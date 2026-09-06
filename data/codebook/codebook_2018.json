@@ -2572,2583 +2572,3060 @@
   }
  ],
  "resolved": {
-  "V02": {
+  "0": {
    "code": "V02",
    "section": "",
    "qnum": "",
    "stem": "",
-   "item": "Streek"
+   "item": "Streek",
+   "column": "V02"
   },
-  "V03": {
+  "1": {
    "code": "V03",
    "section": "",
    "qnum": "",
    "stem": "",
-   "item": "Gemeente"
+   "item": "Gemeente",
+   "column": "V03"
   },
-  "V04": {
+  "2": {
    "code": "V04",
    "section": "",
    "qnum": "",
    "stem": "",
-   "item": "Sinode"
+   "item": "Sinode",
+   "column": "V04"
   },
-  "V05": {
+  "4": {
    "code": "V05",
    "section": "1 Lidmate In Die Gemeente",
    "qnum": "1.1",
    "stem": "Hoeveel ingeskrewe lidmate behoort tans aan hierdie gemeente? (totaal)",
-   "item": "Belydende lidmate"
+   "item": "Belydende lidmate",
+   "column": "V05"
   },
-  "V06": {
+  "5": {
    "code": "V06",
    "section": "1 Lidmate In Die Gemeente",
    "qnum": "1.1",
    "stem": "Hoeveel ingeskrewe lidmate behoort tans aan hierdie gemeente? (totaal)",
-   "item": "Dooplidmate"
+   "item": "Dooplidmate",
+   "column": "V06"
   },
-  "V07": {
+  "6": {
    "code": "V07",
    "section": "1 Lidmate In Die Gemeente",
    "qnum": "1.1",
    "stem": "Hoeveel ingeskrewe lidmate behoort tans aan hierdie gemeente? (totaal)",
-   "item": "Ongedooptes"
+   "item": "Ongedooptes",
+   "column": "V07"
   },
-  "V08": {
+  "7": {
    "code": "V08",
    "section": "1 Lidmate In Die Gemeente",
    "qnum": "1.2",
    "stem": "Ouderdom - hoeveel lidmate is, sover u weet",
-   "item": "tussen 60 en 80 jaar oud?"
+   "item": "tussen 60 en 80 jaar oud?",
+   "column": "V08"
   },
-  "V09": {
+  "8": {
    "code": "V09",
    "section": "1 Lidmate In Die Gemeente",
    "qnum": "1.2",
    "stem": "Ouderdom - hoeveel lidmate is, sover u weet",
-   "item": "ouer as 80 jaar?"
+   "item": "ouer as 80 jaar?",
+   "column": "V09"
   },
-  "V10": {
+  "9": {
    "code": "V10",
    "section": "1 Lidmate In Die Gemeente",
    "qnum": "1.3",
    "stem": "Hoeveel ingeskrewe lidmate is buite die geografiese gemeentegrense woonagtig?",
-   "item": "Belydende lidmate"
+   "item": "Belydende lidmate",
+   "column": "V10"
   },
-  "V11": {
+  "10": {
    "code": "V11",
    "section": "1 Lidmate In Die Gemeente",
    "qnum": "1.3",
    "stem": "Hoeveel ingeskrewe lidmate is buite die geografiese gemeentegrense woonagtig?",
-   "item": "Dooplidmate"
+   "item": "Dooplidmate",
+   "column": "V11"
   },
-  "V12": {
+  "11": {
    "code": "V12",
    "section": "1 Lidmate In Die Gemeente",
    "qnum": "1.3",
    "stem": "Hoeveel ingeskrewe lidmate is buite die geografiese gemeentegrense woonagtig?",
-   "item": "Ongedooptes"
+   "item": "Ongedooptes",
+   "column": "V12"
   },
-  "V13": {
+  "12": {
    "code": "V13",
    "section": "1 Lidmate In Die Gemeente",
    "qnum": "1.4",
    "stem": "Hoeveel lidmate het gedurende 2017 lidmaat van dié gemeente geword, wat voorheen nie lidmaat van enige ander gemeente of denominasie was nie?",
-   "item": "Belydende lidmate"
+   "item": "Belydende lidmate",
+   "column": "V13"
   },
-  "V14": {
+  "13": {
    "code": "V14",
    "section": "1 Lidmate In Die Gemeente",
    "qnum": "1.4",
    "stem": "Hoeveel lidmate het gedurende 2017 lidmaat van dié gemeente geword, wat voorheen nie lidmaat van enige ander gemeente of denominasie was nie?",
-   "item": "Dooplidmate"
+   "item": "Dooplidmate",
+   "column": "V14"
   },
-  "V15": {
+  "14": {
    "code": "V15",
    "section": "1 Lidmate In Die Gemeente",
    "qnum": "1.4",
    "stem": "Hoeveel lidmate het gedurende 2017 lidmaat van dié gemeente geword, wat voorheen nie lidmaat van enige ander gemeente of denominasie was nie?",
-   "item": "Ongedooptes"
+   "item": "Ongedooptes",
+   "column": "V15"
   },
-  "V16": {
+  "15": {
    "code": "V16",
    "section": "1 Lidmate In Die Gemeente",
    "qnum": "1.5",
    "stem": "Gedurende 2017, hoeveel van die volgende het gebeur?",
-   "item": "Babas gedoop"
+   "item": "Babas gedoop",
+   "column": "V16"
   },
-  "V17": {
+  "16": {
    "code": "V17",
    "section": "1 Lidmate In Die Gemeente",
    "qnum": "1.5",
    "stem": "Gedurende 2017, hoeveel van die volgende het gebeur?",
-   "item": "Kinders gedoop"
+   "item": "Kinders gedoop",
+   "column": "V17"
   },
-  "V18": {
+  "17": {
    "code": "V18",
    "section": "1 Lidmate In Die Gemeente",
    "qnum": "1.5",
    "stem": "Gedurende 2017, hoeveel van die volgende het gebeur?",
-   "item": "Volwassenes gedoop"
+   "item": "Volwassenes gedoop",
+   "column": "V18"
   },
-  "V19": {
+  "18": {
    "code": "V19",
    "section": "1 Lidmate In Die Gemeente",
    "qnum": "1.5",
    "stem": "Gedurende 2017, hoeveel van die volgende het gebeur?",
-   "item": "Dooplidmate wat belydenis van geloof afgelê het"
+   "item": "Dooplidmate wat belydenis van geloof afgelê het",
+   "column": "V19"
   },
-  "V20": {
+  "19": {
    "code": "V20",
    "section": "1 Lidmate In Die Gemeente",
    "qnum": "1.5",
    "stem": "Gedurende 2017, hoeveel van die volgende het gebeur?",
-   "item": "wat belydenis van geloof afgelê het"
+   "item": "wat belydenis van geloof afgelê het",
+   "column": "V20"
   },
-  "V21": {
+  "20": {
    "code": "V21",
    "section": "1 Lidmate In Die Gemeente",
    "qnum": "1.5",
    "stem": "Gedurende 2017, hoeveel van die volgende het gebeur?",
-   "item": "Troues"
+   "item": "Troues",
+   "column": "V21"
   },
-  "V22": {
+  "21": {
    "code": "V22",
    "section": "1 Lidmate In Die Gemeente",
    "qnum": "1.5",
    "stem": "Gedurende 2017, hoeveel van die volgende het gebeur?",
-   "item": "Begrafnisse"
+   "item": "Begrafnisse",
+   "column": "V22"
   },
-  "V23": {
+  "22": {
    "code": "V23",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.1",
    "stem": "Voltydse predikantsposte in die gemeente is … dui aan hoeveel is",
-   "item": "Tans gevul"
+   "item": "Tans gevul",
+   "column": "V23"
   },
-  "V24": {
+  "23": {
    "code": "V24",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.1",
    "stem": "Voltydse predikantsposte in die gemeente is … dui aan hoeveel is",
-   "item": "Tans vakant"
+   "item": "Tans vakant",
+   "column": "V24"
   },
-  "V25": {
+  "24": {
    "code": "V25",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.1",
    "stem": "Voltydse predikantsposte in die gemeente is … dui aan hoeveel is",
-   "item": "In 2014-2017 verander na ŉ “verkleinde” pos"
+   "item": "In 2014-2017 verander na ŉ “verkleinde” pos",
+   "column": "V25"
   },
-  "V26": {
+  "25": {
    "code": "V26",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.1",
    "stem": "Voltydse predikantsposte in die gemeente is … dui aan hoeveel is",
-   "item": "in 2014-2017 afgeskaf/gesluit"
+   "item": "in 2014-2017 afgeskaf/gesluit",
+   "column": "V26"
   },
-  "V27": {
+  "26": {
    "code": "V27",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.1",
    "stem": "Voltydse predikantsposte in die gemeente is … dui aan hoeveel is",
-   "item": "in 2014-2017 geskep"
+   "item": "in 2014-2017 geskep",
+   "column": "V27"
   },
-  "V28": {
+  "27": {
    "code": "V28",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.2",
    "stem": "Hoeveel predikantsposte word gevul deur",
-   "item": "Voltydse geordende leraar(s) (Voltydse onbepaalde termynpos)"
+   "item": "Voltydse geordende leraar(s) (Voltydse onbepaalde termynpos)",
+   "column": "V28"
   },
-  "V29": {
+  "28": {
    "code": "V29",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.2",
    "stem": "Hoeveel predikantsposte word gevul deur",
-   "item": "Tentmakerleraar (Deeltydse onbepaalde termynpos)"
+   "item": "Tentmakerleraar (Deeltydse onbepaalde termynpos)",
+   "column": "V29"
   },
-  "V30": {
+  "29": {
    "code": "V30",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.2",
    "stem": "Hoeveel predikantsposte word gevul deur",
-   "item": "Leraar met kontrakpos (Voltydse vaste termynpos)"
+   "item": "Leraar met kontrakpos (Voltydse vaste termynpos)",
+   "column": "V30"
   },
-  "V31": {
+  "30": {
    "code": "V31",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.2",
    "stem": "Hoeveel predikantsposte word gevul deur",
-   "item": "Deeltydse leraar met kontrakpos (Deeltydse vaste termynpos)"
+   "item": "Deeltydse leraar met kontrakpos (Deeltydse vaste termynpos)",
+   "column": "V31"
   },
-  "V32": {
+  "31": {
    "code": "V32",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.2",
    "stem": "Hoeveel predikantsposte word gevul deur",
-   "item": "Kapelaan, gekoppel aan gemeente"
+   "item": "Kapelaan, gekoppel aan gemeente",
+   "column": "V32"
   },
-  "V33": {
+  "32": {
    "code": "V33",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.2",
    "stem": "Hoeveel predikantsposte word gevul deur",
-   "item": "Proponent"
+   "item": "Proponent",
+   "column": "V33"
   },
-  "V34": {
+  "33": {
    "code": "V34",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.2",
    "stem": "Hoeveel predikantsposte word gevul deur",
-   "item": "help uit)"
+   "item": "help uit)",
+   "column": "V34"
   },
-  "V35": {
+  "34": {
    "code": "V35",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.3",
    "stem": "Indien die gemeente ŉ deeltydse predikantspos het, dui asb die termyn (aantal jare)",
-   "item": "aan"
+   "item": "aan",
+   "column": "V35"
   },
-  "V36": {
+  "35": {
    "code": "V36",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.4",
    "stem": "Gebruik die gemeente ander teologies opgeleide persone in die gemeente?",
-   "item": "Proponent"
+   "item": "Proponent",
+   "column": "V36"
   },
-  "V37": {
+  "36": {
    "code": "V37",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.4",
    "stem": "Gebruik die gemeente ander teologies opgeleide persone in die gemeente?",
-   "item": "Proponent"
+   "item": "Proponent",
+   "column": "V37"
   },
-  "V38": {
+  "37": {
    "code": "V38",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.4",
    "stem": "Gebruik die gemeente ander teologies opgeleide persone in die gemeente?",
-   "item": "Emerituspredikant"
+   "item": "Emerituspredikant",
+   "column": "V38"
   },
-  "V39": {
+  "38": {
    "code": "V39",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.4",
    "stem": "Gebruik die gemeente ander teologies opgeleide persone in die gemeente?",
-   "item": "Emerituspredikant"
+   "item": "Emerituspredikant",
+   "column": "V39"
   },
-  "V40": {
+  "39": {
    "code": "V40",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.4",
    "stem": "Gebruik die gemeente ander teologies opgeleide persone in die gemeente?",
-   "item": "Teologiese student"
+   "item": "Teologiese student",
+   "column": "V40"
   },
-  "V41": {
+  "40": {
    "code": "V41",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.4",
    "stem": "Gebruik die gemeente ander teologies opgeleide persone in die gemeente?",
-   "item": "Teologiese student"
+   "item": "Teologiese student",
+   "column": "V41"
   },
-  "V42": {
+  "41": {
    "code": "V42",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.4",
    "stem": "Gebruik die gemeente ander teologies opgeleide persone in die gemeente?",
-   "item": "Gelegitimeerde in ’n ander betrekking"
+   "item": "Gelegitimeerde in ’n ander betrekking",
+   "column": "V42"
   },
-  "V43": {
+  "42": {
    "code": "V43",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.4",
    "stem": "Gebruik die gemeente ander teologies opgeleide persone in die gemeente?",
-   "item": "Gelegitimeerde in ’n ander betrekking"
+   "item": "Gelegitimeerde in ’n ander betrekking",
+   "column": "V43"
   },
-  "V44": {
+  "43": {
    "code": "V44",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.4",
    "stem": "Gebruik die gemeente ander teologies opgeleide persone in die gemeente?",
-   "item": "Predikant wat op ’n beroep wag"
+   "item": "Predikant wat op ’n beroep wag",
+   "column": "V44"
   },
-  "V45": {
+  "44": {
    "code": "V45",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.4",
    "stem": "Gebruik die gemeente ander teologies opgeleide persone in die gemeente?",
-   "item": "Predikant wat op ’n beroep wag"
+   "item": "Predikant wat op ’n beroep wag",
+   "column": "V45"
   },
-  "V46": {
+  "45": {
    "code": "V46",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.4",
    "stem": "Gebruik die gemeente ander teologies opgeleide persone in die gemeente?",
-   "item": "Jeugwerker"
+   "item": "Jeugwerker",
+   "column": "V46"
   },
-  "V47": {
+  "46": {
    "code": "V47",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.4",
    "stem": "Gebruik die gemeente ander teologies opgeleide persone in die gemeente?",
-   "item": "Jeugwerker"
+   "item": "Jeugwerker",
+   "column": "V47"
   },
-  "V48": {
+  "47": {
    "code": "V48",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.4",
    "stem": "Gebruik die gemeente ander teologies opgeleide persone in die gemeente?",
-   "item": "Nie-gelegitimeerde"
+   "item": "Nie-gelegitimeerde",
+   "column": "V48"
   },
-  "V49": {
+  "48": {
    "code": "V49",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.4",
    "stem": "Gebruik die gemeente ander teologies opgeleide persone in die gemeente?",
-   "item": "Nie-gelegitimeerde"
+   "item": "Nie-gelegitimeerde",
+   "column": "V49"
   },
-  "V50": {
+  "49": {
    "code": "V50",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.4",
    "stem": "Gebruik die gemeente ander teologies opgeleide persone in die gemeente?",
-   "item": "Ander :"
+   "item": "Ander :",
+   "column": "V50"
   },
-  "V51": {
+  "50": {
    "code": "V51",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.4",
    "stem": "Gebruik die gemeente ander teologies opgeleide persone in die gemeente?",
-   "item": "Ander :"
+   "item": "Ander :",
+   "column": "V51"
   },
-  "V52": {
+  "51": {
    "code": "V52",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.5",
    "stem": "Hoeveel gelegitimeerde predikante in die gemeente se diens is vroue?",
-   "item": "Voltyds"
+   "item": "Voltyds",
+   "column": "V52"
   },
-  "V53": {
+  "52": {
    "code": "V53",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.5",
    "stem": "Hoeveel gelegitimeerde predikante in die gemeente se diens is vroue?",
-   "item": "Deeltyds"
+   "item": "Deeltyds",
+   "column": "V53"
   },
-  "V54": {
+  "53": {
    "code": "V54",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.6",
    "stem": "Hoeveel ouderlinge diakens en kategete het u tans in die gemeente?",
-   "item": "Ouderlinge"
+   "item": "Ouderlinge",
+   "column": "V54"
   },
-  "V55": {
+  "54": {
    "code": "V55",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.6",
    "stem": "Hoeveel ouderlinge diakens en kategete het u tans in die gemeente?",
-   "item": "Diakens"
+   "item": "Diakens",
+   "column": "V55"
   },
-  "V56": {
+  "55": {
    "code": "V56",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.6",
    "stem": "Hoeveel ouderlinge diakens en kategete het u tans in die gemeente?",
-   "item": "Kategete"
+   "item": "Kategete",
+   "column": "V56"
   },
-  "V57a": {
+  "56": {
    "code": "V57a",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.7",
    "stem": "Hoeveel kerkraadslede is in die volgende ouderdom kategorieë?",
-   "item": "Jonger as 40 jaar (mans)"
+   "item": "Jonger as 40 jaar (mans)",
+   "column": "V57a"
   },
-  "V57b": {
+  "57": {
    "code": "V57b",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.7",
    "stem": "Hoeveel kerkraadslede is in die volgende ouderdom kategorieë?",
-   "item": "Jonger as 40 jaar (vrouens)"
+   "item": "Jonger as 40 jaar (vrouens)",
+   "column": "V57b"
   },
-  "V58a": {
+  "58": {
    "code": "V58a",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.7",
    "stem": "Hoeveel kerkraadslede is in die volgende ouderdom kategorieë?",
-   "item": "40 tot 60 jaar (mans)"
+   "item": "40 tot 60 jaar (mans)",
+   "column": "V58a"
   },
-  "V58b": {
+  "59": {
    "code": "V58b",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.7",
    "stem": "Hoeveel kerkraadslede is in die volgende ouderdom kategorieë?",
-   "item": "40 tot 60 jaar (vrouens)"
+   "item": "40 tot 60 jaar (vrouens)",
+   "column": "V58b"
   },
-  "V59a": {
+  "60": {
    "code": "V59a",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.7",
    "stem": "Hoeveel kerkraadslede is in die volgende ouderdom kategorieë?",
-   "item": "Ouer as 60 jaar (mans)"
+   "item": "Ouer as 60 jaar (mans)",
+   "column": "V59a"
   },
-  "V59b": {
+  "61": {
    "code": "V59b",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.7",
    "stem": "Hoeveel kerkraadslede is in die volgende ouderdom kategorieë?",
-   "item": "Ouer as 60 jaar (vrouens)"
+   "item": "Ouer as 60 jaar (vrouens)",
+   "column": "V59b"
   },
-  "V60a": {
+  "62": {
    "code": "V60a",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.8",
    "stem": "Hoeveel kategete is in die volgende ouderom kategorieë?",
-   "item": "Jonger as 40 jaar (mans)"
+   "item": "Jonger as 40 jaar (mans)",
+   "column": "V60a"
   },
-  "V60b": {
+  "63": {
    "code": "V60b",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.8",
    "stem": "Hoeveel kategete is in die volgende ouderom kategorieë?",
-   "item": "Jonger as 40 jaar (vrouens)"
+   "item": "Jonger as 40 jaar (vrouens)",
+   "column": "V60b"
   },
-  "V61a": {
+  "64": {
    "code": "V61a",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.8",
    "stem": "Hoeveel kategete is in die volgende ouderom kategorieë?",
-   "item": "40 tot 60 jaar (mans)"
+   "item": "40 tot 60 jaar (mans)",
+   "column": "V61a"
   },
-  "V61b": {
+  "65": {
    "code": "V61b",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.8",
    "stem": "Hoeveel kategete is in die volgende ouderom kategorieë?",
-   "item": "40 tot 60 jaar (vrouens)"
+   "item": "40 tot 60 jaar (vrouens)",
+   "column": "V61b"
   },
-  "V62a": {
+  "66": {
    "code": "V62a",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.8",
    "stem": "Hoeveel kategete is in die volgende ouderom kategorieë?",
-   "item": "Ouer as 60 jaar (mans)"
+   "item": "Ouer as 60 jaar (mans)",
+   "column": "V62a"
   },
-  "V62b": {
+  "67": {
    "code": "V62b",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.8",
    "stem": "Hoeveel kategete is in die volgende ouderom kategorieë?",
-   "item": "Ouer as 60 jaar (vrouens)"
+   "item": "Ouer as 60 jaar (vrouens)",
+   "column": "V62b"
   },
-  "V63a": {
+  "68": {
    "code": "V63a",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.9",
    "stem": "Hoeveel ander dienswerkers (bv kleingroepleiers en projekleiers) is in die volgende ouderdom kategorieë?",
-   "item": "Jonger as 40 jaar (mans)"
+   "item": "Jonger as 40 jaar (mans)",
+   "column": "V63a"
   },
-  "V63b": {
+  "69": {
    "code": "V63b",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.9",
    "stem": "Hoeveel ander dienswerkers (bv kleingroepleiers en projekleiers) is in die volgende ouderdom kategorieë?",
-   "item": "Jonger as 40 jaar (vrouens)"
+   "item": "Jonger as 40 jaar (vrouens)",
+   "column": "V63b"
   },
-  "V64a": {
+  "70": {
    "code": "V64a",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.9",
    "stem": "Hoeveel ander dienswerkers (bv kleingroepleiers en projekleiers) is in die volgende ouderdom kategorieë?",
-   "item": "40 tot 60 jaar (mans)"
+   "item": "40 tot 60 jaar (mans)",
+   "column": "V64a"
   },
-  "V64b": {
+  "71": {
    "code": "V64b",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.9",
    "stem": "Hoeveel ander dienswerkers (bv kleingroepleiers en projekleiers) is in die volgende ouderdom kategorieë?",
-   "item": "40 tot 60 jaar (vrouens)"
+   "item": "40 tot 60 jaar (vrouens)",
+   "column": "V64b"
   },
-  "V65a": {
+  "72": {
    "code": "V65a",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.9",
    "stem": "Hoeveel ander dienswerkers (bv kleingroepleiers en projekleiers) is in die volgende ouderdom kategorieë?",
-   "item": "Ouer as 60 jaar (mans)"
+   "item": "Ouer as 60 jaar (mans)",
+   "column": "V65a"
   },
-  "V65b": {
+  "73": {
    "code": "V65b",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.9",
    "stem": "Hoeveel ander dienswerkers (bv kleingroepleiers en projekleiers) is in die volgende ouderdom kategorieë?",
-   "item": "Ouer as 60 jaar (vrouens)"
+   "item": "Ouer as 60 jaar (vrouens)",
+   "column": "V65b"
   },
-  "V66": {
+  "74": {
    "code": "V66",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.10",
    "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente:",
-   "item": "Musiekleier"
+   "item": "Musiekleier",
+   "column": "V66"
   },
-  "V67": {
+  "75": {
    "code": "V67",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.10",
    "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente:",
-   "item": "Musiekleier"
+   "item": "Musiekleier",
+   "column": "V67"
   },
-  "V68": {
+  "76": {
    "code": "V68",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.10",
    "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente:",
-   "item": "Maatskaplike werker"
+   "item": "Maatskaplike werker",
+   "column": "V68"
   },
-  "V69": {
+  "77": {
    "code": "V69",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.10",
    "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente:",
-   "item": "Maatskaplike werker"
+   "item": "Maatskaplike werker",
+   "column": "V69"
   },
-  "V70": {
+  "78": {
    "code": "V70",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.10",
    "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente:",
-   "item": "Jeugwerker"
+   "item": "Jeugwerker",
+   "column": "V70"
   },
-  "V71": {
+  "79": {
    "code": "V71",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.10",
    "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente:",
-   "item": "Jeugwerker"
+   "item": "Jeugwerker",
+   "column": "V71"
   },
-  "V72": {
+  "80": {
    "code": "V72",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.10",
    "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente:",
-   "item": "Kinderwerker"
+   "item": "Kinderwerker",
+   "column": "V72"
   },
-  "V73": {
+  "81": {
    "code": "V73",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.10",
    "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente:",
-   "item": "Kinderwerker"
+   "item": "Kinderwerker",
+   "column": "V73"
   },
-  "V74": {
+  "82": {
    "code": "V74",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.10",
    "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente:",
-   "item": "Eredienswerker"
+   "item": "Eredienswerker",
+   "column": "V74"
   },
-  "V75": {
+  "83": {
    "code": "V75",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.10",
    "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente:",
-   "item": "Eredienswerker"
+   "item": "Eredienswerker",
+   "column": "V75"
   },
-  "V76": {
+  "84": {
    "code": "V76",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.10",
    "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente:",
-   "item": "Andertalige of kruiskulturele bediening"
+   "item": "Andertalige of kruiskulturele bediening",
+   "column": "V76"
   },
-  "V77": {
+  "85": {
    "code": "V77",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.10",
    "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente:",
-   "item": "Andertalige of kruiskulturele bediening"
+   "item": "Andertalige of kruiskulturele bediening",
+   "column": "V77"
   },
-  "V78": {
+  "86": {
    "code": "V78",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.10",
    "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente:",
-   "item": "Ander"
+   "item": "Ander",
+   "column": "V78"
   },
-  "V79": {
+  "87": {
    "code": "V79",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.10",
    "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente:",
-   "item": "Ander"
+   "item": "Ander",
+   "column": "V79"
   },
-  "V80": {
+  "88": {
    "code": "V80",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.11",
    "stem": "Het u diensooreenkomste met mense wat sonder betaling in die gemeente werk?",
-   "item": "Musiekleier"
+   "item": "Musiekleier",
+   "column": "V80"
   },
-  "V81": {
+  "89": {
    "code": "V81",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.11",
    "stem": "Het u diensooreenkomste met mense wat sonder betaling in die gemeente werk?",
-   "item": "Maatskaplike werker"
+   "item": "Maatskaplike werker",
+   "column": "V81"
   },
-  "V82": {
+  "90": {
    "code": "V82",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.11",
    "stem": "Het u diensooreenkomste met mense wat sonder betaling in die gemeente werk?",
-   "item": "Jeugwerker"
+   "item": "Jeugwerker",
+   "column": "V82"
   },
-  "V83": {
+  "91": {
    "code": "V83",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.11",
    "stem": "Het u diensooreenkomste met mense wat sonder betaling in die gemeente werk?",
-   "item": "Kinderwerker"
+   "item": "Kinderwerker",
+   "column": "V83"
   },
-  "V84": {
+  "92": {
    "code": "V84",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.11",
    "stem": "Het u diensooreenkomste met mense wat sonder betaling in die gemeente werk?",
-   "item": "Erediensleier"
+   "item": "Erediensleier",
+   "column": "V84"
   },
-  "V85": {
+  "93": {
    "code": "V85",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.11",
    "stem": "Het u diensooreenkomste met mense wat sonder betaling in die gemeente werk?",
-   "item": "Andertalige of kruiskulturele bediening"
+   "item": "Andertalige of kruiskulturele bediening",
+   "column": "V85"
   },
-  "V86": {
+  "94": {
    "code": "V86",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.11",
    "stem": "Het u diensooreenkomste met mense wat sonder betaling in die gemeente werk?",
-   "item": "Ander"
+   "item": "Ander",
+   "column": "V86"
   },
-  "V87": {
+  "95": {
    "code": "V87",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.12",
    "stem": "Word persone buiten ouderlinge en diakens tydens ŉ erediens vir hulle dienswerk",
-   "item": "afgesonder of bevestig?"
+   "item": "afgesonder of bevestig?",
+   "column": "V87"
   },
-  "V88": {
+  "96": {
    "code": "V88",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.13",
    "stem": "Oor watter formele kwalifikasies beskik die aangestelde jeugwerker(s)?",
-   "item": "2.13 Oor watter formele kwalifikasies beskik die aangestelde jeugwerker(s)?"
+   "item": "2.13 Oor watter formele kwalifikasies beskik die aangestelde jeugwerker(s)?",
+   "column": "V88"
   },
-  "V89": {
+  "97": {
    "code": "V89",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.14",
    "stem": "Bestaan daar ŉ Diensverhoudinge Kommissie of soortgelyke kommissie wat die",
-   "item": "diensooreenkoms van predikante en amptenare hanteer?"
+   "item": "diensooreenkoms van predikante en amptenare hanteer?",
+   "column": "V89"
   },
-  "V90": {
+  "98": {
    "code": "V90",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.15",
    "stem": "Word die Bestuursgids vir Diensverhoudinge van die NG Kerk as riglyn vir",
-   "item": "diensverhoudinge gebruik?"
+   "item": "diensverhoudinge gebruik?",
+   "column": "V90"
   },
-  "V91": {
+  "99": {
    "code": "V91",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.16",
    "stem": "Is daar ŉ diensooreenkoms, volgens die Kerkorde, wat met die volgende persone wat in diens van die gemeente is, aangegaan is?",
-   "item": "Predikant(e)"
+   "item": "Predikant(e)",
+   "column": "V91"
   },
-  "V92": {
+  "100": {
    "code": "V92",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.16",
    "stem": "Is daar ŉ diensooreenkoms, volgens die Kerkorde, wat met die volgende persone wat in diens van die gemeente is, aangegaan is?",
-   "item": "Kantoorpersoneel"
+   "item": "Kantoorpersoneel",
+   "column": "V92"
   },
-  "V93": {
+  "101": {
    "code": "V93",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.16",
    "stem": "Is daar ŉ diensooreenkoms, volgens die Kerkorde, wat met die volgende persone wat in diens van die gemeente is, aangegaan is?",
-   "item": "Orrelis"
+   "item": "Orrelis",
+   "column": "V93"
   },
-  "V94": {
+  "102": {
    "code": "V94",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.16",
    "stem": "Is daar ŉ diensooreenkoms, volgens die Kerkorde, wat met die volgende persone wat in diens van die gemeente is, aangegaan is?",
-   "item": "Koster"
+   "item": "Koster",
+   "column": "V94"
   },
-  "V95": {
+  "103": {
    "code": "V95",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.16",
    "stem": "Is daar ŉ diensooreenkoms, volgens die Kerkorde, wat met die volgende persone wat in diens van die gemeente is, aangegaan is?",
-   "item": "Ander personeel"
+   "item": "Ander personeel",
+   "column": "V95"
   },
-  "V96": {
+  "104": {
    "code": "V96",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.17",
    "stem": "Is daar ŉ versorgingskommissie, naas die diensverhoudinge kommissie, wat omsien na die versorging van die volgende persone?",
-   "item": "Predikant(e)"
+   "item": "Predikant(e)",
+   "column": "V96"
   },
-  "V97": {
+  "105": {
    "code": "V97",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.17",
    "stem": "Is daar ŉ versorgingskommissie, naas die diensverhoudinge kommissie, wat omsien na die versorging van die volgende persone?",
-   "item": "Kantoorpersoneel"
+   "item": "Kantoorpersoneel",
+   "column": "V97"
   },
-  "V98": {
+  "106": {
    "code": "V98",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.17",
    "stem": "Is daar ŉ versorgingskommissie, naas die diensverhoudinge kommissie, wat omsien na die versorging van die volgende persone?",
-   "item": "Orrelis"
+   "item": "Orrelis",
+   "column": "V98"
   },
-  "V99": {
+  "107": {
    "code": "V99",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.17",
    "stem": "Is daar ŉ versorgingskommissie, naas die diensverhoudinge kommissie, wat omsien na die versorging van die volgende persone?",
-   "item": "Koster"
+   "item": "Koster",
+   "column": "V99"
   },
-  "V100": {
+  "108": {
    "code": "V100",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.17",
    "stem": "Is daar ŉ versorgingskommissie, naas die diensverhoudinge kommissie, wat omsien na die versorging van die volgende persone?",
-   "item": "Ander personeel"
+   "item": "Ander personeel",
+   "column": "V100"
   },
-  "V101": {
+  "109": {
    "code": "V101",
    "section": "2 Poste In Die Gemeente",
    "qnum": "2.18",
    "stem": "Hanteer en bestuur die diensverhoudinge kommissie, of soortgelyke kommissie die",
-   "item": "verlof van die predikant(e) en ander amptenare?"
+   "item": "verlof van die predikant(e) en ander amptenare?",
+   "column": "V101"
   },
-  "V102": {
+  "110": {
    "code": "V102",
    "section": "3 Finansies Van Die Gemeente",
    "qnum": "3.1",
    "stem": "Het die gemeente ŉ amptelik goedgekeurde begroting?",
-   "item": "3.1 Het die gemeente ŉ amptelik goedgekeurde begroting?"
+   "item": "3.1 Het die gemeente ŉ amptelik goedgekeurde begroting?",
+   "column": "V102"
   },
-  "V103": {
+  "111": {
    "code": "V103",
    "section": "3 Finansies Van Die Gemeente",
    "qnum": "3.2",
    "stem": "Watter persentasie van u werklike uitgawes in die 2017/2018 finansiële jaar het u bestee aan ...",
-   "item": "Salarisse en voordele"
+   "item": "Salarisse en voordele",
+   "column": "V103"
   },
-  "V104": {
+  "112": {
    "code": "V104",
    "section": "3 Finansies Van Die Gemeente",
    "qnum": "3.2",
    "stem": "Watter persentasie van u werklike uitgawes in die 2017/2018 finansiële jaar het u bestee aan ...",
-   "item": "Administrasie van die gemeente"
+   "item": "Administrasie van die gemeente",
+   "column": "V104"
   },
-  "V105": {
+  "113": {
    "code": "V105",
    "section": "3 Finansies Van Die Gemeente",
    "qnum": "3.2",
    "stem": "Watter persentasie van u werklike uitgawes in die 2017/2018 finansiële jaar het u bestee aan ...",
-   "item": "Eiendomsuitgawes"
+   "item": "Eiendomsuitgawes",
+   "column": "V105"
   },
-  "V106": {
+  "114": {
    "code": "V106",
    "section": "3 Finansies Van Die Gemeente",
    "qnum": "3.2",
    "stem": "Watter persentasie van u werklike uitgawes in die 2017/2018 finansiële jaar het u bestee aan ...",
-   "item": "Bedieninge ter wille van die gemeente self"
+   "item": "Bedieninge ter wille van die gemeente self",
+   "column": "V106"
   },
-  "V107": {
+  "115": {
    "code": "V107",
    "section": "3 Finansies Van Die Gemeente",
    "qnum": "3.2",
    "stem": "Watter persentasie van u werklike uitgawes in die 2017/2018 finansiële jaar het u bestee aan ...",
-   "item": "Diens en getuienis na buite die gemeente"
+   "item": "Diens en getuienis na buite die gemeente",
+   "column": "V107"
   },
-  "V108": {
+  "116": {
    "code": "V108",
    "section": "3 Finansies Van Die Gemeente",
    "qnum": "3.2",
    "stem": "Watter persentasie van u werklike uitgawes in die 2017/2018 finansiële jaar het u bestee aan ...",
-   "item": "Ander"
+   "item": "Ander",
+   "column": "V108"
   },
-  "V109": {
+  "117": {
+   "code": "V108a",
+   "section": "3 Finansies Van Die Gemeente",
+   "qnum": "3.2",
+   "stem": "Watter persentasie van u werklike uitgawes in die 2017/2018 finansiële jaar het u bestee aan ...",
+   "item": "Ander (spesifiseer)",
+   "column": "V108a",
+   "aliased_from": "V108"
+  },
+  "118": {
    "code": "V109",
    "section": "3 Finansies Van Die Gemeente",
    "qnum": "3.2",
    "stem": "Watter persentasie van u werklike uitgawes in die 2017/2018 finansiële jaar het u bestee aan ...",
-   "item": "Ander"
+   "item": "Ander",
+   "column": "V109"
   },
-  "V110": {
+  "119": {
+   "code": "V109a",
+   "section": "3 Finansies Van Die Gemeente",
+   "qnum": "3.2",
+   "stem": "Watter persentasie van u werklike uitgawes in die 2017/2018 finansiële jaar het u bestee aan ...",
+   "item": "Ander (spesifiseer)",
+   "column": "V109a",
+   "aliased_from": "V109"
+  },
+  "120": {
    "code": "V110",
    "section": "3 Finansies Van Die Gemeente",
    "qnum": "3.2",
    "stem": "Watter persentasie van u werklike uitgawes in die 2017/2018 finansiële jaar het u bestee aan ...",
-   "item": "Ander"
+   "item": "Ander",
+   "column": "V110"
   },
-  "V111": {
+  "121": {
+   "code": "V110a",
+   "section": "3 Finansies Van Die Gemeente",
+   "qnum": "3.2",
+   "stem": "Watter persentasie van u werklike uitgawes in die 2017/2018 finansiële jaar het u bestee aan ...",
+   "item": "Ander (spesifiseer)",
+   "column": "V110a",
+   "aliased_from": "V110"
+  },
+  "122": {
    "code": "V111",
    "section": "3 Finansies Van Die Gemeente",
    "qnum": "3.3",
    "stem": "Watter van die volgende beskryf die gemeente se finansiële posisie die beste?",
-   "item": ""
+   "item": "",
+   "column": "V111"
   },
-  "V112": {
+  "123": {
    "code": "V112",
    "section": "3 Finansies Van Die Gemeente",
    "qnum": "3.4",
    "stem": "Indien die gemeente se voortbestaan bedreig word deur finansies, watter opsies",
-   "item": "oorweeg u?"
+   "item": "oorweeg u?",
+   "column": "V112"
   },
-  "V113": {
+  "124": {
+   "code": "V112a",
+   "section": "3 Finansies Van Die Gemeente",
+   "qnum": "3.4",
+   "stem": "Indien die gemeente se voortbestaan bedreig word deur finansies, watter opsies",
+   "item": "oorweeg u? (spesifiseer)",
+   "column": "V112a",
+   "aliased_from": "V112"
+  },
+  "125": {
    "code": "V113",
    "section": "3 Finansies Van Die Gemeente",
    "qnum": "3.5",
    "stem": "Die vergoeding van die voltydse predikant(e) in diens van die gemeente is",
-   "item": "3.5 Die vergoeding van die voltydse predikant(e) in diens van die gemeente is"
+   "item": "3.5 Die vergoeding van die voltydse predikant(e) in diens van die gemeente is",
+   "column": "V113"
   },
-  "V114": {
+  "126": {
    "code": "V114",
    "section": "3 Finansies Van Die Gemeente",
    "qnum": "3.6",
    "stem": "Voltydse predikante in diens van die gemeente word toegelaat om in ŉ eie woning",
-   "item": "te bly"
+   "item": "te bly",
+   "column": "V114"
   },
-  "V115": {
+  "127": {
+   "code": "V114a",
+   "section": "3 Finansies Van Die Gemeente",
+   "qnum": "3.6",
+   "stem": "Voltydse predikante in diens van die gemeente word toegelaat om in ŉ eie woning",
+   "item": "te bly (spesifiseer)",
+   "column": "V114a",
+   "aliased_from": "V114"
+  },
+  "128": {
    "code": "V115",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.1",
    "stem": "Hoeveel eredienste word gewoonlik elke Sondag in dié gemeente gehou?",
-   "item": "Oggend Getal"
+   "item": "Oggend Getal",
+   "column": "V115"
   },
-  "V116": {
+  "129": {
    "code": "V116",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.1",
    "stem": "Hoeveel eredienste word gewoonlik elke Sondag in dié gemeente gehou?",
-   "item": "Aand Getal"
+   "item": "Aand Getal",
+   "column": "V116"
   },
-  "V117": {
+  "130": {
    "code": "V117",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.1",
    "stem": "Hoeveel eredienste word gewoonlik elke Sondag in dié gemeente gehou?",
-   "item": "Ander Getal"
+   "item": "Ander Getal",
+   "column": "V117"
   },
-  "V118": {
+  "131": {
    "code": "V118",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.2",
    "stem": "Het u gemeente, naas ’n gewone erediens, ook ander eredienste?",
-   "item": "Gesins- of familiediens"
+   "item": "Gesins- of familiediens",
+   "column": "V118"
   },
-  "V119": {
+  "132": {
    "code": "V119",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.2",
    "stem": "Het u gemeente, naas ’n gewone erediens, ook ander eredienste?",
-   "item": "Aparte diens vir senior burgers"
+   "item": "Aparte diens vir senior burgers",
+   "column": "V119"
   },
-  "V120": {
+  "133": {
    "code": "V120",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.2",
    "stem": "Het u gemeente, naas ’n gewone erediens, ook ander eredienste?",
-   "item": "Aparte diens vir jong volwassenes"
+   "item": "Aparte diens vir jong volwassenes",
+   "column": "V120"
   },
-  "V121": {
+  "134": {
    "code": "V121",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.2",
    "stem": "Het u gemeente, naas ’n gewone erediens, ook ander eredienste?",
-   "item": "Aparte Jeugdiens (hoofsaaklik hoërskool)"
+   "item": "Aparte Jeugdiens (hoofsaaklik hoërskool)",
+   "column": "V121"
   },
-  "V122": {
+  "135": {
    "code": "V122",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.2",
    "stem": "Het u gemeente, naas ’n gewone erediens, ook ander eredienste?",
-   "item": "Aparte Kinderdiens (hoofsaaklik laerskool)"
+   "item": "Aparte Kinderdiens (hoofsaaklik laerskool)",
+   "column": "V122"
   },
-  "V123": {
+  "136": {
    "code": "V123",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.2",
    "stem": "Het u gemeente, naas ’n gewone erediens, ook ander eredienste?",
-   "item": "Aparte Kleuterdiens (voorskools)"
+   "item": "Aparte Kleuterdiens (voorskools)",
+   "column": "V123"
   },
-  "V124": {
+  "137": {
    "code": "V124",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.2",
    "stem": "Het u gemeente, naas ’n gewone erediens, ook ander eredienste?",
-   "item": "Andertalige diens"
+   "item": "Andertalige diens",
+   "column": "V124"
   },
-  "V125": {
+  "138": {
    "code": "V125",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.2",
    "stem": "Het u gemeente, naas ’n gewone erediens, ook ander eredienste?",
-   "item": "Ander :"
+   "item": "Ander :",
+   "column": "V125"
   },
-  "V126": {
+  "139": {
+   "code": "V125a",
+   "section": "4 Eredienste In Die Gemeente",
+   "qnum": "4.2",
+   "stem": "Het u gemeente, naas ’n gewone erediens, ook ander eredienste?",
+   "item": "Ander : (spesifiseer)",
+   "column": "V125a",
+   "aliased_from": "V125"
+  },
+  "140": {
    "code": "V126",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.3",
    "stem": "Wie lei hierdie dienste? (Merk asb waar van toepassing)",
-   "item": ""
+   "item": "",
+   "column": "V126"
   },
-  "V127": {
+  "141": {
    "code": "V127",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.3",
    "stem": "Wie lei hierdie dienste? (Merk asb waar van toepassing)",
-   "item": "burgers"
+   "item": "burgers",
+   "column": "V127"
   },
-  "V128": {
+  "142": {
    "code": "V128",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.3",
    "stem": "Wie lei hierdie dienste? (Merk asb waar van toepassing)",
-   "item": "Aparte Jeugdiens"
+   "item": "Aparte Jeugdiens",
+   "column": "V128"
   },
-  "V129": {
+  "143": {
    "code": "V129",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.3",
    "stem": "Wie lei hierdie dienste? (Merk asb waar van toepassing)",
-   "item": "Aparte Kinderdiens"
+   "item": "Aparte Kinderdiens",
+   "column": "V129"
   },
-  "V130": {
+  "144": {
    "code": "V130",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.3",
    "stem": "Wie lei hierdie dienste? (Merk asb waar van toepassing)",
-   "item": "Aparte Kleuterdiens"
+   "item": "Aparte Kleuterdiens",
+   "column": "V130"
   },
-  "V131": {
+  "145": {
    "code": "V131",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.3",
    "stem": "Wie lei hierdie dienste? (Merk asb waar van toepassing)",
-   "item": "Andertalige diens"
+   "item": "Andertalige diens",
+   "column": "V131"
   },
-  "V132": {
+  "146": {
    "code": "V132",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.3",
    "stem": "Wie lei hierdie dienste? (Merk asb waar van toepassing)",
-   "item": "Ander"
+   "item": "Ander",
+   "column": "V132"
   },
-  "V133": {
+  "147": {
+   "code": "V132a",
+   "section": "4 Eredienste In Die Gemeente",
+   "qnum": "4.3",
+   "stem": "Wie lei hierdie dienste? (Merk asb waar van toepassing)",
+   "item": "Ander (spesifiseer)",
+   "column": "V132a",
+   "aliased_from": "V132"
+  },
+  "148": {
    "code": "V133",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.4",
    "stem": "Indien u ’n andertalige diens het, dui aan watter taal en hoeveel dienste per maand",
-   "item": "Taal"
+   "item": "Taal",
+   "column": "V133"
   },
-  "V134": {
+  "149": {
+   "code": "V133a",
+   "section": "4 Eredienste In Die Gemeente",
+   "qnum": "4.4",
+   "stem": "Indien u ’n andertalige diens het, dui aan watter taal en hoeveel dienste per maand",
+   "item": "Taal (spesifiseer)",
+   "column": "V133a",
+   "aliased_from": "V133"
+  },
+  "150": {
    "code": "V134",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.4",
    "stem": "Indien u ’n andertalige diens het, dui aan watter taal en hoeveel dienste per maand",
-   "item": "Taal"
+   "item": "Taal",
+   "column": "V134"
   },
-  "V135": {
+  "151": {
+   "code": "V134a",
+   "section": "4 Eredienste In Die Gemeente",
+   "qnum": "4.4",
+   "stem": "Indien u ’n andertalige diens het, dui aan watter taal en hoeveel dienste per maand",
+   "item": "Taal (spesifiseer)",
+   "column": "V134a",
+   "aliased_from": "V134"
+  },
+  "152": {
    "code": "V135",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.4",
    "stem": "Indien u ’n andertalige diens het, dui aan watter taal en hoeveel dienste per maand",
-   "item": "Taal"
+   "item": "Taal",
+   "column": "V135"
   },
-  "V136": {
+  "153": {
+   "code": "V135a",
+   "section": "4 Eredienste In Die Gemeente",
+   "qnum": "4.4",
+   "stem": "Indien u ’n andertalige diens het, dui aan watter taal en hoeveel dienste per maand",
+   "item": "Taal (spesifiseer)",
+   "column": "V135a",
+   "aliased_from": "V135"
+  },
+  "154": {
    "code": "V136",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.5",
    "stem": "Wat is die totale gemiddelde erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ’n Sondag in Februarie plaasvind, aan)",
-   "item": "2013"
+   "item": "2013",
+   "column": "V136"
   },
-  "V137": {
+  "155": {
    "code": "V137",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.5",
    "stem": "Wat is die totale gemiddelde erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ’n Sondag in Februarie plaasvind, aan)",
-   "item": "2014"
+   "item": "2014",
+   "column": "V137"
   },
-  "V138": {
+  "156": {
    "code": "V138",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.5",
    "stem": "Wat is die totale gemiddelde erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ’n Sondag in Februarie plaasvind, aan)",
-   "item": "2015"
+   "item": "2015",
+   "column": "V138"
   },
-  "V139": {
+  "157": {
    "code": "V139",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.5",
    "stem": "Wat is die totale gemiddelde erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ’n Sondag in Februarie plaasvind, aan)",
-   "item": "2016"
+   "item": "2016",
+   "column": "V139"
   },
-  "V140": {
+  "158": {
    "code": "V140",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.5",
    "stem": "Wat is die totale gemiddelde erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ’n Sondag in Februarie plaasvind, aan)",
-   "item": "2017"
+   "item": "2017",
+   "column": "V140"
   },
-  "V141": {
+  "159": {
    "code": "V141",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.5",
    "stem": "Wat is die totale gemiddelde erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ’n Sondag in Februarie plaasvind, aan)",
-   "item": "2018"
+   "item": "2018",
+   "column": "V141"
   },
-  "V142": {
+  "160": {
    "code": "V142",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.6",
    "stem": "Watter liederebundels gebruik u tydens die eredienste",
-   "item": "Liedboek"
+   "item": "Liedboek",
+   "column": "V142"
   },
-  "V143": {
+  "161": {
    "code": "V143",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.6",
    "stem": "Watter liederebundels gebruik u tydens die eredienste",
-   "item": "Flam"
+   "item": "Flam",
+   "column": "V143"
   },
-  "V144": {
+  "162": {
    "code": "V144",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.6",
    "stem": "Watter liederebundels gebruik u tydens die eredienste",
-   "item": "VONKK"
+   "item": "VONKK",
+   "column": "V144"
   },
-  "V145": {
+  "163": {
    "code": "V145",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.6",
    "stem": "Watter liederebundels gebruik u tydens die eredienste",
-   "item": "’n Eie bundel"
+   "item": "’n Eie bundel",
+   "column": "V145"
   },
-  "V146": {
+  "164": {
    "code": "V146",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.6",
    "stem": "Watter liederebundels gebruik u tydens die eredienste",
-   "item": "Ander :"
+   "item": "Ander :",
+   "column": "V146"
   },
-  "V147": {
+  "165": {
    "code": "V147",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.7",
    "stem": "Wat die eredienste in die gemeente betref",
-   "item": "die kerkjaar word gevolg"
+   "item": "die kerkjaar word gevolg",
+   "column": "V147"
   },
-  "V148": {
+  "166": {
    "code": "V148",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.7",
    "stem": "Wat die eredienste in die gemeente betref",
-   "item": "gebruik"
+   "item": "gebruik",
+   "column": "V148"
   },
-  "V149": {
+  "167": {
    "code": "V149",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.7",
    "stem": "Wat die eredienste in die gemeente betref",
-   "item": ""
+   "item": "",
+   "column": "V149"
   },
-  "V150": {
+  "168": {
    "code": "V150",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.7",
    "stem": "Wat die eredienste in die gemeente betref",
-   "item": "Ons doen van tyd tot tyd preekreekse"
+   "item": "Ons doen van tyd tot tyd preekreekse",
+   "column": "V150"
   },
-  "V151": {
+  "169": {
    "code": "V151",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.7",
    "stem": "Wat die eredienste in die gemeente betref",
-   "item": "teks en tema"
+   "item": "teks en tema",
+   "column": "V151"
   },
-  "V152": {
+  "170": {
    "code": "V152",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.8",
    "stem": "Wat is die primêre vorm van begeleiding tydens die volgende eredienste?",
-   "item": "Gesins- of familiediens"
+   "item": "Gesins- of familiediens",
+   "column": "V152"
   },
-  "V153": {
+  "171": {
    "code": "V153",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.8",
    "stem": "Wat is die primêre vorm van begeleiding tydens die volgende eredienste?",
-   "item": "Diens vir senior burgers"
+   "item": "Diens vir senior burgers",
+   "column": "V153"
   },
-  "V154": {
+  "172": {
    "code": "V154",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.8",
    "stem": "Wat is die primêre vorm van begeleiding tydens die volgende eredienste?",
-   "item": "Jeugdiens"
+   "item": "Jeugdiens",
+   "column": "V154"
   },
-  "V155": {
+  "173": {
    "code": "V155",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.8",
    "stem": "Wat is die primêre vorm van begeleiding tydens die volgende eredienste?",
-   "item": "Kinderkerk"
+   "item": "Kinderkerk",
+   "column": "V155"
   },
-  "V156": {
+  "174": {
    "code": "V156",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.8",
    "stem": "Wat is die primêre vorm van begeleiding tydens die volgende eredienste?",
-   "item": "Kleuterkerk"
+   "item": "Kleuterkerk",
+   "column": "V156"
   },
-  "V157": {
+  "175": {
    "code": "V157",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.8",
    "stem": "Wat is die primêre vorm van begeleiding tydens die volgende eredienste?",
-   "item": "Andertalige diens"
+   "item": "Andertalige diens",
+   "column": "V157"
   },
-  "V158": {
+  "176": {
    "code": "V158",
    "section": "4 Eredienste In Die Gemeente",
    "qnum": "4.9",
    "stem": "Hoeveel maal het u gedurende 2017 die nagmaal gevier? (Gemeentes wat op dieselfde dag by meer as een erediens nagmaal bedien, tel dit net as een",
-   "item": "geleentheid.)"
+   "item": "geleentheid.)",
+   "column": "V158"
   },
-  "V159": {
+  "177": {
    "code": "V159",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.1",
    "stem": "Watter een van die volgende omskrywings sal die kerkraad die beste beskryf?",
-   "item": ""
+   "item": "",
+   "column": "V159"
   },
-  "V160": {
+  "178": {
    "code": "V160",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.2",
    "stem": "Hoe sou u die gemeente se huidige rigting tipeer?",
-   "item": "5.2 Hoe sou u die gemeente se huidige rigting tipeer?"
+   "item": "5.2 Hoe sou u die gemeente se huidige rigting tipeer?",
+   "column": "V160"
   },
-  "V161": {
+  "179": {
    "code": "V161",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.3",
    "stem": "Indien die voortbestaan van die gemeente in gedrang is, watter bedieningsopsies oorweeg u? (Merk almal van toepassing.)",
-   "item": "Saamsmelt met ’n buurgemeente"
+   "item": "Saamsmelt met ’n buurgemeente",
+   "column": "V161"
   },
-  "V162": {
+  "180": {
    "code": "V162",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.3",
    "stem": "Indien die voortbestaan van die gemeente in gedrang is, watter bedieningsopsies oorweeg u? (Merk almal van toepassing.)",
-   "item": "tentmaker"
+   "item": "tentmaker",
+   "column": "V162"
   },
-  "V163": {
+  "181": {
    "code": "V163",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.3",
    "stem": "Indien die voortbestaan van die gemeente in gedrang is, watter bedieningsopsies oorweeg u? (Merk almal van toepassing.)",
-   "item": "konsulent"
+   "item": "konsulent",
+   "column": "V163"
   },
-  "V164": {
+  "182": {
    "code": "V164",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.3",
    "stem": "Indien die voortbestaan van die gemeente in gedrang is, watter bedieningsopsies oorweeg u? (Merk almal van toepassing.)",
-   "item": "gemeente(s)"
+   "item": "gemeente(s)",
+   "column": "V164"
   },
-  "V165": {
+  "183": {
    "code": "V165",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.3",
    "stem": "Indien die voortbestaan van die gemeente in gedrang is, watter bedieningsopsies oorweeg u? (Merk almal van toepassing.)",
-   "item": "Tussenorde"
+   "item": "Tussenorde",
+   "column": "V165"
   },
-  "V166": {
+  "184": {
    "code": "V166",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.4",
    "stem": "Is u bewus van die volgende moontlikhede wat tans ontwikkel word?",
-   "item": "Ouderlinge met preekbevoegdheid"
+   "item": "Ouderlinge met preekbevoegdheid",
+   "column": "V166"
   },
-  "V167": {
+  "185": {
    "code": "V167",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.4",
    "stem": "Is u bewus van die volgende moontlikhede wat tans ontwikkel word?",
-   "item": "Opleiding vir diensleraars"
+   "item": "Opleiding vir diensleraars",
+   "column": "V167"
   },
-  "V168": {
+  "186": {
    "code": "V168",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.4",
    "stem": "Is u bewus van die volgende moontlikhede wat tans ontwikkel word?",
-   "item": "Deeltydse opleiding van tweede loopbaan predikante"
+   "item": "Deeltydse opleiding van tweede loopbaan predikante",
+   "column": "V168"
   },
-  "V169": {
+  "188": {
    "code": "V169",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.5",
    "stem": "Wie is die voorsitter van die kerkraad?",
-   "item": "5.5 Wie is die voorsitter van die kerkraad?"
+   "item": "5.5 Wie is die voorsitter van die kerkraad?",
+   "column": "V169"
   },
-  "V170": {
+  "189": {
    "code": "V170",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.6",
    "stem": "Die gebruik van tegnologie in die gemeente",
-   "item": "Is die lidmaatdatabasis gerekenariseerd?"
+   "item": "Is die lidmaatdatabasis gerekenariseerd?",
+   "column": "V170"
   },
-  "V171": {
+  "190": {
    "code": "V171",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.6",
    "stem": "Die gebruik van tegnologie in die gemeente",
-   "item": "Is die boekhoustelsel gerekenariseerd?"
+   "item": "Is die boekhoustelsel gerekenariseerd?",
+   "column": "V171"
   },
-  "V172": {
+  "191": {
    "code": "V172",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.6",
    "stem": "Die gebruik van tegnologie in die gemeente",
-   "item": "Het die gemeente ŉ eie webwerf?"
+   "item": "Het die gemeente ŉ eie webwerf?",
+   "column": "V172"
   },
-  "V173": {
+  "192": {
    "code": "V173",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.6",
    "stem": "Die gebruik van tegnologie in die gemeente",
-   "item": "kommunikeer?"
+   "item": "kommunikeer?",
+   "column": "V173"
   },
-  "V174": {
+  "193": {
    "code": "V174",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.6",
    "stem": "Die gebruik van tegnologie in die gemeente",
-   "item": "kommunikeer?"
+   "item": "kommunikeer?",
+   "column": "V174"
   },
-  "V175": {
+  "194": {
    "code": "V175",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.6",
    "stem": "Die gebruik van tegnologie in die gemeente",
-   "item": "kommunikeer?"
+   "item": "kommunikeer?",
+   "column": "V175"
   },
-  "V176": {
+  "195": {
    "code": "V176",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.6",
    "stem": "Die gebruik van tegnologie in die gemeente",
-   "item": "Stuur die gemeente ŉ elektroniese nuusbrief uit?"
+   "item": "Stuur die gemeente ŉ elektroniese nuusbrief uit?",
+   "column": "V176"
   },
-  "V177": {
+  "196": {
    "code": "V177",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.6",
    "stem": "Die gebruik van tegnologie in die gemeente",
-   "item": "Word ŉ dataprojektor tydens eredienste gebruik?"
+   "item": "Word ŉ dataprojektor tydens eredienste gebruik?",
+   "column": "V177"
   },
-  "V178": {
+  "197": {
    "code": "V178",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.6",
    "stem": "Die gebruik van tegnologie in die gemeente",
-   "item": "oorbetaal?"
+   "item": "oorbetaal?",
+   "column": "V178"
   },
-  "V179": {
+  "198": {
    "code": "V179",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.7",
    "stem": "Watter rol speel die volgende kerkvergaderings (besluite, aksies, ens.) in die funksionering van die gemeente?",
-   "item": "Algemene Sinode"
+   "item": "Algemene Sinode",
+   "column": "V179"
   },
-  "V180": {
+  "199": {
    "code": "V180",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.7",
    "stem": "Watter rol speel die volgende kerkvergaderings (besluite, aksies, ens.) in die funksionering van die gemeente?",
-   "item": "Sinode"
+   "item": "Sinode",
+   "column": "V180"
   },
-  "V181": {
+  "200": {
    "code": "V181",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.7",
    "stem": "Watter rol speel die volgende kerkvergaderings (besluite, aksies, ens.) in die funksionering van die gemeente?",
-   "item": "Ring"
+   "item": "Ring",
+   "column": "V181"
   },
-  "V182": {
+  "201": {
    "code": "V182",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.8",
    "stem": "Beantwoord elkeen van die onderstaande stellings oor die gemeente",
-   "item": ""
+   "item": "",
+   "column": "V182"
   },
-  "V183": {
+  "202": {
    "code": "V183",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.8",
    "stem": "Beantwoord elkeen van die onderstaande stellings oor die gemeente",
-   "item": "gemeente geleë is"
+   "item": "gemeente geleë is",
+   "column": "V183"
   },
-  "V184": {
+  "203": {
    "code": "V184",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.8",
    "stem": "Beantwoord elkeen van die onderstaande stellings oor die gemeente",
-   "item": ""
+   "item": "",
+   "column": "V184"
   },
-  "V185": {
+  "204": {
    "code": "V185",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.8",
    "stem": "Beantwoord elkeen van die onderstaande stellings oor die gemeente",
-   "item": "veranderende konteks van die gemeenskap"
+   "item": "veranderende konteks van die gemeenskap",
+   "column": "V185"
   },
-  "V186": {
+  "205": {
    "code": "V186",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.8",
    "stem": "Beantwoord elkeen van die onderstaande stellings oor die gemeente",
-   "item": "die gemeente en gemeenskap te gebruik"
+   "item": "die gemeente en gemeenskap te gebruik",
+   "column": "V186"
   },
-  "V187": {
+  "206": {
    "code": "V187",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.8",
    "stem": "Beantwoord elkeen van die onderstaande stellings oor die gemeente",
-   "item": "gemeente"
+   "item": "gemeente",
+   "column": "V187"
   },
-  "V188": {
+  "207": {
    "code": "V188",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.8",
    "stem": "Beantwoord elkeen van die onderstaande stellings oor die gemeente",
-   "item": "bereik"
+   "item": "bereik",
+   "column": "V188"
   },
-  "V189": {
+  "208": {
    "code": "V189",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.8",
    "stem": "Beantwoord elkeen van die onderstaande stellings oor die gemeente",
-   "item": "roeping dien"
+   "item": "roeping dien",
+   "column": "V189"
   },
-  "V190": {
+  "209": {
    "code": "V190",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.8",
    "stem": "Beantwoord elkeen van die onderstaande stellings oor die gemeente",
-   "item": "roeping dien"
+   "item": "roeping dien",
+   "column": "V190"
   },
-  "V191": {
+  "210": {
    "code": "V191",
    "section": "5 Formele Funksionering Van Die Gemeente",
    "qnum": "5.8",
    "stem": "Beantwoord elkeen van die onderstaande stellings oor die gemeente",
-   "item": "wêreld"
+   "item": "wêreld",
+   "column": "V191"
   },
-  "V192": {
+  "211": {
    "code": "V192",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.1",
    "stem": "Op watter maniere leef die gemeente julle roeping as gestuurdes uit?",
-   "item": "Slegs ons bydrae via die ring en sinode."
+   "item": "Slegs ons bydrae via die ring en sinode.",
+   "column": "V192"
   },
-  "V193": {
+  "212": {
    "code": "V193",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.1",
    "stem": "Op watter maniere leef die gemeente julle roeping as gestuurdes uit?",
-   "item": "op ander maniere"
+   "item": "op ander maniere",
+   "column": "V193"
   },
-  "V194": {
+  "213": {
    "code": "V194",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.1",
    "stem": "Op watter maniere leef die gemeente julle roeping as gestuurdes uit?",
-   "item": "Afrika / RCA"
+   "item": "Afrika / RCA",
+   "column": "V194"
   },
-  "V195": {
+  "214": {
    "code": "V195",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.1",
    "stem": "Op watter maniere leef die gemeente julle roeping as gestuurdes uit?",
-   "item": "Ons het een of meer projekte in die gemeenskap"
+   "item": "Ons het een of meer projekte in die gemeenskap",
+   "column": "V195"
   },
-  "V196": {
+  "215": {
    "code": "V196",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.1",
    "stem": "Op watter maniere leef die gemeente julle roeping as gestuurdes uit?",
-   "item": "gemeenskap"
+   "item": "gemeenskap",
+   "column": "V196"
   },
-  "V197": {
+  "216": {
    "code": "V197",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.1",
    "stem": "Op watter maniere leef die gemeente julle roeping as gestuurdes uit?",
-   "item": "georganiseerde landbou en maatskaplike dienste"
+   "item": "georganiseerde landbou en maatskaplike dienste",
+   "column": "V197"
   },
-  "V198": {
+  "217": {
    "code": "V198",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.1",
    "stem": "Op watter maniere leef die gemeente julle roeping as gestuurdes uit?",
-   "item": "staatsdepartemente en munisipaliteite"
+   "item": "staatsdepartemente en munisipaliteite",
+   "column": "V198"
   },
-  "V199": {
+  "218": {
    "code": "V199",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.1",
    "stem": "Op watter maniere leef die gemeente julle roeping as gestuurdes uit?",
-   "item": "geloofsgemeenskappe in die gemeenskap"
+   "item": "geloofsgemeenskappe in die gemeenskap",
+   "column": "V199"
   },
-  "V200": {
+  "219": {
    "code": "V200",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.1",
    "stem": "Op watter maniere leef die gemeente julle roeping as gestuurdes uit?",
-   "item": "meeste van ons lidmate berokke is"
+   "item": "meeste van ons lidmate berokke is",
+   "column": "V200"
   },
-  "V201": {
+  "220": {
    "code": "V201",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.2",
    "stem": "Op watter manier weerspieël die gemeente se begroting die gestuurde roeping van die gemeente?",
-   "item": "Ons bydraes deur die ring en sinode"
+   "item": "Ons bydraes deur die ring en sinode",
+   "column": "V201"
   },
-  "V202": {
+  "221": {
    "code": "V202",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.2",
    "stem": "Op watter manier weerspieël die gemeente se begroting die gestuurde roeping van die gemeente?",
-   "item": "Ons het vaste finansiële ooreenkomste met ander instansies"
+   "item": "Ons het vaste finansiële ooreenkomste met ander instansies",
+   "column": "V202"
   },
-  "V203": {
+  "222": {
    "code": "V203",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.2",
    "stem": "Op watter manier weerspieël die gemeente se begroting die gestuurde roeping van die gemeente?",
-   "item": "na buite"
+   "item": "na buite",
+   "column": "V203"
   },
-  "V204": {
+  "223": {
    "code": "V204",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.2",
    "stem": "Op watter manier weerspieël die gemeente se begroting die gestuurde roeping van die gemeente?",
-   "item": "Ons ken ’n persentasie van ons inkomste toe vir uitreik"
+   "item": "Ons ken ’n persentasie van ons inkomste toe vir uitreik",
+   "column": "V204"
   },
-  "V205": {
+  "224": {
    "code": "V205",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.2",
    "stem": "Op watter manier weerspieël die gemeente se begroting die gestuurde roeping van die gemeente?",
-   "item": "sigbaar"
+   "item": "sigbaar",
+   "column": "V205"
   },
-  "V206": {
+  "225": {
    "code": "V206",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.3",
    "stem": "Ons gemeente stel ons geboue tot beskikking van die gemeenskap as deel van ons",
-   "item": "dienswerk na buite"
+   "item": "dienswerk na buite",
+   "column": "V206"
   },
-  "V207": {
+  "226": {
    "code": "V207",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.4",
    "stem": "Wat doen die gemeente om gasvryheid te bevorder?",
-   "item": "gemeente se eredienste laat tuis voel"
+   "item": "gemeente se eredienste laat tuis voel",
+   "column": "V207"
   },
-  "V208": {
+  "227": {
    "code": "V208",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.4",
    "stem": "Wat doen die gemeente om gasvryheid te bevorder?",
-   "item": "gemeente in te skakel"
+   "item": "gemeente in te skakel",
+   "column": "V208"
   },
-  "V209": {
+  "228": {
    "code": "V209",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.4",
    "stem": "Wat doen die gemeente om gasvryheid te bevorder?",
-   "item": "eredienste toeganklik te maak vir besoekers"
+   "item": "eredienste toeganklik te maak vir besoekers",
+   "column": "V209"
   },
-  "V210": {
+  "229": {
    "code": "V210",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.4",
    "stem": "Wat doen die gemeente om gasvryheid te bevorder?",
-   "item": "van gasvryheid in die gemeente te kweek"
+   "item": "van gasvryheid in die gemeente te kweek",
+   "column": "V210"
   },
-  "V211": {
+  "230": {
    "code": "V211",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.4",
    "stem": "Wat doen die gemeente om gasvryheid te bevorder?",
-   "item": ""
+   "item": "",
+   "column": "V211"
   },
-  "V212": {
+  "231": {
    "code": "V212",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.4",
    "stem": "Wat doen die gemeente om gasvryheid te bevorder?",
-   "item": "mense te besoek en te nooi"
+   "item": "mense te besoek en te nooi",
+   "column": "V212"
   },
-  "V213": {
+  "232": {
    "code": "V213",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.5",
    "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening?",
-   "item": "6.5 Het u gemeente ’n georganiseerde evangelisasiebediening?"
+   "item": "6.5 Het u gemeente ’n georganiseerde evangelisasiebediening?",
+   "column": "V213"
   },
-  "V214": {
+  "233": {
    "code": "V214",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.5",
    "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening?",
-   "item": "Ons hou spesiale eredienste"
+   "item": "Ons hou spesiale eredienste",
+   "column": "V214"
   },
-  "V215": {
+  "234": {
    "code": "V215",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.5",
    "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening?",
-   "item": "Geleenthede soos Doop en Huwelikskategese"
+   "item": "Geleenthede soos Doop en Huwelikskategese",
+   "column": "V215"
   },
-  "V216": {
+  "235": {
    "code": "V216",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.5",
    "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening?",
-   "item": "Getroue getuies-kursus"
+   "item": "Getroue getuies-kursus",
+   "column": "V216"
   },
-  "V217": {
+  "236": {
    "code": "V217",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.5",
    "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening?",
-   "item": "EE III-kursus"
+   "item": "EE III-kursus",
+   "column": "V217"
   },
-  "V218": {
+  "237": {
    "code": "V218",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.5",
    "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening?",
-   "item": "Alpha-kursus"
+   "item": "Alpha-kursus",
+   "column": "V218"
   },
-  "V219": {
+  "238": {
    "code": "V219",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.5",
    "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening?",
-   "item": "Becoming a Contagious Christian"
+   "item": "Becoming a Contagious Christian",
+   "column": "V219"
   },
-  "V220": {
+  "239": {
    "code": "V220",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.5",
    "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening?",
-   "item": "Just Walk across the Room"
+   "item": "Just Walk across the Room",
+   "column": "V220"
   },
-  "V221": {
+  "240": {
    "code": "V221",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.5",
    "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening?",
-   "item": "Eie materiaal in die gemeente ontwikkel"
+   "item": "Eie materiaal in die gemeente ontwikkel",
+   "column": "V221"
   },
-  "V222": {
+  "241": {
    "code": "V222",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.5",
    "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening?",
-   "item": "Ander"
+   "item": "Ander",
+   "column": "V222"
   },
-  "V223": {
+  "242": {
+   "code": "V222a",
+   "section": "6 Bedieninge Van Die Gemeente",
+   "qnum": "6.5",
+   "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening?",
+   "item": "Ander (spesifiseer)",
+   "column": "V222a",
+   "aliased_from": "V222"
+  },
+  "243": {
    "code": "V223",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.6",
    "stem": "Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer",
-   "item": "ŉ Omgewingsoudit is gedoen"
+   "item": "ŉ Omgewingsoudit is gedoen",
+   "column": "V223"
   },
-  "V224": {
+  "244": {
    "code": "V224",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.6",
    "stem": "Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer",
-   "item": "Implementering van waterbesparingsmaatreëls"
+   "item": "Implementering van waterbesparingsmaatreëls",
+   "column": "V224"
   },
-  "V225": {
+  "245": {
    "code": "V225",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.6",
    "stem": "Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer",
-   "item": "Installering van watertenks of die hergebruik van water"
+   "item": "Installering van watertenks of die hergebruik van water",
+   "column": "V225"
   },
-  "V226": {
+  "246": {
    "code": "V226",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.6",
    "stem": "Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer",
-   "item": "Installering van sonpanele vir waterverwarming"
+   "item": "Installering van sonpanele vir waterverwarming",
+   "column": "V226"
   },
-  "V227": {
+  "247": {
    "code": "V227",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.6",
    "stem": "Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer",
-   "item": "Implementering van ander elektrisiteitsbesparing maatreëls"
+   "item": "Implementering van ander elektrisiteitsbesparing maatreëls",
+   "column": "V227"
   },
-  "V228": {
+  "248": {
    "code": "V228",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.6",
    "stem": "Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer",
-   "item": "Plant van inheemse plante in die gemeente se tuin(e)"
+   "item": "Plant van inheemse plante in die gemeente se tuin(e)",
+   "column": "V228"
   },
-  "V229": {
+  "249": {
    "code": "V229",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.6",
    "stem": "Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer",
-   "item": "Ander"
+   "item": "Ander",
+   "column": "V229"
   },
-  "V230": {
+  "250": {
+   "code": "V229a",
+   "section": "6 Bedieninge Van Die Gemeente",
+   "qnum": "6.6",
+   "stem": "Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer",
+   "item": "Ander (spesifiseer)",
+   "column": "V229a",
+   "aliased_from": "V229"
+  },
+  "251": {
    "code": "V230",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.7",
    "stem": "Is daar ŉ georganiseerde kleingroepbediening in u gemeente?",
-   "item": "6.7 Is daar ŉ georganiseerde kleingroepbediening in u gemeente?"
+   "item": "6.7 Is daar ŉ georganiseerde kleingroepbediening in u gemeente?",
+   "column": "V230"
   },
-  "V231": {
+  "253": {
    "code": "V231",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.7",
    "stem": "Is daar ŉ georganiseerde kleingroepbediening in u gemeente?",
-   "item": "beskryf"
+   "item": "beskryf",
+   "column": "V231"
   },
-  "V232": {
+  "254": {
    "code": "V232",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.8",
    "stem": "Watter persentasie lidmate van die gemeente is by die kleingroepe betrokke?",
-   "item": ""
+   "item": "",
+   "column": "V232"
   },
-  "V233": {
+  "255": {
    "code": "V233",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.9",
    "stem": "Watter van die volgende beskryf die gebedsbediening in die gemeente die beste?",
-   "item": "Ons het ’n georganiseerde gebedsbediening"
+   "item": "Ons het ’n georganiseerde gebedsbediening",
+   "column": "V233"
   },
-  "V234": {
+  "256": {
    "code": "V234",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.9",
    "stem": "Watter van die volgende beskryf die gebedsbediening in die gemeente die beste?",
-   "item": "Ons het gebedsgroepe wat van tyd tot tyd bymekaar kom"
+   "item": "Ons het gebedsgroepe wat van tyd tot tyd bymekaar kom",
+   "column": "V234"
   },
-  "V235": {
+  "257": {
    "code": "V235",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.9",
    "stem": "Watter van die volgende beskryf die gebedsbediening in die gemeente die beste?",
-   "item": "Lydenstyd, Pinkster of uitreike)"
+   "item": "Lydenstyd, Pinkster of uitreike)",
+   "column": "V235"
   },
-  "V236": {
+  "258": {
    "code": "V236",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.9",
    "stem": "Watter van die volgende beskryf die gebedsbediening in die gemeente die beste?",
-   "item": "Ons gebruik ons kleingroepe ook as gebedsgroepe"
+   "item": "Ons gebruik ons kleingroepe ook as gebedsgroepe",
+   "column": "V236"
   },
-  "V237": {
+  "259": {
    "code": "V237",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.10",
    "stem": "Hoe lyk die gemeente se seniorbediening?",
-   "item": "Ons het ’n georganiseerde seniorbediening"
+   "item": "Ons het ’n georganiseerde seniorbediening",
+   "column": "V237"
   },
-  "V238": {
+  "260": {
    "code": "V238",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.10",
    "stem": "Hoe lyk die gemeente se seniorbediening?",
-   "item": "van die gemeente"
+   "item": "van die gemeente",
+   "column": "V238"
   },
-  "V239": {
+  "261": {
    "code": "V239",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.10",
    "stem": "Hoe lyk die gemeente se seniorbediening?",
-   "item": "seniors"
+   "item": "seniors",
+   "column": "V239"
   },
-  "V240": {
+  "262": {
    "code": "V240",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.10",
    "stem": "Hoe lyk die gemeente se seniorbediening?",
-   "item": "sorg en geestelike opbou"
+   "item": "sorg en geestelike opbou",
+   "column": "V240"
   },
-  "V241": {
+  "263": {
    "code": "V241",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.10",
    "stem": "Hoe lyk die gemeente se seniorbediening?",
-   "item": "gemeente en na buite"
+   "item": "gemeente en na buite",
+   "column": "V241"
   },
-  "V242": {
+  "264": {
    "code": "V242",
    "section": "6 Bedieninge Van Die Gemeente",
    "qnum": "6.10",
    "stem": "Hoe lyk die gemeente se seniorbediening?",
-   "item": "verswakte bejaardes"
+   "item": "verswakte bejaardes",
+   "column": "V242"
   },
-  "V243": {
+  "265": {
    "code": "V243",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.1",
    "stem": "Hoeveel jongmense is betrokke by die",
-   "item": "Kleuterbediening (voorskool)"
+   "item": "Kleuterbediening (voorskool)",
+   "column": "V243"
   },
-  "V244": {
+  "266": {
    "code": "V244",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.1",
    "stem": "Hoeveel jongmense is betrokke by die",
-   "item": "Kleuterbediening (voorskool)"
+   "item": "Kleuterbediening (voorskool)",
+   "column": "V244"
   },
-  "V245": {
+  "267": {
    "code": "V245",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.1",
    "stem": "Hoeveel jongmense is betrokke by die",
-   "item": "Junior kategese (Graad 1-3)"
+   "item": "Junior kategese (Graad 1-3)",
+   "column": "V245"
   },
-  "V246": {
+  "268": {
    "code": "V246",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.1",
    "stem": "Hoeveel jongmense is betrokke by die",
-   "item": "Junior kategese (Graad 1-3)"
+   "item": "Junior kategese (Graad 1-3)",
+   "column": "V246"
   },
-  "V247": {
+  "269": {
    "code": "V247",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.1",
    "stem": "Hoeveel jongmense is betrokke by die",
-   "item": "Middel kategese (Graad 4-7)"
+   "item": "Middel kategese (Graad 4-7)",
+   "column": "V247"
   },
-  "V248": {
+  "270": {
    "code": "V248",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.1",
    "stem": "Hoeveel jongmense is betrokke by die",
-   "item": "Middel kategese (Graad 4-7)"
+   "item": "Middel kategese (Graad 4-7)",
+   "column": "V248"
   },
-  "V249": {
+  "271": {
    "code": "V249",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.1",
    "stem": "Hoeveel jongmense is betrokke by die",
-   "item": "Senior kategese (Graag 8-10)"
+   "item": "Senior kategese (Graag 8-10)",
+   "column": "V249"
   },
-  "V250": {
+  "272": {
    "code": "V250",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.1",
    "stem": "Hoeveel jongmense is betrokke by die",
-   "item": "Senior kategese (Graag 8-10)"
+   "item": "Senior kategese (Graag 8-10)",
+   "column": "V250"
   },
-  "V251": {
+  "273": {
    "code": "V251",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.1",
    "stem": "Hoeveel jongmense is betrokke by die",
-   "item": "Belydenisklas (Graad 11-12)"
+   "item": "Belydenisklas (Graad 11-12)",
+   "column": "V251"
   },
-  "V252": {
+  "274": {
    "code": "V252",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.1",
    "stem": "Hoeveel jongmense is betrokke by die",
-   "item": "Belydenisklas (Graad 11-12)"
+   "item": "Belydenisklas (Graad 11-12)",
+   "column": "V252"
   },
-  "V253": {
+  "275": {
    "code": "V253",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.1",
    "stem": "Hoeveel jongmense is betrokke by die",
-   "item": "Jong-volwassene bediening"
+   "item": "Jong-volwassene bediening",
+   "column": "V253"
   },
-  "V254": {
+  "276": {
    "code": "V254",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.1",
    "stem": "Hoeveel jongmense is betrokke by die",
-   "item": "Jong-volwassene bediening"
+   "item": "Jong-volwassene bediening",
+   "column": "V254"
   },
-  "V255": {
+  "277": {
    "code": "V255",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.2",
    "stem": "Ons spandeer die tyd beskikbaar in die gemeente se laerskoolbediening en/of kategese daaraan om …",
-   "item": ""
+   "item": "",
+   "column": "V255"
   },
-  "V256": {
+  "278": {
    "code": "V256",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.2",
    "stem": "Ons spandeer die tyd beskikbaar in die gemeente se laerskoolbediening en/of kategese daaraan om …",
-   "item": "gewoontes vir geloofvorming in te oefen"
+   "item": "gewoontes vir geloofvorming in te oefen",
+   "column": "V256"
   },
-  "V257": {
+  "279": {
    "code": "V257",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.2",
    "stem": "Ons spandeer die tyd beskikbaar in die gemeente se laerskoolbediening en/of kategese daaraan om …",
-   "item": "geloofsperspektief te voer"
+   "item": "geloofsperspektief te voer",
+   "column": "V257"
   },
-  "V258": {
+  "280": {
    "code": "V258",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.2",
    "stem": "Ons spandeer die tyd beskikbaar in die gemeente se laerskoolbediening en/of kategese daaraan om …",
-   "item": "leierskap te ontwikkel"
+   "item": "leierskap te ontwikkel",
+   "column": "V258"
   },
-  "V259": {
+  "281": {
    "code": "V259",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.2",
    "stem": "Ons spandeer die tyd beskikbaar in die gemeente se laerskoolbediening en/of kategese daaraan om …",
-   "item": "hulle ’n gevoel van behoort te gee"
+   "item": "hulle ’n gevoel van behoort te gee",
+   "column": "V259"
   },
-  "V260": {
+  "282": {
    "code": "V260",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.2",
    "stem": "Ons spandeer die tyd beskikbaar in die gemeente se laerskoolbediening en/of kategese daaraan om …",
-   "item": "hulle te aktiveer om ’n verskil te maak"
+   "item": "hulle te aktiveer om ’n verskil te maak",
+   "column": "V260"
   },
-  "V261": {
+  "283": {
    "code": "V261",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.2",
    "stem": "Ons spandeer die tyd beskikbaar in die gemeente se laerskoolbediening en/of kategese daaraan om …",
-   "item": ""
+   "item": "",
+   "column": "V261"
   },
-  "V262": {
+  "284": {
    "code": "V262",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.3",
    "stem": "Ons spandeer die tyd beskikbaar in die gemeente se hoërskoolbediening en/of kategese daaraan om …",
-   "item": ""
+   "item": "",
+   "column": "V262"
   },
-  "V263": {
+  "285": {
    "code": "V263",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.3",
    "stem": "Ons spandeer die tyd beskikbaar in die gemeente se hoërskoolbediening en/of kategese daaraan om …",
-   "item": "gewoontes vir geloofvorming in te oefen"
+   "item": "gewoontes vir geloofvorming in te oefen",
+   "column": "V263"
   },
-  "V264": {
+  "286": {
    "code": "V264",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.3",
    "stem": "Ons spandeer die tyd beskikbaar in die gemeente se hoërskoolbediening en/of kategese daaraan om …",
-   "item": "geloofsperspektief te voer"
+   "item": "geloofsperspektief te voer",
+   "column": "V264"
   },
-  "V265": {
+  "287": {
    "code": "V265",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.3",
    "stem": "Ons spandeer die tyd beskikbaar in die gemeente se hoërskoolbediening en/of kategese daaraan om …",
-   "item": "leierskap te ontwikkel"
+   "item": "leierskap te ontwikkel",
+   "column": "V265"
   },
-  "V266": {
+  "288": {
    "code": "V266",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.3",
    "stem": "Ons spandeer die tyd beskikbaar in die gemeente se hoërskoolbediening en/of kategese daaraan om …",
-   "item": "hulle ’n gevoel van behoort te gee"
+   "item": "hulle ’n gevoel van behoort te gee",
+   "column": "V266"
   },
-  "V267": {
+  "289": {
    "code": "V267",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.3",
    "stem": "Ons spandeer die tyd beskikbaar in die gemeente se hoërskoolbediening en/of kategese daaraan om …",
-   "item": "hulle te aktiveer om ’n verskil te maak"
+   "item": "hulle te aktiveer om ’n verskil te maak",
+   "column": "V267"
   },
-  "V268": {
+  "290": {
    "code": "V268",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.3",
    "stem": "Ons spandeer die tyd beskikbaar in die gemeente se hoërskoolbediening en/of kategese daaraan om …",
-   "item": ""
+   "item": "",
+   "column": "V268"
   },
-  "V269": {
+  "291": {
    "code": "V269",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.4",
    "stem": "Hoe word die kinders en jongmense in eredienste ingeskakel?",
-   "item": "Geen spesifieke fokus nie"
+   "item": "Geen spesifieke fokus nie",
+   "column": "V269"
   },
-  "V270": {
+  "292": {
    "code": "V270",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.4",
    "stem": "Hoe word die kinders en jongmense in eredienste ingeskakel?",
-   "item": "Kinder- of jeugmoment in die volwasse erediens"
+   "item": "Kinder- of jeugmoment in die volwasse erediens",
+   "column": "V270"
   },
-  "V271": {
+  "293": {
    "code": "V271",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.4",
    "stem": "Hoe word die kinders en jongmense in eredienste ingeskakel?",
-   "item": "liturgie inskakel is"
+   "item": "liturgie inskakel is",
+   "column": "V271"
   },
-  "V272": {
+  "294": {
    "code": "V272",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.4",
    "stem": "Hoe word die kinders en jongmense in eredienste ingeskakel?",
-   "item": "begeleiers"
+   "item": "begeleiers",
+   "column": "V272"
   },
-  "V273": {
+  "295": {
    "code": "V273",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.4",
    "stem": "Hoe word die kinders en jongmense in eredienste ingeskakel?",
-   "item": "vir volwassenes"
+   "item": "vir volwassenes",
+   "column": "V273"
   },
-  "V274": {
+  "296": {
    "code": "V274",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.4",
    "stem": "Hoe word die kinders en jongmense in eredienste ingeskakel?",
-   "item": "families"
+   "item": "families",
+   "column": "V274"
   },
-  "V275": {
+  "297": {
    "code": "V275",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.4",
    "stem": "Hoe word die kinders en jongmense in eredienste ingeskakel?",
-   "item": "Jeugdiens, ’n gereelde erediens spesifiek vir jeug"
+   "item": "Jeugdiens, ’n gereelde erediens spesifiek vir jeug",
+   "column": "V275"
   },
-  "V276": {
+  "298": {
    "code": "V276",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.5",
    "stem": "Waar word geloofvorming, buiten in die kategese, nog aktief in die gemeente bevorder?",
-   "item": "Huise en/of gesinne"
+   "item": "Huise en/of gesinne",
+   "column": "V276"
   },
-  "V277": {
+  "299": {
    "code": "V277",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.5",
    "stem": "Waar word geloofvorming, buiten in die kategese, nog aktief in die gemeente bevorder?",
-   "item": "Weeklikse tiener- of kinderaksies"
+   "item": "Weeklikse tiener- of kinderaksies",
+   "column": "V277"
   },
-  "V278": {
+  "300": {
    "code": "V278",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.5",
    "stem": "Waar word geloofvorming, buiten in die kategese, nog aktief in die gemeente bevorder?",
-   "item": "Kampe"
+   "item": "Kampe",
+   "column": "V278"
   },
-  "V279": {
+  "301": {
    "code": "V279",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.5",
    "stem": "Waar word geloofvorming, buiten in die kategese, nog aktief in die gemeente bevorder?",
-   "item": "ens.)"
+   "item": "ens.)",
+   "column": "V279"
   },
-  "V280": {
+  "302": {
    "code": "V280",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.5",
    "stem": "Waar word geloofvorming, buiten in die kategese, nog aktief in die gemeente bevorder?",
-   "item": "Ander"
+   "item": "Ander",
+   "column": "V280"
   },
-  "V281": {
+  "303": {
    "code": "V281",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.6",
    "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening",
-   "item": "net die jongmense"
+   "item": "net die jongmense",
+   "column": "V281"
   },
-  "V282": {
+  "304": {
    "code": "V282",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.6",
    "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening",
-   "item": "ouer lidmate"
+   "item": "ouer lidmate",
+   "column": "V282"
   },
-  "V283": {
+  "305": {
    "code": "V283",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.6",
    "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening",
-   "item": "naskoolse jongmense"
+   "item": "naskoolse jongmense",
+   "column": "V283"
   },
-  "V284": {
+  "306": {
    "code": "V284",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.6",
    "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening",
-   "item": "deeltydse jeugwerker of kinderwerker"
+   "item": "deeltydse jeugwerker of kinderwerker",
+   "column": "V284"
   },
-  "V285": {
+  "307": {
    "code": "V285",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.6",
    "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening",
-   "item": "ouers"
+   "item": "ouers",
+   "column": "V285"
   },
-  "V286": {
+  "308": {
    "code": "V286",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.6",
    "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening",
-   "item": "voltydse predikant"
+   "item": "voltydse predikant",
+   "column": "V286"
   },
-  "V287": {
+  "309": {
    "code": "V287",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.6",
    "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening",
-   "item": "voltydse jeugwerker"
+   "item": "voltydse jeugwerker",
+   "column": "V287"
   },
-  "V288": {
+  "310": {
    "code": "V288",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.7",
    "stem": "Hoe word kinders en jongmense van buite die gemeente ingeskakel by geloofvorming in die gemeente?",
-   "item": "Ons werk net met gemeentekinders"
+   "item": "Ons werk net met gemeentekinders",
+   "column": "V288"
   },
-  "V289": {
+  "311": {
    "code": "V289",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.7",
    "stem": "Hoe word kinders en jongmense van buite die gemeente ingeskakel by geloofvorming in die gemeente?",
-   "item": "gemeenteaksies te nooi"
+   "item": "gemeenteaksies te nooi",
+   "column": "V289"
   },
-  "V290": {
+  "312": {
    "code": "V290",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.7",
    "stem": "Hoe word kinders en jongmense van buite die gemeente ingeskakel by geloofvorming in die gemeente?",
-   "item": ""
+   "item": "",
+   "column": "V290"
   },
-  "V291": {
+  "313": {
    "code": "V291",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.7",
    "stem": "Hoe word kinders en jongmense van buite die gemeente ingeskakel by geloofvorming in die gemeente?",
-   "item": "Betrokkenheid by die plaaslike skool/skole"
+   "item": "Betrokkenheid by die plaaslike skool/skole",
+   "column": "V291"
   },
-  "V292": {
+  "314": {
    "code": "V292",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.7",
    "stem": "Hoe word kinders en jongmense van buite die gemeente ingeskakel by geloofvorming in die gemeente?",
-   "item": "of ander diensterreine"
+   "item": "of ander diensterreine",
+   "column": "V292"
   },
-  "V293": {
+  "315": {
    "code": "V293",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.7",
    "stem": "Hoe word kinders en jongmense van buite die gemeente ingeskakel by geloofvorming in die gemeente?",
-   "item": "gemeente aktief betrek word"
+   "item": "gemeente aktief betrek word",
+   "column": "V293"
   },
-  "V294": {
+  "316": {
    "code": "V294",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.8",
    "stem": "Ons bevorder die uitleef van geloof by die huis deur",
-   "item": ""
+   "item": "",
+   "column": "V294"
   },
-  "V295": {
+  "317": {
    "code": "V295",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.8",
    "stem": "Ons bevorder die uitleef van geloof by die huis deur",
-   "item": "eredienste"
+   "item": "eredienste",
+   "column": "V295"
   },
-  "V296": {
+  "318": {
    "code": "V296",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.8",
    "stem": "Ons bevorder die uitleef van geloof by die huis deur",
-   "item": "Kursusse vir ouers aan te bied (ouerleiding)"
+   "item": "Kursusse vir ouers aan te bied (ouerleiding)",
+   "column": "V296"
   },
-  "V297": {
+  "319": {
    "code": "V297",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.8",
    "stem": "Ons bevorder die uitleef van geloof by die huis deur",
-   "item": "Familiefokus tydens gemeenteaktiwiteite"
+   "item": "Familiefokus tydens gemeenteaktiwiteite",
+   "column": "V297"
   },
-  "V298": {
+  "320": {
    "code": "V298",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.8",
    "stem": "Ons bevorder die uitleef van geloof by die huis deur",
-   "item": "(huisgeloof)"
+   "item": "(huisgeloof)",
+   "column": "V298"
   },
-  "V299": {
+  "321": {
    "code": "V299",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.8",
    "stem": "Ons bevorder die uitleef van geloof by die huis deur",
-   "item": "kan plaasvind"
+   "item": "kan plaasvind",
+   "column": "V299"
   },
-  "V300": {
+  "322": {
    "code": "V300",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.9",
    "stem": "Ons is betrokke by plaaslike skole op die volgende wyses",
-   "item": "Gereelde saalopeninge"
+   "item": "Gereelde saalopeninge",
+   "column": "V300"
   },
-  "V301": {
+  "323": {
    "code": "V301",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.9",
    "stem": "Ons is betrokke by plaaslike skole op die volgende wyses",
-   "item": "skool (Jesus-weke, Hemelvaart)"
+   "item": "skool (Jesus-weke, Hemelvaart)",
+   "column": "V301"
   },
-  "V302": {
+  "324": {
    "code": "V302",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.9",
    "stem": "Ons is betrokke by plaaslike skole op die volgende wyses",
-   "item": "weeklikse Christelike aksies"
+   "item": "weeklikse Christelike aksies",
+   "column": "V302"
   },
-  "V303": {
+  "325": {
    "code": "V303",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.9",
    "stem": "Ons is betrokke by plaaslike skole op die volgende wyses",
-   "item": "Leierskapsopleiding van skoolleiers"
+   "item": "Leierskapsopleiding van skoolleiers",
+   "column": "V303"
   },
-  "V304": {
+  "326": {
    "code": "V304",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.9",
    "stem": "Ons is betrokke by plaaslike skole op die volgende wyses",
-   "item": "werker) wat deur gemeente/ring gedra word"
+   "item": "werker) wat deur gemeente/ring gedra word",
+   "column": "V304"
   },
-  "V305": {
+  "327": {
    "code": "V305",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.9",
    "stem": "Ons is betrokke by plaaslike skole op die volgende wyses",
-   "item": "Skoolkampe wat deur kerke aangebied word"
+   "item": "Skoolkampe wat deur kerke aangebied word",
+   "column": "V305"
   },
-  "V306": {
+  "328": {
    "code": "V306",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.9",
    "stem": "Ons is betrokke by plaaslike skole op die volgende wyses",
-   "item": "Pastoraat"
+   "item": "Pastoraat",
+   "column": "V306"
   },
-  "V307": {
+  "329": {
    "code": "V307",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.10",
    "stem": "Ons is by #Imagine betrokke",
-   "item": "Van ons jongmense en leiers woon dit by"
+   "item": "Van ons jongmense en leiers woon dit by",
+   "column": "V307"
   },
-  "V308": {
+  "330": {
    "code": "V308",
    "section": "7 Jeugbediening In Die Gemeente",
    "qnum": "7.10",
    "stem": "Ons is by #Imagine betrokke",
-   "item": "Dit vorm deel van ons jeugbedieningstrategie"
+   "item": "Dit vorm deel van ons jeugbedieningstrategie",
+   "column": "V308"
   },
-  "V309": {
+  "331": {
    "code": "V309",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.1",
    "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke?",
-   "item": "Gee van geld, kos en klere"
+   "item": "Gee van geld, kos en klere",
+   "column": "V309"
   },
-  "V310": {
+  "332": {
    "code": "V310",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.1",
    "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke?",
-   "item": "Vaardigheidsontwikkeling"
+   "item": "Vaardigheidsontwikkeling",
+   "column": "V310"
   },
-  "V311": {
+  "333": {
    "code": "V311",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.1",
    "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke?",
-   "item": "Voorligtingsprogramme"
+   "item": "Voorligtingsprogramme",
+   "column": "V311"
   },
-  "V312": {
+  "334": {
    "code": "V312",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.1",
    "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke?",
-   "item": "’n Werksverskaffingsburo"
+   "item": "’n Werksverskaffingsburo",
+   "column": "V312"
   },
-  "V313": {
+  "335": {
    "code": "V313",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.1",
    "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke?",
-   "item": "’n Behuisingskema"
+   "item": "’n Behuisingskema",
+   "column": "V313"
   },
-  "V314": {
+  "336": {
    "code": "V314",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.1",
    "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke?",
-   "item": "Lees- en skryfklasse"
+   "item": "Lees- en skryfklasse",
+   "column": "V314"
   },
-  "V315": {
+  "337": {
    "code": "V315",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.1",
    "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke?",
-   "item": "Ontwikkeling van entrepreneurskap"
+   "item": "Ontwikkeling van entrepreneurskap",
+   "column": "V315"
   },
-  "V316": {
+  "338": {
    "code": "V316",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.1",
    "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke?",
-   "item": "Vroeëkindontwikkeling"
+   "item": "Vroeëkindontwikkeling",
+   "column": "V316"
   },
-  "V317": {
+  "339": {
    "code": "V317",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.1",
    "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke?",
-   "item": "Betrokkenheid by skole byvoorbeeld ’n naskoolsentrum"
+   "item": "Betrokkenheid by skole byvoorbeeld ’n naskoolsentrum",
+   "column": "V317"
   },
-  "V318": {
+  "340": {
    "code": "V318",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.1",
    "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke?",
-   "item": "Ander"
+   "item": "Ander",
+   "column": "V318"
   },
-  "V319": {
+  "341": {
+   "code": "V318a",
+   "section": "8 Impak In Die Omgewing",
+   "qnum": "8.1",
+   "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke?",
+   "item": "Ander (spesifiseer)",
+   "column": "V318a",
+   "aliased_from": "V318"
+  },
+  "342": {
    "code": "V319",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.2",
    "stem": "Wie neem verantwoordelikheid vir hierdie projekte?",
-   "item": "Kerkraad"
+   "item": "Kerkraad",
+   "column": "V319"
   },
-  "V320": {
+  "343": {
    "code": "V320",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.2",
    "stem": "Wie neem verantwoordelikheid vir hierdie projekte?",
-   "item": "Kommissies of georganiseerde bedieninge, taakspanne"
+   "item": "Kommissies of georganiseerde bedieninge, taakspanne",
+   "column": "V320"
   },
-  "V321": {
+  "344": {
    "code": "V321",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.2",
    "stem": "Wie neem verantwoordelikheid vir hierdie projekte?",
-   "item": "Vrouediens"
+   "item": "Vrouediens",
+   "column": "V321"
   },
-  "V322": {
+  "345": {
    "code": "V322",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.2",
    "stem": "Wie neem verantwoordelikheid vir hierdie projekte?",
-   "item": "Kleingroepe"
+   "item": "Kleingroepe",
+   "column": "V322"
   },
-  "V323": {
+  "346": {
    "code": "V323",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.2",
    "stem": "Wie neem verantwoordelikheid vir hierdie projekte?",
-   "item": "Jeugaksies of -bediening"
+   "item": "Jeugaksies of -bediening",
+   "column": "V323"
   },
-  "V324": {
+  "347": {
    "code": "V324",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.2",
    "stem": "Wie neem verantwoordelikheid vir hierdie projekte?",
-   "item": "Individuele lidmate in die gemeente"
+   "item": "Individuele lidmate in die gemeente",
+   "column": "V324"
   },
-  "V325": {
+  "348": {
    "code": "V325",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.3",
    "stem": "Hoe lyk julle gemeente se verhouding met die plaaslike maatskaplike dienste (CMR ens)?",
-   "item": "Ons het baie min met mekaar te doen"
+   "item": "Ons het baie min met mekaar te doen",
+   "column": "V325"
   },
-  "V326": {
+  "349": {
    "code": "V326",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.3",
    "stem": "Hoe lyk julle gemeente se verhouding met die plaaslike maatskaplike dienste (CMR ens)?",
-   "item": "Ons ondersteun finansieel"
+   "item": "Ons ondersteun finansieel",
+   "column": "V326"
   },
-  "V327": {
+  "350": {
    "code": "V327",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.3",
    "stem": "Hoe lyk julle gemeente se verhouding met die plaaslike maatskaplike dienste (CMR ens)?",
-   "item": "Ons gebruik die dienste van tyd tot tyd"
+   "item": "Ons gebruik die dienste van tyd tot tyd",
+   "column": "V327"
   },
-  "V328": {
+  "351": {
    "code": "V328",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.3",
    "stem": "Hoe lyk julle gemeente se verhouding met die plaaslike maatskaplike dienste (CMR ens)?",
-   "item": "Ons doen enkele gesamentlike projekte"
+   "item": "Ons doen enkele gesamentlike projekte",
+   "column": "V328"
   },
-  "V329": {
+  "352": {
    "code": "V329",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.3",
    "stem": "Hoe lyk julle gemeente se verhouding met die plaaslike maatskaplike dienste (CMR ens)?",
-   "item": "Ons is mekaar se vennote en werk ten nouste saam"
+   "item": "Ons is mekaar se vennote en werk ten nouste saam",
+   "column": "V329"
   },
-  "V330": {
+  "353": {
    "code": "V330",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.4",
    "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ...",
-   "item": "geweld"
+   "item": "geweld",
+   "column": "V330"
   },
-  "V331": {
+  "354": {
    "code": "V331",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.4",
    "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ...",
-   "item": "rassisme"
+   "item": "rassisme",
+   "column": "V331"
   },
-  "V332": {
+  "355": {
    "code": "V332",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.4",
    "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ...",
-   "item": "seksisme"
+   "item": "seksisme",
+   "column": "V332"
   },
-  "V333": {
+  "356": {
    "code": "V333",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.4",
    "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ...",
-   "item": "gesinskrisisse"
+   "item": "gesinskrisisse",
+   "column": "V333"
   },
-  "V334": {
+  "357": {
    "code": "V334",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.4",
    "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ...",
-   "item": "misdaad en korrupsie"
+   "item": "misdaad en korrupsie",
+   "column": "V334"
   },
-  "V335": {
+  "358": {
    "code": "V335",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.4",
    "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ...",
-   "item": "MIV/Vigs"
+   "item": "MIV/Vigs",
+   "column": "V335"
   },
-  "V336": {
+  "359": {
    "code": "V336",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.4",
    "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ...",
-   "item": "armoede"
+   "item": "armoede",
+   "column": "V336"
   },
-  "V337": {
+  "360": {
    "code": "V337",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.4",
    "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ...",
-   "item": "afhanklikheidsprobleme"
+   "item": "afhanklikheidsprobleme",
+   "column": "V337"
   },
-  "V338": {
+  "361": {
    "code": "V338",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.4",
    "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ...",
-   "item": "werkloosheid"
+   "item": "werkloosheid",
+   "column": "V338"
   },
-  "V339": {
+  "362": {
    "code": "V339",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.5",
    "stem": "Watter van die volgende stellings beskryf die gemeente se betrokkenheid by gemeenskapsorganisasies en -aktiwiteite (soos markte, optogte,",
-   "item": "skoonmaakprojekte, konserte, ens.) die beste?"
+   "item": "skoonmaakprojekte, konserte, ens.) die beste?",
+   "column": "V339"
   },
-  "V340": {
+  "363": {
    "code": "V340",
    "section": "8 Impak In Die Omgewing",
    "qnum": "8.6",
    "stem": "Hoe sien julle die rol van die gemeente tov krisisse en kwessies in die",
-   "item": "gemeenskap?"
+   "item": "gemeenskap?",
+   "column": "V340"
   },
-  "V341": {
+  "364": {
    "code": "V341",
    "section": "9 Verhouding Met Kerke En Gemeentes",
    "qnum": "9.1",
    "stem": "Het u kontak met ŉ bepaalde gemeente(s) van die NG Kerkfamilie?",
-   "item": "9.1 Het u kontak met ŉ bepaalde gemeente(s) van die NG Kerkfamilie?"
+   "item": "9.1 Het u kontak met ŉ bepaalde gemeente(s) van die NG Kerkfamilie?",
+   "column": "V341"
   },
-  "V342": {
+  "365": {
    "code": "V342",
    "section": "9 Verhouding Met Kerke En Gemeentes",
    "qnum": "9.2",
    "stem": "Watter vorm neem die kontak met die NG Kerkfamilie aan?",
-   "item": "Skakeling van tyd tot tyd"
+   "item": "Skakeling van tyd tot tyd",
+   "column": "V342"
   },
-  "V343": {
+  "366": {
    "code": "V343",
    "section": "9 Verhouding Met Kerke En Gemeentes",
    "qnum": "9.2",
    "stem": "Watter vorm neem die kontak met die NG Kerkfamilie aan?",
-   "item": "Erediensbeurte oor en weer"
+   "item": "Erediensbeurte oor en weer",
+   "column": "V343"
   },
-  "V344": {
+  "367": {
    "code": "V344",
    "section": "9 Verhouding Met Kerke En Gemeentes",
    "qnum": "9.2",
    "stem": "Watter vorm neem die kontak met die NG Kerkfamilie aan?",
-   "item": "Gesamentlike eredienste of Nagmaal"
+   "item": "Gesamentlike eredienste of Nagmaal",
+   "column": "V344"
   },
-  "V345": {
+  "368": {
    "code": "V345",
    "section": "9 Verhouding Met Kerke En Gemeentes",
    "qnum": "9.2",
    "stem": "Watter vorm neem die kontak met die NG Kerkfamilie aan?",
-   "item": "Gesamentlike projekte"
+   "item": "Gesamentlike projekte",
+   "column": "V345"
   },
-  "V346": {
+  "369": {
    "code": "V346",
    "section": "9 Verhouding Met Kerke En Gemeentes",
    "qnum": "9.2",
    "stem": "Watter vorm neem die kontak met die NG Kerkfamilie aan?",
-   "item": "Ons is in ’n proses van hereniging"
+   "item": "Ons is in ’n proses van hereniging",
+   "column": "V346"
   },
-  "V347": {
+  "370": {
    "code": "V347",
    "section": "9 Verhouding Met Kerke En Gemeentes",
    "qnum": "9.2",
    "stem": "Watter vorm neem die kontak met die NG Kerkfamilie aan?",
-   "item": "Ander"
+   "item": "Ander",
+   "column": "V347"
   },
-  "V348": {
+  "371": {
+   "code": "V347a",
+   "section": "9 Verhouding Met Kerke En Gemeentes",
+   "qnum": "9.2",
+   "stem": "Watter vorm neem die kontak met die NG Kerkfamilie aan?",
+   "item": "Ander (spesifiseer)",
+   "column": "V347a",
+   "aliased_from": "V347"
+  },
+  "372": {
    "code": "V348",
    "section": "9 Verhouding Met Kerke En Gemeentes",
    "qnum": "9.3",
    "stem": "Bestaan daar ekumeniese gespreksgroepe (“fraternals”/“pastors’ forum”) tussen",
-   "item": "kerke en gemeentes in u omgewing?"
+   "item": "kerke en gemeentes in u omgewing?",
+   "column": "V348"
   },
-  "V349": {
+  "373": {
    "code": "V349",
    "section": "9 Verhouding Met Kerke En Gemeentes",
    "qnum": "9.4",
    "stem": "Neem u gemeente daaraan deel?",
-   "item": "9.4 Neem u gemeente daaraan deel?"
+   "item": "9.4 Neem u gemeente daaraan deel?",
+   "column": "V349"
   },
-  "V350": {
+  "374": {
    "code": "V350",
    "section": "10 Kommentaar",
    "qnum": "9.4",
    "stem": "Neem u gemeente daaraan deel?",
-   "item": "Enige kommentaar of voorstelle oor hierdie vraelys?"
+   "item": "Enige kommentaar of voorstelle oor hierdie vraelys?",
+   "column": "V350"
   },
-  "V351": {
+  "375": {
    "code": "V351",
    "section": "11 Invul Van Die Vraelys",
    "qnum": "9.4",
    "stem": "Neem u gemeente daaraan deel?",
-   "item": "Voorsitter van die kerkraad"
+   "item": "Voorsitter van die kerkraad",
+   "column": "V351"
   },
-  "V352": {
+  "376": {
    "code": "V352",
    "section": "11 Invul Van Die Vraelys",
    "qnum": "9.4",
    "stem": "Neem u gemeente daaraan deel?",
-   "item": "Dagbestuur of lede van die dagbestuur"
+   "item": "Dagbestuur of lede van die dagbestuur",
+   "column": "V352"
   },
-  "V353": {
+  "377": {
    "code": "V353",
    "section": "11 Invul Van Die Vraelys",
    "qnum": "9.4",
    "stem": "Neem u gemeente daaraan deel?",
-   "item": "Predikant (e)"
+   "item": "Predikant (e)",
+   "column": "V353"
   },
-  "V354": {
+  "378": {
    "code": "V354",
    "section": "11 Invul Van Die Vraelys",
    "qnum": "9.4",
    "stem": "Neem u gemeente daaraan deel?",
-   "item": "ŉ Aangewysde taakspan of komitee"
+   "item": "ŉ Aangewysde taakspan of komitee",
+   "column": "V354"
   },
-  "V355": {
+  "379": {
    "code": "V355",
    "section": "11 Invul Van Die Vraelys",
    "qnum": "9.4",
    "stem": "Neem u gemeente daaraan deel?",
-   "item": "Administratiewe personeel"
+   "item": "Administratiewe personeel",
+   "column": "V355"
   },
-  "V356": {
+  "380": {
    "code": "V356",
    "section": "11 Invul Van Die Vraelys",
    "qnum": "9.4",
    "stem": "Neem u gemeente daaraan deel?",
-   "item": "Leiers van bedieninge"
+   "item": "Leiers van bedieninge",
+   "column": "V356"
   },
-  "V357": {
+  "381": {
    "code": "V357",
    "section": "11 Invul Van Die Vraelys",
    "qnum": "9.4",
    "stem": "Neem u gemeente daaraan deel?",
-   "item": "ŉ Lidmaat"
+   "item": "ŉ Lidmaat",
+   "column": "V357"
   },
-  "V358": {
+  "382": {
    "code": "V358",
    "section": "11 Invul Van Die Vraelys",
    "qnum": "9.4",
    "stem": "Neem u gemeente daaraan deel?",
-   "item": "Iemand anders"
+   "item": "Iemand anders",
+   "column": "V358"
   }
  },
- "unresolved": [
-  "V108a",
-  "V109a",
-  "V110a",
-  "V112a",
-  "V114a",
-  "V125a",
-  "V132a",
-  "V133a",
-  "V134a",
-  "V135a",
-  "V222a",
-  "V229a",
-  "V318a",
-  "V347a"
- ]
+ "unresolved": []
 }

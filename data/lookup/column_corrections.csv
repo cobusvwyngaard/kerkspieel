@@ -1,0 +1,9 @@
+# Corrections applied to raw column headers at read time.
+# code = DROP discards the column entirely.
+# Position is the zero-based column index in the source sheet.
+year,position,header,code,reason
+2018,187,V169,DROP,"duplicate of column 188; identical distribution but values stored as text ('4' not 4)"
+2018,252,V231,DROP,"duplicate of column 253; identical distribution"
+2022,66,V62b,V61b,"sits between V61a (65) and V62a (67); V61b is the only questionnaire code with no column"
+2022,95,V62,V82a,"sits between V81 (94) and V82b (96) with Ja/Nee values; V82a is the questionnaire code with no column"
+2022,413,V284,V384,"sits in the V381-V386 run; V284 is already at column 312 and V384 has no column"

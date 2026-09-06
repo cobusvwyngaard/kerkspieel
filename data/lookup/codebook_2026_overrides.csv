@@ -1,0 +1,18 @@
+# 2026 columns the text and position matchers could not reach.
+# The export states these as a full sentence where the questionnaire prints
+# a one-word grid label, so the similarity score stays low even though the
+# question is unambiguous.
+column,code,evidence,occurrence
+Hoeveel ouderlinge het u tans in die gemeente?,V38,questionnaire 2.6 grid row 'Ouderlinge (V38)'
+Hoeveel diakens het u tans in die gemeente?,V39,questionnaire 2.6 grid row 'Diakens (V39)'
+Hoeveel kategete het u tans in die gemeente?,V40,questionnaire 2.6 grid row 'Kategete (V40)'
+Hoeveel vrywillige dienswerkers (bv. kleingroepleiers en projekleiers) het u tans in die gemeente?,V41,questionnaire 2.6 grid row 'Vrywillige dienswerkers (bv kleingroepleiers en projekleiers) (V41)'
+Hoeveel belydende lidmate behoort tans aan hierdie gemeente?,V02,questionnaire 1.1 grid row 'Belydende lidmate (V02)'
+Hoeveel doop lidmate behoort tans aan die gemeente?,V03,questionnaire 1.1 grid row 'Dooplidmate (V03)'; parser caught a wrapped line as its label
+Hoeveel ongedooptes behoort tans aan die gemeente?,V04,questionnaire 1.1 grid row 'Ongedooptes (V04)'
+Wat was die finansiële posisie aan die einde van die finansiële boekjaar wat geëindig het op 28 Februarie 2025?,V67,questionnaire 3.x 'Wat was die finansiële posisie ... 28 Februarie 2025? (V67)'
+die predikant(e) besluit van week tot week oor teks en tema,V108,questionnaire 4.8 grid row wrapped across two lines ending '(V108)'
+Hoeveel gelegitimeerde predikante (voltyds) in die gemeente se diens is vroue?,V36,questionnaire 2.5 grid row 'Voltyds (V36)'
+Hoeveel gelegitimeerde predikante (deeltyds) in die gemeente se diens is vroue?,V37,questionnaire 2.5 grid row 'Deeltyds (V37)'
+Ouderlinge,V294,"9.x structures grid row 'Ouderlinge (V294)'; the 2.6 count grid is a separate column"
+Diakens,V295,"9.x structures grid row 'Diakens (V295)'; the 2.6 count grid is a separate column"
