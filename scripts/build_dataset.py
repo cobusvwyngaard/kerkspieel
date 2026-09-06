@@ -6,7 +6,13 @@ Everything the dashboard needs is precomputed here and shipped as static
 JSON: there is no server and no database, because all three waves together
 compress to a fraction of a megabyte.
 
-Output, into web/public/data:
+Output, into data/build. This is the working intermediate and is NOT
+published: it holds one row per congregation, so a named congregation's
+answers are readable from it. scripts/build_aggregates.py reduces it to
+the ring, synod and national counts the dashboard actually shows, and
+only that reduction goes into web/public/data.
+
+Files:
   congregations.json  the standing register: code, name, ring, synod, point
   questions.json      the crosswalk, with each wave's option labels
   responses.json      one row per congregation per wave, values keyed by
@@ -81,14 +87,21 @@ def build_register(data_dir):
 
     register = {}
     for ring, code, name in ((r[0], r[1].strip(), r[2]) for r in ring_rows):
+        prefix = code.split("-")[0]
+        if prefix not in synods:
+            # WK_TOE001 "Toetsgemeente" is a test record; its underscore
+            # keeps it out of the synod list rather than inventing one.
+            continue
+        ring = (ring or "").strip()
         point = points.get(normalise_name(name))
         register.setdefault(code, {
             "code": code, "name": name,
-            # The ring lookup carries a few spelling variants of the same
-            # ring; the synod comes from the code prefix, which is cleaner
-            # than the synod column in either data file.
-            "ring": (ring or "").strip(),
-            "synod": synods.get(code.split("-")[0], code.split("-")[0]),
+            # The synod comes from the code prefix, which is cleaner than the
+            # synod column in either data file. 31 congregations have #N/A
+            # where their ring should be; they still count towards their
+            # synod, but there is no ring to select them under.
+            "ring": "" if ring.startswith("#") else ring,
+            "synod": synods[prefix],
             "lon": point[0] if point else None,
             "lat": point[1] if point else None,
         })
@@ -109,7 +122,7 @@ def main():
     ap.add_argument("--data-dir", default="data/raw")
     ap.add_argument("--lookup-dir", default="data/lookup")
     ap.add_argument("--codebook-dir", default="data/codebook")
-    ap.add_argument("--out-dir", default="web/public/data")
+    ap.add_argument("--out-dir", default="data/build")
     args = ap.parse_args()
 
     data_dir = pathlib.Path(args.data_dir)

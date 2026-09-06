@@ -51,7 +51,7 @@ def load(out_dir):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--data-dir", default="web/public/data")
+    ap.add_argument("--data-dir", default="data/build")
     args = ap.parse_args()
     out_dir = pathlib.Path(args.data_dir)
     if not (out_dir / "responses.json").exists():

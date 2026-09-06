@@ -1,24 +1,24 @@
-/* Kerkspieël Ringsverslag — reads the precomputed dataset and renders a
-   ring's answers against its synod and the church as a whole. */
+/* Kerkspieël Ringsverslag — reads the pre-aggregated dataset and renders a
+   ring's answers against its synod and the church as a whole.
+
+   The published data holds counts per ring, per synod and nationally, never
+   a congregation's own answers. */
 
 const WAVES = ["2018", "2022", "2026"];
 const SERIES = ["var(--series-1)", "var(--series-2)", "var(--series-3)"];
-const ALL_RINGS = "__all__";
+const NATIONAL = "__all__";
 // Below this, a single congregation moves the share by 10 points or more.
 const SMALL_N = 10;
 
 const el = (id) => document.getElementById(id);
-const state = { congregations: [], questions: [], responses: [], byCode: new Map() };
+const state = { scopes: [], byKey: new Map(), questions: [], counts: {} };
 
 async function boot() {
-  const [congregations, questions, responses] = await Promise.all(
-    ["congregations", "questions", "responses"].map((n) =>
-      fetch(`data/${n}.json`).then((r) => r.json())));
-
-  state.congregations = congregations;
-  state.questions = questions;
-  state.responses = responses;
-  state.byCode = new Map(congregations.map((c) => [c.code, c]));
+  const payload = await fetch("data/aggregates.json").then((r) => r.json());
+  state.scopes = payload.scopes;
+  state.byKey = new Map(payload.scopes.map((s) => [s.key, s]));
+  state.questions = payload.questions;
+  state.counts = payload.counts;
 
   fillSynods();
   fillQuestions();
@@ -27,26 +27,18 @@ async function boot() {
   onSynodChange();
 }
 
-function synodList() {
-  return [...new Set(state.congregations.map((c) => c.synod))].sort();
-}
-
-function ringList(synod) {
-  return [...new Set(state.congregations
-    .filter((c) => c.synod === synod && c.ring)
-    .map((c) => c.ring))].sort();
-}
+const synodScopes = () => state.scopes.filter((s) => s.kind === "synod");
+const ringScopes = (synod) =>
+  state.scopes.filter((s) => s.kind === "ring" && s.synod === synod);
 
 function fillSynods() {
-  el("synod").innerHTML = synodList()
-    .map((s) => `<option value="${s}">${s}</option>`).join("");
+  el("synod").innerHTML = synodScopes()
+    .sort((a, b) => a.name.localeCompare(b.name, "af"))
+    .map((s) => `<option value="${s.key}">${escapeHtml(s.name)}</option>`).join("");
 }
 
 function fillQuestions() {
-  // A question is only offered where at least two waves asked it on the
-  // same scale, or where it is a straightforward count.
-  const usable = state.questions
-    .filter((q) => q.comparable === "yes" || q.comparable === "scale-changed")
+  const usable = [...state.questions]
     // Questions asked the same way in every wave come first; the ones whose
     // scale moved are still offered, but behind a warning.
     .sort((a, b) => (a.comparable === b.comparable ? 0
@@ -59,9 +51,11 @@ function fillQuestions() {
 }
 
 function onSynodChange() {
-  const synod = el("synod").value;
-  el("ring").innerHTML = [`<option value="${ALL_RINGS}">Hele sinode</option>`]
-    .concat(ringList(synod).map((r) => `<option value="${r}">${escapeHtml(r)}</option>`))
+  const synod = state.byKey.get(el("synod").value);
+  el("ring").innerHTML = [`<option value="${synod.key}">Hele sinode</option>`]
+    .concat(ringScopes(synod.name)
+      .sort((a, b) => a.name.localeCompare(b.name, "af"))
+      .map((r) => `<option value="${r.key}">${escapeHtml(r.name)}</option>`))
     .join("");
   render();
 }
@@ -69,59 +63,35 @@ function onSynodChange() {
 /* ---------- selection ---------- */
 
 function scopes() {
-  const synod = el("synod").value;
-  const ring = el("ring").value;
-  const inSynod = (c) => c.synod === synod;
-  const inRing = ring === ALL_RINGS ? inSynod : (c) => c.ring === ring;
+  const synod = state.byKey.get(el("synod").value);
+  const chosen = state.byKey.get(el("ring").value) || synod;
+  const national = state.byKey.get(NATIONAL);
   const all = [
-    { key: "ring", label: `Ring ${ring}`, short: "Ring", test: inRing },
-    { key: "synod", label: `Sinode ${synod}`, short: "Sinode", test: inSynod },
-    { key: "national", label: "Algemene Sinode", short: "AS", test: () => true },
+    { scope: chosen, label: `Ring ${chosen.name}`, short: "Ring" },
+    { scope: synod, label: `Sinode ${synod.name}`, short: "Sinode" },
+    { scope: national, label: national.name, short: "AS" },
   ];
   // Choosing the whole synod makes the ring scope the synod scope; showing
   // both would just repeat every column.
-  return ring === ALL_RINGS ? all.slice(1) : all;
+  return chosen.key === synod.key ? all.slice(1) : all;
 }
 
-function responsesFor(test, wave) {
-  return state.responses.filter((r) => {
-    if (r.wave !== wave) return false;
-    const c = state.byCode.get(r.code);
-    return c && test(c);
-  });
+function distribution(question, scope, wave) {
+  const counts = (state.counts[question.id] || {})[scope.key];
+  const bucket = counts && counts[wave];
+  if (!bucket) return null;
+  const n = bucket.reduce((a, b) => a + b, 0);
+  if (!n) return null;
+  return { n, share: bucket.map((c) => (100 * c) / n) };
 }
 
-/* ---------- aggregation ---------- */
-
-function optionsFor(question) {
-  // Options can be worded differently between waves; show the most recent
-  // wording, and order it the way the published report does where the
-  // scale's direction is known.
-  for (const wave of [...WAVES].reverse()) {
-    const listed = question.options[wave];
-    if (listed && listed.length) {
-      const order = question.order || {};
-      return [...listed]
-        .map((o) => ({ ...o, rank: order[o.value] ?? o.value }))
-        .sort((a, b) => a.rank - b.rank);
-    }
-  }
-  return null;
-}
-
-function distribution(question, test, wave) {
-  const options = optionsFor(question);
-  if (!options) return null;
-  const values = responsesFor(test, wave)
-    .map((r) => r.values[question.id])
-    .filter((v) => options.some((o) => o.value === v));
-  if (!values.length) return null;
-  const counts = new Map(options.map((o) => [o.value, 0]));
-  values.forEach((v) => counts.set(v, counts.get(v) + 1));
-  return {
-    n: values.length,
-    share: options.map((o) => (100 * counts.get(o.value)) / values.length),
-  };
+function orderedOptions(question) {
+  // The published report orders options worst-first; the raw codes of
+  // several questions run the other way.
+  const order = question.order || {};
+  return question.options
+    .map((o, index) => ({ ...o, index, rank: order[o.value] ?? o.value }))
+    .sort((a, b) => a.rank - b.rank);
 }
 
 /* ---------- render ---------- */
@@ -131,7 +101,7 @@ function render() {
   const scopeList = scopes();
   const primary = scopeList[0];
 
-  renderTiles(primary);
+  renderTiles(primary.scope);
   if (!question) return;
 
   el("chart-title").textContent = trim(question.label, 150);
@@ -140,14 +110,14 @@ function render() {
   el("note-slot").innerHTML = question.comparable === "scale-changed"
     ? `<p class="note"><strong>Skale verskil tussen jare.</strong> Hierdie vraag
        is nie in elke jaar met dieselfde aantal antwoordopsies gevra nie
-       (${WAVES.filter((w) => question.options[w])
-              .map((w) => `${w}: ${question.options[w].length}`).join(", ")}),
+       (${WAVES.filter((w) => question.optionCounts[w])
+              .map((w) => `${w}: ${question.optionCounts[w]}`).join(", ")}),
        so die jare is nie direk vergelykbaar nie.</p>`
     : "";
 
-  const options = optionsFor(question);
+  const options = orderedOptions(question);
   const series = WAVES
-    .map((wave) => ({ wave, data: distribution(question, primary.test, wave) }))
+    .map((wave) => ({ wave, data: distribution(question, primary.scope, wave) }))
     .filter((s) => s.data);
 
   const thin = series.filter((s) => s.data.n < SMALL_N);
@@ -167,12 +137,11 @@ function render() {
 }
 
 function renderTiles(scope) {
-  const total = state.congregations.filter(scope.test).length;
   const tiles = [`<div class="tile"><div class="k">Gemeentes</div>
-     <div class="v">${total}</div><div class="s">in hierdie keuse</div></div>`];
+     <div class="v">${scope.congregations}</div><div class="s">in hierdie keuse</div></div>`];
   WAVES.forEach((wave) => {
-    const n = responsesFor(scope.test, wave).length;
-    const pct = total ? Math.round((100 * n) / total) : 0;
+    const n = scope.responded[wave] || 0;
+    const pct = scope.congregations ? Math.round((100 * n) / scope.congregations) : 0;
     tiles.push(`<div class="tile"><div class="k">${wave} deelname</div>
       <div class="v">${n}</div><div class="s">${pct}% van gemeentes</div></div>`);
   });
@@ -186,7 +155,7 @@ function renderLegend(series) {
 }
 
 function renderChart(options, series) {
-  if (!options || !series.length) {
+  if (!options.length || !series.length) {
     el("chart").innerHTML = `<p class="empty">Geen antwoorde vir hierdie keuse nie.</p>`;
     return;
   }
@@ -213,13 +182,14 @@ function renderChart(options, series) {
   const bars = options.map((opt, oi) => {
     const x0 = pad.left + oi * groupW + 9;
     return series.map((s, si) => {
-      const v = s.data.share[oi];
+      const v = s.data.share[opt.index];
       const h = Math.max(v > 0 ? 2 : 0, (v / max) * plotH);
       const x = x0 + si * (barW + gap);
+      const name = opt.label || `Opsie ${opt.value}`;
       return `<rect class="bar" x="${x}" y="${y(v)}" width="${barW}" height="${h}"
         fill="${SERIES[si]}" tabindex="0" role="img"
-        aria-label="${escapeHtml(opt.label || "Opsie " + opt.value)}, ${s.wave}: ${v.toFixed(1)} persent"
-        data-tip="${escapeHtml(`${s.wave} · ${opt.label || "Opsie " + opt.value}: ${v.toFixed(1)}% (n=${s.data.n})`)}"></rect>`;
+        aria-label="${escapeHtml(name)}, ${s.wave}: ${v.toFixed(1)} persent"
+        data-tip="${escapeHtml(`${s.wave} · ${name}: ${v.toFixed(1)}% (n=${s.data.n})`)}"></rect>`;
     }).join("");
   }).join("");
 
@@ -240,19 +210,18 @@ function renderChart(options, series) {
 }
 
 function renderTable(question, options, scopeList) {
-  if (!options) { el("table").innerHTML = ""; return; }
   const cols = [];
   scopeList.forEach((sc) => WAVES.forEach((wave) => {
-    const d = distribution(question, sc.test, wave);
+    const d = distribution(question, sc.scope, wave);
     if (d) cols.push({ head: `${sc.short} ${wave}`, d });
   }));
   if (!cols.length) { el("table").innerHTML = ""; return; }
 
   const head = `<thead><tr><th>Beskrywing</th>${
     cols.map((c) => `<th>${escapeHtml(c.head)}</th>`).join("")}</tr></thead>`;
-  const body = options.map((opt, oi) => `<tr>
+  const body = options.map((opt) => `<tr>
       <td>${escapeHtml(opt.label || `Opsie ${opt.value}`)}</td>
-      ${cols.map((c) => `<td>${c.d.share[oi].toFixed(2)}%</td>`).join("")}
+      ${cols.map((c) => `<td>${c.d.share[opt.index].toFixed(2)}%</td>`).join("")}
     </tr>`).join("");
   const foot = `<tr><td>Aantal gemeentes</td>${
     cols.map((c) => `<td>${c.d.n}</td>`).join("")}</tr>`;
