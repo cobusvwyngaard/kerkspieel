@@ -21,9 +21,11 @@ jobs:
 
       - name: Check the dashboard has data to serve
         run: |
-          test -s web/public/aggregates.json 2>/dev/null \
-            || test -s web/public/data/aggregates.json \
-            || { echo "::error::web/public/data/aggregates.json is missing or empty."; exit 1; }
+          test -s web/public/data/aggregates.json || {
+            echo "::error::web/public/data/aggregates.json is missing or empty."
+            echo "Regenerate it with scripts/build_aggregates.py and commit it."
+            exit 1
+          }
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3

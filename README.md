@@ -44,8 +44,36 @@ python3 scripts/validate_dataset.py  # built dataset vs the published report
 cd web/public && python3 -m http.server 8788
 ```
 
-Deployment is Cloudflare Pages, serving `web/public` as-is
-(`web/wrangler.toml`).
+`build_dataset.py` writes to `data/build/`, which is **not** published:
+it holds one row per congregation. `build_aggregates.py` reduces that to
+the ring, synod and national counts the dashboard actually shows, and
+only `web/public/data/aggregates.json` is committed and deployed.
+
+## Deploying
+
+Cloudflare Pages, via `.github/workflows/deploy.yml`, on every push to
+this branch. The workflow only uploads `web/public` — the raw extracts
+are not in the repo, so when a wave is refreshed you regenerate
+`aggregates.json` locally and commit it.
+
+Two repository secrets are needed once, under Settings → Secrets and
+variables → Actions:
+
+| Secret | Where it comes from |
+|---|---|
+| `CLOUDFLARE_API_TOKEN` | Cloudflare dashboard → My Profile → API Tokens → Create Token, with the **Cloudflare Pages: Edit** permission |
+| `CLOUDFLARE_ACCOUNT_ID` | Cloudflare dashboard → Workers & Pages, in the right-hand sidebar |
+
+Create a Pages project named `kerkspieel` first (Workers & Pages → Create
+→ Pages → direct upload), or change `--project-name` in the workflow.
+
+> **A Pages URL is public by default.** The published data includes ring
+> cells where only one or two congregations responded, and in those the
+> distribution *is* that congregation's answer. Turn on Cloudflare Access
+> for the project (Workers & Pages → the project → Settings → Access
+> policy) before sharing the link. Alternatively, suppress those cells at
+> build time — 31 of 390 ring/wave cells have fewer than three responding
+> congregations.
 
 ## Inputs
 
