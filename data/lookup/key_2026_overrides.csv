@@ -1,0 +1,25 @@
+# Manual reconciliation of 2026 self-entered congregation codes.
+# Takes precedence over every heuristic in scripts/resolve_2026_keys.py.
+# name_2026 may be left blank to match on the key alone; it is required
+# where the same key was submitted by more than one congregation.
+# Supersede this wholesale once an authoritative old/new key lookup exists.
+key_2026,name_2026,V03,evidence
+06076ELA001,,GL-ELA001,stub ELA + prefix 06=GL; register 'Elandia (In kombinasie met Meiringspark)'
+07087QUA001,,NS-QUA001,stub QUA + prefix 07=NS; register 'Queenswood (Hartebeespruit-Queeswood)'
+05071STH00,,VS-STH001,stub STH + prefix 05=VS; register 'St Helena (Welkom)' matches the address given
+06083VAN0,,GL-VAN007,stub VAN + prefix 06=GL; register 'Collage (Vanderbijlpark saamgesmelt nou Collage)'
+06078SED001,,GL-SED001,stub SED + prefix 06=GL; register 'Sederpark'
+06084LUX001,,GL-LUX001,stub LUX + prefix 06=GL; register 'Lux-Deo' not OS-LUX001 'Lux-Mundi'
+050620HAR00,,VS-HAR002,stub HAR + prefix 05=VS; register 'Harmonie OVS'
+1,NG Gemeente Vryheid,KZ-VRY005,key unusable; register 'Vryheid (waarby Vryheid-Wes ingelyf is)'
+01025WYN00,,WK-WYN001,stub WYN + prefix 01=WK; register 'Wynberg'
+01006PHI001,,WK-PHI001,name blank on this row; the other row with this key is 'NG KERK PHILADELPHIA'
+NGKLYTOOS,,OS-LYT003,register 'Voetspore (Naamsverandering voorheen Lyttelton-Oos)'
+07095SA001,,NS-SA001,stub SA + prefix 07=NS; register 'SA-Gemeente' in the Pretoria-Oos ring
+V01,Miederpark Gemeente,GL-POT004,placeholder key; name -> register 'Potchefstroom-Miederpark'
+V01,NG Kerk Panorama Bethlehem,VS-BET011,placeholder key; name -> register 'Bethlehem-Panorama'
+02035POR007,,OK-POR007,key was right; 'PE-Nooitgedacht' is register 'Port Elizabeth-Nooitgedacht' not OS-NOO001 'Nooitgedacht'
+06074OTT003,,GL-OTT003,key was right; register 'Ottosdal-Suid (waarby Ottosdal ingelyf is)' is the surviving congregation
+05057BET008,,VS-BET008,key was right; register carries two 'Bethlehem-Noord' entries and BET008 is the merged survivor
+07088MAR006,,OK-BUF002,name was right; key points at 'Marikana' in another synod
+02030CLE001,Maclear,OK-MAC002,name was right; this key belongs to 'Clearview' which another row also submitted
