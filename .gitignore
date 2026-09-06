@@ -1,0 +1,12 @@
+# Raw survey extracts are NOT committed by default.
+# They contain free-text comment fields that may identify individual
+# ministers and congregations (POPIA). Decide on a redaction policy
+# before putting them under version control or shipping them to a CDN.
+data/raw/*.xlsx
+data/raw/*.xls
+
+node_modules/
+dist/
+.wrangler/
+__pycache__/
+*.pyc
