@@ -1,0 +1,504 @@
+label,type,V2018,V2022,V2026,options_2018,options_2022,options_2026,comparable,source_2018_2022,source_2022_2026
+Streek,,V02,,,,,,single-wave,,
+Gemeente,,V03,,,,,,single-wave,,
+Sinode,,V04,,,,,,single-wave,,
+Belydende Lidmate,numeries,V05,V05,V02,,,,numeric,KS_lookup,block+order
+Dooplidmate,numeries,V06,V06,V03,,,,numeric,KS_lookup,block+order
+Ongedooptes,numeries,V07,V07,V04,,,,numeric,KS_lookup,block+order
+Tussen 60 en 80,numeries,V08,V08,V06,,,,numeric,KS_lookup,block+text
+ouer as 80,numeries,V09,V09,V05,,,,numeric,KS_lookup,block+text
+Belydende Lidmate buite geografiese grense,numeries,V10,V10,,,,,numeric,KS_lookup,
+Dooplidmate buite geografiese grense,numeries,V11,V11,,,,,numeric,KS_lookup,
+Ongedooptes buite geografiese grense,numeries,V12,V12,,,,,numeric,KS_lookup,
+"Hoeveel lidmate het gedurende 2017 lidmaat van dié gemeente geword, wat voorheen nie lidmaat van enige ander gemeente of denominasie was nie? Belydende lidmate",,V13,V13,V08,,,,numeric,block+order,block+text
+"Hoeveel lidmate het gedurende 2017 lidmaat van dié gemeente geword, wat voorheen nie lidmaat van enige ander gemeente of denominasie was nie? Dooplidmate",,V14,V14,,,,,numeric,block+order,
+"Hoeveel lidmate het gedurende 2017 lidmaat van dié gemeente geword, wat voorheen nie lidmaat van enige ander gemeente of denominasie was nie? Ongedooptes",,V15,V15,,,,,numeric,block+order,
+"Gedurende 2017, hoeveel van die volgende het gebeur? Babas gedoop",,V16,V16,,,,,numeric,block+order,
+"Gedurende 2017, hoeveel van die volgende het gebeur? Kinders gedoop",,V17,V17,,,,,numeric,block+order,
+"Gedurende 2017, hoeveel van die volgende het gebeur? Volwassenes gedoop",,V18,V18,,,,,numeric,block+order,
+"Gedurende 2017, hoeveel van die volgende het gebeur? Dooplidmate wat belydenis van geloof afgelê het",,V19,V19,,,,,numeric,block+order,
+"Gedurende 2017, hoeveel van die volgende het gebeur? wat belydenis van geloof afgelê het",,V20,V20,,,,,numeric,block+order,
+"Gedurende 2017, hoeveel van die volgende het gebeur? Troues",,V21,V21,,,,,numeric,block+order,
+"Gedurende 2017, hoeveel van die volgende het gebeur? Begrafnisse",,V22,V22,,,,,numeric,block+order,
+Aantal voltydse Predikante,numeries,V23,V23,,,,,numeric,KS_lookup,
+Voltydse predikantsposte in die gemeente is … dui aan hoeveel is Tans vakant,,V24,V24,,,,,numeric,block+order,
+Voltydse predikantsposte in die gemeente is … dui aan hoeveel is In 2014-2017 verander na ŉ “verkleinde” pos,,V25,V25,,,,,numeric,block+order,
+Voltydse predikantsposte in die gemeente is … dui aan hoeveel is in 2014-2017 afgeskaf/gesluit,,V26,V26,,,,,numeric,block+order,
+Voltydse predikantsposte in die gemeente is … dui aan hoeveel is in 2014-2017 geskep,,V27,V27,,,,,numeric,block+order,
+Hoeveel predikantsposte word gevul deur Voltydse geordende leraar(s) (Voltydse onbepaalde termynpos),,V28,V28,V14,,,,numeric,block+text,block+text
+Hoeveel predikantsposte word gevul deur Tentmakerleraar (Deeltydse onbepaalde termynpos),,V29,V29,V15,,,,numeric,block+text,block+text
+Hoeveel predikantsposte word gevul deur Leraar met kontrakpos (Voltydse vaste termynpos),,V30,V30,V16,,,,numeric,block+text,block+text
+Hoeveel predikantsposte word gevul deur Deeltydse leraar met kontrakpos (Deeltydse vaste termynpos),,V31,V31,V17,,,,numeric,block+text,block+text
+"Hoeveel predikantsposte word gevul deur Kapelaan, gekoppel aan gemeente",,V32,V32,V18,,,,numeric,block+text,block+text
+Hoeveel predikantsposte word gevul deur Proponent,,V33,V34,V22,,,,numeric,block+text,block+text
+Hoeveel predikantsposte word gevul deur help uit),,V34,V35,V19,,,,numeric,block+text,block+text
+"Indien die gemeente ŉ deeltydse predikantspos het, dui asb die termyn (aantal jare) aan",,V35,V37,V26,,,,numeric,block+order,block+order
+Gebruik die gemeente ander teologies opgeleide persone in die gemeente? Proponent,,V36,V40,V29,2,2,2,yes,block+text,block+text
+Gebruik die gemeente ander teologies opgeleide persone in die gemeente? Proponent,,V37,V41,V30,,,2,scale-changed,block+text,block+text
+Gebruik die gemeente ander teologies opgeleide persone in die gemeente? Emerituspredikant,,V38,V42,V31,2,2,2,yes,block+text,block+text
+Gebruik die gemeente ander teologies opgeleide persone in die gemeente? Emerituspredikant,,V39,V43,V33,,,2,scale-changed,block+text,block+text
+Gebruik die gemeente ander teologies opgeleide persone in die gemeente? Teologiese student,,V40,V44,V35,2,2,2,yes,block+text,block+text
+Gebruik die gemeente ander teologies opgeleide persone in die gemeente? Teologiese student,,V41,V45,V28,,,2,scale-changed,block+text,block+text
+Gebruik die gemeente ander teologies opgeleide persone in die gemeente? Gelegitimeerde in ’n ander betrekking,,V42,V46,V34,2,2,2,yes,block+text,block+text
+Gebruik die gemeente ander teologies opgeleide persone in die gemeente? Gelegitimeerde in ’n ander betrekking,,V43,V47,,,,,numeric,block+text,
+Gebruik die gemeente ander teologies opgeleide persone in die gemeente? Predikant wat op ’n beroep wag,,V44,V48,,2,2,,yes,block+text,
+Gebruik die gemeente ander teologies opgeleide persone in die gemeente? Predikant wat op ’n beroep wag,,V45,V49,,,,,numeric,block+text,
+Gebruik die gemeente ander teologies opgeleide persone in die gemeente? Jeugwerker,,V46,V50,,2,2,,yes,block+text,
+Gebruik die gemeente ander teologies opgeleide persone in die gemeente? Jeugwerker,,V47,V51,,,,,numeric,block+text,
+Gebruik die gemeente ander teologies opgeleide persone in die gemeente? Nie-gelegitimeerde,,V48,V52,,2,2,,yes,block+text,
+Gebruik die gemeente ander teologies opgeleide persone in die gemeente? Nie-gelegitimeerde,,V49,V53,,,,,numeric,block+text,
+Gebruik die gemeente ander teologies opgeleide persone in die gemeente? Ander :,,V50,V54,,2,2,,yes,block+text,
+Gebruik die gemeente ander teologies opgeleide persone in die gemeente? Ander :,,V51,V55,,,,,numeric,block+text,
+Hoeveel gelegitimeerde predikante in die gemeente se diens is vroue? Voltyds,,V52,V56,V36,,,,numeric,block+order,block+order
+Hoeveel gelegitimeerde predikante in die gemeente se diens is vroue? Deeltyds,,V53,V57,V37,,,,numeric,block+order,block+order
+Aantal ouderlinge,numeries,V54,V58,V38,,,,numeric,KS_lookup,block+text
+Aantal diakens,numeries,V55,V59,V39,,,,numeric,KS_lookup,block+text
+Aantal kategete,numeries,V56,V60,V40,,,,numeric,KS_lookup,block+text
+Kerkraadslede mans onder 40,numeries,V57a,V61a,,,,,numeric,KS_lookup,
+Kerkraadslede vrouens onder 40,numeries,V57b,V61b,,,,,numeric,KS_lookup,
+Kerkraadslede mans 40-60,numeries,V58a,V62a,,,,,numeric,KS_lookup,
+Kerkraadslede vrouens 40-60,numeries,V58b,V62b,,,,,numeric,KS_lookup,
+Kerkraadslede mans bo 60,numeries,V59a,V63a,,,,,numeric,KS_lookup,
+Kerkraadslede vrouens bo 60,numeries,V59b,V63b,,,,,numeric,KS_lookup,
+Kategete mans onder 40,numeries,V60a,V64a,,,,,numeric,KS_lookup,
+Kategete vrouens onder 40,numeries,V60b,V64b,,,,,numeric,KS_lookup,
+Kategete mans 40-60,numeries,V61a,V65a,,,,,numeric,KS_lookup,
+Kategete vrouens 40-60,numeries,V61b,V65b,,,,,numeric,KS_lookup,
+Kategete mans bo 60,numeries,V62a,V66a,,,,,numeric,KS_lookup,
+Kategete vrouens bo 60,numeries,V62b,V66b,,,,,numeric,KS_lookup,
+Ander dienswerkers mans onder 40,numeries,V63a,V67a,,,,,numeric,KS_lookup,
+Ander dienswerkers vroue onder 40,numeries,V63b,V67b,,,,,numeric,KS_lookup,
+Ander dienswerkers mans 40-60,numeries,V64a,V68a,,,,,numeric,KS_lookup,
+Ander dienswerkers vroue 40-60,numeries,V64b,V68b,,,,,numeric,KS_lookup,
+Ander dienswerkers mans bo 60,numeries,V65a,V69a,,,,,numeric,KS_lookup,
+Ander dienswerkers vroue bo 60,numeries,V65b,V69b,,,,,numeric,KS_lookup,
+Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente: Musiekleier,,V66,V70,V42,2,2,2,yes,block+text,block+text
+Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente: Musiekleier,,V67,V71,V43,,,2,scale-changed,block+text,block+text
+Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente: Maatskaplike werker,,V68,V72,V45,2,2,2,yes,block+text,block+text
+Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente: Maatskaplike werker,,V69,V73,V44,,,2,scale-changed,block+text,block+text
+Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente: Jeugwerker,,V70,V74,V46,2,2,2,yes,block+text,block+text
+Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente: Jeugwerker,,V71,V75,V48,,,2,scale-changed,block+text,block+text
+Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente: Kinderwerker,,V72,V76,V47,2,2,2,yes,block+text,block+text
+Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente: Kinderwerker,,V73,V77,,,,,numeric,block+text,
+Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente: Eredienswerker,,V74,V78,,2,2,,yes,block+text,
+Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente: Eredienswerker,,V75,V79,,,,,numeric,block+text,
+Betaalde persone vir andertalige of kruiskulturele bediening,janee,V76,V80,,2,2,,yes,KS_lookup,
+Betaalde persone vir andertalige of kruiskulturele bediening (Getal),numeries,V77,V81,,,,,numeric,KS_lookup,
+Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente: Ander,,V78,V82a,,,2,,scale-changed,block+text,
+Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente: Ander,,V79,V82b,,,,,numeric,block+text,
+Het u diensooreenkomste met mense wat sonder betaling in die gemeente werk? Musiekleier,,V80,V84,,2,2,,yes,block+text,
+Het u diensooreenkomste met mense wat sonder betaling in die gemeente werk? Maatskaplike werker,,V81,V85,,2,2,,yes,block+text,
+Het u diensooreenkomste met mense wat sonder betaling in die gemeente werk? Jeugwerker,,V82,V86,,2,2,,yes,block+text,
+Het u diensooreenkomste met mense wat sonder betaling in die gemeente werk? Kinderwerker,,V83,V87,,2,2,,yes,block+text,
+Het u diensooreenkomste met mense wat sonder betaling in die gemeente werk? Erediensleier,,V84,V88,,2,2,,yes,block+text,
+Onbetaalde persone vir andertalige of kruiskulturele bediening,janee,V85,V89,,2,2,,yes,KS_lookup,
+Het u diensooreenkomste met mense wat sonder betaling in die gemeente werk? Ander,,V86,V90a,,,2,,scale-changed,block+text,
+Word persone buiten ouderlinge en diakens tydens ŉ erediens vir hulle dienswerk afgesonder of bevestig?,,V87,V91,,2,2,,yes,block+order,
+Oor watter formele kwalifikasies beskik die aangestelde jeugwerker(s)? 2.13 Oor watter formele kwalifikasies beskik die aangestelde jeugwerker(s)?,,V88,V92,,,,,numeric,block+order,
+Bestaan daar ŉ Diensverhoudinge Kommissie of soortgelyke kommissie wat die diensooreenkoms van predikante en amptenare hanteer?,,V89,V93,V49,2,2,2,yes,block+order,block+order
+Word die Bestuursgids vir Diensverhoudinge van die NG Kerk as riglyn vir diensverhoudinge gebruik?,,V90,V94,,2,2,,yes,block+order,
+"Is daar ŉ diensooreenkoms, volgens die Kerkorde, wat met die volgende persone wat in diens van die gemeente is, aangegaan is? Predikant(e)",,V91,V95,,2,2,,yes,block+order,
+"Is daar ŉ diensooreenkoms, volgens die Kerkorde, wat met die volgende persone wat in diens van die gemeente is, aangegaan is? Kantoorpersoneel",,V92,V96,,2,2,,yes,block+order,
+"Is daar ŉ diensooreenkoms, volgens die Kerkorde, wat met die volgende persone wat in diens van die gemeente is, aangegaan is? Orrelis",,V93,V97,,2,2,,yes,block+order,
+"Is daar ŉ diensooreenkoms, volgens die Kerkorde, wat met die volgende persone wat in diens van die gemeente is, aangegaan is? Koster",,V94,V98,,2,2,,yes,block+order,
+"Is daar ŉ diensooreenkoms, volgens die Kerkorde, wat met die volgende persone wat in diens van die gemeente is, aangegaan is? Ander personeel",,V95,V99,,2,2,,yes,block+order,
+"Is daar ŉ versorgingskommissie, naas die diensverhoudinge kommissie, wat omsien na die versorging van die volgende persone? Predikant(e)",,V96,V100,V50,2,2,2,yes,block+order,block+order
+"Is daar ŉ versorgingskommissie, naas die diensverhoudinge kommissie, wat omsien na die versorging van die volgende persone? Kantoorpersoneel",,V97,V101,V51,2,2,2,yes,block+order,block+order
+"Is daar ŉ versorgingskommissie, naas die diensverhoudinge kommissie, wat omsien na die versorging van die volgende persone? Orrelis",,V98,V102,V52,2,2,2,yes,block+order,block+order
+"Is daar ŉ versorgingskommissie, naas die diensverhoudinge kommissie, wat omsien na die versorging van die volgende persone? Koster",,V99,V103,V53,2,2,2,yes,block+order,block+order
+"Is daar ŉ versorgingskommissie, naas die diensverhoudinge kommissie, wat omsien na die versorging van die volgende persone? Ander personeel",,V100,V104,V54,2,2,2,yes,block+order,block+order
+"Hanteer en bestuur die diensverhoudinge kommissie, of soortgelyke kommissie die verlof van die predikant(e) en ander amptenare?",,V101,V105,,2,2,,yes,block+order,
+Het die gemeente ŉ amptelik goedgekeurde begroting? 3.1 Het die gemeente ŉ amptelik goedgekeurde begroting?,,V102,V106,V55,2,2,2,yes,block+order,block+order
+Watter persentasie van u werklike uitgawes in die 2017/2018 finansiële jaar het u bestee aan ... Salarisse en voordele,,V103,V108,V57,,,,numeric,block+text,block+text
+Watter persentasie van u werklike uitgawes in die 2017/2018 finansiële jaar het u bestee aan ... Administrasie van die gemeente,,V104,V109,V60,,,,numeric,block+text,block+text
+Watter persentasie van u werklike uitgawes in die 2017/2018 finansiële jaar het u bestee aan ... Eiendomsuitgawes,,V105,V110,V59,,,,numeric,block+text,block+text
+Watter persentasie van u werklike uitgawes in die 2017/2018 finansiële jaar het u bestee aan ... Bedieninge ter wille van die gemeente self,,V106,V111,V61,,,,numeric,block+text,block+text
+Watter persentasie van u werklike uitgawes in die 2017/2018 finansiële jaar het u bestee aan ... Diens en getuienis na buite die gemeente,,V107,V112,V62,,,,numeric,block+text,block+text
+Watter persentasie van u werklike uitgawes in die 2017/2018 finansiële jaar het u bestee aan ... Ander,,V108,V114a,,,,,numeric,block+text,
+Watter persentasie van u werklike uitgawes in die 2017/2018 finansiële jaar het u bestee aan ... Ander (spesifiseer),,V108a,V114b,,,,,numeric,block+text,
+Watter persentasie van u werklike uitgawes in die 2017/2018 finansiële jaar het u bestee aan ... Ander,,V109,V115a,,,,,numeric,block+text,
+Watter persentasie van u werklike uitgawes in die 2017/2018 finansiële jaar het u bestee aan ... Ander (spesifiseer),,V109a,V115b,,,,,numeric,block+text,
+Watter persentasie van u werklike uitgawes in die 2017/2018 finansiële jaar het u bestee aan ... Ander,,V110,V116a,,,,,numeric,block+text,
+Watter persentasie van u werklike uitgawes in die 2017/2018 finansiële jaar het u bestee aan ... Ander (spesifiseer),,V110a,V116b,,,,,numeric,block+text,
+Beskryf die gemeente se finansiële posisie,4opsies2,V111,V117,V64,4,4,4,yes,KS_lookup,block+order
+"Indien die gemeente se voortbestaan bedreig word deur finansies, watter opsies oorweeg u?",,V112,V123a,,4,4,,yes,block+order,
+"Indien die gemeente se voortbestaan bedreig word deur finansies, watter opsies oorweeg u? (spesifiseer)",,V112a,V123b,,,,,numeric,block+order,
+Die vergoeding van die voltydse predikant(e) in diens van die gemeente is 3.5 Die vergoeding van die voltydse predikant(e) in diens van die gemeente is,,V113,V124,V68,3,3,3,yes,block+order,block+order
+Voltydse predikante in diens van die gemeente word toegelaat om in ŉ eie woning te bly,,V114,V125a,,3,3,,yes,block+order,
+Voltydse predikante in diens van die gemeente word toegelaat om in ŉ eie woning te bly (spesifiseer),,V114a,V125b,,,,,numeric,block+order,
+Hoeveel eredienste word gewoonlik elke Sondag in dié gemeente gehou? Oggend Getal,,V115,V126,V69,,,,numeric,block+order,block+order
+Hoeveel eredienste word gewoonlik elke Sondag in dié gemeente gehou? Aand Getal,,V116,V127,V70,,,,numeric,block+order,block+order
+Hoeveel eredienste word gewoonlik elke Sondag in dié gemeente gehou? Ander Getal,,V117,V128,V71,,,,numeric,block+order,block+order
+"Het u gemeente, naas ’n gewone erediens, ook ander eredienste? Gesins- of familiediens",,V118,V130,V73,2,2,2,yes,block+text,block+text
+"Het u gemeente, naas ’n gewone erediens, ook ander eredienste? Aparte diens vir senior burgers",,V119,V131,V74,2,2,2,yes,block+text,block+text
+"Het u gemeente, naas ’n gewone erediens, ook ander eredienste? Aparte diens vir jong volwassenes",,V120,V132,V75,2,2,2,yes,block+text,block+text
+"Het u gemeente, naas ’n gewone erediens, ook ander eredienste? Aparte Jeugdiens (hoofsaaklik hoërskool)",,V121,V133,V76,2,2,2,yes,block+text,block+text
+"Het u gemeente, naas ’n gewone erediens, ook ander eredienste? Aparte Kinderdiens (hoofsaaklik laerskool)",,V122,V134,V77,2,2,2,yes,block+text,block+text
+"Het u gemeente, naas ’n gewone erediens, ook ander eredienste? Aparte Kleuterdiens (voorskools)",,V123,V135,V78,2,2,2,yes,block+text,block+text
+"Het u gemeente, naas ’n gewone erediens, ook ander eredienste? Andertalige diens",,V124,V136,V79,2,2,2,yes,block+text,block+text
+"Het u gemeente, naas ’n gewone erediens, ook ander eredienste? Ander :",,V125,V137a,,2,2,,yes,block+text,
+"Het u gemeente, naas ’n gewone erediens, ook ander eredienste? Ander : (spesifiseer)",,V125a,V137b,,,,,numeric,block+text,
+Wie lei hierdie dienste? (Merk asb waar van toepassing),,V126,,,,,,single-wave,,
+Wie lei hierdie dienste? (Merk asb waar van toepassing) burgers,,V127,,,,,,single-wave,,
+Wie lei hierdie dienste? (Merk asb waar van toepassing) Aparte Jeugdiens,,V128,,,5,,,single-wave,,
+Wie lei hierdie dienste? (Merk asb waar van toepassing) Aparte Kinderdiens,,V129,,,5,,,single-wave,,
+Wie lei hierdie dienste? (Merk asb waar van toepassing) Aparte Kleuterdiens,,V130,,,5,,,single-wave,,
+Wie lei hierdie dienste? (Merk asb waar van toepassing) Andertalige diens,,V131,,,5,,,single-wave,,
+Wie lei hierdie dienste? (Merk asb waar van toepassing) Ander,,V132,,,,,,single-wave,,
+Wie lei hierdie dienste? (Merk asb waar van toepassing) Ander (spesifiseer),,V132a,,,,,,single-wave,,
+"Indien u ’n andertalige diens het, dui aan watter taal en hoeveel dienste per maand Taal",,V133,,,,,,single-wave,,
+"Indien u ’n andertalige diens het, dui aan watter taal en hoeveel dienste per maand Taal (spesifiseer)",,V133a,,,,,,single-wave,,
+"Indien u ’n andertalige diens het, dui aan watter taal en hoeveel dienste per maand Taal",,V134,,,,,,single-wave,,
+"Indien u ’n andertalige diens het, dui aan watter taal en hoeveel dienste per maand Taal (spesifiseer)",,V134a,,,,,,single-wave,,
+"Indien u ’n andertalige diens het, dui aan watter taal en hoeveel dienste per maand Taal",,V135,,,,,,single-wave,,
+"Indien u ’n andertalige diens het, dui aan watter taal en hoeveel dienste per maand Taal (spesifiseer)",,V135a,,,,,,single-wave,,
+"Wat is die totale gemiddelde erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ’n Sondag in Februarie plaasvind, aan) 2013",,V136,V150,V88,,,,numeric,block+text,block+order
+"Wat is die totale gemiddelde erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ’n Sondag in Februarie plaasvind, aan) 2014",,V137,V152,V90,,,,numeric,block+text,block+order
+Erediensbywoning Y3,numeries,V138,V150,V88,,,,numeric,KS_lookup,block+order
+Erediensbywoning Y2,numeries,V139,V151,V89,,,,numeric,KS_lookup,block+order
+Erediensbywoning Y1,numeries,V140,V152,V90,,,,numeric,KS_lookup,block+order
+Erediensbywoning Y0,numeries,V141,V153,V91,,,,numeric,KS_lookup,block+order
+Watter liederebundels gebruik u tydens die eredienste Liedboek,,V142,V160,V97,4,4,4,yes,block+order,block+order
+Watter liederebundels gebruik u tydens die eredienste Flam,,V143,V161,V98,4,4,4,yes,block+order,block+order
+Watter liederebundels gebruik u tydens die eredienste VONKK,,V144,V162,V99,4,4,4,yes,block+order,block+order
+Watter liederebundels gebruik u tydens die eredienste ’n Eie bundel,,V145,V163,V100,4,4,4,yes,block+order,block+order
+Watter liederebundels gebruik u tydens die eredienste Ander :,,V146,V164,V101,4,4,4,yes,block+order,block+order
+Wat die eredienste in die gemeente betref die kerkjaar word gevolg,,V147,V165,V102,4,4,4,yes,block+text,block+text
+Wat die eredienste in die gemeente betref gebruik,,V148,V170,V108,,,,numeric,block+text,block+text
+Wat die eredienste in die gemeente betref,,V149,V166,V104,,,,numeric,block+text,block+text
+Wat die eredienste in die gemeente betref Ons doen van tyd tot tyd preekreekse,,V150,V169,V107,4,4,4,yes,block+text,block+text
+Wat die eredienste in die gemeente betref teks en tema,,V151,V167,V106,,,,numeric,block+text,block+text
+Wat is die primêre vorm van begeleiding tydens die volgende eredienste? Gesins- of familiediens,,V152,V171,V110,5,5,5,yes,block+order,block+text
+Wat is die primêre vorm van begeleiding tydens die volgende eredienste? Diens vir senior burgers,,V153,V172,V111,5,5,5,yes,block+order,block+text
+Wat is die primêre vorm van begeleiding tydens die volgende eredienste? Jeugdiens,,V154,V173,V112,5,5,5,yes,block+order,block+text
+Wat is die primêre vorm van begeleiding tydens die volgende eredienste? Kinderkerk,,V155,V174,V113,5,5,5,yes,block+order,block+text
+Wat is die primêre vorm van begeleiding tydens die volgende eredienste? Kleuterkerk,,V156,V175,V114,5,5,5,yes,block+order,block+text
+In persoon eredienste is nou,3opsies2,V157,V176,V115,5,5,5,yes,block+order,block+text
+"Hoeveel maal het u gedurende 2017 die nagmaal gevier? (Gemeentes wat op dieselfde dag by meer as een erediens nagmaal bedien, tel dit net as een geleentheid.)",,V158,V177,V116,,,,numeric,block+order,block+order
+Watter een van die volgende omskrywings sal die kerkraad die beste beskryf?,,V159,V178,V117,6,7,,scale-changed,block+order,block+order
+Hoe sou u die gemeente se huidige rigting tipeer,4opsies1,V160,V179,V118,4,4,4,yes,KS_lookup,block+order
+Oorweeg vir voortbestaan: saamsmelt met buurgemeente,janee,V161,V180,,2,2,,yes,KS_lookup,
+Oorweeg vir voortbestaan: deeltydse leraar,janee,V162,V181,,2,2,,yes,KS_lookup,
+Oorweeg vir voortbestaan: ouderling met preekbevoegdheid,janee,V163,V183,,2,2,,yes,KS_lookup,
+Oorweeg vir voortbestaan: verenigde kerkraad breed ekumenis,janee,V164,V184,,2,2,,yes,KS_lookup,
+Oorweeg vir voortbestaan: verenigde kerkraad VGK,janee,V165,V185,,2,2,,yes,KS_lookup,
+Is u bewus van die volgende moontlikhede wat tans ontwikkel word? Ouderlinge met preekbevoegdheid,,V166,V186,V128,2,2,2,yes,block+order,block+order
+Is u bewus van die volgende moontlikhede wat tans ontwikkel word? Opleiding vir diensleraars,,V167,V187,V129,2,2,2,yes,block+order,block+order
+Is u bewus van die volgende moontlikhede wat tans ontwikkel word? Deeltydse opleiding van tweede loopbaan predikante,,V168,V188,V130,2,2,2,yes,block+order,block+order
+Wie is die voorsitter van die kerkraad? 5.5 Wie is die voorsitter van die kerkraad?,,V169,,,4,,,single-wave,,
+Die gebruik van tegnologie in die gemeente Is die lidmaatdatabasis gerekenariseerd?,,V170,V190,V132,2,2,2,yes,block+order,block+text
+Die gebruik van tegnologie in die gemeente Is die boekhoustelsel gerekenariseerd?,,V171,V191,V133,2,2,2,yes,block+order,block+text
+Die gebruik van tegnologie in die gemeente Het die gemeente ŉ eie webwerf?,,V172,V192,V134,2,2,2,yes,block+order,block+text
+Die gebruik van tegnologie in die gemeente kommunikeer?,,V173,V193,V142,,,,numeric,block+order,block+text
+Die gebruik van tegnologie in die gemeente kommunikeer?,,V174,V194,V135,,,,numeric,block+order,block+text
+Die gebruik van tegnologie in die gemeente kommunikeer?,,V175,V195,V137,,,,numeric,block+order,block+text
+Die gebruik van tegnologie in die gemeente Stuur die gemeente ŉ elektroniese nuusbrief uit?,,V176,V196,V139,2,2,2,yes,block+order,block+text
+Die gebruik van tegnologie in die gemeente Word ŉ dataprojektor tydens eredienste gebruik?,,V177,V197,V140,2,,2,scale-changed,block+order,block+text
+Die gebruik van tegnologie in die gemeente oorbetaal?,,V178,V198,V141,,2,,scale-changed,block+order,block+text
+Rol van verband: Algemene Sinode,3opsies1,V179,V213,V156,3,3,3,yes,KS_lookup,block+order
+Rol van verband: Streeksinode,3opsies1,V180,V214,V157,3,3,3,yes,KS_lookup,block+order
+Rol van verband: Ring,3opsies1,V181,V215,V158,3,3,3,yes,KS_lookup,block+order
+Die gemeentelike leierskap beplan gereeld om die roeping en fokus van die gemeente te onderskei.,lickert5,V182,V216,V159,5,5,5,yes,KS_lookup,block+order
+Die kultuur en ouderdom van die gemeente reflekteer die demografie van die gemeenskap waarbinne die gemeente geleë is.,lickert5,V183,V217,V160,5,5,5,yes,KS_lookup,block+order
+Ons gemeente is ‘n gemeente met sendingprojekte wat deel is van die gewone gemeenteaktiwiteite.,lickert5,V184,V218,V161,5,5,5,yes,KS_lookup,block+order
+Die gemeente pas gereeld haar bediening aan by die veranderende konteks van die gemeenskap.,lickert5,V185,V219,V162,5,5,5,yes,KS_lookup,block+order
+Die gemeente bemagtig lidmate om hulle gawes in die gemeente en gemeenskap te gebruik.,lickert5,V186,V220,V163,5,5,5,yes,KS_lookup,block+order
+"Die gemeentelike leierskap kommunikeer die roeping van die gemeente gereeld, helder en duidelik aan die gemeente.",lickert5,V187,V221,V164,5,5,5,yes,KS_lookup,block+order
+Die gemeentelike leierskap beskik oor ‘n formele bedieningsplan met spesifieke strategieë om te bereik.,lickert5,V188,V222,V165,5,5,5,yes,KS_lookup,block+order
+Die gemeentelike leierskap bestuur die finansies van die gemeente op so ‘n manier dat dit die gemeente se roeping dien.,lickert5,V189,V223,V166,5,5,5,yes,KS_lookup,block+order
+"Die gemeentelike leierskap maak seker dat die bedieninge, aksies en projekte die gemeente se roeping dien.",lickert5,V190,V224,V167,5,5,5,yes,KS_lookup,block+order
+Ons gemeente is ’n missionale gemeente wat sy bestaan sien as deel van God se sending na hierdie wêreld.,lickert5,V191,V225,V168,5,5,5,yes,KS_lookup,block+order
+Op watter maniere leef die gemeente julle roeping as gestuurdes uit? Slegs ons bydrae via die ring en sinode.,,V192,V226,V175,3,4,,scale-changed,block+order,block+text
+Op watter maniere leef die gemeente julle roeping as gestuurdes uit? op ander maniere,,V193,V227,V169,,,,numeric,block+order,block+text
+Op watter maniere leef die gemeente julle roeping as gestuurdes uit? Afrika / RCA,,V194,V228,V170,,,,numeric,block+order,block+text
+Op watter maniere leef die gemeente julle roeping as gestuurdes uit? Ons het een of meer projekte in die gemeenskap,,V195,V229,V172,3,,,scale-changed,block+order,block+text
+Op watter maniere leef die gemeente julle roeping as gestuurdes uit? gemeenskap,,V196,V230,V173,,,,numeric,block+order,block+text
+Op watter maniere leef die gemeente julle roeping as gestuurdes uit? georganiseerde landbou en maatskaplike dienste,,V197,V231,V174,,,,numeric,block+order,block+text
+Op watter maniere leef die gemeente julle roeping as gestuurdes uit? staatsdepartemente en munisipaliteite,,V198,V232,V171,,,,numeric,block+order,block+text
+Op watter maniere leef die gemeente julle roeping as gestuurdes uit? geloofsgemeenskappe in die gemeenskap,,V199,V233,V176,,,,numeric,block+order,block+text
+Op watter maniere leef die gemeente julle roeping as gestuurdes uit? meeste van ons lidmate berokke is,,V200,V234,,,,,numeric,block+order,
+Op watter manier weerspieël die gemeente se begroting die gestuurde roeping van die gemeente? Ons bydraes deur die ring en sinode,,V201,V235,V178,2,2,2,yes,block+order,block+order
+Op watter manier weerspieël die gemeente se begroting die gestuurde roeping van die gemeente? Ons het vaste finansiële ooreenkomste met ander instansies,,V202,V236,V179,2,2,2,yes,block+order,block+order
+Op watter manier weerspieël die gemeente se begroting die gestuurde roeping van die gemeente? na buite,,V203,V237,V180,,,,numeric,block+order,block+order
+Op watter manier weerspieël die gemeente se begroting die gestuurde roeping van die gemeente? Ons ken ’n persentasie van ons inkomste toe vir uitreik,,V204,V238,V181,2,2,2,yes,block+order,block+order
+Op watter manier weerspieël die gemeente se begroting die gestuurde roeping van die gemeente? sigbaar,,V205,V239,V182,,,,numeric,block+order,block+order
+Ons gemeente stel ons geboue tot beskikking van die gemeenskap as deel van ons dienswerk na buite,,V206,V240,V183,5,5,5,yes,block+order,block+order
+Wat doen die gemeente om gasvryheid te bevorder? gemeente se eredienste laat tuis voel,,V207,V241,V184,,,,numeric,block+text,block+order
+Wat doen die gemeente om gasvryheid te bevorder? gemeente in te skakel,,V208,V242,V185,,,,numeric,block+text,block+order
+Wat doen die gemeente om gasvryheid te bevorder? eredienste toeganklik te maak vir besoekers,,V209,V244,V187,,,,numeric,block+text,block+order
+Wat doen die gemeente om gasvryheid te bevorder? van gasvryheid in die gemeente te kweek,,V210,V246,V189,,,,numeric,block+text,block+order
+Wat doen die gemeente om gasvryheid te bevorder?,,V211,V247,V190,,,,numeric,block+text,block+order
+Wat doen die gemeente om gasvryheid te bevorder? mense te besoek en te nooi,,V212,V243,V186,,,,numeric,block+text,block+order
+Het u gemeente ’n georganiseerde evangelisasiebediening? 6.5 Het u gemeente ’n georganiseerde evangelisasiebediening?,,V213,V248,V191,2,2,2,yes,block+order,block+text
+Het u gemeente ’n georganiseerde evangelisasiebediening? Ons hou spesiale eredienste,,V214,V249,V192,2,2,2,yes,block+order,block+text
+Het u gemeente ’n georganiseerde evangelisasiebediening? Geleenthede soos Doop en Huwelikskategese,,V215,V250,V193,2,2,2,yes,block+order,block+text
+Het u gemeente ’n georganiseerde evangelisasiebediening? Getroue getuies-kursus,,V216,V251,V194,2,2,2,yes,block+order,block+text
+Het u gemeente ’n georganiseerde evangelisasiebediening? EE III-kursus,,V217,V252,V195,2,2,2,yes,block+order,block+text
+Het u gemeente ’n georganiseerde evangelisasiebediening? Alpha-kursus,,V218,V253,V196,2,2,2,yes,block+order,block+text
+Het u gemeente ’n georganiseerde evangelisasiebediening? Becoming a Contagious Christian,,V219,V254,V197,2,2,2,yes,block+order,block+text
+Het u gemeente ’n georganiseerde evangelisasiebediening? Just Walk across the Room,,V220,V255,V200,2,2,2,yes,block+order,block+text
+Het u gemeente ’n georganiseerde evangelisasiebediening? Eie materiaal in die gemeente ontwikkel,,V221,V256,V199,2,2,2,yes,block+order,block+text
+Het u gemeente ’n georganiseerde evangelisasiebediening? Ander,,V222,V257a,V198,2,2,2,yes,block+order,block+text
+Het u gemeente ’n georganiseerde evangelisasiebediening? Ander (spesifiseer),,V222a,V257b,,,,,numeric,block+order,
+Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer ŉ Omgewingsoudit is gedoen,,V223,V258,V201,2,2,2,yes,block+text,block+text
+Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer Implementering van waterbesparingsmaatreëls,,V224,V259,V202,2,2,2,yes,block+text,block+text
+Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer Installering van watertenks of die hergebruik van water,,V225,V260,V203,2,2,2,yes,block+text,block+text
+Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer Installering van sonpanele vir waterverwarming,,V226,V261,V204,2,2,2,yes,block+text,block+text
+Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer Implementering van ander elektrisiteitsbesparing maatreëls,,V227,V262,V205,2,2,2,yes,block+text,block+text
+Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer Plant van inheemse plante in die gemeente se tuin(e),,V228,V263,V206,2,2,2,yes,block+text,block+text
+Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer Ander,,V229,V265,V208,,,2,scale-changed,block+text,block+text
+Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer Ander (spesifiseer),,V229a,V265b,,,,,numeric,block+text,
+Is daar ŉ georganiseerde kleingroepbediening in u gemeente? 6.7 Is daar ŉ georganiseerde kleingroepbediening in u gemeente?,,V230,V266,V209,2,2,2,yes,block+order,block+order
+Is daar ŉ georganiseerde kleingroepbediening in u gemeente? beskryf,,V231,V267,V210,3,3,,scale-changed,block+order,block+order
+Watter persentasie lidmate van die gemeente is by die kleingroepe betrokke?,,V232,V268,,,,,numeric,block+order,
+Ons het ‘n georganiseerde gebedsbediening,janee,V233,V269,V211,2,2,2,yes,KS_lookup,block+order
+Ons het gebedsgroepe wat van tyd tot tyd bymekaar kom,janee,V234,V270,V212,2,2,2,yes,KS_lookup,block+order
+"Ons het gebedsgroepe wat sekere tye bymekaarkom (bv. Lydenstyd, Pinkster of uitreike)",janee,V235,V271,V213,2,2,2,yes,KS_lookup,block+order
+Ons gebruik ons kleingroepe ook as gebedsgroepe,janee,V236,V272,V214,2,2,2,yes,KS_lookup,block+order
+Hoe lyk die gemeente se seniorbediening? Ons het ’n georganiseerde seniorbediening,,V237,V273,V215,2,2,2,yes,block+order,block+order
+Hoe lyk die gemeente se seniorbediening? van die gemeente,,V238,V274,V216,,,,numeric,block+order,block+order
+Hoe lyk die gemeente se seniorbediening? seniors,,V239,V275,V217,,,2,scale-changed,block+order,block+order
+Hoe lyk die gemeente se seniorbediening? sorg en geestelike opbou,,V240,V276,V218,,,,numeric,block+order,block+order
+Ons het ‘n span wat besoekers en nuwelinge by die gemeente se eredienste laat tuis voel,4opsies4,V241,V277,V219,4,4,4,yes,block+order,block+order
+Ons het ’n spesifieke aksie om nuwe lidmate by die gemeente in te skakel,4opsies4,V242,V278,V220,4,4,4,yes,block+order,block+order
+"Ons doen moeite om die liturgie, musiek en taal van ons eredienste toeganklik te maak vir besoekers",4opsies4,V243,V279,V221,4,4,4,yes,KS_lookup,block+text
+Ons vestig gewoontes by al ons lidmate om ’n kultuur van gasvryheid in die gemeente te kweek,4opsies4,V244,V280,V226,4,4,4,yes,KS_lookup,block+text
+Ons soek nuwe mense op wat in die gemeenskap intrek,4opsies4,V245,V281,V222,4,4,4,yes,KS_lookup,block+text
+Ons het ’n program om kerklos en kerkvervreemde mense te besoek en te nooi,4opsies4,V246,V282,V223,4,4,4,yes,KS_lookup,block+text
+Ons vestig ’n uitnooi-kultuur in die gemeente waar alle lidmate geïnspireer word om mense te nooi om Jesus te volg,4opsies4,V247,V283,V224,4,4,4,yes,KS_lookup,block+text
+Jongmense betrokke by Graad 4-7 - nie-lidmate,numeries,V248,V284,V225,,,,numeric,KS_lookup,block+text
+Jongmense betrokke by Graad 8-10 - lidmate,numeries,V249,V285,V227,,,,numeric,KS_lookup,block+text
+Jongmense betrokke by Graad 8-10 - nie-lidmate,numeries,V250,V286,,,,,numeric,KS_lookup,
+Jongmense betrokke by Graad 11-12 - lidmate,numeries,V251,V287,,,,,numeric,KS_lookup,
+Jongmense betrokke by Graad 11-12 - nie-lidmate,numeries,V252,V288,,,,,numeric,KS_lookup,
+Jongmense betrokke by jong volwassene - lidmate,numeries,V253,V289,,,,,numeric,KS_lookup,
+Jongmense betrokke by jong volwassene - nie-lidmate,numeries,V254,V290,,,,,numeric,KS_lookup,
+Gebruik laerskoolbediening tyd om kennis oor die Bybel en geloof te verhoog,4opsies4,V255,V291,V228,4,4,3,scale-changed,KS_lookup,block+order
+Gebruik laerskoolbediening tyd om gewoontes vir geloofvorming in te oefen,4opsies4,V256,V292,V229,4,4,3,scale-changed,KS_lookup,block+order
+Gebruik laerskoolbediening tyd om gesprek oor aktuele lewensvrae vanuit ’n geloofsperspektief te voer,4opsies4,V257,V293,V230,4,4,4,yes,KS_lookup,block+order
+Gebruik laerskoolbediening tyd om eierskap te ontwikkel,4opsies4,V258,V294,V231,4,4,3,scale-changed,KS_lookup,block+order
+Gebruik laerskoolbediening tyd om hulle ’n gevoel van behoort te gee,4opsies4,V259,V295,V232,4,4,3,scale-changed,KS_lookup,block+order
+Gebruik laerskoolbediening tyd om hulle te aktiveer om ’n verskil te maak,4opsies4,V260,V296,V233,4,4,3,scale-changed,KS_lookup,block+order
+Gebruik laerskoolbediening tyd om geleenthede te skep waar jongmense kan dien,4opsies4,V261,V297,V234,4,4,3,scale-changed,KS_lookup,block+order
+Gebruik hoërskoolbediening tyd om kennis oor die Bybel en geloof te verhoog,4opsies4,V262,V298,V235,4,4,3,scale-changed,KS_lookup,block+order
+Gebruik hoërskoolbediening tyd om gewoontes vir geloofvorming in te oefen,4opsies4,V263,V299,V236,4,4,3,scale-changed,KS_lookup,block+order
+Gebruik hoërskoolbediening tyd om gesprek oor aktuele lewensvrae vanuit ’n geloofsperspektief te voer,4opsies4,V264,V300,V237,4,4,4,yes,KS_lookup,block+order
+Gebruik hoërskoolbediening tyd om eierskap te ontwikkel,4opsies4,V265,V301,V238,4,4,3,scale-changed,KS_lookup,block+order
+Gebruik hoërskoolbediening tyd om hulle ’n gevoel van behoort te gee,4opsies4,V266,V302,V239,4,4,3,scale-changed,KS_lookup,block+order
+Gebruik hoërskoolbediening tyd om hulle te aktiveer om ’n verskil te maak,4opsies4,V267,V303,V240,4,4,3,scale-changed,KS_lookup,block+order
+Gebruik hoërskoolbediening tyd om geleenthede te skep waar jongmense kan dien,4opsies4,V268,V304,V241,4,4,3,scale-changed,KS_lookup,block+order
+Hoe word die kinders en jongmense in eredienste ingeskakel? Geen spesifieke fokus nie,,V269,V305,V242,3,4,3,scale-changed,block+order,block+order
+Hoe word die kinders en jongmense in eredienste ingeskakel? Kinder- of jeugmoment in die volwasse erediens,,V270,V306,V243,3,,3,scale-changed,block+order,block+order
+Hoe word die kinders en jongmense in eredienste ingeskakel? liturgie inskakel is,,V271,V307,V244,,,,numeric,block+order,block+order
+Hoe word die kinders en jongmense in eredienste ingeskakel? begeleiers,,V272,V308,V245,,,,numeric,block+order,block+order
+Hoe word die kinders en jongmense in eredienste ingeskakel? vir volwassenes,,V273,V309,V246,,,,numeric,block+order,block+order
+Hoe word die kinders en jongmense in eredienste ingeskakel? families,,V274,V310,V247,,,,numeric,block+order,block+order
+"Hoe word die kinders en jongmense in eredienste ingeskakel? Jeugdiens, ’n gereelde erediens spesifiek vir jeug",,V275,V311,V248,3,,3,scale-changed,block+order,block+order
+"Waar word geloofvorming, buiten in die kategese, nog aktief in die gemeente bevorder? Huise en/of gesinne",,V276,V312,V249,3,4,3,scale-changed,block+order,block+text
+"Waar word geloofvorming, buiten in die kategese, nog aktief in die gemeente bevorder? Weeklikse tiener- of kinderaksies",,V277,V313,V250,3,4,3,scale-changed,block+order,block+text
+"Waar word geloofvorming, buiten in die kategese, nog aktief in die gemeente bevorder? Kampe",,V278,V314,V251,3,4,3,scale-changed,block+order,block+text
+"Waar word geloofvorming, buiten in die kategese, nog aktief in die gemeente bevorder? ens.)",,V279,V315,V252,,,,numeric,block+order,block+text
+"Waar word geloofvorming, buiten in die kategese, nog aktief in die gemeente bevorder? Ander",,V280,V316,,,4,,scale-changed,block+order,
+Watter van die volgende persone of groepe is almal betrokke by die jeugbediening net die jongmense,,V281,V317,V253,3,4,3,scale-changed,block+text,block+order
+Watter van die volgende persone of groepe is almal betrokke by die jeugbediening ouer lidmate,,V282,V318,V254,3,4,3,scale-changed,block+text,block+order
+Watter van die volgende persone of groepe is almal betrokke by die jeugbediening naskoolse jongmense,,V283,V319,V255,3,4,3,scale-changed,block+text,block+order
+Watter van die volgende persone of groepe is almal betrokke by die jeugbediening deeltydse jeugwerker of kinderwerker,,V284,V320,V256,3,4,3,scale-changed,block+text,block+order
+Watter van die volgende persone of groepe is almal betrokke by die jeugbediening ouers,,V285,V321,V257,3,4,3,scale-changed,block+text,block+order
+Watter van die volgende persone of groepe is almal betrokke by die jeugbediening voltydse predikant,,V286,V322,V258,3,4,3,scale-changed,block+text,block+order
+Watter van die volgende persone of groepe is almal betrokke by die jeugbediening voltydse jeugwerker,,V287,V323,V259,3,4,3,scale-changed,block+text,block+order
+Hoe word kinders en jongmense van buite die gemeente ingeskakel by geloofvorming in die gemeente? Ons werk net met gemeentekinders,,V288,V327,V263,3,4,3,scale-changed,block+order,block+order
+Hoe word kinders en jongmense van buite die gemeente ingeskakel by geloofvorming in die gemeente? gemeenteaksies te nooi,,V289,V328,V264,,,,numeric,block+order,block+order
+Hoe word kinders en jongmense van buite die gemeente ingeskakel by geloofvorming in die gemeente?,,V290,V329,V265,,,3,scale-changed,block+order,block+order
+Hoe word kinders en jongmense van buite die gemeente ingeskakel by geloofvorming in die gemeente? Betrokkenheid by die plaaslike skool/skole,,V291,V330,V266,3,,3,scale-changed,block+order,block+order
+Hoe word kinders en jongmense van buite die gemeente ingeskakel by geloofvorming in die gemeente? of ander diensterreine,,V292,V331,V267,,,,numeric,block+order,block+order
+Hoe word kinders en jongmense van buite die gemeente ingeskakel by geloofvorming in die gemeente? gemeente aktief betrek word,,V293,V332,V268,,,,numeric,block+order,block+order
+Ons bevorder die uitleef van geloof by die huis deur,,V294,,,,,,single-wave,,
+Ons bevorder die uitleef van geloof by die huis deur eredienste,,V295,,,,,,single-wave,,
+Ons bevorder die uitleef van geloof by die huis deur Kursusse vir ouers aan te bied (ouerleiding),,V296,,,3,,,single-wave,,
+Ons bevorder die uitleef van geloof by die huis deur Familiefokus tydens gemeenteaktiwiteite,,V297,,,3,,,single-wave,,
+Ons bevorder die uitleef van geloof by die huis deur (huisgeloof),,V298,,,,,,single-wave,,
+Ons bevorder die uitleef van geloof by die huis deur kan plaasvind,,V299,,,,,,single-wave,,
+Ons is betrokke by plaaslike skole op die volgende wyses Gereelde saalopeninge,,V300,V339,V275,3,4,3,scale-changed,block+order,block+order
+"Ons is betrokke by plaaslike skole op die volgende wyses skool (Jesus-weke, Hemelvaart)",,V301,V340,V276,,,,numeric,block+order,block+order
+Ons is betrokke by plaaslike skole op die volgende wyses weeklikse Christelike aksies,,V302,V341,V277,,,,numeric,block+order,block+order
+Ons is betrokke by plaaslike skole op die volgende wyses Leierskapsopleiding van skoolleiers,,V303,V342,V278,3,4,3,scale-changed,block+order,block+order
+Ons is betrokke by plaaslike skole op die volgende wyses werker) wat deur gemeente/ring gedra word,,V304,V343,V279,,,,numeric,block+order,block+order
+Ons is betrokke by plaaslike skole op die volgende wyses Skoolkampe wat deur kerke aangebied word,,V305,V344,V280,3,,3,scale-changed,block+order,block+order
+Ons is betrokke by plaaslike skole op die volgende wyses Pastoraat,,V306,V345,V281,3,4,3,scale-changed,block+order,block+order
+Ons is by #Imagine betrokke Van ons jongmense en leiers woon dit by,,V307,V346,V282,3,4,3,scale-changed,block+order,block+order
+Ons is by #Imagine betrokke Dit vorm deel van ons jeugbedieningstrategie,,V308,V347,V283,3,,3,scale-changed,block+order,block+order
+"Verligting van armoede: Gee van geld, kos en klere",janee,V309,V348,V284,2,2,2,yes,KS_lookup,block+text
+Verligting van armoede: Vaardigheidsontwikkeling,janee,V310,V349,V285,2,2,2,yes,KS_lookup,block+text
+Verligting van armoede: Voorligtingsprogramme,janee,V311,V350,V286,2,2,2,yes,KS_lookup,block+text
+Verligting van armoede: ’n Werksverskaffingsburo,janee,V312,V351,V287,2,2,2,yes,KS_lookup,block+text
+Verligting van armoede: ’n Behuisingskema,janee,V313,V352,V288,2,2,2,yes,KS_lookup,block+text
+Verligting van armoede: Lees en skryf klasse,janee,V314,V353,V289,2,2,2,yes,KS_lookup,block+text
+Verligting van armoede: Ontwikkeling van entrepreneurskap,janee,V315,V354,V290,2,2,2,yes,KS_lookup,block+text
+Verligting van armoede: Vroeë kind-ontwikkeling,janee,V316,V355,V291,2,2,2,yes,KS_lookup,block+text
+Verligting van armoede: Betrokkenheid by skole byvoorbeeld ’n naskoolsentrum,janee,V317,V356,V292,2,2,2,yes,KS_lookup,block+text
+"Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke? Ander",,V318,V357a,,,2,,scale-changed,block+order,
+"Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke? Ander (spesifiseer)",,V318a,V357b,,,,,numeric,block+order,
+Wie neem verantwoordelikheid vir hierdie projekte? Kerkraad,,V319,V358,V293,2,2,2,yes,block+order,block+text
+"Wie neem verantwoordelikheid vir hierdie projekte? Kommissies of georganiseerde bedieninge, taakspanne",,V320,V359,V296,2,2,2,yes,block+order,block+text
+Wie neem verantwoordelikheid vir hierdie projekte? Vrouediens,,V321,V360,V297,2,2,2,yes,block+order,block+text
+Wie neem verantwoordelikheid vir hierdie projekte? Kleingroepe,,V322,V361,V298,2,2,2,yes,block+order,block+text
+Wie neem verantwoordelikheid vir hierdie projekte? Jeugaksies of -bediening,,V323,V362,V299,2,2,2,yes,block+order,block+text
+Wie neem verantwoordelikheid vir hierdie projekte? Individuele lidmate in die gemeente,,V324,V363,V300,2,2,2,yes,block+order,block+text
+Hoe lyk julle gemeente se verhouding met die plaaslike maatskaplike dienste (CMR ens)? Ons het baie min met mekaar te doen,,V325,V364,V301,2,2,2,yes,block+order,block+text
+Hoe lyk julle gemeente se verhouding met die plaaslike maatskaplike dienste (CMR ens)? Ons ondersteun finansieel,,V326,V365,V302,2,2,2,yes,block+order,block+text
+Hoe lyk julle gemeente se verhouding met die plaaslike maatskaplike dienste (CMR ens)? Ons gebruik die dienste van tyd tot tyd,,V327,V366,V303,2,2,2,yes,block+order,block+text
+Hoe lyk julle gemeente se verhouding met die plaaslike maatskaplike dienste (CMR ens)? Ons doen enkele gesamentlike projekte,,V328,V367,V304,2,2,2,yes,block+order,block+text
+Hoe lyk julle gemeente se verhouding met die plaaslike maatskaplike dienste (CMR ens)? Ons is mekaar se vennote en werk ten nouste saam,,V329,V368,V305,2,2,2,yes,block+order,block+text
+Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... geweld,,V330,V369,V307,3,4,3,scale-changed,block+order,block+text
+Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... rassisme,,V331,V370,V308,3,4,3,scale-changed,block+order,block+text
+Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... seksisme,,V332,V371,V309,3,4,3,scale-changed,block+order,block+text
+Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... gesinskrisisse,,V333,V372,V310,3,4,3,scale-changed,block+order,block+text
+Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... misdaad en korrupsie,,V334,V373,V312,3,4,3,scale-changed,block+order,block+text
+Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... MIV/Vigs,,V335,V374,V313,3,4,3,scale-changed,block+order,block+text
+Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... armoede,,V336,V375,V314,3,4,3,scale-changed,block+order,block+text
+Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... afhanklikheidsprobleme,,V337,V376,V315,3,4,3,scale-changed,block+order,block+text
+Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... werkloosheid,,V338,V377,V316,3,4,3,scale-changed,block+order,block+text
+Gemeente se betrokkenheid by gemeenskapsorganisasies,4opsies3,V339,V378,V318,4,4,4,yes,KS_lookup,block+order
+Hoe sien julle die rol van die gemeente tov krisisse en kwessies in die gemeenskap?,,V340,V379,V320,5,5,5,yes,block+order,block+order
+Het u kontak met ŉ bepaalde gemeente(s) van die NG Kerkfamilie? 9.1 Het u kontak met ŉ bepaalde gemeente(s) van die NG Kerkfamilie?,,V341,V380,V321,2,2,2,yes,block+order,block+order
+Watter vorm neem die kontak met die NG Kerkfamilie aan? Skakeling van tyd tot tyd,,V342,V381,V322,2,2,2,yes,block+text,block+text
+Watter vorm neem die kontak met die NG Kerkfamilie aan? Erediensbeurte oor en weer,,V343,V382,V323,2,2,2,yes,block+text,block+text
+Watter vorm neem die kontak met die NG Kerkfamilie aan? Gesamentlike eredienste of Nagmaal,,V344,V383,V324,2,2,2,yes,block+text,block+text
+Watter vorm neem die kontak met die NG Kerkfamilie aan? Gesamentlike projekte,,V345,V384,V325,2,2,2,yes,block+text,block+text
+Watter vorm neem die kontak met die NG Kerkfamilie aan? Ons is in ’n proses van hereniging,,V346,V385,V326,2,2,2,yes,block+text,block+text
+Watter vorm neem die kontak met die NG Kerkfamilie aan? Ander,,V347,V386a,,,2,,scale-changed,block+text,
+Watter vorm neem die kontak met die NG Kerkfamilie aan? Ander (spesifiseer),,V347a,,,,,,single-wave,,
+Bestaan daar ekumeniese gespreksgroepe (“fraternals”/“pastors’ forum”) tussen kerke en gemeentes in u omgewing?,,V348,V387,V327,2,2,2,yes,block+order,block+order
+Neem u gemeente daaraan deel? 9.4 Neem u gemeente daaraan deel?,,V349,V388,,2,2,,yes,block+text,
+Neem u gemeente daaraan deel? Enige kommentaar of voorstelle oor hierdie vraelys?,,V350,V391,,,2,,scale-changed,block+text,
+Neem u gemeente daaraan deel? Voorsitter van die kerkraad,,V351,V390,,2,2,,yes,block+text,
+Neem u gemeente daaraan deel? Dagbestuur of lede van die dagbestuur,,V352,V395,,2,2,,yes,block+text,
+Neem u gemeente daaraan deel? Predikant (e),,V353,V392,,2,2,,yes,block+text,
+Neem u gemeente daaraan deel? ŉ Aangewysde taakspan of komitee,,V354,V393,,2,2,,yes,block+text,
+Neem u gemeente daaraan deel? Administratiewe personeel,,V355,V394,,2,2,,yes,block+text,
+Neem u gemeente daaraan deel? Leiers van bedieninge,,V356,V397,,2,2,,yes,block+text,
+Neem u gemeente daaraan deel? ŉ Lidmaat,,V357,V396,,2,2,,yes,block+text,
+Neem u gemeente daaraan deel? Iemand anders,,V358,,,2,,,single-wave,,
+Streek,,,V02,,,,,single-wave,,
+Gemeente,,,V03,,,,,single-wave,,
+Sinode,,,V04,,,,,single-wave,,
+Hoeveel predikantsposte word gevul deur diensleraar,,,V33,V20,,,,numeric,,block+text
+Hoeveel predikantsposte word gevul deur ander,,,V36a,V21,,,,numeric,,block+text
+Hoeveel predikantsposte word gevul deur ander,,,V36b,V25,,,,numeric,,block+text
+Gebruik gemeente ander teologies opgeleide persone (wat nie beroep en bevestig is nie) in die gemeente? Ja Nee Getal Diensleraar (nie in gemeente bevestig nie),,,V38,V27,,2,2,yes,,block+text
+Gebruik gemeente ander teologies opgeleide persone (wat nie beroep en bevestig is nie) in die gemeente? Ja Nee Getal Diensleraar (nie in gemeente bevestig nie),,,V39,V32,,,2,scale-changed,,block+text
+Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente? Ja Nee Getal Ander:,,,V83,,,,,single-wave,,
+Het u diensooreenkomste met mense wat sonder betaling in die gemeente werk? Ja Nee Ander:,,,V90b,,,,,single-wave,,
+Watter persentasie van u werklike uitgawes in die 2021/2022 finansiële jaar het u bestee aan ... % predikante en diensleraars: Salarisse en voordele,,,V107,V56,,,,numeric,,block+text
+Watter persentasie van u werklike uitgawes in die 2021/2022 finansiële jaar het u bestee aan ... % ring- en sinodale bydraes,,,V113,V63,,,,numeric,,block+text
+Hoe vergelyk die gemeente se werklike inkomste met die begrote inkomste vir die boekjaar wat geëindig het op 28 Februarie 2022? Inkomste,,,V118,V65,,3,3,yes,,block+text
+Hoe vergelyk die gemeente se werklike inkomste met die begrote inkomste vir die boekjaar wat geëindig het op 28 Februarie 2022? Met watter persentasie?,,,V119,V67,,,3,scale-changed,,block+text
+Hoe vergelyk die gemeente se werklike inkomste met die begrote inkomste vir die boekjaar wat geëindig het op 28 Februarie 2022? Uitgawes,,,V120,V66,,3,3,yes,,block+text
+Hoe vergelyk die gemeente se werklike inkomste met die begrote inkomste vir die boekjaar wat geëindig het op 28 Februarie 2022? Met watter persentasie?,,,V121,,,,,single-wave,,
+Hoe vergelyk die gemeente se werklike inkomste met die begrote inkomste vir die boekjaar wat geëindig het op 28 Februarie 2022? geëindig het op 28 Februarie 2022?,,,V122,,,3,,single-wave,,
+"Het u gemeente, naas ’n gewone erediens, ook ander eredienste? Ja Nee Aanlyn erediens (op You tube, ens beskikbaar)",,,V129,V72,,2,2,yes,,block+text
+Wie lei hierdie dienste? (Merk asb waar van toepassing) Voltydse Deel- Diens- Jeug- Kerk- Lid- predi- tydse leraar of raads- maat,numeries,,V138,,,,,single-wave,,
+Wie lei hierdie dienste? (Merk asb waar van toepassing) Voltydse Deel- Diens- Jeug- Kerk- Lid- predi- tydse leraar of raads- maat burgers,numeries,,V139,,,,,single-wave,,
+Wie lei hierdie dienste? (Merk asb waar van toepassing) Voltydse Deel- Diens- Jeug- Kerk- Lid- predi- tydse leraar of raads- maat Aparte Jeugdiens,numeries,,V140,,,6,,single-wave,,
+Wie lei hierdie dienste? (Merk asb waar van toepassing) Voltydse Deel- Diens- Jeug- Kerk- Lid- predi- tydse leraar of raads- maat Aparte Kinderdiens,numeries,,V141,,,6,,single-wave,,
+Wie lei hierdie dienste? (Merk asb waar van toepassing) Voltydse Deel- Diens- Jeug- Kerk- Lid- predi- tydse leraar of raads- maat Aparte Kleuterdiens,,,V142,,,6,,single-wave,,
+Wie lei hierdie dienste? (Merk asb waar van toepassing) Voltydse Deel- Diens- Jeug- Kerk- Lid- predi- tydse leraar of raads- maat Andertalige diens,,,V143,,,6,,single-wave,,
+Wie lei hierdie dienste? (Merk asb waar van toepassing) Voltydse Deel- Diens- Jeug- Kerk- Lid- predi- tydse leraar of raads- maat Ander: Spesifiseer,,,V144a,,,6,,single-wave,,
+Dui al die verskillende tale waarin eredienste gehou word en hoeveel dienste per maand: Getal Taal,,,V145a,V87,,,,numeric,,block+text
+Dui al die verskillende tale waarin eredienste gehou word en hoeveel dienste per maand: Getal Taal,,,V145b,,,,,single-wave,,
+Dui al die verskillende tale waarin eredienste gehou word en hoeveel dienste per maand: Getal Taal,,,V146a,,,,,single-wave,,
+Dui al die verskillende tale waarin eredienste gehou word en hoeveel dienste per maand: Getal Taal,,,V146b,,,,,single-wave,,
+Dui al die verskillende tale waarin eredienste gehou word en hoeveel dienste per maand: Getal Taal,,,V147a,,,,,single-wave,,
+Dui al die verskillende tale waarin eredienste gehou word en hoeveel dienste per maand: Getal Taal,,,V147b,,,,,single-wave,,
+Dui al die verskillende tale waarin eredienste gehou word en hoeveel dienste per maand: Getal Taal,,,V148a,,,,,single-wave,,
+Dui al die verskillende tale waarin eredienste gehou word en hoeveel dienste per maand: Getal Taal,,,V148b,,,,,single-wave,,
+Dui al die verskillende tale waarin eredienste gehou word en hoeveel dienste per maand: Getal Taal,,,V149a,,,,,single-wave,,
+Dui al die verskillende tale waarin eredienste gehou word en hoeveel dienste per maand: Getal Taal,,,V149b,,,,,single-wave,,
+"Wat is die totale gemiddelde digitale/aanlyn erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ’n Sondag in Februarie plaasvind, aan. Om ’n akkurate telling te verseker kan 2020",,,V154,V92,,,,numeric,,block+text
+"Wat is die totale gemiddelde digitale/aanlyn erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ’n Sondag in Februarie plaasvind, aan. Om ’n akkurate telling te verseker kan 2021",,,V155,V93,,,,numeric,,block+text
+"Wat is die totale gemiddelde digitale/aanlyn erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ’n Sondag in Februarie plaasvind, aan. Om ’n akkurate telling te verseker kan Hoe het u die digitale/aanlyn erediensbywoning bepaal?",,,V156,V96,,,,numeric,,block+text
+"Wat is die totale gemiddelde digitale/aanlyn erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ’n Sondag in Februarie plaasvind, aan. Om ’n akkurate telling te verseker kan (in persoon en",3opsies2,,V157,V94,,3,3,yes,,block+text
+"Wat is die totale gemiddelde digitale/aanlyn erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ’n Sondag in Februarie plaasvind, aan. Om ’n akkurate telling te verseker kan (in persoon en",,,V158,V95,,,,numeric,,block+text
+"Wat is die totale gemiddelde digitale/aanlyn erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ’n Sondag in Februarie plaasvind, aan. Om ’n akkurate telling te verseker kan aanlyn)",,,V159,,,3,,single-wave,,
+Wat die eredienste in die gemeente betref… Altyd Gereeld Soms Nooit,,,V168,V105,,,,numeric,,block+text
+Oorweeg u enige van die volgende bedieningsopsies? (Merk almal van toepassing.) Ja Nee Diensleraar,lickert5,,V182,,,2,,single-wave,,
+"Wie is die voorsitter van die kerkraad? Ons het een predikant, hy/sy doen dit 1 Ons het meer as een predikant, hulle roteer 2 5.5 Wie is die voorsitter van die kerkraad?",lickert5,,V189,V131,,4,5,scale-changed,,block+order
+"Gebruik die gemeente sosiale media (whatsapp, facebook en andere) vir enige van die volgende? (Kies al die opsies van toepassing) Ja Nee Algemene afkondiginge",,,V199,V143,,2,2,yes,,block+text
+"Gebruik die gemeente sosiale media (whatsapp, facebook en andere) vir enige van die volgende? (Kies al die opsies van toepassing) Ja Nee Bekendstelling van eredienste",,,V200,V144,,2,2,yes,,block+text
+"Gebruik die gemeente sosiale media (whatsapp, facebook en andere) vir enige van die volgende? (Kies al die opsies van toepassing) Ja Nee Bekendstelling van hulpbronne of programme",,,V201,V145,,2,2,yes,,block+text
+"Gebruik die gemeente sosiale media (whatsapp, facebook en andere) vir enige van die volgende? (Kies al die opsies van toepassing) Ja Nee Deel van Skrifgedeeltes of ander aanhalings",,,V202,V146,,2,2,yes,,block+text
+"Aanlyn bediening: Gemeentes het nuwe maniere gevind, om wat eers in persoon gedoen is, nou ook aanlyn te doen. Dui asb. aan wat die gemeente nou ook aanlyn doen. Bybelstudie- en/of kleingroepe",,,V203,,,4,,single-wave,,
+"Aanlyn bediening: Gemeentes het nuwe maniere gevind, om wat eers in persoon gedoen is, nou ook aanlyn te doen. Dui asb. aan wat die gemeente nou ook aanlyn doen. Bediening aan Laerskool leerders",,,V204,,,4,,single-wave,,
+"Aanlyn bediening: Gemeentes het nuwe maniere gevind, om wat eers in persoon gedoen is, nou ook aanlyn te doen. Dui asb. aan wat die gemeente nou ook aanlyn doen. Tiener en/of jong volwasse bediening",,,V205,,,4,,single-wave,,
+"Aanlyn bediening: Gemeentes het nuwe maniere gevind, om wat eers in persoon gedoen is, nou ook aanlyn te doen. Dui asb. aan wat die gemeente nou ook aanlyn doen. Komitee en/of bediening vergaderings",,,V206,,,4,,single-wave,,
+"Aanlyn bediening: Gemeentes het nuwe maniere gevind, om wat eers in persoon gedoen is, nou ook aanlyn te doen. Dui asb. aan wat die gemeente nou ook aanlyn doen. Kommissie en/of kerkraad vergaderings",,,V207,,,4,,single-wave,,
+"Aanlyn bediening: Gemeentes het nuwe maniere gevind, om wat eers in persoon gedoen is, nou ook aanlyn te doen. Dui asb. aan wat die gemeente nou ook aanlyn doen. Aanlyn pastorale sorg",,,V208,,,4,,single-wave,,
+"Aanlyn bediening: Gemeentes het nuwe maniere gevind, om wat eers in persoon gedoen is, nou ook aanlyn te doen. Dui asb. aan wat die gemeente nou ook aanlyn doen. Ander",,,V209,,,4,,single-wave,,
+"Aanlyn bediening: Gemeentes het nuwe maniere gevind, om wat eers in persoon gedoen is, nou ook aanlyn te doen. Dui asb. aan wat die gemeente nou ook aanlyn doen. Beskryf ander",,,V210,,,,,single-wave,,
+Word die gemeente se eredienste op die internet opgelaai? Ja 1 Nee 2 5.9 Word die gemeente se eredienste op die internet opgelaai?,,,V211,V154,,2,,scale-changed,,block+order
+"Het die gemeente ’n spesifieke proses om met die persone wat die erediens van buite die kerkgebou volg, kontak te maak (bv. stuur van ’n boodskap of om kontakbesonderhede te verkry)?",,,V212,V155,,2,,scale-changed,,block+order
+Wat doen die gemeente om gasvryheid te bevorder? gemeenskap intrek,4opsies4,,V245,V188,,4,3,scale-changed,,block+order
+Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer: Ja Nee Ons gemeente is aktief betrokke by herwinning,4opsies4,,V264,V207,,2,2,yes,,block+text
+Watter van die volgende persone of groepe is almal betrokke by die leiding en organisering van die jeugbediening ... Altyd Gereeld Soms Nooit diensleraar (gelegitmeer),,,V324,V260,,4,3,scale-changed,,block+order
+Watter van die volgende persone of groepe is almal betrokke by die leiding en organisering van die jeugbediening ... Altyd Gereeld Soms Nooit Kollege),,,V325,V261,,,3,scale-changed,,block+order
+Watter van die volgende persone of groepe is almal betrokke by die leiding en organisering van die jeugbediening ... Altyd Gereeld Soms Nooit ander gemeentes of die ring,,,V326,V262,,4,3,scale-changed,,block+order
+Ons bevorder die uitleef van geloof by die huis deur Altyd Gereeld Soms Nooit daaroor te praat en te preek (lering in erediens) 1 2 3 4,,,V333,V269,,,,numeric,,block+order
+Ons bevorder die uitleef van geloof by die huis deur Altyd Gereeld Soms Nooit daaroor te praat en te preek (lering in erediens) 1 2 3 4 tydens eredienste,,,V334,V270,,,,numeric,,block+order
+Ons bevorder die uitleef van geloof by die huis deur Altyd Gereeld Soms Nooit daaroor te praat en te preek (lering in erediens) 1 2 3 4,,,V335,V271,,,3,scale-changed,,block+order
+Ons bevorder die uitleef van geloof by die huis deur Altyd Gereeld Soms Nooit daaroor te praat en te preek (lering in erediens) 1 2 3 4 familiefokus tydens gemeenteaktiwiteite,,,V336,V272,,4,3,scale-changed,,block+order
+Ons bevorder die uitleef van geloof by die huis deur Altyd Gereeld Soms Nooit daaroor te praat en te preek (lering in erediens) 1 2 3 4 (huisgeloof),,,V337,V273,,,,numeric,,block+order
+Ons bevorder die uitleef van geloof by die huis deur Altyd Gereeld Soms Nooit daaroor te praat en te preek (lering in erediens) 1 2 3 4 waar geloofsvorming kan plaasvind,,,V338,V274,,,,numeric,,block+order
+Het u diensooreenkomste met mense wat sonder betaling in die gemeente werk? Ja Nee Jeugwerker (spesifiseer),,,V86b,,,,,single-wave,,
+"Hoeveel lidmate is, sover u weet, 80 jaar of ouer?",,,,V07,,,,single-wave,,
+Dui aan hoeveel voltydse predikantsposte (vir beroeping en bevestiging) daar tans in die gemeente is ... tans gevul,,,,V09,,,,single-wave,,
+Dui aan hoeveel voltydse predikantsposte (vir beroeping en bevestiging) daar tans in die gemeente is ... tans vakant,,,,V10,,,,single-wave,,
+Dui aan hoeveel voltydse predikantsposte (vir beroeping en bevestiging) daar tans in die gemeente is ... in 2022-2025 verander na 'n 'verkleinde' pos,,,,V11,,,,single-wave,,
+Dui aan hoeveel voltydse predikantsposte (vir beroeping en bevestiging) daar tans in die gemeente is ... in 2022-2025 afgeskaf/gesluit,,,,V12,,,,single-wave,,
+Dui aan hoeveel voltydse predikantsposte (vir beroeping en bevestiging) daar tans in die gemeente is in 2022-2025 geskep,,,,V13,,,,single-wave,,
+Hoeveel predikantsposte word gevul deur ... konsulent (Gemeente is sonder 'n leraar en die konsulent van die Ring help uit),,,,V23,,,,single-wave,,
+Hoeveel predikantsposte word gevul deur ... emeritus (70 jaar of jonger),,,,V24,,,,single-wave,,
+Hoeveel vrywillige dienswerkers (bv. kleingroepleiers en projekleiers) het u tans in die gemeente?,,,,V41,,,,single-wave,,
+Gewone erediens,,,,V80,,,6,single-wave,,
+Gesins- of familiediens,,,,V81,,,,single-wave,,
+Aparte diens vir senior burgers,,,,V82,,,,single-wave,,
+Aparte Jeugdiens,,,,V83,,,6,single-wave,,
+Aparte Kinderdiens,,,,V84,,,6,single-wave,,
+Aparte Kleuterdiens,,,,V85,,,6,single-wave,,
+Andertalige erediensdiens,,,,V86,,,6,single-wave,,
+"simbole wat by die kerkjaar aansluit, word gebruik",,,,V103,,,,single-wave,,
+Gewone erediens,,,,V109,,,5,single-wave,,
+Samewerking met 'n buurgemeente(s),,,,V119,,,2,single-wave,,
+Samesmelting of eenwording met 'n buurgemeente(s),,,,V120,,,2,single-wave,,
+'n Eenheidskerkraad saam met VGKSA of NHKA gemeente(s) in terme van die Tussenorde,,,,V121,,,,single-wave,,
+"Goedkoper predikantpos (bv emeritus- of termynbepaalde kontrakpos, diensleraar)",,,,V122,,,,single-wave,,
+Ontwikkeling van entrepreneuriese fondsinsameling,,,,V123,,,2,single-wave,,
+Vermindering van ander personeeluitgawes/poste,,,,V124,,,2,single-wave,,
+Heraanwending van geboue (bv. verhuring),,,,V125,,,2,single-wave,,
+Rentmeesterskap program om bydraes te verhoog,,,,V126,,,2,single-wave,,
+Evangelisasie en gemeente groei strategie,,,,V127,,,2,single-wave,,
+Word sms?e of WhatsApp gebruik om met gemeentelede as ? groep te kommunikeer?,,,,V136,,,,single-wave,,
+Word Kunsmatige Intellegensie (AI) in die gemeentelike administrasie en bediening gebruik?,,,,V138,,,,single-wave,,
+Nuus vanaf Sinode of Algemene Sinode,,,,V147,,,2,single-wave,,
+Bybelstudie- en/of kleingroepe,,,,V148,,,4,single-wave,,
+Bediening aan Laerskool leerders,,,,V149,,,4,single-wave,,
+Tiener en/of jong volwasse bediening,,,,V150,,,4,single-wave,,
+Komitee en/of bediening vergaderings,,,,V151,,,4,single-wave,,
+"Kommissie, bediening en/of kerkraad vergaderings",,,,V152,,,,single-wave,,
+Aanlyn pastorale sorg,,,,V153,,,4,single-wave,,
+Nie-winsgewende organisasie: Die gemeente het ?n geregistreerde nie-winsgewende organisasie wat direk aan die bediening van die gemeente gekoppel is,,,,V177,,,,single-wave,,
+Ouderlinge,,,,V294,,,2,single-wave,,
+Diakens,,,,V295,,,2,single-wave,,
+"Die dienste is nie aan die gemeente beskikbaar nie, a.g.v. die gemeente se ligging",,,,V306,,,,single-wave,,
+enkelouer gesinne,,,,V311,,,3,single-wave,,
+ouer mense (bejaardes),,,,V317,,,3,single-wave,,
+Netwerke: Die gemeente is deel van die RESPOND SA nasionale rampondersteuningsnetwerk wat deur die NG Kerk geïnisieer is en tans ekumenies deur die onderskeie sinodes funksioneer,,,,V319,,,,single-wave,,
+Neem u gemeente aan die ekumeniese gesprekgroepe ('fraternals/ pastors forum') deel?,,,,V328,,,2,single-wave,,
+Enige kommentaar of voorstelle oor die vraelys?,,,,V329,,,,single-wave,,
+Voorsitter van die kerkraad,,,,V330,,,2,single-wave,,
+Dagbestuur of lede van die dagbestuur,,,,V331,,,2,single-wave,,
+Predikant(e),,,,V332,,,2,single-wave,,
+'n Aangewysde taakspan op komitee,,,,V333,,,2,single-wave,,
+Administratiewe personeel,,,,V334,,,2,single-wave,,
+Leiers van bedieninge,,,,V335,,,2,single-wave,,
+'n Lidmaat,,,,V336,,,2,single-wave,,
+Iemand anders,,,,V337,,,2,single-wave,,
