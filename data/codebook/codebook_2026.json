@@ -1,0 +1,4436 @@
+{
+ "year": "2026",
+ "variables": [
+  {
+   "code": "V01",
+   "section": "",
+   "qnum": "",
+   "stem": "",
+   "item": "Gemeentekode"
+  },
+  {
+   "code": "V02",
+   "section": "",
+   "qnum": "1.1",
+   "stem": "Hoeveel ingeskrewe lidmate behoort tans aan hierdie gemeente? (totaal)",
+   "item": "Belydende lidmate"
+  },
+  {
+   "code": "V03",
+   "section": "",
+   "qnum": "1.1",
+   "stem": "Hoeveel ingeskrewe lidmate behoort tans aan hierdie gemeente? (totaal)",
+   "item": "van geloof), vir jong volwassenes, voltooi het nie"
+  },
+  {
+   "code": "V04",
+   "section": "",
+   "qnum": "1.1",
+   "stem": "Hoeveel ingeskrewe lidmate behoort tans aan hierdie gemeente? (totaal)",
+   "item": "Ongedooptes"
+  },
+  {
+   "code": "V05",
+   "section": "",
+   "qnum": "1.2",
+   "stem": "Ouderdom - hoeveel lidmate is, sover u weet",
+   "item": "Jonger as 17 jaar?"
+  },
+  {
+   "code": "V06",
+   "section": "",
+   "qnum": "1.2",
+   "stem": "Ouderdom - hoeveel lidmate is, sover u weet",
+   "item": "tussen 60 en 80 jaar oud?"
+  },
+  {
+   "code": "V07",
+   "section": "",
+   "qnum": "1.2",
+   "stem": "Ouderdom - hoeveel lidmate is, sover u weet",
+   "item": "80 jaar of ouer?"
+  },
+  {
+   "code": "V08",
+   "section": "",
+   "qnum": "1.3",
+   "stem": "Hoeveel lidmate (belydend, doop en ongedoop) het gedurende 2025 lidmaat van dié gemeente geword, wat voorheen nie lidmaat van enige ander gemeente of denominasie was nie?",
+   "item": "Belydend, doop en ongedoop lidmate"
+  },
+  {
+   "code": "V09",
+   "section": "",
+   "qnum": "2.1",
+   "stem": "Dui aan hoeveel voltydse predikantsposte (vir beroeping en bevestiging) daar tans in die gemeente is",
+   "item": "Tans gevul"
+  },
+  {
+   "code": "V10",
+   "section": "",
+   "qnum": "2.1",
+   "stem": "Dui aan hoeveel voltydse predikantsposte (vir beroeping en bevestiging) daar tans in die gemeente is",
+   "item": "Tans vakant"
+  },
+  {
+   "code": "V11",
+   "section": "",
+   "qnum": "2.1",
+   "stem": "Dui aan hoeveel voltydse predikantsposte (vir beroeping en bevestiging) daar tans in die gemeente is",
+   "item": "In 2022-2025 verander na ŉ “verkleinde” pos"
+  },
+  {
+   "code": "V12",
+   "section": "",
+   "qnum": "2.1",
+   "stem": "Dui aan hoeveel voltydse predikantsposte (vir beroeping en bevestiging) daar tans in die gemeente is",
+   "item": "in 2022-2025 afgeskaf/gesluit"
+  },
+  {
+   "code": "V13",
+   "section": "",
+   "qnum": "2.1",
+   "stem": "Dui aan hoeveel voltydse predikantsposte (vir beroeping en bevestiging) daar tans in die gemeente is",
+   "item": "in 2022-2025 geskep"
+  },
+  {
+   "code": "V14",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "voltydse geordende leraar(s) (Voltydse onbepaalde termynpos)"
+  },
+  {
+   "code": "V15",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "tentmakerleraar (Deeltydse onbepaalde termynpos)"
+  },
+  {
+   "code": "V16",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "voltydse leraar met kontrakpos (Voltydse vaste termynpos)"
+  },
+  {
+   "code": "V17",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "deeltydse leraar met kontrakpos (Deeltydse vaste termynpos)"
+  },
+  {
+   "code": "V18",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "kapelaan, gekoppel aan gemeente"
+  },
+  {
+   "code": "V19",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "predikant in sinodale diens, gekoppel aan gemeente"
+  },
+  {
+   "code": "V20",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "diensleraar"
+  },
+  {
+   "code": "V21",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "bedienaar"
+  },
+  {
+   "code": "V22",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "proponent"
+  },
+  {
+   "code": "V23",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "uit)"
+  },
+  {
+   "code": "V24",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "emeritus (70 jaar of jonger)"
+  },
+  {
+   "code": "V25",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "emeritus (ouer as 70 jaar)"
+  },
+  {
+   "code": "V26",
+   "section": "",
+   "qnum": "2.3",
+   "stem": "Indien die gemeente ŉ deeltydse vaste termyn predikantspos het, dui asb die termyn",
+   "item": "(aantal jare) aan . (Let wel: alle deeltydse poste is nie noodwendig vaste termyn"
+  },
+  {
+   "code": "V27",
+   "section": "",
+   "qnum": "2.4",
+   "stem": "Gebruik die gemeente ander teologies opgeleide persone wat nie beroep en bevestig is nie, in die gemeente? Ja Nee",
+   "item": "Diensleraar (nie in gemeente bevestig nie)"
+  },
+  {
+   "code": "V28",
+   "section": "",
+   "qnum": "2.4",
+   "stem": "Gebruik die gemeente ander teologies opgeleide persone wat nie beroep en bevestig is nie, in die gemeente? Ja Nee",
+   "item": "Bedienaar"
+  },
+  {
+   "code": "V29",
+   "section": "",
+   "qnum": "2.4",
+   "stem": "Gebruik die gemeente ander teologies opgeleide persone wat nie beroep en bevestig is nie, in die gemeente? Ja Nee",
+   "item": "Proponent"
+  },
+  {
+   "code": "V30",
+   "section": "",
+   "qnum": "2.4",
+   "stem": "Gebruik die gemeente ander teologies opgeleide persone wat nie beroep en bevestig is nie, in die gemeente? Ja Nee",
+   "item": "Emerituspredikant"
+  },
+  {
+   "code": "V31",
+   "section": "",
+   "qnum": "2.4",
+   "stem": "Gebruik die gemeente ander teologies opgeleide persone wat nie beroep en bevestig is nie, in die gemeente? Ja Nee",
+   "item": "Teologiese student"
+  },
+  {
+   "code": "V32",
+   "section": "",
+   "qnum": "2.4",
+   "stem": "Gebruik die gemeente ander teologies opgeleide persone wat nie beroep en bevestig is nie, in die gemeente? Ja Nee",
+   "item": "Gelegitimeerde in ’n ander betrekking"
+  },
+  {
+   "code": "V33",
+   "section": "",
+   "qnum": "2.4",
+   "stem": "Gebruik die gemeente ander teologies opgeleide persone wat nie beroep en bevestig is nie, in die gemeente? Ja Nee",
+   "item": "Predikant wat op ’n beroep wag"
+  },
+  {
+   "code": "V34",
+   "section": "",
+   "qnum": "2.4",
+   "stem": "Gebruik die gemeente ander teologies opgeleide persone wat nie beroep en bevestig is nie, in die gemeente? Ja Nee",
+   "item": "Jeugwerker"
+  },
+  {
+   "code": "V35",
+   "section": "",
+   "qnum": "2.4",
+   "stem": "Gebruik die gemeente ander teologies opgeleide persone wat nie beroep en bevestig is nie, in die gemeente? Ja Nee",
+   "item": "Nie-gelegitimeerde"
+  },
+  {
+   "code": "V36",
+   "section": "",
+   "qnum": "2.5",
+   "stem": "Hoeveel gelegitimeerde predikante in die gemeente se diens is vroue?",
+   "item": "Voltyds"
+  },
+  {
+   "code": "V37",
+   "section": "",
+   "qnum": "2.5",
+   "stem": "Hoeveel gelegitimeerde predikante in die gemeente se diens is vroue?",
+   "item": "Deeltyds"
+  },
+  {
+   "code": "V38",
+   "section": "",
+   "qnum": "2.6",
+   "stem": "Hoeveel ouderlinge, diakens, kategete en dienswerkers het u tans in die gemeente?",
+   "item": "Ouderlinge"
+  },
+  {
+   "code": "V39",
+   "section": "",
+   "qnum": "2.6",
+   "stem": "Hoeveel ouderlinge, diakens, kategete en dienswerkers het u tans in die gemeente?",
+   "item": "Diakens"
+  },
+  {
+   "code": "V40",
+   "section": "",
+   "qnum": "2.6",
+   "stem": "Hoeveel ouderlinge, diakens, kategete en dienswerkers het u tans in die gemeente?",
+   "item": "Kategete"
+  },
+  {
+   "code": "V41",
+   "section": "",
+   "qnum": "2.6",
+   "stem": "Hoeveel ouderlinge, diakens, kategete en dienswerkers het u tans in die gemeente?",
+   "item": "Vrywillige dienswerkers (bv kleingroepleiers en projekleiers)"
+  },
+  {
+   "code": "V42",
+   "section": "",
+   "qnum": "2.7",
+   "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente? Ja Nee",
+   "item": "Musiekleier, orrelis"
+  },
+  {
+   "code": "V43",
+   "section": "",
+   "qnum": "2.7",
+   "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente? Ja Nee",
+   "item": "Maatskaplike werker"
+  },
+  {
+   "code": "V44",
+   "section": "",
+   "qnum": "2.7",
+   "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente? Ja Nee",
+   "item": "Jeugwerker"
+  },
+  {
+   "code": "V45",
+   "section": "",
+   "qnum": "2.7",
+   "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente? Ja Nee",
+   "item": "Kinderwerker"
+  },
+  {
+   "code": "V46",
+   "section": "",
+   "qnum": "2.7",
+   "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente? Ja Nee",
+   "item": "Eredienswerker"
+  },
+  {
+   "code": "V47",
+   "section": "",
+   "qnum": "2.7",
+   "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente? Ja Nee",
+   "item": "Andertalige of kruiskulturele bediening"
+  },
+  {
+   "code": "V48",
+   "section": "",
+   "qnum": "2.7",
+   "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente? Ja Nee",
+   "item": "Bestuurder van gemeente bedieninge"
+  },
+  {
+   "code": "V49",
+   "section": "",
+   "qnum": "2.8",
+   "stem": "Bestaan daar ŉ Diensverhoudinge Kommissie of soortgelyke kommissie wat die",
+   "item": "diensooreenkoms van predikante en ander personeel hanteer ?"
+  },
+  {
+   "code": "V50",
+   "section": "",
+   "qnum": "2.9",
+   "stem": "Is daar ŉ versorgingskommissie, naas die diensverhoudinge kommissie, wat omsien na die versorging van die volgende persone? Ja Nee",
+   "item": "Predikant(e), ander gelegitimeerdes"
+  },
+  {
+   "code": "V51",
+   "section": "",
+   "qnum": "2.9",
+   "stem": "Is daar ŉ versorgingskommissie, naas die diensverhoudinge kommissie, wat omsien na die versorging van die volgende persone? Ja Nee",
+   "item": "Kantoorpersoneel"
+  },
+  {
+   "code": "V52",
+   "section": "",
+   "qnum": "2.9",
+   "stem": "Is daar ŉ versorgingskommissie, naas die diensverhoudinge kommissie, wat omsien na die versorging van die volgende persone? Ja Nee",
+   "item": "Orrelis, musiekleier"
+  },
+  {
+   "code": "V53",
+   "section": "",
+   "qnum": "2.9",
+   "stem": "Is daar ŉ versorgingskommissie, naas die diensverhoudinge kommissie, wat omsien na die versorging van die volgende persone? Ja Nee",
+   "item": "Koster"
+  },
+  {
+   "code": "V54",
+   "section": "",
+   "qnum": "2.9",
+   "stem": "Is daar ŉ versorgingskommissie, naas die diensverhoudinge kommissie, wat omsien na die versorging van die volgende persone? Ja Nee",
+   "item": "Ander personeel"
+  },
+  {
+   "code": "V55",
+   "section": "",
+   "qnum": "3.1",
+   "stem": "Het die gemeente ŉ amptelik goedgekeurde begroting? Ja 1 Nee 2",
+   "item": "3.1. Het die gemeente ŉ amptelik goedgekeurde begroting?"
+  },
+  {
+   "code": "V56",
+   "section": "",
+   "qnum": "3.2",
+   "stem": "Watter persentasie van u werklike uitgawes in die 2024/2025 finansiële jaar het u bestee aan ... %",
+   "item": "predikante en diensleraars: Salarisse en voordele"
+  },
+  {
+   "code": "V57",
+   "section": "",
+   "qnum": "3.2",
+   "stem": "Watter persentasie van u werklike uitgawes in die 2024/2025 finansiële jaar het u bestee aan ... %",
+   "item": "ander werknemers: Salarisse en voordele"
+  },
+  {
+   "code": "V58",
+   "section": "",
+   "qnum": "3.2",
+   "stem": "Watter persentasie van u werklike uitgawes in die 2024/2025 finansiële jaar het u bestee aan ... %",
+   "item": "administrasie van die gemeente"
+  },
+  {
+   "code": "V59",
+   "section": "",
+   "qnum": "3.2",
+   "stem": "Watter persentasie van u werklike uitgawes in die 2024/2025 finansiële jaar het u bestee aan ... %",
+   "item": "Eiendomsuitgawes: onderhoud en verbandlening"
+  },
+  {
+   "code": "V60",
+   "section": "",
+   "qnum": "3.2",
+   "stem": "Watter persentasie van u werklike uitgawes in die 2024/2025 finansiële jaar het u bestee aan ... %",
+   "item": "bedieninge ter wille van die gemeente self"
+  },
+  {
+   "code": "V61",
+   "section": "",
+   "qnum": "3.2",
+   "stem": "Watter persentasie van u werklike uitgawes in die 2024/2025 finansiële jaar het u bestee aan ... %",
+   "item": "diens en getuienis na buite die gemeente"
+  },
+  {
+   "code": "V62",
+   "section": "",
+   "qnum": "3.2",
+   "stem": "Watter persentasie van u werklike uitgawes in die 2024/2025 finansiële jaar het u bestee aan ... %",
+   "item": "ring- en sinodale bydraes"
+  },
+  {
+   "code": "V63",
+   "section": "",
+   "qnum": "3.2",
+   "stem": "Watter persentasie van u werklike uitgawes in die 2024/2025 finansiële jaar het u bestee aan ... %",
+   "item": "ander uitgawes"
+  },
+  {
+   "code": "V64",
+   "section": "",
+   "qnum": "3.3",
+   "stem": "Watter van die volgende beskryf die gemeente se finansiële posisie die beste? Ons inkomste groei bo die inflasiekoers 1 Ons inkomste hou tred met inflasie 2",
+   "item": "3.3. Watter van die volgende beskryf die gemeente se finansiële posisie die beste?"
+  },
+  {
+   "code": "V65",
+   "section": "",
+   "qnum": "3.4",
+   "stem": "Hoe vergelyk die gemeente se werklike finansiële posisie (inkomste en uitgawes) vir die boekjaar wat geëindig het op 28 Februarie 2025 met die vorige boekjaar?",
+   "item": "Inkomste"
+  },
+  {
+   "code": "V66",
+   "section": "",
+   "qnum": "3.4",
+   "stem": "Hoe vergelyk die gemeente se werklike finansiële posisie (inkomste en uitgawes) vir die boekjaar wat geëindig het op 28 Februarie 2025 met die vorige boekjaar?",
+   "item": "Uitgawes"
+  },
+  {
+   "code": "V67",
+   "section": "",
+   "qnum": "3.4",
+   "stem": "Hoe vergelyk die gemeente se werklike finansiële posisie (inkomste en uitgawes) vir die boekjaar wat geëindig het op 28 Februarie 2025 met die vorige boekjaar?",
+   "item": "geëindig het op 28 Februarie 2025?"
+  },
+  {
+   "code": "V68",
+   "section": "",
+   "qnum": "3.5",
+   "stem": "Die vergoeding van die voltydse predikant(e) in diens van die gemeente is minder as die sinodale skaal 1 volgens sinodale skaal 2",
+   "item": "3.5. Die vergoeding van die voltydse predikant(e) in diens van die gemeente is"
+  },
+  {
+   "code": "V69",
+   "section": "",
+   "qnum": "4.1",
+   "stem": "Hoeveel eredienste word gewoonlik elke Sondag in dié gemeente gehou?",
+   "item": "Oggend Getal"
+  },
+  {
+   "code": "V70",
+   "section": "",
+   "qnum": "4.1",
+   "stem": "Hoeveel eredienste word gewoonlik elke Sondag in dié gemeente gehou?",
+   "item": "Aand Getal"
+  },
+  {
+   "code": "V71",
+   "section": "",
+   "qnum": "4.1",
+   "stem": "Hoeveel eredienste word gewoonlik elke Sondag in dié gemeente gehou?",
+   "item": "Ander Getal"
+  },
+  {
+   "code": "V72",
+   "section": "",
+   "qnum": "4.2",
+   "stem": "Het u gemeente, naas ‘n gewone erediens, ook ander eredienste? Ja Nee",
+   "item": "Aanlyn erediens (op YouTube, ens beskikbaar)"
+  },
+  {
+   "code": "V73",
+   "section": "",
+   "qnum": "4.2",
+   "stem": "Het u gemeente, naas ‘n gewone erediens, ook ander eredienste? Ja Nee",
+   "item": "Gesins- of familiediens"
+  },
+  {
+   "code": "V74",
+   "section": "",
+   "qnum": "4.2",
+   "stem": "Het u gemeente, naas ‘n gewone erediens, ook ander eredienste? Ja Nee",
+   "item": "Aparte diens vir senior burgers (bv. in aftreeoord)"
+  },
+  {
+   "code": "V75",
+   "section": "",
+   "qnum": "4.2",
+   "stem": "Het u gemeente, naas ‘n gewone erediens, ook ander eredienste? Ja Nee",
+   "item": "Aparte diens vir jong volwassenes"
+  },
+  {
+   "code": "V76",
+   "section": "",
+   "qnum": "4.2",
+   "stem": "Het u gemeente, naas ‘n gewone erediens, ook ander eredienste? Ja Nee",
+   "item": "Aparte Jeugdiens (hoofsaaklik hoërskool)"
+  },
+  {
+   "code": "V77",
+   "section": "",
+   "qnum": "4.2",
+   "stem": "Het u gemeente, naas ‘n gewone erediens, ook ander eredienste? Ja Nee",
+   "item": "Aparte Kinderdiens (hoofsaaklik laerskool)"
+  },
+  {
+   "code": "V78",
+   "section": "",
+   "qnum": "4.2",
+   "stem": "Het u gemeente, naas ‘n gewone erediens, ook ander eredienste? Ja Nee",
+   "item": "Aparte Kleuterdiens (voorskools)"
+  },
+  {
+   "code": "V79",
+   "section": "",
+   "qnum": "4.2",
+   "stem": "Het u gemeente, naas ‘n gewone erediens, ook ander eredienste? Ja Nee",
+   "item": "Andertalige erediens"
+  },
+  {
+   "code": "V80",
+   "section": "",
+   "qnum": "4.3",
+   "stem": "Wie lei die eredienste? (Merk asb waar van toepassing)",
+   "item": "Gewone erediens"
+  },
+  {
+   "code": "V81",
+   "section": "",
+   "qnum": "4.3",
+   "stem": "Wie lei die eredienste? (Merk asb waar van toepassing)",
+   "item": ""
+  },
+  {
+   "code": "V82",
+   "section": "",
+   "qnum": "4.3",
+   "stem": "Wie lei die eredienste? (Merk asb waar van toepassing)",
+   "item": "burgers"
+  },
+  {
+   "code": "V83",
+   "section": "",
+   "qnum": "4.3",
+   "stem": "Wie lei die eredienste? (Merk asb waar van toepassing)",
+   "item": "Aparte Jeugdiens"
+  },
+  {
+   "code": "V84",
+   "section": "",
+   "qnum": "4.3",
+   "stem": "Wie lei die eredienste? (Merk asb waar van toepassing)",
+   "item": "Aparte Kinderdiens"
+  },
+  {
+   "code": "V85",
+   "section": "",
+   "qnum": "4.3",
+   "stem": "Wie lei die eredienste? (Merk asb waar van toepassing)",
+   "item": "Aparte Kleuterdiens"
+  },
+  {
+   "code": "V86",
+   "section": "",
+   "qnum": "4.3",
+   "stem": "Wie lei die eredienste? (Merk asb waar van toepassing)",
+   "item": "Andertalige diens"
+  },
+  {
+   "code": "V87",
+   "section": "",
+   "qnum": "4.4",
+   "stem": "Dui al die verskillende tale waarin eredienste gehou word aan",
+   "item": "4.4. Dui al die verskillende tale waarin eredienste gehou word aan"
+  },
+  {
+   "code": "V88",
+   "section": "",
+   "qnum": "4.5",
+   "stem": "Wat is die totale gemiddelde in-persoon erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ‘n Sondag in Februarie",
+   "item": "2022"
+  },
+  {
+   "code": "V89",
+   "section": "",
+   "qnum": "4.5",
+   "stem": "Wat is die totale gemiddelde in-persoon erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ‘n Sondag in Februarie",
+   "item": "2023"
+  },
+  {
+   "code": "V90",
+   "section": "",
+   "qnum": "4.5",
+   "stem": "Wat is die totale gemiddelde in-persoon erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ‘n Sondag in Februarie",
+   "item": "2024"
+  },
+  {
+   "code": "V91",
+   "section": "",
+   "qnum": "4.5",
+   "stem": "Wat is die totale gemiddelde in-persoon erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ‘n Sondag in Februarie",
+   "item": "2025"
+  },
+  {
+   "code": "V92",
+   "section": "",
+   "qnum": "4.6",
+   "stem": "Wat is die totale gemiddelde digitale/aanlyn erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ‘n Sondag in",
+   "item": "2024"
+  },
+  {
+   "code": "V93",
+   "section": "",
+   "qnum": "4.6",
+   "stem": "Wat is die totale gemiddelde digitale/aanlyn erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ‘n Sondag in",
+   "item": "2025"
+  },
+  {
+   "code": "V94",
+   "section": "",
+   "qnum": "4.6",
+   "stem": "Wat is die totale gemiddelde digitale/aanlyn erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ‘n Sondag in",
+   "item": "as wat dit was voor die (in persoon en"
+  },
+  {
+   "code": "V95",
+   "section": "",
+   "qnum": "4.6",
+   "stem": "Wat is die totale gemiddelde digitale/aanlyn erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ‘n Sondag in",
+   "item": "as wat dit was voor die (in persoon en"
+  },
+  {
+   "code": "V96",
+   "section": "",
+   "qnum": "4.6",
+   "stem": "Wat is die totale gemiddelde digitale/aanlyn erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ‘n Sondag in",
+   "item": "Covid-19 grendeltyd aanlyn)"
+  },
+  {
+   "code": "V97",
+   "section": "",
+   "qnum": "4.7",
+   "stem": "Watter liedere bundels gebruik u tydens die eredienste… Altyd Gereeld Soms Nooit",
+   "item": "Liedboek"
+  },
+  {
+   "code": "V98",
+   "section": "",
+   "qnum": "4.7",
+   "stem": "Watter liedere bundels gebruik u tydens die eredienste… Altyd Gereeld Soms Nooit",
+   "item": "Flam"
+  },
+  {
+   "code": "V99",
+   "section": "",
+   "qnum": "4.7",
+   "stem": "Watter liedere bundels gebruik u tydens die eredienste… Altyd Gereeld Soms Nooit",
+   "item": "VONKK"
+  },
+  {
+   "code": "V100",
+   "section": "",
+   "qnum": "4.7",
+   "stem": "Watter liedere bundels gebruik u tydens die eredienste… Altyd Gereeld Soms Nooit",
+   "item": "’n Eie bundel"
+  },
+  {
+   "code": "V101",
+   "section": "",
+   "qnum": "4.7",
+   "stem": "Watter liedere bundels gebruik u tydens die eredienste… Altyd Gereeld Soms Nooit",
+   "item": "Ander bundel(s)"
+  },
+  {
+   "code": "V102",
+   "section": "",
+   "qnum": "4.8",
+   "stem": "Wat die eredienste in die gemeente betref… Altyd Gereeld Soms Nooit",
+   "item": "die kerkjaar word gevolg"
+  },
+  {
+   "code": "V103",
+   "section": "",
+   "qnum": "4.8",
+   "stem": "Wat die eredienste in die gemeente betref… Altyd Gereeld Soms Nooit",
+   "item": "gebruik"
+  },
+  {
+   "code": "V104",
+   "section": "",
+   "qnum": "4.8",
+   "stem": "Wat die eredienste in die gemeente betref… Altyd Gereeld Soms Nooit",
+   "item": ""
+  },
+  {
+   "code": "V105",
+   "section": "",
+   "qnum": "4.8",
+   "stem": "Wat die eredienste in die gemeente betref… Altyd Gereeld Soms Nooit",
+   "item": "momente, bv, wet, verootmoediging"
+  },
+  {
+   "code": "V106",
+   "section": "",
+   "qnum": "4.8",
+   "stem": "Wat die eredienste in die gemeente betref… Altyd Gereeld Soms Nooit",
+   "item": ""
+  },
+  {
+   "code": "V107",
+   "section": "",
+   "qnum": "4.8",
+   "stem": "Wat die eredienste in die gemeente betref… Altyd Gereeld Soms Nooit",
+   "item": "ons doen van tyd tot tyd preekreekse"
+  },
+  {
+   "code": "V108",
+   "section": "",
+   "qnum": "4.8",
+   "stem": "Wat die eredienste in die gemeente betref… Altyd Gereeld Soms Nooit",
+   "item": "teks en tema"
+  },
+  {
+   "code": "V109",
+   "section": "",
+   "qnum": "4.9",
+   "stem": "Wat is die primêre vorm van sangbegeleiding tydens die volgende eredienste? Orrel Begeleiers- Klavier Klankopnames Geen groep (backtracks)",
+   "item": "Gewone erediens"
+  },
+  {
+   "code": "V110",
+   "section": "",
+   "qnum": "4.9",
+   "stem": "Wat is die primêre vorm van sangbegeleiding tydens die volgende eredienste? Orrel Begeleiers- Klavier Klankopnames Geen groep (backtracks)",
+   "item": "Gesins- of familiediens"
+  },
+  {
+   "code": "V111",
+   "section": "",
+   "qnum": "4.9",
+   "stem": "Wat is die primêre vorm van sangbegeleiding tydens die volgende eredienste? Orrel Begeleiers- Klavier Klankopnames Geen groep (backtracks)",
+   "item": "Diens vir senior burgers"
+  },
+  {
+   "code": "V112",
+   "section": "",
+   "qnum": "4.9",
+   "stem": "Wat is die primêre vorm van sangbegeleiding tydens die volgende eredienste? Orrel Begeleiers- Klavier Klankopnames Geen groep (backtracks)",
+   "item": "Jeugdiens"
+  },
+  {
+   "code": "V113",
+   "section": "",
+   "qnum": "4.9",
+   "stem": "Wat is die primêre vorm van sangbegeleiding tydens die volgende eredienste? Orrel Begeleiers- Klavier Klankopnames Geen groep (backtracks)",
+   "item": "Kindererediens"
+  },
+  {
+   "code": "V114",
+   "section": "",
+   "qnum": "4.9",
+   "stem": "Wat is die primêre vorm van sangbegeleiding tydens die volgende eredienste? Orrel Begeleiers- Klavier Klankopnames Geen groep (backtracks)",
+   "item": "Kleutererediens"
+  },
+  {
+   "code": "V115",
+   "section": "",
+   "qnum": "4.9",
+   "stem": "Wat is die primêre vorm van sangbegeleiding tydens die volgende eredienste? Orrel Begeleiers- Klavier Klankopnames Geen groep (backtracks)",
+   "item": "Andertalige erediens"
+  },
+  {
+   "code": "V116",
+   "section": "",
+   "qnum": "4.10",
+   "stem": "Hoeveel maal het u gedurende 2025 die Nagmaal gevier? (gemeentes wat op dieselfde dag by meer as een erediens Nagmaal bedien, tel dit net as een geleentheid)",
+   "item": "Getal"
+  },
+  {
+   "code": "V117",
+   "section": "",
+   "qnum": "5.1",
+   "stem": "Watter een van die volgende omskrywings sal die kerkraad die beste beskryf?",
+   "item": "5.1. Watter een van die volgende omskrywings sal die kerkraad die beste beskryf?"
+  },
+  {
+   "code": "V118",
+   "section": "",
+   "qnum": "5.2",
+   "stem": "Hoe sou u die gemeente se huidige rigting tipeer? Krimpend en/of sterwend 1 Besig met instandhouding of oorlewing 2",
+   "item": "5.2. Hoe sou u die gemeente se huidige rigting tipeer?"
+  },
+  {
+   "code": "V119",
+   "section": "",
+   "qnum": "5.3",
+   "stem": "Indien die voortbestaan van die gemeente in gedrang is, watter opsies oorweeg u (Merk almal van toepassing)? Ja Nee",
+   "item": "Samewerking met ‘n buurgemeente(s)"
+  },
+  {
+   "code": "V120",
+   "section": "",
+   "qnum": "5.3",
+   "stem": "Indien die voortbestaan van die gemeente in gedrang is, watter opsies oorweeg u (Merk almal van toepassing)? Ja Nee",
+   "item": "Samesmetling of eenwording met ‘n buurgemeente(s)"
+  },
+  {
+   "code": "V121",
+   "section": "",
+   "qnum": "5.3",
+   "stem": "Indien die voortbestaan van die gemeente in gedrang is, watter opsies oorweeg u (Merk almal van toepassing)? Ja Nee",
+   "item": "in terme van die Tussenorde"
+  },
+  {
+   "code": "V122",
+   "section": "",
+   "qnum": "5.3",
+   "stem": "Indien die voortbestaan van die gemeente in gedrang is, watter opsies oorweeg u (Merk almal van toepassing)? Ja Nee",
+   "item": "kontrakpos, diensleraar)"
+  },
+  {
+   "code": "V123",
+   "section": "",
+   "qnum": "5.3",
+   "stem": "Indien die voortbestaan van die gemeente in gedrang is, watter opsies oorweeg u (Merk almal van toepassing)? Ja Nee",
+   "item": "Ontwikkeling van entrepreneuriese fondsinsameling"
+  },
+  {
+   "code": "V124",
+   "section": "",
+   "qnum": "5.3",
+   "stem": "Indien die voortbestaan van die gemeente in gedrang is, watter opsies oorweeg u (Merk almal van toepassing)? Ja Nee",
+   "item": "Vermindering van ander personeeluitgawes/poste"
+  },
+  {
+   "code": "V125",
+   "section": "",
+   "qnum": "5.3",
+   "stem": "Indien die voortbestaan van die gemeente in gedrang is, watter opsies oorweeg u (Merk almal van toepassing)? Ja Nee",
+   "item": "Heraanwending van geboue (bv. verhuring)"
+  },
+  {
+   "code": "V126",
+   "section": "",
+   "qnum": "5.3",
+   "stem": "Indien die voortbestaan van die gemeente in gedrang is, watter opsies oorweeg u (Merk almal van toepassing)? Ja Nee",
+   "item": "Rentmeesterskap program om bydraes te verhoog"
+  },
+  {
+   "code": "V127",
+   "section": "",
+   "qnum": "5.3",
+   "stem": "Indien die voortbestaan van die gemeente in gedrang is, watter opsies oorweeg u (Merk almal van toepassing)? Ja Nee",
+   "item": "Evangelisasie en gemeente groei strategie"
+  },
+  {
+   "code": "V128",
+   "section": "",
+   "qnum": "5.4",
+   "stem": "Is u bewus van die volgende bediening moontlikhede wat tans ontwikkel word? Ja Nee",
+   "item": "Bedienaars"
+  },
+  {
+   "code": "V129",
+   "section": "",
+   "qnum": "5.4",
+   "stem": "Is u bewus van die volgende bediening moontlikhede wat tans ontwikkel word? Ja Nee",
+   "item": "Opleiding vir diensleraars"
+  },
+  {
+   "code": "V130",
+   "section": "",
+   "qnum": "5.4",
+   "stem": "Is u bewus van die volgende bediening moontlikhede wat tans ontwikkel word? Ja Nee",
+   "item": "Deeltydse opleiding van tweede loopbaan predikante"
+  },
+  {
+   "code": "V131",
+   "section": "",
+   "qnum": "5.5",
+   "stem": "Wie is die voorsitter van die kerkraad? Ons het een predikant, hy/sy doen dit 1 Ons het meer as een predikant, hulle roteer 2",
+   "item": "5.5. Wie is die voorsitter van die kerkraad?"
+  },
+  {
+   "code": "V132",
+   "section": "",
+   "qnum": "5.6",
+   "stem": "Die gebruik van tegnologie in die gemeente Ja Nee",
+   "item": "Is die lidmaatdatabasis gerekenariseerd?"
+  },
+  {
+   "code": "V133",
+   "section": "",
+   "qnum": "5.6",
+   "stem": "Die gebruik van tegnologie in die gemeente Ja Nee",
+   "item": "Is die boekhoustelsel gerekenariseerd?"
+  },
+  {
+   "code": "V134",
+   "section": "",
+   "qnum": "5.6",
+   "stem": "Die gebruik van tegnologie in die gemeente Ja Nee",
+   "item": "Het die gemeente ŉ eie webwerf?"
+  },
+  {
+   "code": "V135",
+   "section": "",
+   "qnum": "5.6",
+   "stem": "Die gebruik van tegnologie in die gemeente Ja Nee",
+   "item": "kommunikeer?"
+  },
+  {
+   "code": "V136",
+   "section": "",
+   "qnum": "5.6",
+   "stem": "Die gebruik van tegnologie in die gemeente Ja Nee",
+   "item": "groep te kommunikeer?"
+  },
+  {
+   "code": "V137",
+   "section": "",
+   "qnum": "5.6",
+   "stem": "Die gebruik van tegnologie in die gemeente Ja Nee",
+   "item": "Twitter) gebruik om met gemeentelede te kommunikeer?"
+  },
+  {
+   "code": "V138",
+   "section": "",
+   "qnum": "5.6",
+   "stem": "Die gebruik van tegnologie in die gemeente Ja Nee",
+   "item": "administrasie en bediening gebruik?"
+  },
+  {
+   "code": "V139",
+   "section": "",
+   "qnum": "5.6",
+   "stem": "Die gebruik van tegnologie in die gemeente Ja Nee",
+   "item": "Stuur die gemeente ŉ elektroniese nuusbrief uit?"
+  },
+  {
+   "code": "V140",
+   "section": "",
+   "qnum": "5.6",
+   "stem": "Die gebruik van tegnologie in die gemeente Ja Nee",
+   "item": "Word ŉ dataprojektor tydens eredienste gebruik?"
+  },
+  {
+   "code": "V141",
+   "section": "",
+   "qnum": "5.6",
+   "stem": "Die gebruik van tegnologie in die gemeente Ja Nee",
+   "item": "Snapscan, ens.) ingesamel?"
+  },
+  {
+   "code": "V142",
+   "section": "",
+   "qnum": "5.6",
+   "stem": "Die gebruik van tegnologie in die gemeente Ja Nee",
+   "item": ""
+  },
+  {
+   "code": "V143",
+   "section": "",
+   "qnum": "5.7",
+   "stem": "Gebruik die gemeente sosiale media (WhatsApp, facebook en ander) vir enige van die volgende? (Kies al die opsies van toepassing)",
+   "item": "Algemene afkondiginge"
+  },
+  {
+   "code": "V144",
+   "section": "",
+   "qnum": "5.7",
+   "stem": "Gebruik die gemeente sosiale media (WhatsApp, facebook en ander) vir enige van die volgende? (Kies al die opsies van toepassing)",
+   "item": "Bekendstelling van eredienste"
+  },
+  {
+   "code": "V145",
+   "section": "",
+   "qnum": "5.7",
+   "stem": "Gebruik die gemeente sosiale media (WhatsApp, facebook en ander) vir enige van die volgende? (Kies al die opsies van toepassing)",
+   "item": "Bekendstelling van hulpbronne of programme"
+  },
+  {
+   "code": "V146",
+   "section": "",
+   "qnum": "5.7",
+   "stem": "Gebruik die gemeente sosiale media (WhatsApp, facebook en ander) vir enige van die volgende? (Kies al die opsies van toepassing)",
+   "item": "Deel van Skrifgedeeltes of ander aanhalings"
+  },
+  {
+   "code": "V147",
+   "section": "",
+   "qnum": "5.7",
+   "stem": "Gebruik die gemeente sosiale media (WhatsApp, facebook en ander) vir enige van die volgende? (Kies al die opsies van toepassing)",
+   "item": "Nuus vanaf Sinode of Algemene Sinode"
+  },
+  {
+   "code": "V148",
+   "section": "",
+   "qnum": "5.8",
+   "stem": "Aanlyn bediening: Dui asb. aan wat die gemeente aanlyn doen (kies een opsie by elkeen van die items)",
+   "item": "Bybelstudie- en/of kleingroepe"
+  },
+  {
+   "code": "V149",
+   "section": "",
+   "qnum": "5.8",
+   "stem": "Aanlyn bediening: Dui asb. aan wat die gemeente aanlyn doen (kies een opsie by elkeen van die items)",
+   "item": "Bediening aan Laerskool leerders"
+  },
+  {
+   "code": "V150",
+   "section": "",
+   "qnum": "5.8",
+   "stem": "Aanlyn bediening: Dui asb. aan wat die gemeente aanlyn doen (kies een opsie by elkeen van die items)",
+   "item": "Tiener en/of jong volwasse bediening"
+  },
+  {
+   "code": "V151",
+   "section": "",
+   "qnum": "5.8",
+   "stem": "Aanlyn bediening: Dui asb. aan wat die gemeente aanlyn doen (kies een opsie by elkeen van die items)",
+   "item": "Komitee en/of bediening vergaderings"
+  },
+  {
+   "code": "V152",
+   "section": "",
+   "qnum": "5.8",
+   "stem": "Aanlyn bediening: Dui asb. aan wat die gemeente aanlyn doen (kies een opsie by elkeen van die items)",
+   "item": "vergaderings"
+  },
+  {
+   "code": "V153",
+   "section": "",
+   "qnum": "5.8",
+   "stem": "Aanlyn bediening: Dui asb. aan wat die gemeente aanlyn doen (kies een opsie by elkeen van die items)",
+   "item": "Aanlyn pastorale sorg"
+  },
+  {
+   "code": "V154",
+   "section": "",
+   "qnum": "5.9",
+   "stem": "Word die gemeente se eredienste op die internet Ja 1",
+   "item": "opgelaai? Nee"
+  },
+  {
+   "code": "V155",
+   "section": "",
+   "qnum": "5.10",
+   "stem": "Het die gemeente ‘n spesifieke proses om met die persone wat die erediens van buite die kerkgebou volg, kontak te maak (bv. stuur van ‘n boodskap of om",
+   "item": "kontakbesonderhede te verkry)? Ja"
+  },
+  {
+   "code": "V156",
+   "section": "",
+   "qnum": "5.11",
+   "stem": "Watter rol speel die volgende kerkvergaderings (besluite, aksies, ens.) in die funksionering van die gemeente? Geen rol Geringe rol Belangrike rol",
+   "item": "Algemene Sinode"
+  },
+  {
+   "code": "V157",
+   "section": "",
+   "qnum": "5.11",
+   "stem": "Watter rol speel die volgende kerkvergaderings (besluite, aksies, ens.) in die funksionering van die gemeente? Geen rol Geringe rol Belangrike rol",
+   "item": "Streek Sinode"
+  },
+  {
+   "code": "V158",
+   "section": "",
+   "qnum": "5.11",
+   "stem": "Watter rol speel die volgende kerkvergaderings (besluite, aksies, ens.) in die funksionering van die gemeente? Geen rol Geringe rol Belangrike rol",
+   "item": "Ring"
+  },
+  {
+   "code": "V159",
+   "section": "",
+   "qnum": "5.12",
+   "stem": "Beantwoord elkeen van die onderstaande stellings oor die gemeente",
+   "item": ""
+  },
+  {
+   "code": "V160",
+   "section": "",
+   "qnum": "5.12",
+   "stem": "Beantwoord elkeen van die onderstaande stellings oor die gemeente",
+   "item": "gemeente geleë is"
+  },
+  {
+   "code": "V161",
+   "section": "",
+   "qnum": "5.12",
+   "stem": "Beantwoord elkeen van die onderstaande stellings oor die gemeente",
+   "item": ""
+  },
+  {
+   "code": "V162",
+   "section": "",
+   "qnum": "5.12",
+   "stem": "Beantwoord elkeen van die onderstaande stellings oor die gemeente",
+   "item": "veranderende konteks van die gemeenskap"
+  },
+  {
+   "code": "V163",
+   "section": "",
+   "qnum": "5.12",
+   "stem": "Beantwoord elkeen van die onderstaande stellings oor die gemeente",
+   "item": "die gemeente en gemeenskap te gebruik"
+  },
+  {
+   "code": "V164",
+   "section": "",
+   "qnum": "5.12",
+   "stem": "Beantwoord elkeen van die onderstaande stellings oor die gemeente",
+   "item": "gemeente"
+  },
+  {
+   "code": "V165",
+   "section": "",
+   "qnum": "5.12",
+   "stem": "Beantwoord elkeen van die onderstaande stellings oor die gemeente",
+   "item": "bereik"
+  },
+  {
+   "code": "V166",
+   "section": "",
+   "qnum": "5.12",
+   "stem": "Beantwoord elkeen van die onderstaande stellings oor die gemeente",
+   "item": "roeping dien"
+  },
+  {
+   "code": "V167",
+   "section": "",
+   "qnum": "5.12",
+   "stem": "Beantwoord elkeen van die onderstaande stellings oor die gemeente",
+   "item": "roeping dien"
+  },
+  {
+   "code": "V168",
+   "section": "",
+   "qnum": "5.12",
+   "stem": "Beantwoord elkeen van die onderstaande stellings oor die gemeente",
+   "item": "wêreld"
+  },
+  {
+   "code": "V169",
+   "section": "",
+   "qnum": "6.1",
+   "stem": "Op watter maniere leef die gemeente julle roeping as gestuurdes uit? Altyd Soms Nooit",
+   "item": "ander maniere"
+  },
+  {
+   "code": "V170",
+   "section": "",
+   "qnum": "6.1",
+   "stem": "Op watter maniere leef die gemeente julle roeping as gestuurdes uit? Altyd Soms Nooit",
+   "item": "RCA"
+  },
+  {
+   "code": "V171",
+   "section": "",
+   "qnum": "6.1",
+   "stem": "Op watter maniere leef die gemeente julle roeping as gestuurdes uit? Altyd Soms Nooit",
+   "item": ""
+  },
+  {
+   "code": "V172",
+   "section": "",
+   "qnum": "6.1",
+   "stem": "Op watter maniere leef die gemeente julle roeping as gestuurdes uit? Altyd Soms Nooit",
+   "item": "gemeenskap"
+  },
+  {
+   "code": "V173",
+   "section": "",
+   "qnum": "6.1",
+   "stem": "Op watter maniere leef die gemeente julle roeping as gestuurdes uit? Altyd Soms Nooit",
+   "item": "landbou en maatskaplike dienste"
+  },
+  {
+   "code": "V174",
+   "section": "",
+   "qnum": "6.1",
+   "stem": "Op watter maniere leef die gemeente julle roeping as gestuurdes uit? Altyd Soms Nooit",
+   "item": "staatsdepartemente en munisipaliteite"
+  },
+  {
+   "code": "V175",
+   "section": "",
+   "qnum": "6.1",
+   "stem": "Op watter maniere leef die gemeente julle roeping as gestuurdes uit? Altyd Soms Nooit",
+   "item": "geloofsgemeenskappe in die gemeenskap"
+  },
+  {
+   "code": "V176",
+   "section": "",
+   "qnum": "6.1",
+   "stem": "Op watter maniere leef die gemeente julle roeping as gestuurdes uit? Altyd Soms Nooit",
+   "item": "meeste van ons lidmate berokke is"
+  },
+  {
+   "code": "V177",
+   "section": "",
+   "qnum": "6.2",
+   "stem": "Nie-winsgewende organisasie Ja Nee Die gemeente het ‘n geregistreerde nie-winsgewende organisasie wat 1 2",
+   "item": "direk aan die bediening van die gemeente gekoppel is"
+  },
+  {
+   "code": "V178",
+   "section": "",
+   "qnum": "6.3",
+   "stem": "Op watter manier weerspieël die gemeente se begroting die gestuurde roeping van die gemeente? Ja Nee",
+   "item": "Ons bydraes deur die ring en sinode"
+  },
+  {
+   "code": "V179",
+   "section": "",
+   "qnum": "6.3",
+   "stem": "Op watter manier weerspieël die gemeente se begroting die gestuurde roeping van die gemeente? Ja Nee",
+   "item": "Ons het vaste finansiële ooreenkomste met ander instansies"
+  },
+  {
+   "code": "V180",
+   "section": "",
+   "qnum": "6.3",
+   "stem": "Op watter manier weerspieël die gemeente se begroting die gestuurde roeping van die gemeente? Ja Nee",
+   "item": "na buite"
+  },
+  {
+   "code": "V181",
+   "section": "",
+   "qnum": "6.3",
+   "stem": "Op watter manier weerspieël die gemeente se begroting die gestuurde roeping van die gemeente? Ja Nee",
+   "item": "Ons ken ‘n persentasie van ons inkomste toe vir uitreik"
+  },
+  {
+   "code": "V182",
+   "section": "",
+   "qnum": "6.3",
+   "stem": "Op watter manier weerspieël die gemeente se begroting die gestuurde roeping van die gemeente? Ja Nee",
+   "item": "sigbaar"
+  },
+  {
+   "code": "V183",
+   "section": "",
+   "qnum": "6.4",
+   "stem": "Ons gemeente stel ons geboue tot beskikking van die gemeenskap as deel van ons",
+   "item": "dienswerk na buite"
+  },
+  {
+   "code": "V184",
+   "section": "",
+   "qnum": "6.5",
+   "stem": "Wat doen die gemeente om gasvryheid te bevorder? Altyd Soms Nooit",
+   "item": "se eredienste laat tuis voel"
+  },
+  {
+   "code": "V185",
+   "section": "",
+   "qnum": "6.5",
+   "stem": "Wat doen die gemeente om gasvryheid te bevorder? Altyd Soms Nooit",
+   "item": "te skakel"
+  },
+  {
+   "code": "V186",
+   "section": "",
+   "qnum": "6.5",
+   "stem": "Wat doen die gemeente om gasvryheid te bevorder? Altyd Soms Nooit",
+   "item": "eredienste toeganklik te maak vir besoekers"
+  },
+  {
+   "code": "V187",
+   "section": "",
+   "qnum": "6.5",
+   "stem": "Wat doen die gemeente om gasvryheid te bevorder? Altyd Soms Nooit",
+   "item": "gasvryheid in die gemeente te kweek"
+  },
+  {
+   "code": "V188",
+   "section": "",
+   "qnum": "6.5",
+   "stem": "Wat doen die gemeente om gasvryheid te bevorder? Altyd Soms Nooit",
+   "item": "Ons soek nuwe mense op wat in die gemeenskap intrek."
+  },
+  {
+   "code": "V189",
+   "section": "",
+   "qnum": "6.5",
+   "stem": "Wat doen die gemeente om gasvryheid te bevorder? Altyd Soms Nooit",
+   "item": "besoek en te nooi"
+  },
+  {
+   "code": "V190",
+   "section": "",
+   "qnum": "6.5",
+   "stem": "Wat doen die gemeente om gasvryheid te bevorder? Altyd Soms Nooit",
+   "item": "geïnspireer word om mense te nooi om Jesus te volg"
+  },
+  {
+   "code": "V191",
+   "section": "",
+   "qnum": "6.6",
+   "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening? Ja 1 Nee 2",
+   "item": "6.6. Het u gemeente ’n georganiseerde evangelisasiebediening?"
+  },
+  {
+   "code": "V192",
+   "section": "",
+   "qnum": "6.6",
+   "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening? Ja 1 Nee 2",
+   "item": "Ons hou spesiale eredienste"
+  },
+  {
+   "code": "V193",
+   "section": "",
+   "qnum": "6.6",
+   "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening? Ja 1 Nee 2",
+   "item": "Geleenthede soos Doop en Huwelikskategese"
+  },
+  {
+   "code": "V194",
+   "section": "",
+   "qnum": "6.6",
+   "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening? Ja 1 Nee 2",
+   "item": "Getroue getuies-kursus"
+  },
+  {
+   "code": "V195",
+   "section": "",
+   "qnum": "6.6",
+   "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening? Ja 1 Nee 2",
+   "item": "EE III-kursus"
+  },
+  {
+   "code": "V196",
+   "section": "",
+   "qnum": "6.6",
+   "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening? Ja 1 Nee 2",
+   "item": "Alpha-kursus"
+  },
+  {
+   "code": "V197",
+   "section": "",
+   "qnum": "6.6",
+   "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening? Ja 1 Nee 2",
+   "item": "Becoming a Contagious Christian"
+  },
+  {
+   "code": "V198",
+   "section": "",
+   "qnum": "6.6",
+   "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening? Ja 1 Nee 2",
+   "item": "Just Walk across the Room"
+  },
+  {
+   "code": "V199",
+   "section": "",
+   "qnum": "6.6",
+   "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening? Ja 1 Nee 2",
+   "item": "Eie materiaal in die gemeente ontwikkel"
+  },
+  {
+   "code": "V200",
+   "section": "",
+   "qnum": "6.6",
+   "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening? Ja 1 Nee 2",
+   "item": "Ander"
+  },
+  {
+   "code": "V201",
+   "section": "",
+   "qnum": "6.7",
+   "stem": "Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer: Ja Nee",
+   "item": "ŉ Omgewings oudit is gedoen"
+  },
+  {
+   "code": "V202",
+   "section": "",
+   "qnum": "6.7",
+   "stem": "Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer: Ja Nee",
+   "item": "Implementering van waterbesparingsmaatreëls"
+  },
+  {
+   "code": "V203",
+   "section": "",
+   "qnum": "6.7",
+   "stem": "Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer: Ja Nee",
+   "item": "Installering van watertenks of die hergebruik van water"
+  },
+  {
+   "code": "V204",
+   "section": "",
+   "qnum": "6.7",
+   "stem": "Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer: Ja Nee",
+   "item": "Installering van sonpanele vir waterverwarming"
+  },
+  {
+   "code": "V205",
+   "section": "",
+   "qnum": "6.7",
+   "stem": "Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer: Ja Nee",
+   "item": "Implementering van ander elektrisiteitsbesparing maatreëls"
+  },
+  {
+   "code": "V206",
+   "section": "",
+   "qnum": "6.7",
+   "stem": "Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer: Ja Nee",
+   "item": "Plant van inheemse plante in die gemeente se tuin(e)"
+  },
+  {
+   "code": "V207",
+   "section": "",
+   "qnum": "6.7",
+   "stem": "Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer: Ja Nee",
+   "item": "Ons gemeente is aktief betrokke by herwinning"
+  },
+  {
+   "code": "V208",
+   "section": "",
+   "qnum": "6.7",
+   "stem": "Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer: Ja Nee",
+   "item": "Eie sonkragopwekking"
+  },
+  {
+   "code": "V209",
+   "section": "",
+   "qnum": "6.8",
+   "stem": "Is daar ŉ georganiseerde kleingroepbediening in u gemeente? Ja 1 Nee 2",
+   "item": "6.8. Is daar ŉ georganiseerde kleingroepbediening in u gemeente?"
+  },
+  {
+   "code": "V210",
+   "section": "",
+   "qnum": "6.8",
+   "stem": "Is daar ŉ georganiseerde kleingroepbediening in u gemeente? Ja 1 Nee 2",
+   "item": "beskryf?"
+  },
+  {
+   "code": "V211",
+   "section": "",
+   "qnum": "6.9",
+   "stem": "Watter van die volgende beskryf die gebedsbediening in die gemeente die beste? Ja Nee",
+   "item": "Ons het ‘n georganiseerde gebedsbediening"
+  },
+  {
+   "code": "V212",
+   "section": "",
+   "qnum": "6.9",
+   "stem": "Watter van die volgende beskryf die gebedsbediening in die gemeente die beste? Ja Nee",
+   "item": "Ons het gebedsgroepe wat van tyd tot tyd bymekaar kom"
+  },
+  {
+   "code": "V213",
+   "section": "",
+   "qnum": "6.9",
+   "stem": "Watter van die volgende beskryf die gebedsbediening in die gemeente die beste? Ja Nee",
+   "item": "Pinkster of uitreike)"
+  },
+  {
+   "code": "V214",
+   "section": "",
+   "qnum": "6.9",
+   "stem": "Watter van die volgende beskryf die gebedsbediening in die gemeente die beste? Ja Nee",
+   "item": "Ons gebruik ons kleingroepe ook as gebedsgroepe"
+  },
+  {
+   "code": "V215",
+   "section": "",
+   "qnum": "6.10",
+   "stem": "Hoe lyk die gemeente se seniorbediening? Ja Nee",
+   "item": "Ons het ‘n georganiseerde seniorbediening"
+  },
+  {
+   "code": "V216",
+   "section": "",
+   "qnum": "6.10",
+   "stem": "Hoe lyk die gemeente se seniorbediening? Ja Nee",
+   "item": "gemeente"
+  },
+  {
+   "code": "V217",
+   "section": "",
+   "qnum": "6.10",
+   "stem": "Hoe lyk die gemeente se seniorbediening? Ja Nee",
+   "item": "Ons reël sosiale byeenkomste en / of uitstappies vir seniors"
+  },
+  {
+   "code": "V218",
+   "section": "",
+   "qnum": "6.10",
+   "stem": "Hoe lyk die gemeente se seniorbediening? Ja Nee",
+   "item": "geestelike opbou"
+  },
+  {
+   "code": "V219",
+   "section": "",
+   "qnum": "6.10",
+   "stem": "Hoe lyk die gemeente se seniorbediening? Ja Nee",
+   "item": "en na buite"
+  },
+  {
+   "code": "V220",
+   "section": "",
+   "qnum": "6.10",
+   "stem": "Hoe lyk die gemeente se seniorbediening? Ja Nee",
+   "item": "bejaardes"
+  },
+  {
+   "code": "V221",
+   "section": "",
+   "qnum": "7.1",
+   "stem": "Hoeveel jongmense is betrokke by die Lidmate",
+   "item": "kleuter bediening (voorskool)"
+  },
+  {
+   "code": "V222",
+   "section": "",
+   "qnum": "7.1",
+   "stem": "Hoeveel jongmense is betrokke by die Lidmate",
+   "item": "junior kategese (Graad 1-3)"
+  },
+  {
+   "code": "V223",
+   "section": "",
+   "qnum": "7.1",
+   "stem": "Hoeveel jongmense is betrokke by die Lidmate",
+   "item": "middel kategese (Graad 4-7)"
+  },
+  {
+   "code": "V224",
+   "section": "",
+   "qnum": "7.1",
+   "stem": "Hoeveel jongmense is betrokke by die Lidmate",
+   "item": "senior kategese (Graag 8-10)"
+  },
+  {
+   "code": "V225",
+   "section": "",
+   "qnum": "7.1",
+   "stem": "Hoeveel jongmense is betrokke by die Lidmate",
+   "item": "belydenisklas (Graad 11-12)"
+  },
+  {
+   "code": "V226",
+   "section": "",
+   "qnum": "7.1",
+   "stem": "Hoeveel jongmense is betrokke by die Lidmate",
+   "item": "jong-volwassene bediening"
+  },
+  {
+   "code": "V227",
+   "section": "",
+   "qnum": "7.1",
+   "stem": "Hoeveel jongmense is betrokke by die Lidmate",
+   "item": "gemeente is nie?"
+  },
+  {
+   "code": "V228",
+   "section": "",
+   "qnum": "7.2",
+   "stem": "Ons spandeer die tyd beskikbaar in die gemeente se laerskoolbediening en/of kategese daaraan om… Altyd Soms Nooit",
+   "item": "kennis oor die Bybel en geloof te verhoog"
+  },
+  {
+   "code": "V229",
+   "section": "",
+   "qnum": "7.2",
+   "stem": "Ons spandeer die tyd beskikbaar in die gemeente se laerskoolbediening en/of kategese daaraan om… Altyd Soms Nooit",
+   "item": "gewoontes vir geloofvorming in te oefen"
+  },
+  {
+   "code": "V230",
+   "section": "",
+   "qnum": "7.2",
+   "stem": "Ons spandeer die tyd beskikbaar in die gemeente se laerskoolbediening en/of kategese daaraan om… Altyd Soms Nooit",
+   "item": "geloofsperspektief te voer"
+  },
+  {
+   "code": "V231",
+   "section": "",
+   "qnum": "7.2",
+   "stem": "Ons spandeer die tyd beskikbaar in die gemeente se laerskoolbediening en/of kategese daaraan om… Altyd Soms Nooit",
+   "item": "leierskap te ontwikkel"
+  },
+  {
+   "code": "V232",
+   "section": "",
+   "qnum": "7.2",
+   "stem": "Ons spandeer die tyd beskikbaar in die gemeente se laerskoolbediening en/of kategese daaraan om… Altyd Soms Nooit",
+   "item": "hulle ‘n gevoel van behoort te gee"
+  },
+  {
+   "code": "V233",
+   "section": "",
+   "qnum": "7.2",
+   "stem": "Ons spandeer die tyd beskikbaar in die gemeente se laerskoolbediening en/of kategese daaraan om… Altyd Soms Nooit",
+   "item": "hulle te aktiveer om ‘n verskil te maak"
+  },
+  {
+   "code": "V234",
+   "section": "",
+   "qnum": "7.2",
+   "stem": "Ons spandeer die tyd beskikbaar in die gemeente se laerskoolbediening en/of kategese daaraan om… Altyd Soms Nooit",
+   "item": "geleenthede te skep waar jongmense kan dien"
+  },
+  {
+   "code": "V235",
+   "section": "",
+   "qnum": "7.3",
+   "stem": "Ons spandeer die tyd beskikbaar in die gemeente se hoërskoolbediening en/of kategese daaraan om… Altyd Soms Nooit",
+   "item": "kennis oor die Bybel en geloof te verhoog"
+  },
+  {
+   "code": "V236",
+   "section": "",
+   "qnum": "7.3",
+   "stem": "Ons spandeer die tyd beskikbaar in die gemeente se hoërskoolbediening en/of kategese daaraan om… Altyd Soms Nooit",
+   "item": "gewoontes vir geloofvorming in te oefen"
+  },
+  {
+   "code": "V237",
+   "section": "",
+   "qnum": "7.3",
+   "stem": "Ons spandeer die tyd beskikbaar in die gemeente se hoërskoolbediening en/of kategese daaraan om… Altyd Soms Nooit",
+   "item": "geloofsperspektief te voer"
+  },
+  {
+   "code": "V238",
+   "section": "",
+   "qnum": "7.3",
+   "stem": "Ons spandeer die tyd beskikbaar in die gemeente se hoërskoolbediening en/of kategese daaraan om… Altyd Soms Nooit",
+   "item": "leierskap te ontwikkel"
+  },
+  {
+   "code": "V239",
+   "section": "",
+   "qnum": "7.3",
+   "stem": "Ons spandeer die tyd beskikbaar in die gemeente se hoërskoolbediening en/of kategese daaraan om… Altyd Soms Nooit",
+   "item": "hulle ‘n gevoel van behoort te gee"
+  },
+  {
+   "code": "V240",
+   "section": "",
+   "qnum": "7.3",
+   "stem": "Ons spandeer die tyd beskikbaar in die gemeente se hoërskoolbediening en/of kategese daaraan om… Altyd Soms Nooit",
+   "item": "hulle te aktiveer om ‘n verskil te maak"
+  },
+  {
+   "code": "V241",
+   "section": "",
+   "qnum": "7.3",
+   "stem": "Ons spandeer die tyd beskikbaar in die gemeente se hoërskoolbediening en/of kategese daaraan om… Altyd Soms Nooit",
+   "item": "geleenthede te skep waar jongmense kan dien"
+  },
+  {
+   "code": "V242",
+   "section": "",
+   "qnum": "7.4",
+   "stem": "Hoe word die kinders en jongmense in eredienste ingeskakel? Altyd Soms Nooit",
+   "item": "Geen spesifieke fokus nie"
+  },
+  {
+   "code": "V243",
+   "section": "",
+   "qnum": "7.4",
+   "stem": "Hoe word die kinders en jongmense in eredienste ingeskakel? Altyd Soms Nooit",
+   "item": "Kinder- of jeugmoment in die gewone erediens"
+  },
+  {
+   "code": "V244",
+   "section": "",
+   "qnum": "7.4",
+   "stem": "Hoe word die kinders en jongmense in eredienste ingeskakel? Altyd Soms Nooit",
+   "item": "liturgie inskakel is"
+  },
+  {
+   "code": "V245",
+   "section": "",
+   "qnum": "7.4",
+   "stem": "Hoe word die kinders en jongmense in eredienste ingeskakel? Altyd Soms Nooit",
+   "item": "begeleiers"
+  },
+  {
+   "code": "V246",
+   "section": "",
+   "qnum": "7.4",
+   "stem": "Hoe word die kinders en jongmense in eredienste ingeskakel? Altyd Soms Nooit",
+   "item": "vir volwassenes"
+  },
+  {
+   "code": "V247",
+   "section": "",
+   "qnum": "7.4",
+   "stem": "Hoe word die kinders en jongmense in eredienste ingeskakel? Altyd Soms Nooit",
+   "item": "families"
+  },
+  {
+   "code": "V248",
+   "section": "",
+   "qnum": "7.4",
+   "stem": "Hoe word die kinders en jongmense in eredienste ingeskakel? Altyd Soms Nooit",
+   "item": "Jeugdiens, ‘n gereelde erediens spesifiek vir jeug"
+  },
+  {
+   "code": "V249",
+   "section": "",
+   "qnum": "7.5",
+   "stem": "Waar word geloofvorming, buiten in die kategese, nog aktief in die gemeente bevorder? Altyd Soms Nooit",
+   "item": "Huise en of gesinne"
+  },
+  {
+   "code": "V250",
+   "section": "",
+   "qnum": "7.5",
+   "stem": "Waar word geloofvorming, buiten in die kategese, nog aktief in die gemeente bevorder? Altyd Soms Nooit",
+   "item": "Weeklikse tiener- of kinderaksies"
+  },
+  {
+   "code": "V251",
+   "section": "",
+   "qnum": "7.5",
+   "stem": "Waar word geloofvorming, buiten in die kategese, nog aktief in die gemeente bevorder? Altyd Soms Nooit",
+   "item": "Kampe"
+  },
+  {
+   "code": "V252",
+   "section": "",
+   "qnum": "7.5",
+   "stem": "Waar word geloofvorming, buiten in die kategese, nog aktief in die gemeente bevorder? Altyd Soms Nooit",
+   "item": "ens.)"
+  },
+  {
+   "code": "V253",
+   "section": "",
+   "qnum": "7.6",
+   "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening Altyd Soms Nooit",
+   "item": "net die jongmense"
+  },
+  {
+   "code": "V254",
+   "section": "",
+   "qnum": "7.6",
+   "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening Altyd Soms Nooit",
+   "item": "senior lidmate"
+  },
+  {
+   "code": "V255",
+   "section": "",
+   "qnum": "7.6",
+   "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening Altyd Soms Nooit",
+   "item": "naskoolse jongmense"
+  },
+  {
+   "code": "V256",
+   "section": "",
+   "qnum": "7.6",
+   "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening Altyd Soms Nooit",
+   "item": "deeltydse jeugwerker of kinderwerker"
+  },
+  {
+   "code": "V257",
+   "section": "",
+   "qnum": "7.6",
+   "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening Altyd Soms Nooit",
+   "item": "ouers"
+  },
+  {
+   "code": "V258",
+   "section": "",
+   "qnum": "7.6",
+   "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening Altyd Soms Nooit",
+   "item": "voltydse predikant"
+  },
+  {
+   "code": "V259",
+   "section": "",
+   "qnum": "7.6",
+   "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening Altyd Soms Nooit",
+   "item": "voltydse jeugwerker"
+  },
+  {
+   "code": "V260",
+   "section": "",
+   "qnum": "7.6",
+   "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening Altyd Soms Nooit",
+   "item": "diensleraar (gelegitmeer)"
+  },
+  {
+   "code": "V261",
+   "section": "",
+   "qnum": "7.6",
+   "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening Altyd Soms Nooit",
+   "item": "ouderling-bedienaar"
+  },
+  {
+   "code": "V262",
+   "section": "",
+   "qnum": "7.6",
+   "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening Altyd Soms Nooit",
+   "item": "ander gemeentes of die ring"
+  },
+  {
+   "code": "V263",
+   "section": "",
+   "qnum": "7.7",
+   "stem": "Hoe word kinders en jongmense van buite die gemeente ingeskakel by geloofvorming in die gemeente? Altyd Soms Nooit",
+   "item": "Ons werk net met gemeentekinders"
+  },
+  {
+   "code": "V264",
+   "section": "",
+   "qnum": "7.7",
+   "stem": "Hoe word kinders en jongmense van buite die gemeente ingeskakel by geloofvorming in die gemeente? Altyd Soms Nooit",
+   "item": "gemeenteaksies te nooi"
+  },
+  {
+   "code": "V265",
+   "section": "",
+   "qnum": "7.7",
+   "stem": "Hoe word kinders en jongmense van buite die gemeente ingeskakel by geloofvorming in die gemeente? Altyd Soms Nooit",
+   "item": "Byeenkoms vir kinders wat ná skool in bewaarskole is"
+  },
+  {
+   "code": "V266",
+   "section": "",
+   "qnum": "7.7",
+   "stem": "Hoe word kinders en jongmense van buite die gemeente ingeskakel by geloofvorming in die gemeente? Altyd Soms Nooit",
+   "item": "Betrokkenheid by die plaaslike skool/skole"
+  },
+  {
+   "code": "V267",
+   "section": "",
+   "qnum": "7.7",
+   "stem": "Hoe word kinders en jongmense van buite die gemeente ingeskakel by geloofvorming in die gemeente? Altyd Soms Nooit",
+   "item": "diensterreine"
+  },
+  {
+   "code": "V268",
+   "section": "",
+   "qnum": "7.7",
+   "stem": "Hoe word kinders en jongmense van buite die gemeente ingeskakel by geloofvorming in die gemeente? Altyd Soms Nooit",
+   "item": "gemeente aktief betrek word"
+  },
+  {
+   "code": "V269",
+   "section": "",
+   "qnum": "7.8",
+   "stem": "Ons bevorder die uitleef van geloof by die huis deur Altyd Soms Nooit gereeld daaroor te praat en te preek (lering in erediens) 1 2 3",
+   "item": ""
+  },
+  {
+   "code": "V270",
+   "section": "",
+   "qnum": "7.8",
+   "stem": "Ons bevorder die uitleef van geloof by die huis deur Altyd Soms Nooit gereeld daaroor te praat en te preek (lering in erediens) 1 2 3",
+   "item": "eredienste"
+  },
+  {
+   "code": "V271",
+   "section": "",
+   "qnum": "7.8",
+   "stem": "Ons bevorder die uitleef van geloof by die huis deur Altyd Soms Nooit gereeld daaroor te praat en te preek (lering in erediens) 1 2 3",
+   "item": "kursusse vir ouers aan te bied (ouerleiding)"
+  },
+  {
+   "code": "V272",
+   "section": "",
+   "qnum": "7.8",
+   "stem": "Ons bevorder die uitleef van geloof by die huis deur Altyd Soms Nooit gereeld daaroor te praat en te preek (lering in erediens) 1 2 3",
+   "item": "familiefokus tydens gemeenteaktiwiteite"
+  },
+  {
+   "code": "V273",
+   "section": "",
+   "qnum": "7.8",
+   "stem": "Ons bevorder die uitleef van geloof by die huis deur Altyd Soms Nooit gereeld daaroor te praat en te preek (lering in erediens) 1 2 3",
+   "item": ""
+  },
+  {
+   "code": "V274",
+   "section": "",
+   "qnum": "7.8",
+   "stem": "Ons bevorder die uitleef van geloof by die huis deur Altyd Soms Nooit gereeld daaroor te praat en te preek (lering in erediens) 1 2 3",
+   "item": "geloofsvorming kan plaasvind"
+  },
+  {
+   "code": "V275",
+   "section": "",
+   "qnum": "7.9",
+   "stem": "Ons is betrokke by plaaslike skool/skole op die volgende wyses Altyd Soms Nooit",
+   "item": "gereelde saalopeninge"
+  },
+  {
+   "code": "V276",
+   "section": "",
+   "qnum": "7.9",
+   "stem": "Ons is betrokke by plaaslike skool/skole op die volgende wyses Altyd Soms Nooit",
+   "item": "(Jesus-weke, Hemelvaart)"
+  },
+  {
+   "code": "V277",
+   "section": "",
+   "qnum": "7.9",
+   "stem": "Ons is betrokke by plaaslike skool/skole op die volgende wyses Altyd Soms Nooit",
+   "item": "weeklikse Christelike aksies"
+  },
+  {
+   "code": "V278",
+   "section": "",
+   "qnum": "7.9",
+   "stem": "Ons is betrokke by plaaslike skool/skole op die volgende wyses Altyd Soms Nooit",
+   "item": "leierskapsopleiding van skoolleiers"
+  },
+  {
+   "code": "V279",
+   "section": "",
+   "qnum": "7.9",
+   "stem": "Ons is betrokke by plaaslike skool/skole op die volgende wyses Altyd Soms Nooit",
+   "item": "deur gemeente/ring gedra word"
+  },
+  {
+   "code": "V280",
+   "section": "",
+   "qnum": "7.9",
+   "stem": "Ons is betrokke by plaaslike skool/skole op die volgende wyses Altyd Soms Nooit",
+   "item": "skoolkampe wat deur kerke aangebied word"
+  },
+  {
+   "code": "V281",
+   "section": "",
+   "qnum": "7.9",
+   "stem": "Ons is betrokke by plaaslike skool/skole op die volgende wyses Altyd Soms Nooit",
+   "item": "pastoraat"
+  },
+  {
+   "code": "V282",
+   "section": "",
+   "qnum": "7.10",
+   "stem": "Ons is by #Imagine betrokke Altyd Soms Nooit",
+   "item": "van ons jongmense en leiers woon dit by"
+  },
+  {
+   "code": "V283",
+   "section": "",
+   "qnum": "7.10",
+   "stem": "Ons is by #Imagine betrokke Altyd Soms Nooit",
+   "item": "dit vorm deel van ons jeugbedieningstrategie"
+  },
+  {
+   "code": "V284",
+   "section": "",
+   "qnum": "8.1",
+   "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke? Ja Nee",
+   "item": "Gee van geld, kos en klere"
+  },
+  {
+   "code": "V285",
+   "section": "",
+   "qnum": "8.1",
+   "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke? Ja Nee",
+   "item": "Vaardigheidsontwikkeling"
+  },
+  {
+   "code": "V286",
+   "section": "",
+   "qnum": "8.1",
+   "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke? Ja Nee",
+   "item": "Voorligtingsprogramme"
+  },
+  {
+   "code": "V287",
+   "section": "",
+   "qnum": "8.1",
+   "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke? Ja Nee",
+   "item": "‘n Werksverskaffingsburo"
+  },
+  {
+   "code": "V288",
+   "section": "",
+   "qnum": "8.1",
+   "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke? Ja Nee",
+   "item": "‘n Behuisingskema"
+  },
+  {
+   "code": "V289",
+   "section": "",
+   "qnum": "8.1",
+   "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke? Ja Nee",
+   "item": "Lees en skryf klasse"
+  },
+  {
+   "code": "V290",
+   "section": "",
+   "qnum": "8.1",
+   "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke? Ja Nee",
+   "item": "Ontwikkeling van entrepreneurskap"
+  },
+  {
+   "code": "V291",
+   "section": "",
+   "qnum": "8.1",
+   "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke? Ja Nee",
+   "item": "Vroeë kind-ontwikkeling"
+  },
+  {
+   "code": "V292",
+   "section": "",
+   "qnum": "8.1",
+   "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke? Ja Nee",
+   "item": "Betrokkenheid by skole byvoorbeeld ‘n naskoolsentrum"
+  },
+  {
+   "code": "V293",
+   "section": "",
+   "qnum": "8.2",
+   "stem": "Wie neem verantwoordelikheid vir hierdie projekte? Ja Nee",
+   "item": "Kerkraad"
+  },
+  {
+   "code": "V294",
+   "section": "",
+   "qnum": "8.2",
+   "stem": "Wie neem verantwoordelikheid vir hierdie projekte? Ja Nee",
+   "item": "Ouderlinge"
+  },
+  {
+   "code": "V295",
+   "section": "",
+   "qnum": "8.2",
+   "stem": "Wie neem verantwoordelikheid vir hierdie projekte? Ja Nee",
+   "item": "Diakens"
+  },
+  {
+   "code": "V296",
+   "section": "",
+   "qnum": "8.2",
+   "stem": "Wie neem verantwoordelikheid vir hierdie projekte? Ja Nee",
+   "item": "Kommissies of georganiseerde bedieninge, taakspanne"
+  },
+  {
+   "code": "V297",
+   "section": "",
+   "qnum": "8.2",
+   "stem": "Wie neem verantwoordelikheid vir hierdie projekte? Ja Nee",
+   "item": "Vrouediens"
+  },
+  {
+   "code": "V298",
+   "section": "",
+   "qnum": "8.2",
+   "stem": "Wie neem verantwoordelikheid vir hierdie projekte? Ja Nee",
+   "item": "Kleingroepe"
+  },
+  {
+   "code": "V299",
+   "section": "",
+   "qnum": "8.2",
+   "stem": "Wie neem verantwoordelikheid vir hierdie projekte? Ja Nee",
+   "item": "Jeugaksies of –bediening"
+  },
+  {
+   "code": "V300",
+   "section": "",
+   "qnum": "8.2",
+   "stem": "Wie neem verantwoordelikheid vir hierdie projekte? Ja Nee",
+   "item": "Individuele lidmate in die gemeente"
+  },
+  {
+   "code": "V301",
+   "section": "",
+   "qnum": "8.3",
+   "stem": "Hoe lyk julle gemeente se verhouding met die plaaslike kerklik maatskaplike dienste (CMR ens)? Ja Nee",
+   "item": "Ons het baie min met mekaar te doen"
+  },
+  {
+   "code": "V302",
+   "section": "",
+   "qnum": "8.3",
+   "stem": "Hoe lyk julle gemeente se verhouding met die plaaslike kerklik maatskaplike dienste (CMR ens)? Ja Nee",
+   "item": "Ons ondersteun finansieel"
+  },
+  {
+   "code": "V303",
+   "section": "",
+   "qnum": "8.3",
+   "stem": "Hoe lyk julle gemeente se verhouding met die plaaslike kerklik maatskaplike dienste (CMR ens)? Ja Nee",
+   "item": "Ons gebruik die dienste van tyd tot tyd"
+  },
+  {
+   "code": "V304",
+   "section": "",
+   "qnum": "8.3",
+   "stem": "Hoe lyk julle gemeente se verhouding met die plaaslike kerklik maatskaplike dienste (CMR ens)? Ja Nee",
+   "item": "Ons doen enkele gesamentlike projekte"
+  },
+  {
+   "code": "V305",
+   "section": "",
+   "qnum": "8.3",
+   "stem": "Hoe lyk julle gemeente se verhouding met die plaaslike kerklik maatskaplike dienste (CMR ens)? Ja Nee",
+   "item": "Ons is mekaar se vennote en werk ten nouste saam"
+  },
+  {
+   "code": "V306",
+   "section": "",
+   "qnum": "8.3",
+   "stem": "Hoe lyk julle gemeente se verhouding met die plaaslike kerklik maatskaplike dienste (CMR ens)? Ja Nee",
+   "item": "gemeente se ligging"
+  },
+  {
+   "code": "V307",
+   "section": "",
+   "qnum": "8.4",
+   "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... Altyd Soms Nooit",
+   "item": "geweld"
+  },
+  {
+   "code": "V308",
+   "section": "",
+   "qnum": "8.4",
+   "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... Altyd Soms Nooit",
+   "item": "rassisme"
+  },
+  {
+   "code": "V309",
+   "section": "",
+   "qnum": "8.4",
+   "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... Altyd Soms Nooit",
+   "item": "seksisme"
+  },
+  {
+   "code": "V310",
+   "section": "",
+   "qnum": "8.4",
+   "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... Altyd Soms Nooit",
+   "item": "gesinskrisisse"
+  },
+  {
+   "code": "V311",
+   "section": "",
+   "qnum": "8.4",
+   "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... Altyd Soms Nooit",
+   "item": "enkelouer gesinne"
+  },
+  {
+   "code": "V312",
+   "section": "",
+   "qnum": "8.4",
+   "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... Altyd Soms Nooit",
+   "item": "misdaad en korrupsie"
+  },
+  {
+   "code": "V313",
+   "section": "",
+   "qnum": "8.4",
+   "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... Altyd Soms Nooit",
+   "item": "MIV/Vigs"
+  },
+  {
+   "code": "V314",
+   "section": "",
+   "qnum": "8.4",
+   "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... Altyd Soms Nooit",
+   "item": "armoede"
+  },
+  {
+   "code": "V315",
+   "section": "",
+   "qnum": "8.4",
+   "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... Altyd Soms Nooit",
+   "item": "afhanklikheidsprobleme"
+  },
+  {
+   "code": "V316",
+   "section": "",
+   "qnum": "8.4",
+   "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... Altyd Soms Nooit",
+   "item": "werkloosheid"
+  },
+  {
+   "code": "V317",
+   "section": "",
+   "qnum": "8.4",
+   "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... Altyd Soms Nooit",
+   "item": "ouer mense (bejaardes)"
+  },
+  {
+   "code": "V318",
+   "section": "",
+   "qnum": "8.5",
+   "stem": "Watter een van die volgende stellings beskryf die gemeente se betrokkenheid by gemeenskapsorganisasies en -aktiwiteite (soos markte, optogte, skoonmaak",
+   "item": "projekte, konserte, ens.) die beste?"
+  },
+  {
+   "code": "V319",
+   "section": "",
+   "qnum": "8.6",
+   "stem": "Netwerke Ja Nee Die gemeente is deel van die RESPOND SA nasionale rampondersteuningsnetwerk wat deur die NG Kerk geïnisieer is en 1 2",
+   "item": "tans ekumenies deur die onderskeie sinodes funksioneer"
+  },
+  {
+   "code": "V320",
+   "section": "",
+   "qnum": "8.7",
+   "stem": "Hoe sien julle die rol van die gemeente tov krisisse en kwessies in die gemeenskap?",
+   "item": ""
+  },
+  {
+   "code": "V321",
+   "section": "",
+   "qnum": "9.1",
+   "stem": "Het u kontak met ŉ bepaalde gemeente(s) van die NG Kerkfamilie? Ja 1 Nee 2",
+   "item": "9.1. Het u kontak met ŉ bepaalde gemeente(s) van die NG Kerkfamilie?"
+  },
+  {
+   "code": "V322",
+   "section": "",
+   "qnum": "9.2",
+   "stem": "Watter vorm neem die kontak met die NG Kerkfamilie aan? Ja Nee",
+   "item": "Skakeling van tyd tot tyd"
+  },
+  {
+   "code": "V323",
+   "section": "",
+   "qnum": "9.2",
+   "stem": "Watter vorm neem die kontak met die NG Kerkfamilie aan? Ja Nee",
+   "item": "Erediensbeurte oor en weer"
+  },
+  {
+   "code": "V324",
+   "section": "",
+   "qnum": "9.2",
+   "stem": "Watter vorm neem die kontak met die NG Kerkfamilie aan? Ja Nee",
+   "item": "Gesamentlike eredienste of Nagmaal"
+  },
+  {
+   "code": "V325",
+   "section": "",
+   "qnum": "9.2",
+   "stem": "Watter vorm neem die kontak met die NG Kerkfamilie aan? Ja Nee",
+   "item": "Gesamentlike projekte"
+  },
+  {
+   "code": "V326",
+   "section": "",
+   "qnum": "9.2",
+   "stem": "Watter vorm neem die kontak met die NG Kerkfamilie aan? Ja Nee",
+   "item": "Ons is in ‘n proses van hereniging"
+  },
+  {
+   "code": "V327",
+   "section": "",
+   "qnum": "9.3",
+   "stem": "Bestaan daar ekumeniese gespreksgroepe (“fraternals / pastors’ forum ) tussen kerke",
+   "item": "en gemeentes in u omgewing?"
+  },
+  {
+   "code": "V328",
+   "section": "",
+   "qnum": "9.4",
+   "stem": "Neem u gemeente aan die ekumeniese gespreksgroepe (“fraternals / pastors’ forum",
+   "item": ")deel?"
+  },
+  {
+   "code": "V329",
+   "section": "",
+   "qnum": "9.4",
+   "stem": "Neem u gemeente aan die ekumeniese gespreksgroepe (“fraternals / pastors’ forum",
+   "item": "Enige kommentaar of voorstelle oor hierdie vraelys?"
+  },
+  {
+   "code": "V330",
+   "section": "",
+   "qnum": "9.4",
+   "stem": "Neem u gemeente aan die ekumeniese gespreksgroepe (“fraternals / pastors’ forum",
+   "item": "Voorsitter van die kerkraad"
+  },
+  {
+   "code": "V331",
+   "section": "",
+   "qnum": "9.4",
+   "stem": "Neem u gemeente aan die ekumeniese gespreksgroepe (“fraternals / pastors’ forum",
+   "item": "Dagbestuur of lede van die dagbestuur"
+  },
+  {
+   "code": "V332",
+   "section": "",
+   "qnum": "9.4",
+   "stem": "Neem u gemeente aan die ekumeniese gespreksgroepe (“fraternals / pastors’ forum",
+   "item": "Predikant (e)"
+  },
+  {
+   "code": "V333",
+   "section": "",
+   "qnum": "9.4",
+   "stem": "Neem u gemeente aan die ekumeniese gespreksgroepe (“fraternals / pastors’ forum",
+   "item": "ŉ Aangewysde taakspan of komitee"
+  },
+  {
+   "code": "V334",
+   "section": "",
+   "qnum": "9.4",
+   "stem": "Neem u gemeente aan die ekumeniese gespreksgroepe (“fraternals / pastors’ forum",
+   "item": "Administratiewe personeel"
+  },
+  {
+   "code": "V335",
+   "section": "",
+   "qnum": "9.4",
+   "stem": "Neem u gemeente aan die ekumeniese gespreksgroepe (“fraternals / pastors’ forum",
+   "item": "Leiers van bedieninge"
+  },
+  {
+   "code": "V336",
+   "section": "",
+   "qnum": "9.4",
+   "stem": "Neem u gemeente aan die ekumeniese gespreksgroepe (“fraternals / pastors’ forum",
+   "item": "ŉ Lidmaat"
+  },
+  {
+   "code": "V337",
+   "section": "",
+   "qnum": "9.4",
+   "stem": "Neem u gemeente aan die ekumeniese gespreksgroepe (“fraternals / pastors’ forum",
+   "item": "Iemand anders"
+  }
+ ],
+ "resolved": {
+  "Gemeente kode": {
+   "code": "V01",
+   "section": "",
+   "qnum": "",
+   "stem": "",
+   "item": "Gemeentekode",
+   "match_score": 0.96
+  },
+  "Hoeveel lidmate is, sover u weet, jonger as 17 jaar?": {
+   "code": "V05",
+   "section": "",
+   "qnum": "1.2",
+   "stem": "Ouderdom - hoeveel lidmate is, sover u weet",
+   "item": "Jonger as 17 jaar?",
+   "match_score": 0.893
+  },
+  "Hoeveel lidmate is, sover u weet, tussen 60 en 80 jaar oud?": {
+   "code": "V06",
+   "section": "",
+   "qnum": "1.2",
+   "stem": "Ouderdom - hoeveel lidmate is, sover u weet",
+   "item": "tussen 60 en 80 jaar oud?",
+   "match_score": 0.905
+  },
+  "Hoeveel lidmate is, sover u weet, 80 jaar of ouer?": {
+   "code": "V07",
+   "section": "",
+   "qnum": "1.2",
+   "stem": "Ouderdom - hoeveel lidmate is, sover u weet",
+   "item": "80 jaar of ouer?",
+   "match_score": 0.889
+  },
+  "Hoeveel lidmate (belydend, doop en ongedoop) het gedurende 2025 lidmaat van dié gemeente geword, wat voorheen nie lidmaat van enige ander gemeente of denominasie was nie?": {
+   "code": "V08",
+   "section": "",
+   "qnum": "1.3",
+   "stem": "Hoeveel lidmate (belydend, doop en ongedoop) het gedurende 2025 lidmaat van dié gemeente geword, wat voorheen nie lidmaat van enige ander gemeente of denominasie was nie?",
+   "item": "Belydend, doop en ongedoop lidmate",
+   "match_score": 1.0
+  },
+  "Dui aan hoeveel voltydse predikantsposte (vir beroeping en bevestiging) daar tans in die gemeente is ... tans gevul": {
+   "code": "V09",
+   "section": "",
+   "qnum": "2.1",
+   "stem": "Dui aan hoeveel voltydse predikantsposte (vir beroeping en bevestiging) daar tans in die gemeente is",
+   "item": "Tans gevul",
+   "match_score": 0.991
+  },
+  "Dui aan hoeveel voltydse predikantsposte (vir beroeping en bevestiging) daar tans in die gemeente is ... tans vakant": {
+   "code": "V10",
+   "section": "",
+   "qnum": "2.1",
+   "stem": "Dui aan hoeveel voltydse predikantsposte (vir beroeping en bevestiging) daar tans in die gemeente is",
+   "item": "Tans vakant",
+   "match_score": 0.991
+  },
+  "Dui aan hoeveel voltydse predikantsposte (vir beroeping en bevestiging) daar tans in die gemeente is ... in 2022-2025 verander na 'n 'verkleinde' pos": {
+   "code": "V11",
+   "section": "",
+   "qnum": "2.1",
+   "stem": "Dui aan hoeveel voltydse predikantsposte (vir beroeping en bevestiging) daar tans in die gemeente is",
+   "item": "In 2022-2025 verander na ŉ “verkleinde” pos",
+   "match_score": 0.993
+  },
+  "Dui aan hoeveel voltydse predikantsposte (vir beroeping en bevestiging) daar tans in die gemeente is ... in 2022-2025 afgeskaf/gesluit": {
+   "code": "V12",
+   "section": "",
+   "qnum": "2.1",
+   "stem": "Dui aan hoeveel voltydse predikantsposte (vir beroeping en bevestiging) daar tans in die gemeente is",
+   "item": "in 2022-2025 afgeskaf/gesluit",
+   "match_score": 0.992
+  },
+  "Dui aan hoeveel voltydse predikantsposte (vir beroeping en bevestiging) daar tans in die gemeente is in 2022-2025 geskep": {
+   "code": "V13",
+   "section": "",
+   "qnum": "2.1",
+   "stem": "Dui aan hoeveel voltydse predikantsposte (vir beroeping en bevestiging) daar tans in die gemeente is",
+   "item": "in 2022-2025 geskep",
+   "match_score": 1.0
+  },
+  "Hoeveel predikantposte word gevul deur ...voltydse geordende leraar(s) (Voltydse onbepaalde termynpos)": {
+   "code": "V14",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "voltydse geordende leraar(s) (Voltydse onbepaalde termynpos)",
+   "match_score": 0.99
+  },
+  "Hoeveel predikantposte word gevul deur ....tentmakerleraar (Deeltydse onbepaalde termynpos)": {
+   "code": "V15",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "tentmakerleraar (Deeltydse onbepaalde termynpos)",
+   "match_score": 0.989
+  },
+  "Hoeveel preikantposte word geul deur ...voltydse leraar met kontrakpos (Voltydse vaste termynpos)": {
+   "code": "V16",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "voltydse leraar met kontrakpos (Voltydse vaste termynpos)",
+   "match_score": 0.979
+  },
+  "Hoeveel predikantposte word gevul deur ...deeltydse leraar met kontrakpos (Deeltydse vaste termynpos)": {
+   "code": "V17",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "deeltydse leraar met kontrakpos (Deeltydse vaste termynpos)",
+   "match_score": 0.99
+  },
+  "Hoeveel predikantposte word gevul deur ... kapelaan gekoppel aan gemeente": {
+   "code": "V18",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "kapelaan, gekoppel aan gemeente",
+   "match_score": 0.972
+  },
+  "Hoeveel predikantspote word gevul deur ... predikant in sinodale diens gekoppel aan gemeente": {
+   "code": "V19",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "predikant in sinodale diens, gekoppel aan gemeente",
+   "match_score": 0.978
+  },
+  "Hoeveel predikantsposte word gevul deur ... diensleraar": {
+   "code": "V20",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "diensleraar",
+   "match_score": 0.981
+  },
+  "Hoeveel predikantsposte word gevul deur ... bedienaar": {
+   "code": "V21",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "bedienaar",
+   "match_score": 0.98
+  },
+  "Hoeveel predikantsposte word gevul deur ..proponent": {
+   "code": "V22",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "proponent",
+   "match_score": 0.99
+  },
+  "Hoeveel predikantsposte word gevul deur ... emeritus (70 jaar of jonger)": {
+   "code": "V24",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "emeritus (70 jaar of jonger)",
+   "match_score": 0.985
+  },
+  "Hoeveel predikantsposte word gevul deur ... emeritus (ouer as 70 jaar)": {
+   "code": "V25",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "emeritus (ouer as 70 jaar)",
+   "match_score": 0.985
+  },
+  "Indien die gemeente ? deeltydse vaste termyn predikantspos het, dui asb die termyn (aantal jare) aan. (Let wel: alle deeltydse poste is nie noodwendig vaste termyn nie)": {
+   "code": "V26",
+   "section": "",
+   "qnum": "2.3",
+   "stem": "Indien die gemeente ŉ deeltydse vaste termyn predikantspos het, dui asb die termyn",
+   "item": "(aantal jare) aan . (Let wel: alle deeltydse poste is nie noodwendig vaste termyn",
+   "match_score": 0.982
+  },
+  "Diensleraar (nie in gemeente bevestig nie)": {
+   "code": "V27",
+   "section": "",
+   "qnum": "2.4",
+   "stem": "Gebruik die gemeente ander teologies opgeleide persone wat nie beroep en bevestig is nie, in die gemeente? Ja Nee",
+   "item": "Diensleraar (nie in gemeente bevestig nie)",
+   "match_score": 1.0
+  },
+  "Bedienaar": {
+   "code": "V21",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "bedienaar",
+   "match_score": 1.0
+  },
+  "Proponent": {
+   "code": "V22",
+   "section": "",
+   "qnum": "2.2",
+   "stem": "Hoeveel predikantsposte word gevul deur",
+   "item": "proponent",
+   "match_score": 1.0
+  },
+  "Emerituspredikant": {
+   "code": "V30",
+   "section": "",
+   "qnum": "2.4",
+   "stem": "Gebruik die gemeente ander teologies opgeleide persone wat nie beroep en bevestig is nie, in die gemeente? Ja Nee",
+   "item": "Emerituspredikant",
+   "match_score": 1.0
+  },
+  "Teologiese student": {
+   "code": "V31",
+   "section": "",
+   "qnum": "2.4",
+   "stem": "Gebruik die gemeente ander teologies opgeleide persone wat nie beroep en bevestig is nie, in die gemeente? Ja Nee",
+   "item": "Teologiese student",
+   "match_score": 1.0
+  },
+  "Gelegitmeerde in ander betrekking": {
+   "code": "V32",
+   "section": "",
+   "qnum": "2.4",
+   "stem": "Gebruik die gemeente ander teologies opgeleide persone wat nie beroep en bevestig is nie, in die gemeente? Ja Nee",
+   "item": "Gelegitimeerde in ’n ander betrekking",
+   "match_score": 0.943
+  },
+  "Predikant wat op beroep wag": {
+   "code": "V33",
+   "section": "",
+   "qnum": "2.4",
+   "stem": "Gebruik die gemeente ander teologies opgeleide persone wat nie beroep en bevestig is nie, in die gemeente? Ja Nee",
+   "item": "Predikant wat op ’n beroep wag",
+   "match_score": 0.947
+  },
+  "Jeugwerker": {
+   "code": "V34",
+   "section": "",
+   "qnum": "2.4",
+   "stem": "Gebruik die gemeente ander teologies opgeleide persone wat nie beroep en bevestig is nie, in die gemeente? Ja Nee",
+   "item": "Jeugwerker",
+   "match_score": 1.0
+  },
+  "Nie-gelegitimeerde": {
+   "code": "V35",
+   "section": "",
+   "qnum": "2.4",
+   "stem": "Gebruik die gemeente ander teologies opgeleide persone wat nie beroep en bevestig is nie, in die gemeente? Ja Nee",
+   "item": "Nie-gelegitimeerde",
+   "match_score": 1.0
+  },
+  "Hoeveel gelegitimeerde predikante (voltyds) in die gemeente se diens is vroue?": {
+   "code": "V36",
+   "section": "",
+   "qnum": "2.5",
+   "stem": "Hoeveel gelegitimeerde predikante in die gemeente se diens is vroue?",
+   "item": "Voltyds",
+   "match_score": 0.931
+  },
+  "Hoeveel gelegitimeerde predikante (deeltyds) in die gemeente se diens is vroue?": {
+   "code": "V36",
+   "section": "",
+   "qnum": "2.5",
+   "stem": "Hoeveel gelegitimeerde predikante in die gemeente se diens is vroue?",
+   "item": "Voltyds",
+   "match_score": 0.924
+  },
+  "Musiekleiers, orrelis": {
+   "code": "V42",
+   "section": "",
+   "qnum": "2.7",
+   "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente? Ja Nee",
+   "item": "Musiekleier, orrelis",
+   "match_score": 0.976
+  },
+  "Maatskaplike werker": {
+   "code": "V43",
+   "section": "",
+   "qnum": "2.7",
+   "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente? Ja Nee",
+   "item": "Maatskaplike werker",
+   "match_score": 1.0
+  },
+  "Kinderwerker": {
+   "code": "V45",
+   "section": "",
+   "qnum": "2.7",
+   "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente? Ja Nee",
+   "item": "Kinderwerker",
+   "match_score": 1.0
+  },
+  "Eredienswerker": {
+   "code": "V46",
+   "section": "",
+   "qnum": "2.7",
+   "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente? Ja Nee",
+   "item": "Eredienswerker",
+   "match_score": 1.0
+  },
+  "Andertalige of kruiskulturele bediening": {
+   "code": "V47",
+   "section": "",
+   "qnum": "2.7",
+   "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente? Ja Nee",
+   "item": "Andertalige of kruiskulturele bediening",
+   "match_score": 1.0
+  },
+  "Bestuurder van gemeente bedieninge": {
+   "code": "V48",
+   "section": "",
+   "qnum": "2.7",
+   "stem": "Gebruik u ook ander betaalde persone wat nie teologies opgelei is nie vir bedieningstake in die gemeente? Ja Nee",
+   "item": "Bestuurder van gemeente bedieninge",
+   "match_score": 1.0
+  },
+  "Bestaan daar ? Diensverhoudinge Kommissie of soortgelyke kommissie wat die diensooreenkoms van predikante en ander personeel hanteer ?": {
+   "code": "V49",
+   "section": "",
+   "qnum": "2.8",
+   "stem": "Bestaan daar ŉ Diensverhoudinge Kommissie of soortgelyke kommissie wat die",
+   "item": "diensooreenkoms van predikante en ander personeel hanteer ?",
+   "match_score": 0.996
+  },
+  "Predikant(e), ander gelegitimeerdes": {
+   "code": "V50",
+   "section": "",
+   "qnum": "2.9",
+   "stem": "Is daar ŉ versorgingskommissie, naas die diensverhoudinge kommissie, wat omsien na die versorging van die volgende persone? Ja Nee",
+   "item": "Predikant(e), ander gelegitimeerdes",
+   "match_score": 1.0
+  },
+  "Kantoorpersoneel": {
+   "code": "V51",
+   "section": "",
+   "qnum": "2.9",
+   "stem": "Is daar ŉ versorgingskommissie, naas die diensverhoudinge kommissie, wat omsien na die versorging van die volgende persone? Ja Nee",
+   "item": "Kantoorpersoneel",
+   "match_score": 1.0
+  },
+  "Orrelis, musiekleier": {
+   "code": "V52",
+   "section": "",
+   "qnum": "2.9",
+   "stem": "Is daar ŉ versorgingskommissie, naas die diensverhoudinge kommissie, wat omsien na die versorging van die volgende persone? Ja Nee",
+   "item": "Orrelis, musiekleier",
+   "match_score": 1.0
+  },
+  "Koster": {
+   "code": "V53",
+   "section": "",
+   "qnum": "2.9",
+   "stem": "Is daar ŉ versorgingskommissie, naas die diensverhoudinge kommissie, wat omsien na die versorging van die volgende persone? Ja Nee",
+   "item": "Koster",
+   "match_score": 1.0
+  },
+  "Ander personeel": {
+   "code": "V54",
+   "section": "",
+   "qnum": "2.9",
+   "stem": "Is daar ŉ versorgingskommissie, naas die diensverhoudinge kommissie, wat omsien na die versorging van die volgende persone? Ja Nee",
+   "item": "Ander personeel",
+   "match_score": 1.0
+  },
+  "Het die gemeente 'n amptelike goedgekeurde begroting?": {
+   "code": "V55",
+   "section": "",
+   "qnum": "3.1",
+   "stem": "Het die gemeente ŉ amptelik goedgekeurde begroting? Ja 1 Nee 2",
+   "item": "3.1. Het die gemeente ŉ amptelik goedgekeurde begroting?",
+   "match_score": 0.944
+  },
+  "Predikante en diensleraars - salarisse en voordele": {
+   "code": "V56",
+   "section": "",
+   "qnum": "3.2",
+   "stem": "Watter persentasie van u werklike uitgawes in die 2024/2025 finansiële jaar het u bestee aan ... %",
+   "item": "predikante en diensleraars: Salarisse en voordele",
+   "match_score": 0.99
+  },
+  "Ander werknemers - salarisse en voordele": {
+   "code": "V57",
+   "section": "",
+   "qnum": "3.2",
+   "stem": "Watter persentasie van u werklike uitgawes in die 2024/2025 finansiële jaar het u bestee aan ... %",
+   "item": "ander werknemers: Salarisse en voordele",
+   "match_score": 0.987
+  },
+  "Eiendomsuitgawes - onderhoud en verbandlening": {
+   "code": "V59",
+   "section": "",
+   "qnum": "3.2",
+   "stem": "Watter persentasie van u werklike uitgawes in die 2024/2025 finansiële jaar het u bestee aan ... %",
+   "item": "Eiendomsuitgawes: onderhoud en verbandlening",
+   "match_score": 0.989
+  },
+  "Bedieninge ter van die gemeente self": {
+   "code": "V60",
+   "section": "",
+   "qnum": "3.2",
+   "stem": "Watter persentasie van u werklike uitgawes in die 2024/2025 finansiële jaar het u bestee aan ... %",
+   "item": "bedieninge ter wille van die gemeente self",
+   "match_score": 0.923
+  },
+  "Diens en getuienis na buite die gemeente": {
+   "code": "V61",
+   "section": "",
+   "qnum": "3.2",
+   "stem": "Watter persentasie van u werklike uitgawes in die 2024/2025 finansiële jaar het u bestee aan ... %",
+   "item": "diens en getuienis na buite die gemeente",
+   "match_score": 1.0
+  },
+  "Ring- en sinodale bydraes": {
+   "code": "V62",
+   "section": "",
+   "qnum": "3.2",
+   "stem": "Watter persentasie van u werklike uitgawes in die 2024/2025 finansiële jaar het u bestee aan ... %",
+   "item": "ring- en sinodale bydraes",
+   "match_score": 1.0
+  },
+  "Ander uitgawes": {
+   "code": "V63",
+   "section": "",
+   "qnum": "3.2",
+   "stem": "Watter persentasie van u werklike uitgawes in die 2024/2025 finansiële jaar het u bestee aan ... %",
+   "item": "ander uitgawes",
+   "match_score": 1.0
+  },
+  "Watter van die volgende beskryf die gemeente se finansiële posisie die beste?": {
+   "code": "V64",
+   "section": "",
+   "qnum": "3.3",
+   "stem": "Watter van die volgende beskryf die gemeente se finansiële posisie die beste? Ons inkomste groei bo die inflasiekoers 1 Ons inkomste hou tred met inflasie 2",
+   "item": "3.3. Watter van die volgende beskryf die gemeente se finansiële posisie die beste?",
+   "match_score": 0.969
+  },
+  "Hoe vergelyk die gemeente se werklike finansiële posisie (inkomste) vir die boekjaar wat geëindig het op 28 Februarie 2025 met die vorige boekjaar?": {
+   "code": "V65",
+   "section": "",
+   "qnum": "3.4",
+   "stem": "Hoe vergelyk die gemeente se werklike finansiële posisie (inkomste en uitgawes) vir die boekjaar wat geëindig het op 28 Februarie 2025 met die vorige boekjaar?",
+   "item": "Inkomste",
+   "match_score": 0.961
+  },
+  "Hoe vergelyk die gemeente se werklike finansiële posisie (uitgawes) vir die boekjaar wat geëindig het op 28 Februarie 2025 met die vorige boekjaar?": {
+   "code": "V65",
+   "section": "",
+   "qnum": "3.4",
+   "stem": "Hoe vergelyk die gemeente se werklike finansiële posisie (inkomste en uitgawes) vir die boekjaar wat geëindig het op 28 Februarie 2025 met die vorige boekjaar?",
+   "item": "Inkomste",
+   "match_score": 0.961
+  },
+  "Die vergoeding van die voltydse predikant(e) in diens van die gemeente is ...": {
+   "code": "V68",
+   "section": "",
+   "qnum": "3.5",
+   "stem": "Die vergoeding van die voltydse predikant(e) in diens van die gemeente is minder as die sinodale skaal 1 volgens sinodale skaal 2",
+   "item": "3.5. Die vergoeding van die voltydse predikant(e) in diens van die gemeente is",
+   "match_score": 0.967
+  },
+  "Hoeveel oggenddienste word gewoonlik elke Sondag in die gemeente gehou?": {
+   "code": "V69",
+   "section": "",
+   "qnum": "4.1",
+   "stem": "Hoeveel eredienste word gewoonlik elke Sondag in dié gemeente gehou?",
+   "item": "Oggend Getal",
+   "match_score": 0.942
+  },
+  "Hoeveel aanddienste word gewoonlik elke Sondag in die gemeente gehou?": {
+   "code": "V69",
+   "section": "",
+   "qnum": "4.1",
+   "stem": "Hoeveel eredienste word gewoonlik elke Sondag in dié gemeente gehou?",
+   "item": "Oggend Getal",
+   "match_score": 0.941
+  },
+  "Hoeveel ander eredienste word gewoonlik elke Sondag in die gemeente gehou?": {
+   "code": "V69",
+   "section": "",
+   "qnum": "4.1",
+   "stem": "Hoeveel eredienste word gewoonlik elke Sondag in dié gemeente gehou?",
+   "item": "Oggend Getal",
+   "match_score": 0.95
+  },
+  "Aanlyn erediens (op YouTube, ens beskikbaar)": {
+   "code": "V72",
+   "section": "",
+   "qnum": "4.2",
+   "stem": "Het u gemeente, naas ‘n gewone erediens, ook ander eredienste? Ja Nee",
+   "item": "Aanlyn erediens (op YouTube, ens beskikbaar)",
+   "match_score": 1.0
+  },
+  "Gesins- of familiediens": {
+   "code": "V73",
+   "section": "",
+   "qnum": "4.2",
+   "stem": "Het u gemeente, naas ‘n gewone erediens, ook ander eredienste? Ja Nee",
+   "item": "Gesins- of familiediens",
+   "match_score": 1.0
+  },
+  "Aparte diens vir senior burgers (bv. in aftreeoord)": {
+   "code": "V74",
+   "section": "",
+   "qnum": "4.2",
+   "stem": "Het u gemeente, naas ‘n gewone erediens, ook ander eredienste? Ja Nee",
+   "item": "Aparte diens vir senior burgers (bv. in aftreeoord)",
+   "match_score": 1.0
+  },
+  "Aparte diens vir jong volwassenes": {
+   "code": "V75",
+   "section": "",
+   "qnum": "4.2",
+   "stem": "Het u gemeente, naas ‘n gewone erediens, ook ander eredienste? Ja Nee",
+   "item": "Aparte diens vir jong volwassenes",
+   "match_score": 1.0
+  },
+  "Aparte Jeugdiens (hoofsaaklik hoërskool)": {
+   "code": "V76",
+   "section": "",
+   "qnum": "4.2",
+   "stem": "Het u gemeente, naas ‘n gewone erediens, ook ander eredienste? Ja Nee",
+   "item": "Aparte Jeugdiens (hoofsaaklik hoërskool)",
+   "match_score": 1.0
+  },
+  "Aparte Kinderdiens (hoofsaaklik laerskool)": {
+   "code": "V77",
+   "section": "",
+   "qnum": "4.2",
+   "stem": "Het u gemeente, naas ‘n gewone erediens, ook ander eredienste? Ja Nee",
+   "item": "Aparte Kinderdiens (hoofsaaklik laerskool)",
+   "match_score": 1.0
+  },
+  "Aparte Kleuterdiens (voorskools)": {
+   "code": "V78",
+   "section": "",
+   "qnum": "4.2",
+   "stem": "Het u gemeente, naas ‘n gewone erediens, ook ander eredienste? Ja Nee",
+   "item": "Aparte Kleuterdiens (voorskools)",
+   "match_score": 1.0
+  },
+  "Andertalige erediens": {
+   "code": "V79",
+   "section": "",
+   "qnum": "4.2",
+   "stem": "Het u gemeente, naas ‘n gewone erediens, ook ander eredienste? Ja Nee",
+   "item": "Andertalige erediens",
+   "match_score": 1.0
+  },
+  "Gewone erediens": {
+   "code": "V80",
+   "section": "",
+   "qnum": "4.3",
+   "stem": "Wie lei die eredienste? (Merk asb waar van toepassing)",
+   "item": "Gewone erediens",
+   "match_score": 1.0
+  },
+  "Aparte diens vir senior burgers": {
+   "code": "V111",
+   "section": "",
+   "qnum": "4.9",
+   "stem": "Wat is die primêre vorm van sangbegeleiding tydens die volgende eredienste? Orrel Begeleiers- Klavier Klankopnames Geen groep (backtracks)",
+   "item": "Diens vir senior burgers",
+   "match_score": 0.873
+  },
+  "Aparte Jeugdiens": {
+   "code": "V83",
+   "section": "",
+   "qnum": "4.3",
+   "stem": "Wie lei die eredienste? (Merk asb waar van toepassing)",
+   "item": "Aparte Jeugdiens",
+   "match_score": 1.0
+  },
+  "Aparte Kinderdiens": {
+   "code": "V84",
+   "section": "",
+   "qnum": "4.3",
+   "stem": "Wie lei die eredienste? (Merk asb waar van toepassing)",
+   "item": "Aparte Kinderdiens",
+   "match_score": 1.0
+  },
+  "Aparte Kleuterdiens": {
+   "code": "V85",
+   "section": "",
+   "qnum": "4.3",
+   "stem": "Wie lei die eredienste? (Merk asb waar van toepassing)",
+   "item": "Aparte Kleuterdiens",
+   "match_score": 1.0
+  },
+  "Andertalige erediensdiens": {
+   "code": "V79",
+   "section": "",
+   "qnum": "4.2",
+   "stem": "Het u gemeente, naas ‘n gewone erediens, ook ander eredienste? Ja Nee",
+   "item": "Andertalige erediens",
+   "match_score": 0.889
+  },
+  "Dui al die verskillende tale waarin eredienste gehou word aan:": {
+   "code": "V87",
+   "section": "",
+   "qnum": "4.4",
+   "stem": "Dui al die verskillende tale waarin eredienste gehou word aan",
+   "item": "4.4. Dui al die verskillende tale waarin eredienste gehou word aan",
+   "match_score": 1.0
+  },
+  "Wat is die totale gemiddelde in-persoon erediensbywoning per Sondag in Februarie? (Dui dit as gemiddeld vir al die erediente wat op ?n Sondag in Februarie plaasvind, aan) vir 2022:": {
+   "code": "V88",
+   "section": "",
+   "qnum": "4.5",
+   "stem": "Wat is die totale gemiddelde in-persoon erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ‘n Sondag in Februarie",
+   "item": "2022",
+   "match_score": 0.901
+  },
+  "Wat is die totale gemiddelde in-persoon erediensbywoning per Sondag in Februarie? (Dui dit as gemiddeld vir al die erediente wat op ?n Sondag in Februarie plaasvind, aan) vir 2023:": {
+   "code": "V89",
+   "section": "",
+   "qnum": "4.5",
+   "stem": "Wat is die totale gemiddelde in-persoon erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ‘n Sondag in Februarie",
+   "item": "2023",
+   "match_score": 0.901
+  },
+  "Wat is die totale gemiddelde in-persoon erediensbywoning per Sondag in Februarie? (Dui dit as gemiddeld vir al die erediente wat op ?n Sondag in Februarie plaasvind, aan) vir 2024:": {
+   "code": "V90",
+   "section": "",
+   "qnum": "4.5",
+   "stem": "Wat is die totale gemiddelde in-persoon erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ‘n Sondag in Februarie",
+   "item": "2024",
+   "match_score": 0.901
+  },
+  "Wat is die totale gemiddelde in-persoon erediensbywoning per Sondag in Februarie? (Dui dit as gemiddeld vir al die erediente wat op ?n Sondag in Februarie plaasvind, aan) vir 2025:": {
+   "code": "V91",
+   "section": "",
+   "qnum": "4.5",
+   "stem": "Wat is die totale gemiddelde in-persoon erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ‘n Sondag in Februarie",
+   "item": "2025",
+   "match_score": 0.901
+  },
+  "Liedboek": {
+   "code": "V97",
+   "section": "",
+   "qnum": "4.7",
+   "stem": "Watter liedere bundels gebruik u tydens die eredienste… Altyd Gereeld Soms Nooit",
+   "item": "Liedboek",
+   "match_score": 1.0
+  },
+  "Flam": {
+   "code": "V98",
+   "section": "",
+   "qnum": "4.7",
+   "stem": "Watter liedere bundels gebruik u tydens die eredienste… Altyd Gereeld Soms Nooit",
+   "item": "Flam",
+   "match_score": 1.0
+  },
+  "VONKK": {
+   "code": "V99",
+   "section": "",
+   "qnum": "4.7",
+   "stem": "Watter liedere bundels gebruik u tydens die eredienste… Altyd Gereeld Soms Nooit",
+   "item": "VONKK",
+   "match_score": 1.0
+  },
+  "'n Eie bundel": {
+   "code": "V100",
+   "section": "",
+   "qnum": "4.7",
+   "stem": "Watter liedere bundels gebruik u tydens die eredienste… Altyd Gereeld Soms Nooit",
+   "item": "’n Eie bundel",
+   "match_score": 1.0
+  },
+  "Ander bundel(s)": {
+   "code": "V101",
+   "section": "",
+   "qnum": "4.7",
+   "stem": "Watter liedere bundels gebruik u tydens die eredienste… Altyd Gereeld Soms Nooit",
+   "item": "Ander bundel(s)",
+   "match_score": 1.0
+  },
+  "die kerkjaar word gevolg": {
+   "code": "V102",
+   "section": "",
+   "qnum": "4.8",
+   "stem": "Wat die eredienste in die gemeente betref… Altyd Gereeld Soms Nooit",
+   "item": "die kerkjaar word gevolg",
+   "match_score": 1.0
+  },
+  "ons doen van tyd tot tyd preek reekse": {
+   "code": "V107",
+   "section": "",
+   "qnum": "4.8",
+   "stem": "Wat die eredienste in die gemeente betref… Altyd Gereeld Soms Nooit",
+   "item": "ons doen van tyd tot tyd preekreekse",
+   "match_score": 0.986
+  },
+  "Diens vir senior burgers": {
+   "code": "V111",
+   "section": "",
+   "qnum": "4.9",
+   "stem": "Wat is die primêre vorm van sangbegeleiding tydens die volgende eredienste? Orrel Begeleiers- Klavier Klankopnames Geen groep (backtracks)",
+   "item": "Diens vir senior burgers",
+   "match_score": 1.0
+  },
+  "Jeugdiens": {
+   "code": "V112",
+   "section": "",
+   "qnum": "4.9",
+   "stem": "Wat is die primêre vorm van sangbegeleiding tydens die volgende eredienste? Orrel Begeleiers- Klavier Klankopnames Geen groep (backtracks)",
+   "item": "Jeugdiens",
+   "match_score": 1.0
+  },
+  "Kinderdiens": {
+   "code": "V113",
+   "section": "",
+   "qnum": "4.9",
+   "stem": "Wat is die primêre vorm van sangbegeleiding tydens die volgende eredienste? Orrel Begeleiers- Klavier Klankopnames Geen groep (backtracks)",
+   "item": "Kindererediens",
+   "match_score": 0.88
+  },
+  "Kleuterdiens": {
+   "code": "V114",
+   "section": "",
+   "qnum": "4.9",
+   "stem": "Wat is die primêre vorm van sangbegeleiding tydens die volgende eredienste? Orrel Begeleiers- Klavier Klankopnames Geen groep (backtracks)",
+   "item": "Kleutererediens",
+   "match_score": 0.889
+  },
+  "Andertalinge erediens": {
+   "code": "V79",
+   "section": "",
+   "qnum": "4.2",
+   "stem": "Het u gemeente, naas ‘n gewone erediens, ook ander eredienste? Ja Nee",
+   "item": "Andertalige erediens",
+   "match_score": 0.976
+  },
+  "Hoeveel maal het u gedurende 2025 die Nagmaal gevier?  (gemeentes wat op dieselfde dag by meer as een erediens Nagmaal bedien, tel dit net as een geleentheid)": {
+   "code": "V116",
+   "section": "",
+   "qnum": "4.10",
+   "stem": "Hoeveel maal het u gedurende 2025 die Nagmaal gevier? (gemeentes wat op dieselfde dag by meer as een erediens Nagmaal bedien, tel dit net as een geleentheid)",
+   "item": "Getal",
+   "match_score": 0.997
+  },
+  "Watter een van die volgende omskrywings sal die kerkraad die beste beskryf?": {
+   "code": "V117",
+   "section": "",
+   "qnum": "5.1",
+   "stem": "Watter een van die volgende omskrywings sal die kerkraad die beste beskryf?",
+   "item": "5.1. Watter een van die volgende omskrywings sal die kerkraad die beste beskryf?",
+   "match_score": 1.0
+  },
+  "Hoe sou u die gemeente se huidige rigting tipeer?": {
+   "code": "V118",
+   "section": "",
+   "qnum": "5.2",
+   "stem": "Hoe sou u die gemeente se huidige rigting tipeer? Krimpend en/of sterwend 1 Besig met instandhouding of oorlewing 2",
+   "item": "5.2. Hoe sou u die gemeente se huidige rigting tipeer?",
+   "match_score": 0.95
+  },
+  "Samewerking met 'n buurgemeente(s)": {
+   "code": "V119",
+   "section": "",
+   "qnum": "5.3",
+   "stem": "Indien die voortbestaan van die gemeente in gedrang is, watter opsies oorweeg u (Merk almal van toepassing)? Ja Nee",
+   "item": "Samewerking met ‘n buurgemeente(s)",
+   "match_score": 1.0
+  },
+  "Samesmelting of eenwording met 'n buurgemeente(s)": {
+   "code": "V120",
+   "section": "",
+   "qnum": "5.3",
+   "stem": "Indien die voortbestaan van die gemeente in gedrang is, watter opsies oorweeg u (Merk almal van toepassing)? Ja Nee",
+   "item": "Samesmetling of eenwording met ‘n buurgemeente(s)",
+   "match_score": 0.979
+  },
+  "Ontwikkeling van entrepreneuriese fondsinsameling": {
+   "code": "V123",
+   "section": "",
+   "qnum": "5.3",
+   "stem": "Indien die voortbestaan van die gemeente in gedrang is, watter opsies oorweeg u (Merk almal van toepassing)? Ja Nee",
+   "item": "Ontwikkeling van entrepreneuriese fondsinsameling",
+   "match_score": 1.0
+  },
+  "Vermindering van ander personeeluitgawes/poste": {
+   "code": "V124",
+   "section": "",
+   "qnum": "5.3",
+   "stem": "Indien die voortbestaan van die gemeente in gedrang is, watter opsies oorweeg u (Merk almal van toepassing)? Ja Nee",
+   "item": "Vermindering van ander personeeluitgawes/poste",
+   "match_score": 1.0
+  },
+  "Heraanwending van geboue (bv. verhuring)": {
+   "code": "V125",
+   "section": "",
+   "qnum": "5.3",
+   "stem": "Indien die voortbestaan van die gemeente in gedrang is, watter opsies oorweeg u (Merk almal van toepassing)? Ja Nee",
+   "item": "Heraanwending van geboue (bv. verhuring)",
+   "match_score": 1.0
+  },
+  "Rentmeesterskap program om bydraes te verhoog": {
+   "code": "V126",
+   "section": "",
+   "qnum": "5.3",
+   "stem": "Indien die voortbestaan van die gemeente in gedrang is, watter opsies oorweeg u (Merk almal van toepassing)? Ja Nee",
+   "item": "Rentmeesterskap program om bydraes te verhoog",
+   "match_score": 1.0
+  },
+  "Evangelisasie en gemeente groei strategie": {
+   "code": "V127",
+   "section": "",
+   "qnum": "5.3",
+   "stem": "Indien die voortbestaan van die gemeente in gedrang is, watter opsies oorweeg u (Merk almal van toepassing)? Ja Nee",
+   "item": "Evangelisasie en gemeente groei strategie",
+   "match_score": 1.0
+  },
+  "Bedienaars": {
+   "code": "V128",
+   "section": "",
+   "qnum": "5.4",
+   "stem": "Is u bewus van die volgende bediening moontlikhede wat tans ontwikkel word? Ja Nee",
+   "item": "Bedienaars",
+   "match_score": 1.0
+  },
+  "Opleiding vir diensleraars": {
+   "code": "V129",
+   "section": "",
+   "qnum": "5.4",
+   "stem": "Is u bewus van die volgende bediening moontlikhede wat tans ontwikkel word? Ja Nee",
+   "item": "Opleiding vir diensleraars",
+   "match_score": 1.0
+  },
+  "Deeltydse opleiding van tweede loopbaan predikante": {
+   "code": "V130",
+   "section": "",
+   "qnum": "5.4",
+   "stem": "Is u bewus van die volgende bediening moontlikhede wat tans ontwikkel word? Ja Nee",
+   "item": "Deeltydse opleiding van tweede loopbaan predikante",
+   "match_score": 1.0
+  },
+  "Wie is die voorsitter van die kerkraad?": {
+   "code": "V131",
+   "section": "",
+   "qnum": "5.5",
+   "stem": "Wie is die voorsitter van die kerkraad? Ons het een predikant, hy/sy doen dit 1 Ons het meer as een predikant, hulle roteer 2",
+   "item": "5.5. Wie is die voorsitter van die kerkraad?",
+   "match_score": 0.938
+  },
+  "Is die lidmaatdatabasis gerekenariseerd?": {
+   "code": "V132",
+   "section": "",
+   "qnum": "5.6",
+   "stem": "Die gebruik van tegnologie in die gemeente Ja Nee",
+   "item": "Is die lidmaatdatabasis gerekenariseerd?",
+   "match_score": 1.0
+  },
+  "Is die boekhoustelsel gerekenariseerd?": {
+   "code": "V133",
+   "section": "",
+   "qnum": "5.6",
+   "stem": "Die gebruik van tegnologie in die gemeente Ja Nee",
+   "item": "Is die boekhoustelsel gerekenariseerd?",
+   "match_score": 1.0
+  },
+  "Het die gemeente ? eie webwerf?": {
+   "code": "V134",
+   "section": "",
+   "qnum": "5.6",
+   "stem": "Die gebruik van tegnologie in die gemeente Ja Nee",
+   "item": "Het die gemeente ŉ eie webwerf?",
+   "match_score": 0.984
+  },
+  "Stuur die gemeente ? elektroniese nuusbrief uit?": {
+   "code": "V139",
+   "section": "",
+   "qnum": "5.6",
+   "stem": "Die gebruik van tegnologie in die gemeente Ja Nee",
+   "item": "Stuur die gemeente ŉ elektroniese nuusbrief uit?",
+   "match_score": 0.989
+  },
+  "Word ? dataprojektor tydens eredienste gebruik?": {
+   "code": "V140",
+   "section": "",
+   "qnum": "5.6",
+   "stem": "Die gebruik van tegnologie in die gemeente Ja Nee",
+   "item": "Word ŉ dataprojektor tydens eredienste gebruik?",
+   "match_score": 0.989
+  },
+  "Algemene afkondiginge": {
+   "code": "V143",
+   "section": "",
+   "qnum": "5.7",
+   "stem": "Gebruik die gemeente sosiale media (WhatsApp, facebook en ander) vir enige van die volgende? (Kies al die opsies van toepassing)",
+   "item": "Algemene afkondiginge",
+   "match_score": 1.0
+  },
+  "Bekendstelling van eredienste": {
+   "code": "V144",
+   "section": "",
+   "qnum": "5.7",
+   "stem": "Gebruik die gemeente sosiale media (WhatsApp, facebook en ander) vir enige van die volgende? (Kies al die opsies van toepassing)",
+   "item": "Bekendstelling van eredienste",
+   "match_score": 1.0
+  },
+  "Bekendstelling van hulpbronne of programme": {
+   "code": "V145",
+   "section": "",
+   "qnum": "5.7",
+   "stem": "Gebruik die gemeente sosiale media (WhatsApp, facebook en ander) vir enige van die volgende? (Kies al die opsies van toepassing)",
+   "item": "Bekendstelling van hulpbronne of programme",
+   "match_score": 1.0
+  },
+  "Deel van Skrifgedeeltes of ander aanhalings": {
+   "code": "V146",
+   "section": "",
+   "qnum": "5.7",
+   "stem": "Gebruik die gemeente sosiale media (WhatsApp, facebook en ander) vir enige van die volgende? (Kies al die opsies van toepassing)",
+   "item": "Deel van Skrifgedeeltes of ander aanhalings",
+   "match_score": 1.0
+  },
+  "Nuus vanaf Sinode of Algemene Sinode": {
+   "code": "V147",
+   "section": "",
+   "qnum": "5.7",
+   "stem": "Gebruik die gemeente sosiale media (WhatsApp, facebook en ander) vir enige van die volgende? (Kies al die opsies van toepassing)",
+   "item": "Nuus vanaf Sinode of Algemene Sinode",
+   "match_score": 1.0
+  },
+  "Bybelstudie- en/of kleingroepe": {
+   "code": "V148",
+   "section": "",
+   "qnum": "5.8",
+   "stem": "Aanlyn bediening: Dui asb. aan wat die gemeente aanlyn doen (kies een opsie by elkeen van die items)",
+   "item": "Bybelstudie- en/of kleingroepe",
+   "match_score": 1.0
+  },
+  "Bediening aan Laerskool leerders": {
+   "code": "V149",
+   "section": "",
+   "qnum": "5.8",
+   "stem": "Aanlyn bediening: Dui asb. aan wat die gemeente aanlyn doen (kies een opsie by elkeen van die items)",
+   "item": "Bediening aan Laerskool leerders",
+   "match_score": 1.0
+  },
+  "Tiener en/of jong volwasse bediening": {
+   "code": "V150",
+   "section": "",
+   "qnum": "5.8",
+   "stem": "Aanlyn bediening: Dui asb. aan wat die gemeente aanlyn doen (kies een opsie by elkeen van die items)",
+   "item": "Tiener en/of jong volwasse bediening",
+   "match_score": 1.0
+  },
+  "Komitee en/of bediening vergaderings": {
+   "code": "V151",
+   "section": "",
+   "qnum": "5.8",
+   "stem": "Aanlyn bediening: Dui asb. aan wat die gemeente aanlyn doen (kies een opsie by elkeen van die items)",
+   "item": "Komitee en/of bediening vergaderings",
+   "match_score": 1.0
+  },
+  "Aanlyn pastorale sorg": {
+   "code": "V153",
+   "section": "",
+   "qnum": "5.8",
+   "stem": "Aanlyn bediening: Dui asb. aan wat die gemeente aanlyn doen (kies een opsie by elkeen van die items)",
+   "item": "Aanlyn pastorale sorg",
+   "match_score": 1.0
+  },
+  "Word die gemeente se eredienste op die internet opgelaai?": {
+   "code": "V154",
+   "section": "",
+   "qnum": "5.9",
+   "stem": "Word die gemeente se eredienste op die internet Ja 1",
+   "item": "opgelaai? Nee",
+   "match_score": 0.918
+  },
+  "Het die gemeente ?n spesifieke proses om met die persone wat die erediens van buite die kerkgebou volg, kontak te maak (bv. stuur van ?n boodskap of om kontakbesonderhede te verkry)?": {
+   "code": "V155",
+   "section": "",
+   "qnum": "5.10",
+   "stem": "Het die gemeente ‘n spesifieke proses om met die persone wat die erediens van buite die kerkgebou volg, kontak te maak (bv. stuur van ‘n boodskap of om",
+   "item": "kontakbesonderhede te verkry)? Ja",
+   "match_score": 0.989
+  },
+  "Algemene Sinode": {
+   "code": "V156",
+   "section": "",
+   "qnum": "5.11",
+   "stem": "Watter rol speel die volgende kerkvergaderings (besluite, aksies, ens.) in die funksionering van die gemeente? Geen rol Geringe rol Belangrike rol",
+   "item": "Algemene Sinode",
+   "match_score": 1.0
+  },
+  "Streek Sinode": {
+   "code": "V157",
+   "section": "",
+   "qnum": "5.11",
+   "stem": "Watter rol speel die volgende kerkvergaderings (besluite, aksies, ens.) in die funksionering van die gemeente? Geen rol Geringe rol Belangrike rol",
+   "item": "Streek Sinode",
+   "match_score": 1.0
+  },
+  "Ring": {
+   "code": "V158",
+   "section": "",
+   "qnum": "5.11",
+   "stem": "Watter rol speel die volgende kerkvergaderings (besluite, aksies, ens.) in die funksionering van die gemeente? Geen rol Geringe rol Belangrike rol",
+   "item": "Ring",
+   "match_score": 1.0
+  },
+  "Nie-winsgewende organisasie: Die gemeente het ?n geregistreerde nie-winsgewende organisasie wat direk aan die bediening van die gemeente gekoppel is": {
+   "code": "V177",
+   "section": "",
+   "qnum": "6.2",
+   "stem": "Nie-winsgewende organisasie Ja Nee Die gemeente het ‘n geregistreerde nie-winsgewende organisasie wat 1 2",
+   "item": "direk aan die bediening van die gemeente gekoppel is",
+   "match_score": 0.967
+  },
+  "Ons bydraes deur die ring en sinode": {
+   "code": "V178",
+   "section": "",
+   "qnum": "6.3",
+   "stem": "Op watter manier weerspieël die gemeente se begroting die gestuurde roeping van die gemeente? Ja Nee",
+   "item": "Ons bydraes deur die ring en sinode",
+   "match_score": 1.0
+  },
+  "Ons het vaste finansiële ooreenkomste met ander instansies": {
+   "code": "V179",
+   "section": "",
+   "qnum": "6.3",
+   "stem": "Op watter manier weerspieël die gemeente se begroting die gestuurde roeping van die gemeente? Ja Nee",
+   "item": "Ons het vaste finansiële ooreenkomste met ander instansies",
+   "match_score": 1.0
+  },
+  "Ons ken ?n persentasie van ons inkomste toe vir uitreik": {
+   "code": "V181",
+   "section": "",
+   "qnum": "6.3",
+   "stem": "Op watter manier weerspieël die gemeente se begroting die gestuurde roeping van die gemeente? Ja Nee",
+   "item": "Ons ken ‘n persentasie van ons inkomste toe vir uitreik",
+   "match_score": 1.0
+  },
+  "Ons gemeente stel ons geboue tot beskikking van die gemeenskap as deel van ons dienswerk na buite ...": {
+   "code": "V183",
+   "section": "",
+   "qnum": "6.4",
+   "stem": "Ons gemeente stel ons geboue tot beskikking van die gemeenskap as deel van ons",
+   "item": "dienswerk na buite",
+   "match_score": 1.0
+  },
+  "Ons soek nuwe mense op wat in die gemeenskap intrek.": {
+   "code": "V188",
+   "section": "",
+   "qnum": "6.5",
+   "stem": "Wat doen die gemeente om gasvryheid te bevorder? Altyd Soms Nooit",
+   "item": "Ons soek nuwe mense op wat in die gemeenskap intrek.",
+   "match_score": 1.0
+  },
+  "Het die gemeente 'n georganiseerde evangelisasiebediening?": {
+   "code": "V191",
+   "section": "",
+   "qnum": "6.6",
+   "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening? Ja 1 Nee 2",
+   "item": "6.6. Het u gemeente ’n georganiseerde evangelisasiebediening?",
+   "match_score": 0.923
+  },
+  "Ons hou spesiale eredienste": {
+   "code": "V192",
+   "section": "",
+   "qnum": "6.6",
+   "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening? Ja 1 Nee 2",
+   "item": "Ons hou spesiale eredienste",
+   "match_score": 1.0
+  },
+  "geleenthede soos Doop en Huwelikskategese": {
+   "code": "V193",
+   "section": "",
+   "qnum": "6.6",
+   "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening? Ja 1 Nee 2",
+   "item": "Geleenthede soos Doop en Huwelikskategese",
+   "match_score": 1.0
+  },
+  "Getroue getuiess-kursus": {
+   "code": "V194",
+   "section": "",
+   "qnum": "6.6",
+   "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening? Ja 1 Nee 2",
+   "item": "Getroue getuies-kursus",
+   "match_score": 0.978
+  },
+  "EE III-kursus": {
+   "code": "V195",
+   "section": "",
+   "qnum": "6.6",
+   "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening? Ja 1 Nee 2",
+   "item": "EE III-kursus",
+   "match_score": 1.0
+  },
+  "Alpha-kursus": {
+   "code": "V196",
+   "section": "",
+   "qnum": "6.6",
+   "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening? Ja 1 Nee 2",
+   "item": "Alpha-kursus",
+   "match_score": 1.0
+  },
+  "Becoming a Contagious Christian": {
+   "code": "V197",
+   "section": "",
+   "qnum": "6.6",
+   "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening? Ja 1 Nee 2",
+   "item": "Becoming a Contagious Christian",
+   "match_score": 1.0
+  },
+  "Just Walk across the Room": {
+   "code": "V198",
+   "section": "",
+   "qnum": "6.6",
+   "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening? Ja 1 Nee 2",
+   "item": "Just Walk across the Room",
+   "match_score": 1.0
+  },
+  "Eie materiaal in die gemeente ontwikkel": {
+   "code": "V199",
+   "section": "",
+   "qnum": "6.6",
+   "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening? Ja 1 Nee 2",
+   "item": "Eie materiaal in die gemeente ontwikkel",
+   "match_score": 1.0
+  },
+  "Ander": {
+   "code": "V200",
+   "section": "",
+   "qnum": "6.6",
+   "stem": "Het u gemeente ’n georganiseerde evangelisasiebediening? Ja 1 Nee 2",
+   "item": "Ander",
+   "match_score": 1.0
+  },
+  "? Omgewings oudit is gedoen": {
+   "code": "V201",
+   "section": "",
+   "qnum": "6.7",
+   "stem": "Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer: Ja Nee",
+   "item": "ŉ Omgewings oudit is gedoen",
+   "match_score": 0.962
+  },
+  "Implementering van waterbesparingsmaatreëls": {
+   "code": "V202",
+   "section": "",
+   "qnum": "6.7",
+   "stem": "Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer: Ja Nee",
+   "item": "Implementering van waterbesparingsmaatreëls",
+   "match_score": 1.0
+  },
+  "Installering van watertenks of die hergebruik van water": {
+   "code": "V203",
+   "section": "",
+   "qnum": "6.7",
+   "stem": "Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer: Ja Nee",
+   "item": "Installering van watertenks of die hergebruik van water",
+   "match_score": 1.0
+  },
+  "Installering van sonpanele vir waterverwarming": {
+   "code": "V204",
+   "section": "",
+   "qnum": "6.7",
+   "stem": "Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer: Ja Nee",
+   "item": "Installering van sonpanele vir waterverwarming",
+   "match_score": 1.0
+  },
+  "Implementering van ander elektrisiteitsbesparing maatreëls": {
+   "code": "V205",
+   "section": "",
+   "qnum": "6.7",
+   "stem": "Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer: Ja Nee",
+   "item": "Implementering van ander elektrisiteitsbesparing maatreëls",
+   "match_score": 1.0
+  },
+  "Plant van inheemse plante in die gemeente se tuin(e)": {
+   "code": "V206",
+   "section": "",
+   "qnum": "6.7",
+   "stem": "Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer: Ja Nee",
+   "item": "Plant van inheemse plante in die gemeente se tuin(e)",
+   "match_score": 1.0
+  },
+  "Ons gemeente is aktief betrokke by herwinning": {
+   "code": "V207",
+   "section": "",
+   "qnum": "6.7",
+   "stem": "Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer: Ja Nee",
+   "item": "Ons gemeente is aktief betrokke by herwinning",
+   "match_score": 1.0
+  },
+  "Eie sonkragopwekking": {
+   "code": "V208",
+   "section": "",
+   "qnum": "6.7",
+   "stem": "Ons gemeente probeer om op die volgende maniere ŉ ekologiese sensitiwiteit te demonstreer: Ja Nee",
+   "item": "Eie sonkragopwekking",
+   "match_score": 1.0
+  },
+  "Is daar ? georganiseerde kleingroepbediening in u gemeente?": {
+   "code": "V209",
+   "section": "",
+   "qnum": "6.8",
+   "stem": "Is daar ŉ georganiseerde kleingroepbediening in u gemeente? Ja 1 Nee 2",
+   "item": "6.8. Is daar ŉ georganiseerde kleingroepbediening in u gemeente?",
+   "match_score": 0.951
+  },
+  "Ons het ?n georganiseerde gebedsbediening": {
+   "code": "V211",
+   "section": "",
+   "qnum": "6.9",
+   "stem": "Watter van die volgende beskryf die gebedsbediening in die gemeente die beste? Ja Nee",
+   "item": "Ons het ‘n georganiseerde gebedsbediening",
+   "match_score": 1.0
+  },
+  "Ons het gebedsgroepe wat van tyd tot tyd bymekaar kom": {
+   "code": "V212",
+   "section": "",
+   "qnum": "6.9",
+   "stem": "Watter van die volgende beskryf die gebedsbediening in die gemeente die beste? Ja Nee",
+   "item": "Ons het gebedsgroepe wat van tyd tot tyd bymekaar kom",
+   "match_score": 1.0
+  },
+  "Ons gebruik ons kleingroepe ook as gebedsgroepe": {
+   "code": "V214",
+   "section": "",
+   "qnum": "6.9",
+   "stem": "Watter van die volgende beskryf die gebedsbediening in die gemeente die beste? Ja Nee",
+   "item": "Ons gebruik ons kleingroepe ook as gebedsgroepe",
+   "match_score": 1.0
+  },
+  "Ons het ?n georganiseerde seniorbediening": {
+   "code": "V215",
+   "section": "",
+   "qnum": "6.10",
+   "stem": "Hoe lyk die gemeente se seniorbediening? Ja Nee",
+   "item": "Ons het ‘n georganiseerde seniorbediening",
+   "match_score": 1.0
+  },
+  "Ons reël sosiale byeenkomste en / of uitstappies vir seniors": {
+   "code": "V217",
+   "section": "",
+   "qnum": "6.10",
+   "stem": "Hoe lyk die gemeente se seniorbediening? Ja Nee",
+   "item": "Ons reël sosiale byeenkomste en / of uitstappies vir seniors",
+   "match_score": 1.0
+  },
+  "kleuter bediening (voorskool)": {
+   "code": "V221",
+   "section": "",
+   "qnum": "7.1",
+   "stem": "Hoeveel jongmense is betrokke by die Lidmate",
+   "item": "kleuter bediening (voorskool)",
+   "match_score": 1.0
+  },
+  "junior kategese (Graad 1-3)": {
+   "code": "V222",
+   "section": "",
+   "qnum": "7.1",
+   "stem": "Hoeveel jongmense is betrokke by die Lidmate",
+   "item": "junior kategese (Graad 1-3)",
+   "match_score": 1.0
+  },
+  "middel kategese (Graad 4-7)": {
+   "code": "V223",
+   "section": "",
+   "qnum": "7.1",
+   "stem": "Hoeveel jongmense is betrokke by die Lidmate",
+   "item": "middel kategese (Graad 4-7)",
+   "match_score": 1.0
+  },
+  "senior kategese (Graad 8-10)": {
+   "code": "V224",
+   "section": "",
+   "qnum": "7.1",
+   "stem": "Hoeveel jongmense is betrokke by die Lidmate",
+   "item": "senior kategese (Graag 8-10)",
+   "match_score": 0.963
+  },
+  "belydenisklas (Graad 11-12)": {
+   "code": "V225",
+   "section": "",
+   "qnum": "7.1",
+   "stem": "Hoeveel jongmense is betrokke by die Lidmate",
+   "item": "belydenisklas (Graad 11-12)",
+   "match_score": 1.0
+  },
+  "jong-volwassene bediening": {
+   "code": "V226",
+   "section": "",
+   "qnum": "7.1",
+   "stem": "Hoeveel jongmense is betrokke by die Lidmate",
+   "item": "jong-volwassene bediening",
+   "match_score": 1.0
+  },
+  "kennis oor die Bybel en geloof te verhoog": {
+   "code": "V228",
+   "section": "",
+   "qnum": "7.2",
+   "stem": "Ons spandeer die tyd beskikbaar in die gemeente se laerskoolbediening en/of kategese daaraan om… Altyd Soms Nooit",
+   "item": "kennis oor die Bybel en geloof te verhoog",
+   "match_score": 1.0
+  },
+  "gewoontes vir geloofvorming te oefen": {
+   "code": "V229",
+   "section": "",
+   "qnum": "7.2",
+   "stem": "Ons spandeer die tyd beskikbaar in die gemeente se laerskoolbediening en/of kategese daaraan om… Altyd Soms Nooit",
+   "item": "gewoontes vir geloofvorming in te oefen",
+   "match_score": 0.96
+  },
+  "leierskap te ontwikkel": {
+   "code": "V231",
+   "section": "",
+   "qnum": "7.2",
+   "stem": "Ons spandeer die tyd beskikbaar in die gemeente se laerskoolbediening en/of kategese daaraan om… Altyd Soms Nooit",
+   "item": "leierskap te ontwikkel",
+   "match_score": 1.0
+  },
+  "hulle 'n gevoel van behoort te gee": {
+   "code": "V232",
+   "section": "",
+   "qnum": "7.2",
+   "stem": "Ons spandeer die tyd beskikbaar in die gemeente se laerskoolbediening en/of kategese daaraan om… Altyd Soms Nooit",
+   "item": "hulle ‘n gevoel van behoort te gee",
+   "match_score": 1.0
+  },
+  "hulle te aktiveer om 'n verskil te maak": {
+   "code": "V233",
+   "section": "",
+   "qnum": "7.2",
+   "stem": "Ons spandeer die tyd beskikbaar in die gemeente se laerskoolbediening en/of kategese daaraan om… Altyd Soms Nooit",
+   "item": "hulle te aktiveer om ‘n verskil te maak",
+   "match_score": 1.0
+  },
+  "geleenthede te skep waar jongmense kan dien": {
+   "code": "V234",
+   "section": "",
+   "qnum": "7.2",
+   "stem": "Ons spandeer die tyd beskikbaar in die gemeente se laerskoolbediening en/of kategese daaraan om… Altyd Soms Nooit",
+   "item": "geleenthede te skep waar jongmense kan dien",
+   "match_score": 1.0
+  },
+  "gewoontes vir geloofvorming in te oefen": {
+   "code": "V229",
+   "section": "",
+   "qnum": "7.2",
+   "stem": "Ons spandeer die tyd beskikbaar in die gemeente se laerskoolbediening en/of kategese daaraan om… Altyd Soms Nooit",
+   "item": "gewoontes vir geloofvorming in te oefen",
+   "match_score": 1.0
+  },
+  "geleetnede te skep waar jongmense kan dien": {
+   "code": "V234",
+   "section": "",
+   "qnum": "7.2",
+   "stem": "Ons spandeer die tyd beskikbaar in die gemeente se laerskoolbediening en/of kategese daaraan om… Altyd Soms Nooit",
+   "item": "geleenthede te skep waar jongmense kan dien",
+   "match_score": 0.965
+  },
+  "Geen spesifieke fokus nie": {
+   "code": "V242",
+   "section": "",
+   "qnum": "7.4",
+   "stem": "Hoe word die kinders en jongmense in eredienste ingeskakel? Altyd Soms Nooit",
+   "item": "Geen spesifieke fokus nie",
+   "match_score": 1.0
+  },
+  "Kinder- of jeugmoment in die gewone erediens": {
+   "code": "V243",
+   "section": "",
+   "qnum": "7.4",
+   "stem": "Hoe word die kinders en jongmense in eredienste ingeskakel? Altyd Soms Nooit",
+   "item": "Kinder- of jeugmoment in die gewone erediens",
+   "match_score": 1.0
+  },
+  "Jeugdiens, ?n gereelde erediens spesifiek vir jeug": {
+   "code": "V248",
+   "section": "",
+   "qnum": "7.4",
+   "stem": "Hoe word die kinders en jongmense in eredienste ingeskakel? Altyd Soms Nooit",
+   "item": "Jeugdiens, ‘n gereelde erediens spesifiek vir jeug",
+   "match_score": 1.0
+  },
+  "Huise en/of gesinne": {
+   "code": "V249",
+   "section": "",
+   "qnum": "7.5",
+   "stem": "Waar word geloofvorming, buiten in die kategese, nog aktief in die gemeente bevorder? Altyd Soms Nooit",
+   "item": "Huise en of gesinne",
+   "match_score": 1.0
+  },
+  "Weeklikse tiener- of kinderaksies": {
+   "code": "V250",
+   "section": "",
+   "qnum": "7.5",
+   "stem": "Waar word geloofvorming, buiten in die kategese, nog aktief in die gemeente bevorder? Altyd Soms Nooit",
+   "item": "Weeklikse tiener- of kinderaksies",
+   "match_score": 1.0
+  },
+  "Kampe": {
+   "code": "V251",
+   "section": "",
+   "qnum": "7.5",
+   "stem": "Waar word geloofvorming, buiten in die kategese, nog aktief in die gemeente bevorder? Altyd Soms Nooit",
+   "item": "Kampe",
+   "match_score": 1.0
+  },
+  "net die jongmense": {
+   "code": "V253",
+   "section": "",
+   "qnum": "7.6",
+   "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening Altyd Soms Nooit",
+   "item": "net die jongmense",
+   "match_score": 1.0
+  },
+  "senior lidmate": {
+   "code": "V254",
+   "section": "",
+   "qnum": "7.6",
+   "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening Altyd Soms Nooit",
+   "item": "senior lidmate",
+   "match_score": 1.0
+  },
+  "naskoolse jongmense": {
+   "code": "V255",
+   "section": "",
+   "qnum": "7.6",
+   "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening Altyd Soms Nooit",
+   "item": "naskoolse jongmense",
+   "match_score": 1.0
+  },
+  "deeltydse jeugwerker of kinderwerker": {
+   "code": "V256",
+   "section": "",
+   "qnum": "7.6",
+   "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening Altyd Soms Nooit",
+   "item": "deeltydse jeugwerker of kinderwerker",
+   "match_score": 1.0
+  },
+  "ouers": {
+   "code": "V257",
+   "section": "",
+   "qnum": "7.6",
+   "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening Altyd Soms Nooit",
+   "item": "ouers",
+   "match_score": 1.0
+  },
+  "voltydse predikant": {
+   "code": "V258",
+   "section": "",
+   "qnum": "7.6",
+   "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening Altyd Soms Nooit",
+   "item": "voltydse predikant",
+   "match_score": 1.0
+  },
+  "voltydse jeugwerker": {
+   "code": "V259",
+   "section": "",
+   "qnum": "7.6",
+   "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening Altyd Soms Nooit",
+   "item": "voltydse jeugwerker",
+   "match_score": 1.0
+  },
+  "diensleraar (gelegitimeer)": {
+   "code": "V260",
+   "section": "",
+   "qnum": "7.6",
+   "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening Altyd Soms Nooit",
+   "item": "diensleraar (gelegitmeer)",
+   "match_score": 0.98
+  },
+  "ouderling-bedienaar": {
+   "code": "V261",
+   "section": "",
+   "qnum": "7.6",
+   "stem": "Watter van die volgende persone of groepe is almal betrokke by die jeugbediening Altyd Soms Nooit",
+   "item": "ouderling-bedienaar",
+   "match_score": 1.0
+  },
+  "Ons werk net met gemeentekinders": {
+   "code": "V263",
+   "section": "",
+   "qnum": "7.7",
+   "stem": "Hoe word kinders en jongmense van buite die gemeente ingeskakel by geloofvorming in die gemeente? Altyd Soms Nooit",
+   "item": "Ons werk net met gemeentekinders",
+   "match_score": 1.0
+  },
+  "Byeenkoms vir kinders wat ná skool in bewaarskole is": {
+   "code": "V265",
+   "section": "",
+   "qnum": "7.7",
+   "stem": "Hoe word kinders en jongmense van buite die gemeente ingeskakel by geloofvorming in die gemeente? Altyd Soms Nooit",
+   "item": "Byeenkoms vir kinders wat ná skool in bewaarskole is",
+   "match_score": 1.0
+  },
+  "Betrokkenheid by die plaaslike skool/skole": {
+   "code": "V266",
+   "section": "",
+   "qnum": "7.7",
+   "stem": "Hoe word kinders en jongmense van buite die gemeente ingeskakel by geloofvorming in die gemeente? Altyd Soms Nooit",
+   "item": "Betrokkenheid by die plaaslike skool/skole",
+   "match_score": 1.0
+  },
+  "kursusse vir ouers aan te bied (ouerleiding)": {
+   "code": "V271",
+   "section": "",
+   "qnum": "7.8",
+   "stem": "Ons bevorder die uitleef van geloof by die huis deur Altyd Soms Nooit gereeld daaroor te praat en te preek (lering in erediens) 1 2 3",
+   "item": "kursusse vir ouers aan te bied (ouerleiding)",
+   "match_score": 1.0
+  },
+  "familiefokus tydens gemeenteaktiwiteite": {
+   "code": "V272",
+   "section": "",
+   "qnum": "7.8",
+   "stem": "Ons bevorder die uitleef van geloof by die huis deur Altyd Soms Nooit gereeld daaroor te praat en te preek (lering in erediens) 1 2 3",
+   "item": "familiefokus tydens gemeenteaktiwiteite",
+   "match_score": 1.0
+  },
+  "gereelde saalopeninge": {
+   "code": "V275",
+   "section": "",
+   "qnum": "7.9",
+   "stem": "Ons is betrokke by plaaslike skool/skole op die volgende wyses Altyd Soms Nooit",
+   "item": "gereelde saalopeninge",
+   "match_score": 1.0
+  },
+  "leierskapopleiding van skoolleiers": {
+   "code": "V278",
+   "section": "",
+   "qnum": "7.9",
+   "stem": "Ons is betrokke by plaaslike skool/skole op die volgende wyses Altyd Soms Nooit",
+   "item": "leierskapsopleiding van skoolleiers",
+   "match_score": 0.986
+  },
+  "skoolkampe wat deur kerke aangebied word": {
+   "code": "V280",
+   "section": "",
+   "qnum": "7.9",
+   "stem": "Ons is betrokke by plaaslike skool/skole op die volgende wyses Altyd Soms Nooit",
+   "item": "skoolkampe wat deur kerke aangebied word",
+   "match_score": 1.0
+  },
+  "pastoraat": {
+   "code": "V281",
+   "section": "",
+   "qnum": "7.9",
+   "stem": "Ons is betrokke by plaaslike skool/skole op die volgende wyses Altyd Soms Nooit",
+   "item": "pastoraat",
+   "match_score": 1.0
+  },
+  "van ons jongmense en leiers woon dit by": {
+   "code": "V282",
+   "section": "",
+   "qnum": "7.10",
+   "stem": "Ons is by #Imagine betrokke Altyd Soms Nooit",
+   "item": "van ons jongmense en leiers woon dit by",
+   "match_score": 1.0
+  },
+  "dit vorm deel van ons jeugbedieningstrategie": {
+   "code": "V283",
+   "section": "",
+   "qnum": "7.10",
+   "stem": "Ons is by #Imagine betrokke Altyd Soms Nooit",
+   "item": "dit vorm deel van ons jeugbedieningstrategie",
+   "match_score": 1.0
+  },
+  "Gee van geld, kos en klere": {
+   "code": "V284",
+   "section": "",
+   "qnum": "8.1",
+   "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke? Ja Nee",
+   "item": "Gee van geld, kos en klere",
+   "match_score": 1.0
+  },
+  "Vaardigheidontwikkeling": {
+   "code": "V285",
+   "section": "",
+   "qnum": "8.1",
+   "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke? Ja Nee",
+   "item": "Vaardigheidsontwikkeling",
+   "match_score": 0.979
+  },
+  "Voorligtingsprogramme": {
+   "code": "V286",
+   "section": "",
+   "qnum": "8.1",
+   "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke? Ja Nee",
+   "item": "Voorligtingsprogramme",
+   "match_score": 1.0
+  },
+  "'n Werkverskaffingsburo": {
+   "code": "V287",
+   "section": "",
+   "qnum": "8.1",
+   "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke? Ja Nee",
+   "item": "‘n Werksverskaffingsburo",
+   "match_score": 0.978
+  },
+  "'n Behuisingskema": {
+   "code": "V288",
+   "section": "",
+   "qnum": "8.1",
+   "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke? Ja Nee",
+   "item": "‘n Behuisingskema",
+   "match_score": 1.0
+  },
+  "Lees en skryf klasse": {
+   "code": "V289",
+   "section": "",
+   "qnum": "8.1",
+   "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke? Ja Nee",
+   "item": "Lees en skryf klasse",
+   "match_score": 1.0
+  },
+  "Ontwikkeling van entrepreneurskap": {
+   "code": "V290",
+   "section": "",
+   "qnum": "8.1",
+   "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke? Ja Nee",
+   "item": "Ontwikkeling van entrepreneurskap",
+   "match_score": 1.0
+  },
+  "Vroeë kind-ontwikkeling": {
+   "code": "V291",
+   "section": "",
+   "qnum": "8.1",
+   "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke? Ja Nee",
+   "item": "Vroeë kind-ontwikkeling",
+   "match_score": 1.0
+  },
+  "Betroekkenheid by skole byvoorbeeld 'n naskoolsentrum": {
+   "code": "V292",
+   "section": "",
+   "qnum": "8.1",
+   "stem": "Op watter maniere is die gemeente by die voorkoming, opheffing en verligting van armoede betrokke? Ja Nee",
+   "item": "Betrokkenheid by skole byvoorbeeld ‘n naskoolsentrum",
+   "match_score": 0.99
+  },
+  "Kerkraad": {
+   "code": "V293",
+   "section": "",
+   "qnum": "8.2",
+   "stem": "Wie neem verantwoordelikheid vir hierdie projekte? Ja Nee",
+   "item": "Kerkraad",
+   "match_score": 1.0
+  },
+  "Ouderlinge": {
+   "code": "V38",
+   "section": "",
+   "qnum": "2.6",
+   "stem": "Hoeveel ouderlinge, diakens, kategete en dienswerkers het u tans in die gemeente?",
+   "item": "Ouderlinge",
+   "match_score": 1.0
+  },
+  "Diakens": {
+   "code": "V39",
+   "section": "",
+   "qnum": "2.6",
+   "stem": "Hoeveel ouderlinge, diakens, kategete en dienswerkers het u tans in die gemeente?",
+   "item": "Diakens",
+   "match_score": 1.0
+  },
+  "Kommissies of georganiseerde bedieninge, taakspanne": {
+   "code": "V296",
+   "section": "",
+   "qnum": "8.2",
+   "stem": "Wie neem verantwoordelikheid vir hierdie projekte? Ja Nee",
+   "item": "Kommissies of georganiseerde bedieninge, taakspanne",
+   "match_score": 1.0
+  },
+  "Vrouediens": {
+   "code": "V297",
+   "section": "",
+   "qnum": "8.2",
+   "stem": "Wie neem verantwoordelikheid vir hierdie projekte? Ja Nee",
+   "item": "Vrouediens",
+   "match_score": 1.0
+  },
+  "Kleingroepe": {
+   "code": "V298",
+   "section": "",
+   "qnum": "8.2",
+   "stem": "Wie neem verantwoordelikheid vir hierdie projekte? Ja Nee",
+   "item": "Kleingroepe",
+   "match_score": 1.0
+  },
+  "Jeugaksies of -bediening": {
+   "code": "V299",
+   "section": "",
+   "qnum": "8.2",
+   "stem": "Wie neem verantwoordelikheid vir hierdie projekte? Ja Nee",
+   "item": "Jeugaksies of –bediening",
+   "match_score": 1.0
+  },
+  "Individuele lidmate in die gemeente": {
+   "code": "V300",
+   "section": "",
+   "qnum": "8.2",
+   "stem": "Wie neem verantwoordelikheid vir hierdie projekte? Ja Nee",
+   "item": "Individuele lidmate in die gemeente",
+   "match_score": 1.0
+  },
+  "Ons het baie min met mekaar te doen": {
+   "code": "V301",
+   "section": "",
+   "qnum": "8.3",
+   "stem": "Hoe lyk julle gemeente se verhouding met die plaaslike kerklik maatskaplike dienste (CMR ens)? Ja Nee",
+   "item": "Ons het baie min met mekaar te doen",
+   "match_score": 1.0
+  },
+  "Ons ondersteun finansieel": {
+   "code": "V302",
+   "section": "",
+   "qnum": "8.3",
+   "stem": "Hoe lyk julle gemeente se verhouding met die plaaslike kerklik maatskaplike dienste (CMR ens)? Ja Nee",
+   "item": "Ons ondersteun finansieel",
+   "match_score": 1.0
+  },
+  "Ons gebruik die dienste van tyd tot tyd": {
+   "code": "V303",
+   "section": "",
+   "qnum": "8.3",
+   "stem": "Hoe lyk julle gemeente se verhouding met die plaaslike kerklik maatskaplike dienste (CMR ens)? Ja Nee",
+   "item": "Ons gebruik die dienste van tyd tot tyd",
+   "match_score": 1.0
+  },
+  "Ons doen enkele gesamentlike projekte": {
+   "code": "V304",
+   "section": "",
+   "qnum": "8.3",
+   "stem": "Hoe lyk julle gemeente se verhouding met die plaaslike kerklik maatskaplike dienste (CMR ens)? Ja Nee",
+   "item": "Ons doen enkele gesamentlike projekte",
+   "match_score": 1.0
+  },
+  "Ons is mekaar se vennote en werk ten nouste saam": {
+   "code": "V305",
+   "section": "",
+   "qnum": "8.3",
+   "stem": "Hoe lyk julle gemeente se verhouding met die plaaslike kerklik maatskaplike dienste (CMR ens)? Ja Nee",
+   "item": "Ons is mekaar se vennote en werk ten nouste saam",
+   "match_score": 1.0
+  },
+  "geweld": {
+   "code": "V307",
+   "section": "",
+   "qnum": "8.4",
+   "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... Altyd Soms Nooit",
+   "item": "geweld",
+   "match_score": 1.0
+  },
+  "rassisme": {
+   "code": "V308",
+   "section": "",
+   "qnum": "8.4",
+   "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... Altyd Soms Nooit",
+   "item": "rassisme",
+   "match_score": 1.0
+  },
+  "seksisme": {
+   "code": "V309",
+   "section": "",
+   "qnum": "8.4",
+   "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... Altyd Soms Nooit",
+   "item": "seksisme",
+   "match_score": 1.0
+  },
+  "gesinskrisisse": {
+   "code": "V310",
+   "section": "",
+   "qnum": "8.4",
+   "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... Altyd Soms Nooit",
+   "item": "gesinskrisisse",
+   "match_score": 1.0
+  },
+  "enkelouer gesinne": {
+   "code": "V311",
+   "section": "",
+   "qnum": "8.4",
+   "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... Altyd Soms Nooit",
+   "item": "enkelouer gesinne",
+   "match_score": 1.0
+  },
+  "misdaad en korrupsie": {
+   "code": "V312",
+   "section": "",
+   "qnum": "8.4",
+   "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... Altyd Soms Nooit",
+   "item": "misdaad en korrupsie",
+   "match_score": 1.0
+  },
+  "MIV/Vigs": {
+   "code": "V313",
+   "section": "",
+   "qnum": "8.4",
+   "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... Altyd Soms Nooit",
+   "item": "MIV/Vigs",
+   "match_score": 1.0
+  },
+  "armoede": {
+   "code": "V314",
+   "section": "",
+   "qnum": "8.4",
+   "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... Altyd Soms Nooit",
+   "item": "armoede",
+   "match_score": 1.0
+  },
+  "afhanklikheidsprobleme": {
+   "code": "V315",
+   "section": "",
+   "qnum": "8.4",
+   "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... Altyd Soms Nooit",
+   "item": "afhanklikheidsprobleme",
+   "match_score": 1.0
+  },
+  "werkloosheid": {
+   "code": "V316",
+   "section": "",
+   "qnum": "8.4",
+   "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... Altyd Soms Nooit",
+   "item": "werkloosheid",
+   "match_score": 1.0
+  },
+  "ouer mense (bejaardes)": {
+   "code": "V317",
+   "section": "",
+   "qnum": "8.4",
+   "stem": "Die gemeente gee spesifiek aan die volgende maatskaplike en sosiale kwessies aandag ... Altyd Soms Nooit",
+   "item": "ouer mense (bejaardes)",
+   "match_score": 1.0
+  },
+  "Watter een van die volgende stellings beskryf die gemeente se betrokkenheid by gemeenskapsorganisasies en -aktiwiteite (soos markte, optogte, skoonmaak projekte, konserte, ens.) die beste?": {
+   "code": "V318",
+   "section": "",
+   "qnum": "8.5",
+   "stem": "Watter een van die volgende stellings beskryf die gemeente se betrokkenheid by gemeenskapsorganisasies en -aktiwiteite (soos markte, optogte, skoonmaak",
+   "item": "projekte, konserte, ens.) die beste?",
+   "match_score": 1.0
+  },
+  "Netwerke: Die gemeente is deel van die RESPOND SA nasionale rampondersteuningsnetwerk wat deur die NG Kerk geïnisieer is en tans ekumenies deur die onderskeie sinodes funksioneer": {
+   "code": "V319",
+   "section": "",
+   "qnum": "8.6",
+   "stem": "Netwerke Ja Nee Die gemeente is deel van die RESPOND SA nasionale rampondersteuningsnetwerk wat deur die NG Kerk geïnisieer is en 1 2",
+   "item": "tans ekumenies deur die onderskeie sinodes funksioneer",
+   "match_score": 0.973
+  },
+  "Hoe sien julle die rol van die gemeente tov krisisse en kwessies in die gemeenskap?": {
+   "code": "V320",
+   "section": "",
+   "qnum": "8.7",
+   "stem": "Hoe sien julle die rol van die gemeente tov krisisse en kwessies in die gemeenskap?",
+   "item": "",
+   "match_score": 1.0
+  },
+  "Het u kontak met 'n bepaalde gemeente(s) van die NG Kerkfamilie?": {
+   "code": "V321",
+   "section": "",
+   "qnum": "9.1",
+   "stem": "Het u kontak met ŉ bepaalde gemeente(s) van die NG Kerkfamilie? Ja 1 Nee 2",
+   "item": "9.1. Het u kontak met ŉ bepaalde gemeente(s) van die NG Kerkfamilie?",
+   "match_score": 0.962
+  },
+  "Skakeling van tyd tot tyd": {
+   "code": "V322",
+   "section": "",
+   "qnum": "9.2",
+   "stem": "Watter vorm neem die kontak met die NG Kerkfamilie aan? Ja Nee",
+   "item": "Skakeling van tyd tot tyd",
+   "match_score": 1.0
+  },
+  "Erediensbeurte oor en weer": {
+   "code": "V323",
+   "section": "",
+   "qnum": "9.2",
+   "stem": "Watter vorm neem die kontak met die NG Kerkfamilie aan? Ja Nee",
+   "item": "Erediensbeurte oor en weer",
+   "match_score": 1.0
+  },
+  "Gesamentlike eredienste of Nagmaal": {
+   "code": "V324",
+   "section": "",
+   "qnum": "9.2",
+   "stem": "Watter vorm neem die kontak met die NG Kerkfamilie aan? Ja Nee",
+   "item": "Gesamentlike eredienste of Nagmaal",
+   "match_score": 1.0
+  },
+  "Gesamentlike projekte": {
+   "code": "V325",
+   "section": "",
+   "qnum": "9.2",
+   "stem": "Watter vorm neem die kontak met die NG Kerkfamilie aan? Ja Nee",
+   "item": "Gesamentlike projekte",
+   "match_score": 1.0
+  },
+  "Ons is in 'n proses van hereniging": {
+   "code": "V326",
+   "section": "",
+   "qnum": "9.2",
+   "stem": "Watter vorm neem die kontak met die NG Kerkfamilie aan? Ja Nee",
+   "item": "Ons is in ‘n proses van hereniging",
+   "match_score": 1.0
+  },
+  "Bestaan daar ekumeniese gespreksgroepe (?fraternals / pastors? forum ) tussen kerke en gemeentes in u omgewing?": {
+   "code": "V327",
+   "section": "",
+   "qnum": "9.3",
+   "stem": "Bestaan daar ekumeniese gespreksgroepe (“fraternals / pastors’ forum ) tussen kerke",
+   "item": "en gemeentes in u omgewing?",
+   "match_score": 1.0
+  },
+  "Neem u gemeente aan die ekumeniese gesprekgroepe ('fraternals/ pastors forum') deel?": {
+   "code": "V328",
+   "section": "",
+   "qnum": "9.4",
+   "stem": "Neem u gemeente aan die ekumeniese gespreksgroepe (“fraternals / pastors’ forum",
+   "item": ")deel?",
+   "match_score": 0.982
+  },
+  "Enige kommentaar of voorstelle oor die vraelys?": {
+   "code": "V329",
+   "section": "",
+   "qnum": "9.4",
+   "stem": "Neem u gemeente aan die ekumeniese gespreksgroepe (“fraternals / pastors’ forum",
+   "item": "Enige kommentaar of voorstelle oor hierdie vraelys?",
+   "match_score": 0.958
+  },
+  "Voorsitter van die kerkraad": {
+   "code": "V330",
+   "section": "",
+   "qnum": "9.4",
+   "stem": "Neem u gemeente aan die ekumeniese gespreksgroepe (“fraternals / pastors’ forum",
+   "item": "Voorsitter van die kerkraad",
+   "match_score": 1.0
+  },
+  "Dagbestuur of lede van die dagbestuur": {
+   "code": "V331",
+   "section": "",
+   "qnum": "9.4",
+   "stem": "Neem u gemeente aan die ekumeniese gespreksgroepe (“fraternals / pastors’ forum",
+   "item": "Dagbestuur of lede van die dagbestuur",
+   "match_score": 1.0
+  },
+  "Predikant(e)": {
+   "code": "V332",
+   "section": "",
+   "qnum": "9.4",
+   "stem": "Neem u gemeente aan die ekumeniese gespreksgroepe (“fraternals / pastors’ forum",
+   "item": "Predikant (e)",
+   "match_score": 0.957
+  },
+  "'n Aangewysde taakspan op komitee": {
+   "code": "V333",
+   "section": "",
+   "qnum": "9.4",
+   "stem": "Neem u gemeente aan die ekumeniese gespreksgroepe (“fraternals / pastors’ forum",
+   "item": "ŉ Aangewysde taakspan of komitee",
+   "match_score": 0.969
+  },
+  "Administratiewe personeel": {
+   "code": "V334",
+   "section": "",
+   "qnum": "9.4",
+   "stem": "Neem u gemeente aan die ekumeniese gespreksgroepe (“fraternals / pastors’ forum",
+   "item": "Administratiewe personeel",
+   "match_score": 1.0
+  },
+  "Leiers van bedieninge": {
+   "code": "V335",
+   "section": "",
+   "qnum": "9.4",
+   "stem": "Neem u gemeente aan die ekumeniese gespreksgroepe (“fraternals / pastors’ forum",
+   "item": "Leiers van bedieninge",
+   "match_score": 1.0
+  },
+  "'n Lidmaat": {
+   "code": "V336",
+   "section": "",
+   "qnum": "9.4",
+   "stem": "Neem u gemeente aan die ekumeniese gespreksgroepe (“fraternals / pastors’ forum",
+   "item": "ŉ Lidmaat",
+   "match_score": 1.0
+  },
+  "Iemand anders": {
+   "code": "V337",
+   "section": "",
+   "qnum": "9.4",
+   "stem": "Neem u gemeente aan die ekumeniese gespreksgroepe (“fraternals / pastors’ forum",
+   "item": "Iemand anders",
+   "match_score": 1.0
+  }
+ },
+ "unresolved": [
+  "Sheet",
+  "Gemeente naam",
+  "Hoeveel belydende lidmate behoort tans aan hierdie gemeente?",
+  "Hoeveel doop lidmate behoort tans aan die gemeente?",
+  "Hoeveel ongedooptes behoort tans aan die gemeente?",
+  "Hoeveel predikantsposte word gevul deur ... konsulent (Gemeente is sonder 'n leraar en die konsulent van die Ring help uit)",
+  "Hoeveel ouderlinge het u tans in die gemeente?",
+  "Hoeveel diakens het u tans in die gemeente?",
+  "Hoeveel kategete het u tans in die gemeente?",
+  "Hoeveel vrywillige dienswerkers (bv. kleingroepleiers en projekleiers) het u tans in die gemeente?",
+  "Wat was die finansiële posisie aan die einde van die finansiële boekjaar wat geëindig het op 28 Februarie 2025?",
+  "Wat is die totale gemiddelde digitale/aanlyn erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ?n Sondag in Februarie plaasvind, aan. Om 'n akkurate telling te verseker kan Youtube analitics gebruik word om te bepaal hoeveel mense minstens 80% van die tyd gekyk het.) in 2024:",
+  "Wat is die totale gemiddelde digitale/aanlyn erediensbywoning per Sondag in Februarie? (Dui dit vir elke jaar, as gemiddeld vir al die erediente wat op ?n Sondag in Februarie plaasvind, aan. Om 'n akkurate telling te verseker kan Youtube analitics gebruik word om te bepaal hoeveel mense minstens 80% van die tyd gekyk het.) in 2025:",
+  "Die in-persoon erediensbywoning in die kerkgebou in ons gemeente is nou ... as wat dit was voor die Covid-19 grendeltyd",
+  "Die aanlyn erediensbywoning (indien van toepassing) in ons gemeente is nou ... as wat dit was voor die Covid-19 grendeltyd",
+  "Die totale erediensbywoning (in-persoon en aanlyn) in ons gemeente is nou ... as wat dit was voor die Covid-19 grendeltyd",
+  "simbole wat by die kerkjaar aansluit, word gebruik",
+  "die liturg dra liturgiese drag (bv. toga of stola)",
+  "word aandag gegee aan verskeie liturgiese momente, bv. wet, verootmoediging ...",
+  "ons het 'n eie doelgerigte preekplan met temas",
+  "die predikant(e) besluit van week tot week oor teks en tema",
+  "'n Eenheidskerkraad saam met VGKSA of NHKA gemeente(s) in terme van die Tussenorde",
+  "Goedkoper predikantpos (bv emeritus- of termynbepaalde kontrakpos, diensleraar)",
+  "Word e-posse gebruik om met gemeentelede as ? groep te kommunikeer?",
+  "Word sms?e of WhatsApp gebruik om met gemeentelede as ? groep te kommunikeer?",
+  "Word sosiale media (bv. Facebook, Instagram, YouTube en Twitter) gebruik om met gemeentelede te kommunikeer?",
+  "Word Kunsmatige Intellegensie (AI) in die gemeentelike administrasie en bediening gebruik?",
+  "Word dankoffers elektronies (bv. internet, debietorder, Zapper, Snapscan, ens.) ingesamel?",
+  "?n Selfoontoep (App) wat spesiaal vir die gemeente ontwerp is",
+  "Kommissie, bediening en/of kerkraad vergaderings",
+  "Die gemeentelike leierskap vergader gereeld om die roeping en fokus van die gemeente te onderskei.",
+  "Die kultuur en ouderdom van die gemeente reflekteer die demografie van die gemeenskap waarbinne die gemeente geleë is.",
+  "Ons gemeente is ?n gemeente met sendingprojekte wat deel is van die gewone gemeente-aktiwiteite.",
+  "Die gemeente pas gereeld haar bediening aan by die veranderende konteks van die gemeenskap.",
+  "Die gemeente bemagtig lidmate om hulle gawes in die gemeente en gemeenskap te gebruik.",
+  "Die gemeentelike leierskap kommunikeer die roeping van die gemeente gereeld, helder en duidelik aan die gemeente.",
+  "Die gemeentelike leierskap beskik oor ?n formele bedieningsplan met spesifieke strategieë om te bereik.",
+  "Die gemeentelike leierskap bestuur die finansies van die gemeente op so ?n manier dat dit die gemeente se roeping dien.",
+  "Die gemeentelike leierskap maak seker dat die bedieninge, aksies en projekte die gemeente se roeping dien.",
+  "Ons gemeente is ?n missionale gemeente wat haar bestaan sien as deel van God se sending na hierdie wêreld.",
+  "Ons ondersteun een of meer sendelinge direk: finansieel en op ander maniere",
+  "Ons staan in vennootskap met die VGKSA / NG Kerk in Afrika / RCA",
+  "Ons het een of meer diakonale projekte in die gemeenskap",
+  "Ons staan in ?n bediening vennootskap met ander kerke in die gemeenskap.",
+  "Ons staan in vennootskap met organisasies in die gemeenskap soos skole, kultuurorganisasies, besighede, georganiseerde landbou en maatskaplike dienste",
+  "Ons staan in vennootskap met die openbare sektor soos staatsdepartemente en munisipaliteite",
+  "Ons is betrokke by die vestiging van nuwe geloofsgemeenskappe in die gemeenskap",
+  "Ons het ?n sterk kultuur as gestuurde gemeente waarby die meeste van ons lidmate berokke is",
+  "Ons het spesiale insamelings (geld en goed) vir ons diens en getuienis na buite",
+  "Ons uitreike en diens na buite is in die meeste bedieninge se begroting sigbaar.",
+  "Ons het ?n span wat besoekers en nuwelinge by die gemeente se eredienste laat tuis voel.(",
+  "Ons het ?n spesifieke aksie om nuwe lidmate by die gemeente in te skakel",
+  "Ons doen moeite om die liturgie, musiek en taal van ons eredienste toeganklik te maak vir besoekers",
+  "Ons vestig gewoontes by al ons lidmate om ?n kultuur van gasvryheid in die gemeente te kweek",
+  "Ons het ?n program om kerklos en kerkvervreemde mense te besoek en te nooi.",
+  "Ons vestig ?n uitnooi-kultuur in die gemeente waar alle lidmate geïnspireer word om mense te nooi om Jesus te volg.",
+  "Indien ja, merk watter van die volgende sal die situasie in u gemeente die beste beskryf?",
+  "Ons het gebedsgroepe wat sekere tye bymekaarkom (bv. Lydenstyd, Pinkster of uitreike",
+  "Ons senior lidmate skakel in by die gewone bediening van die gemeente",
+  "Senior lidmate vorm hulle eie kleingroepe vir onderlinge sorg en geestelike opbou",
+  "Senior lidmate het ?n eie bediening wat diens lewer in die gemeente en na buite",
+  "Spesiale pastorale versorging van huisgebonde en verswakte bejaardes",
+  "Hoeveel jongmense (van kleuter, kategese tot jong-volwasse bediening) is betrokke by die jeugbediening wat nie-lidmate van die gemeente is nie?",
+  "gesprek oor aktuele lewensvrae vanuit ?n geloofsperspektief te voer",
+  "gesprek oor aktuele lewensvrae vanuit ?n geloofsperspektief te voer",
+  "Intergeneratiewe diens waar kinders volledig by die liturgie ingeskakel is",
+  "Aparte kindererediens (Jong kinders met paar volwasse begeleiers",
+  "Informele erediens, diens naas die gemeente se erediens vir volwassenes",
+  "Familiediens wat spesifiek gefokus op die insluiting van families",
+  "Betrokkenheid by die gemeenskap (uitreike, projekte, ens.)",
+  "ander ring of gemeentes",
+  "Ons laat kinders toe om maats na die kategese en gemeenteaksies te nooi",
+  "Lidmate is aktief betrokke by bv. ?n kinderhuis  of ander diensterreine",
+  "Ons bied geleenthede aan waar mense van buite die gemeente aktief betrek word",
+  "gereeld daaroor te praat en te preek (lering in erediens)",
+  "praktiese toepassing van geloofsgewoontes tydens eredienste",
+  "oefeninge vir die huis vir kinders in kategese (huisgeloof)",
+  "byeenkomste tussen verskillende generasies waar geloofsvorming kan plaasvind",
+  "geestelike programme en spesiale eredienste by die skool (Jesus-weke, Hemelvaart)",
+  "verantwoordelikheid of medeverantwoordelikheid vir weeklikse Christelike aksies",
+  "poste (jeugwerker, onderwysers of maatskaplike werker) wat deur gemeente/ring gedra word",
+  "Die dienste is nie aan die gemeente beskikbaar nie, a.g.v.  die gemeente se ligging",
+  "timestamp",
+  "Source of dataset"
+ ]
+}
