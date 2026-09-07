@@ -51,21 +51,29 @@ only `web/public/data/aggregates.json` is committed and deployed.
 
 ## Deploying
 
-Cloudflare Pages, via `.github/workflows/deploy.yml`, on every push to
-this branch. The workflow only uploads `web/public` — the raw extracts
-are not in the repo, so when a wave is refreshed you regenerate
-`aggregates.json` locally and commit it.
+Cloudflare Pages, connected directly to this GitHub repo (Workers &
+Pages → Create → **Connect to Git**). No build step runs on Cloudflare's
+side — the data is committed as JSON — so the project settings are:
 
-Two repository secrets are needed once, under Settings → Secrets and
-variables → Actions:
-
-| Secret | Where it comes from |
+| Field | Value |
 |---|---|
-| `CLOUDFLARE_API_TOKEN` | Cloudflare dashboard → My Profile → API Tokens → Create Token, with the **Cloudflare Pages: Edit** permission |
-| `CLOUDFLARE_ACCOUNT_ID` | Cloudflare dashboard → Workers & Pages, in the right-hand sidebar |
+| Framework preset | `None` |
+| Build command | *(blank)* |
+| Build output directory | `web/public` |
+| Root directory | *(repo root)* |
 
-Create a Pages project named `kerkspieel` first (Workers & Pages → Create
-→ Pages → direct upload), or change `--project-name` in the workflow.
+If the repo picker shows **"Missing git connection,"** Cloudflare's
+GitHub App isn't authorized for this repo yet: go to
+[github.com/settings/installations](https://github.com/settings/installations),
+find **Cloudflare Pages**, click **Configure**, and grant it access to
+`cobusvwyngaard/kerkspieel` (or all repos). Then reselect the repo in
+Cloudflare.
+
+Once the project exists, every push gets deployed automatically: the
+production branch (whatever the project is configured with, typically
+`main`) gets the production URL, and every other branch — including this
+one — gets its own **preview** URL. When a wave is refreshed, regenerate
+`aggregates.json` locally, commit it, and push; no manual redeploy step.
 
 > **A Pages URL is public by default.** The published data includes ring
 > cells where only one or two congregations responded, and in those the
