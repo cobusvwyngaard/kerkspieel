@@ -51,23 +51,32 @@ only `web/public/data/aggregates.json` is committed and deployed.
 
 ## Deploying
 
-Cloudflare Pages, connected directly to this GitHub repo (Workers &
-Pages → Create → **Connect to Git**). No build step runs on Cloudflare's
-side — the data is committed as JSON — so the project settings are:
+Cloudflare's unified Workers & Pages dashboard, connected directly to
+this GitHub repo (Workers & Pages → Create → **Connect to Git**). No
+build step runs on Cloudflare's side — the data is committed as JSON —
+the project just serves `web/public` as static assets, per
+`wrangler.jsonc` at the repo root:
 
-| Field | Value |
-|---|---|
-| Framework preset | `None` |
-| Build command | *(blank)* |
-| Build output directory | `web/public` |
-| Root directory | *(repo root)* |
+```jsonc
+{
+  "name": "kerkspieel",
+  "compatibility_date": "2026-09-01",
+  "assets": { "directory": "./web/public" }
+}
+```
+
+This is the newer `[assets]`-based config a git-connected **Worker**
+deploy expects (it runs `wrangler deploy`, reading config from the repo
+root). It is *not* the classic Pages `pages_build_output_dir` key —
+using that key here, or putting the config anywhere but the repo root,
+produces a build that fails with no very informative error.
 
 If the repo picker shows **"Missing git connection,"** Cloudflare's
 GitHub App isn't authorized for this repo yet: go to
 [github.com/settings/installations](https://github.com/settings/installations),
-find **Cloudflare Pages**, click **Configure**, and grant it access to
-`cobusvwyngaard/kerkspieel` (or all repos). Then reselect the repo in
-Cloudflare.
+find **Cloudflare Pages** (or **Cloudflare Workers and Pages**), click
+**Configure**, and grant it access to `cobusvwyngaard/kerkspieel` (or all
+repos). Then reselect the repo in Cloudflare.
 
 Once the project exists, every push gets deployed automatically: the
 production branch (whatever the project is configured with, typically
