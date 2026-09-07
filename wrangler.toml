@@ -1,0 +1,10 @@
+# Config for Cloudflare's git-connected Worker deploy. Present at the repo
+# root in case the project's "Root directory" build setting is blank; a
+# matching copy lives in web/ in case it is set to "web" instead -- wrangler
+# only reads the config in its actual working directory, so both locations
+# are covered rather than guessing which one the dashboard is using.
+name = "kerkspieel"
+compatibility_date = "2026-09-01"
+
+[assets]
+directory = "./web/public"

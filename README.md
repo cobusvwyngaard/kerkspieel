@@ -55,21 +55,24 @@ Cloudflare's unified Workers & Pages dashboard, connected directly to
 this GitHub repo (Workers & Pages → Create → **Connect to Git**). No
 build step runs on Cloudflare's side — the data is committed as JSON —
 the project just serves `web/public` as static assets, per
-`wrangler.jsonc` at the repo root:
+`wrangler.toml`:
 
-```jsonc
-{
-  "name": "kerkspieel",
-  "compatibility_date": "2026-09-01",
-  "assets": { "directory": "./web/public" }
-}
+```toml
+name = "kerkspieel"
+compatibility_date = "2026-09-01"
+
+[assets]
+directory = "./web/public"
 ```
 
 This is the newer `[assets]`-based config a git-connected **Worker**
-deploy expects (it runs `wrangler deploy`, reading config from the repo
-root). It is *not* the classic Pages `pages_build_output_dir` key —
-using that key here, or putting the config anywhere but the repo root,
-produces a build that fails with no very informative error.
+deploy expects (it runs `wrangler deploy`). It is *not* the classic Pages
+`pages_build_output_dir` key. `wrangler deploy` only reads the config
+file sitting in its actual working directory — which is the project's
+"Root directory" build setting, not necessarily the repo root — so an
+identical `wrangler.toml` (with the path adjusted) lives at **both**
+the repo root and in `web/`, covering either setting rather than relying
+on knowing which one the dashboard is using.
 
 If the repo picker shows **"Missing git connection,"** Cloudflare's
 GitHub App isn't authorized for this repo yet: go to

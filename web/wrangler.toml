@@ -1,0 +1,7 @@
+# See ../wrangler.toml -- duplicated here in case the project's "Root
+# directory" build setting is "web" rather than the repo root.
+name = "kerkspieel"
+compatibility_date = "2026-09-01"
+
+[assets]
+directory = "./public"
