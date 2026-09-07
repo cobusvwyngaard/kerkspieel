@@ -22,19 +22,50 @@ jobs:
             exit 1
           }
 
-      - name: Check the Cloudflare secrets are set
+      # Checks the credentials before wrangler does, because wrangler's own
+      # failure for a bad account id is "Could not route to ... perhaps your
+      # object identifier is invalid? [code: 7003]", which does not say which
+      # identifier or why. Prints the shape of each secret and whether the API
+      # accepts it -- never their values.
+      - name: Preflight the Cloudflare credentials
         env:
-          TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           missing=""
-          [ -n "$TOKEN" ]   || missing="$missing CLOUDFLARE_API_TOKEN"
-          [ -n "$ACCOUNT" ] || missing="$missing CLOUDFLARE_ACCOUNT_ID"
+          [ -n "$CLOUDFLARE_API_TOKEN" ]  || missing="$missing CLOUDFLARE_API_TOKEN"
+          [ -n "$CLOUDFLARE_ACCOUNT_ID" ] || missing="$missing CLOUDFLARE_ACCOUNT_ID"
           if [ -n "$missing" ]; then
             echo "::error::Missing repository secret(s):$missing"
-            echo "Add them under Settings -> Secrets and variables -> Actions."
-            echo "This project is a Worker, so the token needs the"
-            echo "Workers Scripts: Edit permission (not Cloudflare Pages: Edit)."
+            exit 1
+          fi
+
+          acct="$CLOUDFLARE_ACCOUNT_ID"
+          echo "account id: ${#acct} characters (expected 32)"
+          case "$acct" in
+            *[!0-9a-f]*)
+              echo "::warning::account id contains characters outside 0-9a-f."
+              echo "Check for stray whitespace, a newline, quotes, or a pasted URL." ;;
+            *) echo "account id: all hex, as expected" ;;
+          esac
+          echo "api token: ${#CLOUDFLARE_API_TOKEN} characters (expected 40)"
+
+          echo "--- asking the API which accounts this token can see ---"
+          code=$(curl -sS -o /tmp/accts.json -w '%{http_code}' \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            https://api.cloudflare.com/client/v4/accounts)
+          echo "GET /client/v4/accounts -> HTTP $code"
+          echo "success: $(jq -r '.success // "n/a"' /tmp/accts.json)"
+          jq -r '.errors[]? | "error \(.code): \(.message)"' /tmp/accts.json
+          echo "accounts visible to this token: $(jq -r '(.result // []) | length' /tmp/accts.json)"
+          if jq -e --arg id "$acct" '(.result // [])[] | select(.id == $id)' /tmp/accts.json >/dev/null; then
+            echo "configured account id: MATCHES an account this token can see"
+          else
+            echo "::error::The configured CLOUDFLARE_ACCOUNT_ID does not match any"
+            echo "account this token can reach. Either the id is wrong or the token"
+            echo "is scoped to a different account (or to a zone rather than an"
+            echo "account). The correct id is the hex string in your dashboard URL:"
+            echo "  https://dash.cloudflare.com/<ACCOUNT_ID>/workers/..."
             exit 1
           fi
 
