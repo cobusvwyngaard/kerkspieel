@@ -1,0 +1,48 @@
+name: Deploy dashboard
+
+# Manual trigger only. The Cloudflare dashboard's own Git integration is the
+# primary deploy path; this exists so a deploy can be run and its log read
+# directly when that integration is not firing, without going through the
+# dashboard. Because it is workflow_dispatch only, it never races the
+# dashboard's builds.
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check the dashboard has data to serve
+        run: |
+          test -s web/public/data/aggregates.json || {
+            echo "::error::web/public/data/aggregates.json is missing or empty."
+            echo "Regenerate it with scripts/build_aggregates.py and commit it."
+            exit 1
+          }
+
+      - name: Check the Cloudflare secrets are set
+        env:
+          TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          missing=""
+          [ -n "$TOKEN" ]   || missing="$missing CLOUDFLARE_API_TOKEN"
+          [ -n "$ACCOUNT" ] || missing="$missing CLOUDFLARE_ACCOUNT_ID"
+          if [ -n "$missing" ]; then
+            echo "::error::Missing repository secret(s):$missing"
+            echo "Add them under Settings -> Secrets and variables -> Actions."
+            echo "This project is a Worker, so the token needs the"
+            echo "Workers Scripts: Edit permission (not Cloudflare Pages: Edit)."
+            exit 1
+          fi
+
+      # Deploys the Worker described by wrangler.toml at the repo root, which
+      # serves web/public as static assets. Verified locally with
+      # `wrangler deploy --dry-run` and `wrangler dev`.
+      - name: Deploy the Worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx wrangler@4 deploy

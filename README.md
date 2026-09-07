@@ -87,6 +87,28 @@ production branch (whatever the project is configured with, typically
 one — gets its own **preview** URL. When a wave is refreshed, regenerate
 `aggregates.json` locally, commit it, and push; no manual redeploy step.
 
+### If the dashboard stops triggering builds
+
+`.github/workflows/deploy.yml` runs the same deploy manually (Actions →
+Deploy dashboard → Run workflow), so a deploy can be run and its log read
+without the dashboard. It is `workflow_dispatch` only, so it never races
+the dashboard's own builds. It needs two repository secrets under
+Settings → Secrets and variables → Actions:
+
+| Secret | Where it comes from |
+|---|---|
+| `CLOUDFLARE_API_TOKEN` | My Profile → API Tokens → Create Token, with **Workers Scripts: Edit** — this project is a Worker, so *not* Cloudflare Pages: Edit |
+| `CLOUDFLARE_ACCOUNT_ID` | Workers & Pages, in the right-hand sidebar |
+
+### Verifying a change before pushing
+
+`wrangler` validates the whole thing locally without any credentials:
+
+```
+npx wrangler@4 deploy --dry-run   # config parses, assets resolve
+npx wrangler@4 dev --local        # serves the real site on the Workers runtime
+```
+
 > **A Pages URL is public by default.** The published data includes ring
 > cells where only one or two congregations responded, and in those the
 > distribution *is* that congregation's answer. Turn on Cloudflare Access
