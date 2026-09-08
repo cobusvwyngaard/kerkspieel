@@ -169,14 +169,27 @@ def main():
     print(f"birth years known for {len(birth_years)} ABR numbers")
     print(f"congregation register: {len(register)} congregations")
 
+    # Every code that appears, whether or not the register ever describes
+    # it. Several codes the report needs -- A08, A10, C03, C04, D03 -- carry
+    # a blank description in every file, and keying the index off the
+    # described ones silently dropped them from the categories and the
+    # cross-tab, which are exactly the non-A01 serving codes.
     labels = {UNKNOWN_CATEGORY: "Onbekend"}
+    seen_codes = {UNKNOWN_CATEGORY}
     per_scope = collections.defaultdict(lambda: collections.defaultdict(
         lambda: {"total": 0, "withAge": 0, "ageSum": 0,
                  "categories": collections.Counter(),
                  "groups": collections.Counter(),
                  "bands": collections.Counter(),
                  "sets": collections.Counter(),
-                 "gender": collections.Counter()}))
+                 "gender": collections.Counter(),
+                 # (category, gender) -> counts. A gender filter, a
+                 # ministry-set filter and an ABR-code filter are all the
+                 # same question -- "these codes, these genders" -- so the
+                 # page needs the cross-tab, not just the margins.
+                 "cells": collections.defaultdict(
+                     lambda: {"n": 0, "withAge": 0, "ageSum": 0,
+                              "bands": collections.Counter()})}))
     per_congregation = collections.defaultdict(lambda: collections.defaultdict(
         lambda: {"total": 0, "categories": collections.Counter()}))
     set_of = {code: name for name, spec in MINISTRY_SETS.items()
@@ -206,6 +219,7 @@ def main():
                 if code in ("DS_STATUS__KODE", "VBO_KODE"):
                     continue
                 code = UNKNOWN_CATEGORY
+            seen_codes.add(code)
             if text(r[4]):
                 labels.setdefault(code, text(r[4]))
 
@@ -256,6 +270,12 @@ def main():
                     bucket["bands"][band_of(age)] += 1
                 if abr in gender_of:
                     bucket["gender"][gender_of[abr]] += 1
+                cell = bucket["cells"][(code, gender_of.get(abr, "?"))]
+                cell["n"] += 1
+                if age is not None:
+                    cell["withAge"] += 1
+                    cell["ageSum"] += age
+                    cell["bands"][band_of(age)] += 1
 
             if entry:
                 cong = per_congregation[congregation][year]
@@ -278,11 +298,20 @@ def main():
                         # boundary for reasons that are not real ageing.
                         "ageFromColumn": from_column,
                         "ageFromBirthYear": from_birth,
-                        "ageDerived": from_column == 0 and from_birth > 0})
+                        "ageDerived": from_column == 0 and from_birth > 0,
+                        # Gender is only known for ABR numbers that appear in
+                        # the 2022 detail extract. The register changed its
+                        # numbering between waves, so the early years match
+                        # poorly and the matched subset skews male -- the
+                        # page warns where coverage is thin.
+                        "genderKnown": sum(per_scope[NATIONAL][year]["gender"].values())})
 
     years = sorted({q["year"] for q in quality})
     categories = [{"code": c, "label": labels.get(c, ""), "group": c[0]}
-                  for c in sorted(labels)]
+                  for c in sorted(seen_codes)]
+
+    category_index = {c: i for i, c in enumerate(sorted(seen_codes))}
+    GENDERS = ["M", "F", "?"]
 
     def pack(bucket):
         out = {"total": bucket["total"], "withAge": bucket["withAge"],
@@ -294,6 +323,14 @@ def main():
             out["bands"] = [bucket["bands"].get(k, 0) for k, _, _ in AGE_BANDS]
         if bucket["gender"]:
             out["gender"] = dict(bucket["gender"])
+        # Flat rows keep this far smaller than nested objects would:
+        # [category, gender, n, withAge, ageSum, ...bands]
+        out["cells"] = [
+            [category_index[code], GENDERS.index(sex), c["n"], c["withAge"],
+             c["ageSum"], *[c["bands"].get(k, 0) for k, _, _ in AGE_BANDS]]
+            for (code, sex), c in sorted(bucket["cells"].items())
+            if c["n"] and code in category_index
+        ]
         return out
 
     payload = {
@@ -301,6 +338,7 @@ def main():
         "categories": categories,
         "categoryGroups": CATEGORY_GROUPS,
         "ageBands": [k for k, _, _ in AGE_BANDS],
+        "genders": GENDERS,
         "ageRange": [AGE_MIN, AGE_MAX],
         # Age is deliberately absent from byCongregation: with one or two
         # ministers, an age band names a person.

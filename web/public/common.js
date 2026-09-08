@@ -6,7 +6,7 @@ const PAGES = [
   { href: "ring.html", label: "Ringsverslag" },
   { href: "kaart.html", label: "Kaart" },
   { href: "predikante.html", label: "Predikante" },
-  { href: "ouderdom.html", label: "Ouderdomsprofiel" },
+  { href: "predikanteprofiel.html", label: "Predikanteprofiel" },
 ];
 
 // Categorical slots, validated for contrast and colour-vision deficiency
@@ -165,6 +165,12 @@ function lineChart(target, xs, series, options = {}) {
   const width = Math.max(420, pad.left + pad.right + xs.length * 62);
   const plotH = height - pad.top - pad.bottom;
   const all = series.flatMap((s) => s.values).filter((v) => v != null);
+  // Every series can be empty -- no code selected, or no age known anywhere --
+  // and Math.max of nothing is -Infinity, which puts NaN into every coordinate.
+  if (!all.length) {
+    target.innerHTML = `<p class="empty">Geen data vir hierdie keuse nie.</p>`;
+    return;
+  }
   const hi = niceMax(Math.max(...all));
   const lo = zeroBased ? 0 : Math.max(0, Math.floor(Math.min(...all) / 5) * 5 - 5);
   const y = (v) => pad.top + plotH - ((v - lo) / (hi - lo || 1)) * plotH;
@@ -323,30 +329,59 @@ function addExportButtons() {
   });
 }
 
-async function exportChart(id, button) {
+/** A one-slide deck carrying a panel's title and subtitle, ready for content. */
+function newDeck(title, subtitle) {
+  const pptx = new PptxGenJS();
+  pptx.layout = "LAYOUT_16x9";
+  pptx.author = "Kerkspieël";
+  const slide = pptx.addSlide();
+  slide.addText(trim(title, 150), {
+    x: 0.5, y: 0.35, w: 9, h: 0.6, fontSize: 24, bold: true, color: "1A1A19",
+  });
+  if (subtitle) {
+    slide.addText(trim(subtitle, 300), {
+      x: 0.5, y: 0.95, w: 9, h: 0.5, fontSize: 12, color: "52514E",
+    });
+  }
+  return { pptx, slide };
+}
+
+/** The source line every slide ends with, and the write itself. */
+function saveDeck(pptx, slide, source, name) {
+  slide.addText(source || "Bron: Kerkspieël · Taakspan Navorsing", {
+    x: 0.5, y: 5.05, w: 9, h: 0.35, fontSize: 9, color: "78766F",
+  });
+  const stamp = new Date().toISOString().slice(0, 10);
+  return pptx.writeFile({
+    fileName: `kerkspieel-${name}-${stamp}.pptx`.replace(/[^\w.-]+/g, "-"),
+  });
+}
+
+/** Run an export behind a button that says so while it works. */
+async function withBusyButton(button, work) {
+  const label = button.textContent;
+  button.disabled = true;
+  button.textContent = "Besig…";
+  try {
+    await work();
+  } catch (e) {
+    button.textContent = "Kon nie stoor nie";
+    setTimeout(() => { button.textContent = label; button.disabled = false; }, 2500);
+    return;
+  }
+  button.textContent = label;
+  button.disabled = false;
+}
+
+function exportChart(id, button) {
   const spec = chartRegistry.get(id);
   if (!spec || typeof PptxGenJS === "undefined") return;
   const panel = el(id).closest(".panel");
   const title = (panel.querySelector("h2")?.textContent || "Kerkspieël").trim();
   const subtitle = (panel.querySelector(".sub")?.textContent || "").trim();
-  const label = button.textContent;
-  button.disabled = true;
-  button.textContent = "Besig…";
 
-  try {
-    const pptx = new PptxGenJS();
-    pptx.layout = "LAYOUT_16x9";
-    pptx.author = "Kerkspieël";
-    const slide = pptx.addSlide();
-
-    slide.addText(title, {
-      x: 0.5, y: 0.35, w: 9, h: 0.6, fontSize: 24, bold: true, color: "1A1A19",
-    });
-    if (subtitle) {
-      slide.addText(subtitle, {
-        x: 0.5, y: 0.95, w: 9, h: 0.5, fontSize: 12, color: "52514E",
-      });
-    }
+  return withBusyButton(button, async () => {
+    const { pptx, slide } = newDeck(title, subtitle);
 
     const colours = spec.series.map((s) => resolveColour(s.colour));
     const data = spec.series.map((s) => ({
@@ -383,19 +418,6 @@ async function exportChart(id, button) {
       });
     }
 
-    slide.addText(spec.source || "Bron: Kerkspieël · Taakspan Navorsing", {
-      x: 0.5, y: 5.05, w: 9, h: 0.35, fontSize: 9, color: "78766F",
-    });
-
-    const stamp = new Date().toISOString().slice(0, 10);
-    await pptx.writeFile({
-      fileName: `kerkspieel-${id}-${stamp}.pptx`.replace(/[^\w.-]+/g, "-"),
-    });
-  } catch (e) {
-    button.textContent = "Kon nie stoor nie";
-    setTimeout(() => { button.textContent = label; button.disabled = false; }, 2500);
-    return;
-  }
-  button.textContent = label;
-  button.disabled = false;
+    await saveDeck(pptx, slide, spec.source, id);
+  });
 }

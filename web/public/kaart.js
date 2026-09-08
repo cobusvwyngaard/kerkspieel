@@ -11,7 +11,7 @@ const NO_ANSWER = "#9a9a95";
 const ALL_SYNODS = "__all__";
 const SA_VIEW = [[-35.2, 15.5], [-21.5, 33.5]];
 
-const state = { data: null, map: null, layer: null };
+const state = { data: null, map: null, layer: null, pins: [], legend: [] };
 
 async function boot() {
   try {
@@ -31,8 +31,13 @@ async function boot() {
 
 function initMap() {
   state.map = L.map("map", { scrollWheelZoom: true }).fitBounds(SA_VIEW);
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  L.tileLayer(TILE_URL, {
     maxZoom: 17, attribution: "&copy; OpenStreetMap",
+    // Every tile is fetched as a CORS request, including the ones the map
+    // itself draws, so the export can read them back off a canvas. Without
+    // this the browser may serve the export a cached CORS-less copy and the
+    // canvas is tainted.
+    crossOrigin: "anonymous",
   }).addTo(state.map);
   state.layer = L.layerGroup().addTo(state.map);
 }
@@ -137,6 +142,7 @@ function render() {
   renderLegend(question, enc);
 
   state.layer.clearLayers();
+  state.pins = [];
   let shown = 0, answered = 0;
   const bounds = [];
   state.data.congregations.forEach((c, i) => {
@@ -146,18 +152,22 @@ function render() {
     const has = value !== null && value !== undefined;
     if (has) answered += 1;
     bounds.push([c.lat, c.lon]);
-    L.circleMarker([c.lat, c.lon], {
+    const pin = {
+      lat: c.lat, lon: c.lon,
       radius: has ? enc.radius(value) : 3.5,
       fillColor: has ? enc.colour(value) : NO_ANSWER,
       fillOpacity: has ? 0.85 : 0.45,
       color: "var(--surface-1)", weight: has ? 1.5 : 0.5,
-    }).bindPopup(
+    };
+    state.pins.push(pin);
+    L.circleMarker([c.lat, c.lon], pin).bindPopup(
       `<b>${escapeHtml(c.name)}</b><br>${escapeHtml(c.ring || "—")} · ${escapeHtml(c.synod)}` +
       `<br>${has ? escapeHtml(enc.describe(value)) : "<i>geen antwoord</i>"}`
     ).addTo(state.layer);
   });
 
   fitToPoints(bounds);
+  addMapExport();
   el("map-meta").textContent =
     `${answered} van ${shown} gemeentes op die kaart het hierdie vraag in ${wave} beantwoord. ` +
     `Gemeentes sonder 'n antwoord is klein en grys. ` +
@@ -190,18 +200,192 @@ function renderLegend(question, enc) {
   const target = el("legend");
   if (question.kind === "numeric") {
     const { min, p50, p95 } = question.scale;
-    target.innerHTML = [min, p50, p95].map((v) =>
-      `<span class="legend-item"><i class="legend-dot" style="background:${NUMERIC_COLOUR};` +
-      `width:${2 * enc.radius(v)}px;height:${2 * enc.radius(v)}px"></i>${v}</span>`).join("") +
-      `<span class="legend-item">Groter kring = groter getal. ` +
-      `Bo ${p95} bly die kring dieselfde grootte.</span>`;
-    return;
+    state.legend = [min, p50, p95].map((v) =>
+      ({ colour: NUMERIC_COLOUR, size: 2 * enc.radius(v), label: String(v) }));
+    state.legend.push({ label: `Groter kring = groter getal. ` +
+      `Bo ${p95} bly die kring dieselfde grootte.` });
+  } else {
+    state.legend = enc.options.map((o, i) =>
+      ({ colour: enc.palette[i], size: 13, label: o.label || `Opsie ${o.value}` }));
+    state.legend.push({ colour: NO_ANSWER, size: 8, label: "geen antwoord" });
   }
-  target.innerHTML = enc.options.map((o, i) =>
-    `<span class="legend-item"><i class="legend-dot" style="background:${enc.palette[i]};` +
-    `width:13px;height:13px"></i>${escapeHtml(o.label || `Opsie ${o.value}`)}</span>`).join("") +
-    `<span class="legend-item"><i class="legend-dot" style="background:${NO_ANSWER};` +
-    `width:8px;height:8px"></i>geen antwoord</span>`;
+  target.innerHTML = state.legend.map((item) => `<span class="legend-item">` +
+    (item.colour ? `<i class="legend-dot" style="background:${item.colour};` +
+      `width:${item.size}px;height:${item.size}px"></i>` : "") +
+    `${escapeHtml(item.label)}</span>`).join("");
+}
+
+/* ---------- PowerPoint export ----------
+   The map is a picture rather than a chart, so it exports as one: the
+   basemap tiles and the pins are drawn onto a canvas at exactly the
+   framing on screen. The legend is rebuilt out of PowerPoint shapes and
+   text instead of being baked into the image, so the recipient can
+   restyle it, and the title, subtitle and source match the chart
+   exports. */
+
+const TILE_URL = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
+const TILE = 256;
+// One zoom level deeper doubles the linear resolution, which is the
+// difference between a legible slide and a blurred one, but it also
+// quadruples the tile count. Take the deeper level only where it stays
+// within a request count that is polite to a free tile service.
+const MAX_TILES = 90;
+const BASEMAP_FALLBACK = "#e9e5df";
+const ATTRIBUTION = "Kaartagtergrond © OpenStreetMap-bydraers";
+
+function addMapExport() {
+  const panel = el("map").closest(".panel");
+  if (!panel || panel.querySelector(".export-pptx") || typeof PptxGenJS === "undefined") return;
+  const button = document.createElement("button");
+  button.className = "export-pptx";
+  button.type = "button";
+  button.textContent = "Stoor as PowerPoint";
+  button.addEventListener("click", () => withBusyButton(button, exportMap));
+  panel.querySelector("h2").insertAdjacentElement("afterend", button);
+}
+
+/** Which tiles the current view needs at a given zoom, and where each sits. */
+function tileGrid(zoom) {
+  const map = state.map;
+  const size = map.getSize();
+  const scale = Math.pow(2, zoom - map.getZoom());
+  const width = Math.round(size.x * scale);
+  const height = Math.round(size.y * scale);
+  const origin = map.project(map.getCenter(), zoom)
+    .subtract(L.point(width / 2, height / 2));
+  const span = Math.pow(2, zoom);
+  const tiles = [];
+  for (let x = Math.floor(origin.x / TILE); x * TILE < origin.x + width; x += 1) {
+    for (let y = Math.floor(origin.y / TILE); y * TILE < origin.y + height; y += 1) {
+      if (y < 0 || y >= span) continue;   // above the pole or below it
+      tiles.push({ x: ((x % span) + span) % span, y,
+                   left: x * TILE - origin.x, top: y * TILE - origin.y });
+    }
+  }
+  return { zoom, width, height, origin, tiles };
+}
+
+function exportGrid() {
+  const shallow = tileGrid(Math.round(state.map.getZoom()));
+  const deep = tileGrid(Math.min(shallow.zoom + 1, state.map.getMaxZoom()));
+  return deep.tiles.length <= MAX_TILES ? deep : shallow;
+}
+
+// A tile server that answers slowly must not leave the button stuck on
+// "Besig..." for ever; past this the export goes ahead without that tile.
+const TILE_TIMEOUT = 8000;
+
+/** A tile as an image the canvas is allowed to read back. */
+const loadTile = (zoom, t) => new Promise((resolve) => {
+  const img = new Image();
+  const timer = setTimeout(() => resolve(null), TILE_TIMEOUT);
+  const done = (value) => { clearTimeout(timer); resolve(value); };
+  img.crossOrigin = "anonymous";
+  img.onload = () => done(img);
+  img.onerror = () => done(null);   // one missing tile must not fail the export
+  img.src = TILE_URL.replace("{z}", zoom).replace("{x}", t.x).replace("{y}", t.y);
+});
+
+async function mapCanvas() {
+  const grid = exportGrid();
+  const canvas = document.createElement("canvas");
+  canvas.width = grid.width;
+  canvas.height = grid.height;
+  const ctx = canvas.getContext("2d");
+  ctx.fillStyle = BASEMAP_FALLBACK;
+  ctx.fillRect(0, 0, grid.width, grid.height);
+
+  const images = await Promise.all(grid.tiles.map((t) => loadTile(grid.zoom, t)));
+  images.forEach((img, i) => {
+    if (img) ctx.drawImage(img, grid.tiles[i].left, grid.tiles[i].top, TILE, TILE);
+  });
+
+  // The pins are the ones render() actually drew, so the slide cannot drift
+  // from the screen.
+  const scale = grid.width / state.map.getSize().x;
+  const stroke = `#${resolveColour("var(--surface-1)")}`;
+  state.pins.forEach((pin) => {
+    const p = state.map.project([pin.lat, pin.lon], grid.zoom).subtract(grid.origin);
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, pin.radius * scale, 0, 2 * Math.PI);
+    ctx.globalAlpha = pin.fillOpacity;
+    ctx.fillStyle = `#${resolveColour(pin.fillColor)}`;
+    ctx.fill();
+    ctx.globalAlpha = 1;
+    ctx.lineWidth = pin.weight * scale;
+    ctx.strokeStyle = stroke;
+    ctx.stroke();
+  });
+
+  drawAttribution(ctx, grid, scale);
+  return canvas;
+}
+
+/** OpenStreetMap's licence asks for the credit to travel with the image. */
+function drawAttribution(ctx, grid, scale) {
+  const size = Math.round(11 * scale);
+  ctx.font = `${size}px system-ui, sans-serif`;
+  const text = ATTRIBUTION;
+  const w = ctx.measureText(text).width + size;
+  ctx.globalAlpha = 0.8;
+  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(grid.width - w, grid.height - size * 2, w, size * 2);
+  ctx.globalAlpha = 1;
+  ctx.fillStyle = "#3f3e3b";
+  ctx.textBaseline = "middle";
+  ctx.fillText(text, grid.width - w + size / 2, grid.height - size);
+}
+
+/** The legend as shapes and text, laid out in rows across the slide. */
+function addLegendShapes(pptx, slide, y) {
+  const CHAR = 0.072;          // inches per character at 10pt, near enough
+  const ROW = 0.26;
+  const MAX_ROWS = 3;
+  let x = 0.5, row = 0;
+  for (const item of state.legend) {
+    const label = trim(item.label, 60);
+    const dot = item.colour ? Math.max(0.08, Math.min(0.2, (item.size || 13) / 72)) : 0;
+    const w = dot + 0.08 + label.length * CHAR;
+    if (x + w > 9.5 && x > 0.5) { x = 0.5; row += 1; }
+    if (row >= MAX_ROWS) break;
+    const mid = y + row * ROW;
+    if (item.colour) {
+      slide.addShape(pptx.ShapeType.ellipse, {
+        x, y: mid + (ROW - dot) / 2 - 0.03, w: dot, h: dot,
+        fill: { color: resolveColour(item.colour) }, line: { width: 0 },
+      });
+    }
+    slide.addText(label, {
+      x: x + dot + 0.06, y: mid, w: w - dot, h: ROW,
+      fontSize: 10, color: "52514E", valign: "middle",
+    });
+    x += w + 0.12;
+  }
+  return row + 1;
+}
+
+async function exportMap() {
+  const question = current();
+  const title = trim(question.label, 150);
+  const subtitle = el("map-sub").textContent.trim();
+  const { pptx, slide } = newDeck(title, subtitle);
+
+  const rows = addLegendShapes(pptx, slide, 1.5);
+  const canvas = await mapCanvas();
+
+  const top = 1.5 + rows * 0.26 + 0.08;
+  const available = 4.95 - top;
+  const aspect = canvas.width / canvas.height;
+  let w = 9, h = w / aspect;
+  if (h > available) { h = available; w = h * aspect; }
+  slide.addImage({ data: canvas.toDataURL("image/png"),
+                   x: (10 - w) / 2, y: top, w, h });
+
+  const codes = state.data.waves.filter((wave) => question.codes[wave])
+    .map((wave) => `${wave}: ${question.codes[wave]}`).join(" · ");
+  await saveDeck(pptx, slide,
+    `Bron: Gemeentevraelys, veranderlike ${codes}. ${ATTRIBUTION}.`,
+    `kaart-${question.id}-${el("wave").value}`);
 }
 
 boot();

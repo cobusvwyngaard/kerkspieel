@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ouderdomsprofiel · Kerkspieël</title>
+<title>Predikanteprofiel · Kerkspieël</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header>
-  <h1>Ouderdomsprofiel van predikante</h1>
+  <h1>Predikanteprofiel</h1>
   <p>ABR-register 2015–2026 · Taakspan Navorsing</p>
   <nav class="site-nav" id="site-nav" aria-label="Verslae"></nav>
 </header>
@@ -28,7 +28,31 @@
       <label for="year">Jaar</label>
       <select id="year"></select>
     </div>
+    <div class="field">
+      <label for="gender">Geslag</label>
+      <select id="gender">
+        <option value="all">Almal</option>
+        <option value="M">Manlik</option>
+        <option value="F">Vroulik</option>
+        <option value="?">Onbekend</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="preset">Gemeentebediening</label>
+      <select id="preset"></select>
+    </div>
   </div>
+
+  <details class="codes" id="codes-panel">
+    <summary><span id="codes-summary">Bevoegdheidskodes</span></summary>
+    <div class="codes-actions">
+      <button type="button" id="codes-all">Kies almal</button>
+      <button type="button" id="codes-none">Kies niks</button>
+      <span class="codes-hint">Die keuse hierbo stel hierdie merkblokkies; verstel
+        hulle hier vir 'n presiese keuse.</span>
+    </div>
+    <div class="codes-grid" id="codes-grid"></div>
+  </details>
 
   <section class="tiles" id="tiles"></section>
   <div id="note-slot"></div>
@@ -65,6 +89,6 @@
 <div class="tooltip" id="tooltip" role="status" aria-live="polite"></div>
 <script src="vendor/pptxgen.bundle.js"></script>
 <script src="common.js"></script>
-<script src="ouderdom.js"></script>
+<script src="predikanteprofiel.js"></script>
 </body>
 </html>

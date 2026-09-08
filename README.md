@@ -8,7 +8,7 @@ Four reports over the NG Kerk's own data, behind one navigation:
 | `ring.html` | Ringsverslag — a ring against its synod and the whole church, across three survey waves |
 | `kaart.html` | Congregations on a map, coloured or sized by their own answer |
 | `predikante.html` | Ministers by credential category, per congregation, ring, synod or nationally |
-| `ouderdom.html` | Age profile of ministers, and how it has shifted over twelve years |
+| `predikanteprofiel.html` | Age profile of ministers, filterable by gender, congregation-ministry set and individual credential codes |
 
 It draws on the **Gemeentevraelys** of 2018, 2022 and 2026, and on the
 **ABR ministers registers** of 2015-2026.
@@ -195,13 +195,25 @@ Not corrected, and needing a decision:
   `Bellville`) and one duplicated code (`NS-QUA001` names both
   Quaggapoort and Queenswood).
 
-## Exporting a chart to PowerPoint
+## Exporting to PowerPoint
 
 Every chart panel carries a **Stoor as PowerPoint** button. It writes a
 one-slide `.pptx` containing a **native PowerPoint chart**, not a picture
 of one -- so the recipient can restyle it, read the numbers off it, and
 paste it into an existing deck. The slide carries the panel's title, its
 subtitle (which names the scope and year), and a source line.
+
+The map exports through the same button, but a map is a picture rather
+than a chart, so that one slide holds an image: the basemap tiles and the
+pins are redrawn onto a canvas at exactly the framing on screen, at twice
+the screen's resolution where that stays within a polite number of tile
+requests. Only the picture is pixels -- the legend is rebuilt out of
+PowerPoint shapes and text, so it stays editable. Tiles are fetched as
+CORS requests (`crossOrigin` is set on the tile layer, so the map's own
+tiles and the exporter's share one cache entry, and the canvas is never
+tainted); a tile that fails or is slow is left out rather than failing the
+export, and OpenStreetMap's attribution is drawn into the image and
+repeated in the source line.
 
 PptxGenJS is vendored into `web/public/vendor/` for the same reason as
 Leaflet. Charts record what they drew when they render, so the exporter
@@ -242,6 +254,18 @@ letter-A group. The split matters: `A01` posts fall from 1,304 to 704
 between 2015 and 2026 while the rest rise from 315 to 460, so the
 non-`A01` share of congregation ministry roughly doubles, from 19.5% to
 39.5%.
+
+### Gender
+
+Gender is not in the register at all. It comes from the 2022 detail
+extract, joined on the ABR number, which is also where the 2020-2022 birth
+years come from. **The join is thin before 2020**: the register renumbered
+between waves, so gender is known for only 42-46% of 2015-2019 rows, and
+that matched part is 98.8% male -- the female count sits at exactly 23 in
+every one of those five years, which is an artefact of who the join
+reaches, not a fact about the ministry. From 2020 the coverage is 87-99%.
+The profile page warns on any year where coverage falls below 80% of the
+current selection.
 
 Two further quirks the pipeline handles:
 
