@@ -21,11 +21,15 @@ const trim = (s, n) => (String(s).length > n ? String(s).slice(0, n - 1) + "…"
 const round1 = (v) => (Math.round(v * 10) / 10).toString().replace(/\.0$/, "");
 
 function renderNav() {
-  const here = location.pathname.split("/").pop() || "index.html";
+  // Cloudflare serves these as extensionless URLs and redirects "/ring.html"
+  // to "/ring", so match on the stem rather than the filename -- otherwise
+  // the current page never highlights once deployed.
+  const stem = (path) => (path.split("/").pop() || "index").replace(/\.html$/, "") || "index";
+  const here = stem(location.pathname);
   const nav = el("site-nav");
   if (!nav) return;
   nav.innerHTML = PAGES.map((p) =>
-    `<a href="${p.href}"${p.href === here ? ' aria-current="page"' : ""}>${p.label}</a>`
+    `<a href="${p.href}"${stem(p.href) === here ? ' aria-current="page"' : ""}>${p.label}</a>`
   ).join("");
 }
 
