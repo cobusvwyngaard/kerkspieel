@@ -43,12 +43,33 @@ jobs:
           acct="$CLOUDFLARE_ACCOUNT_ID"
           echo "account id: ${#acct} characters (expected 32)"
           case "$acct" in
+            cfut_*|*-*)
+              # The commonest mix-up: the API token pasted into this slot.
+              echo "::error::CLOUDFLARE_ACCOUNT_ID looks like an API token, not"
+              echo "an account id. The two secrets are swapped. The account id is"
+              echo "32 hex characters, from your dashboard URL:"
+              echo "  https://dash.cloudflare.com/<ACCOUNT_ID>/workers-and-pages"
+              exit 1 ;;
             *[!0-9a-f]*)
-              echo "::warning::account id contains characters outside 0-9a-f."
-              echo "Check for stray whitespace, a newline, quotes, or a pasted URL." ;;
+              echo "::error::account id contains characters outside 0-9a-f."
+              echo "Check for stray whitespace, a newline, quotes, or a pasted URL."
+              exit 1 ;;
             *) echo "account id: all hex, as expected" ;;
           esac
-          echo "api token: ${#CLOUDFLARE_API_TOKEN} characters (expected 40)"
+
+          # Cloudflare issues two token shapes: a legacy 40-character one and a
+          # newer "cfut_"-prefixed one. Only flag lengths neither could be.
+          tok="$CLOUDFLARE_API_TOKEN"
+          echo "api token: ${#tok} characters"
+          case "$tok" in
+            cfut_*) echo "api token: newer cfut_ format" ;;
+            *) if [ "${#tok}" -lt 30 ]; then
+                 echo "::error::CLOUDFLARE_API_TOKEN is too short to be a token."
+                 echo "It is shown once, on the screen right after you create it."
+                 exit 1
+               fi
+               echo "api token: legacy format" ;;
+          esac
 
           echo "--- asking the API which accounts this token can see ---"
           code=$(curl -sS -o /tmp/accts.json -w '%{http_code}' \
