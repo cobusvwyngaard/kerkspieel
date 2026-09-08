@@ -86,6 +86,8 @@ function render() {
   el("footer").textContent =
     `Bron: ABR-register ${years[0]}–${years[years.length - 1]}. Ouderdomme is ` +
     `slegs op ring-, sinode- en kerkvlak beskikbaar, nooit per gemeente nie.`;
+
+  addExportButtons();
 }
 
 function renderTiles(bucket, year) {

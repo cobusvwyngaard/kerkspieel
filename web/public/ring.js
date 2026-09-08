@@ -146,6 +146,8 @@ function render() {
   renderChart(options, series);
   renderTable(question, options, scopeList);
   renderFooter(question);
+
+  addExportButtons();
 }
 
 function renderTiles(scope) {
@@ -218,7 +220,17 @@ function renderChart(options, series) {
           role="img" aria-label="Verspreiding van antwoorde per jaar">
        ${gridlines}${bars}${labels}
      </svg>`;
-  attachTooltips();
+  attachTooltips(el("chart"));
+  // This page draws its own bars rather than using the shared helper, so it
+  // has to record its chart itself for the PowerPoint export.
+  registerChart(el("chart"), {
+    type: "bar", unit: "%",
+    categories: options.map((o) => o.label || `Opsie ${o.value}`),
+    series: series.map((s, i) => ({
+      name: s.wave, values: options.map((o) => s.data.share[o.index]),
+      colour: SERIES[i % SERIES.length],
+    })),
+  });
 }
 
 function renderTable(question, options, scopeList) {

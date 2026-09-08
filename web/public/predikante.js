@@ -82,12 +82,15 @@ function render() {
 
   renderTiles(bucket, byYear, year);
   renderTrend(byYear, years);
+  renderServing(byYear, years);
   renderCategories(bucket, year);
   renderCongregations(year);
 
   el("footer").textContent =
     `Bron: ABR-register ${years[0]}–${years[years.length - 1]}. ` +
     `Name, geboortedatums en ID-nommers word nooit gepubliseer nie; slegs tellings.`;
+
+  addExportButtons();
 }
 
 function renderTiles(bucket, byYear, year) {
@@ -101,11 +104,15 @@ function renderTiles(bucket, byYear, year) {
   const before = byYear[first];
   const change = before
     ? totalOf(bucket) - totalOf(before) : null;
+  const sets = bucket.sets || {};
+  const serving = sets.gemeente || 0;
   const tiles = [
     ["Predikante", totalOf(bucket), `${scopeName()} · ${year}`],
-    ["In gemeentes (A)", groups.A || 0, "gekoppel aan 'n gemeente"],
+    ["Gemeentepredikante", serving, "wat 'n gemeente bedien"],
+    ["waarvan A01", sets.gemeenteA01 || 0, "beroep en bevestig"],
+    ["nie A01", sets.gemeenteNieA01 || 0,
+      serving ? `${round1(100 * (sets.gemeenteNieA01 || 0) / serving)}% van gemeentepredikante` : "—"],
     ["Emeriti (C)", groups.C || 0, "afgetree"],
-    ["Proponente (B)", groups.B || 0, "nog nie beroep nie"],
   ].map(([k, v, s]) => `<div class="tile"><div class="k">${k}</div>
       <div class="v">${v}</div><div class="s">${escapeHtml(s)}</div></div>`);
   if (change !== null) {
@@ -128,6 +135,22 @@ function renderTrend(byYear, years) {
     `${scopeName()} · die drie groepe wat die bediening dra, jaar vir jaar.`;
   legend(el("trend-legend"), series);
   lineChart(el("trend"), years.map(String), series, { unit: "", zeroBased: true });
+}
+
+/** The three congregation-serving sets, which cut across the letter groups. */
+function renderServing(byYear, years) {
+  const defs = state.data.ministrySets || {};
+  const order = ["gemeente", "gemeenteA01", "gemeenteNieA01"];
+  const series = order.filter((k) => defs[k]).map((k) => ({
+    name: defs[k].label,
+    values: years.map((y) => (byYear[y]?.sets || {})[k] ?? 0),
+  }));
+  const codes = (defs.gemeente?.codes || []).join(", ");
+  el("serving-sub").textContent =
+    `${scopeName()} · predikante wat 'n gemeente bedien (${codes}), ` +
+    `en die verdeling tussen A01 en die res.`;
+  legend(el("serving-legend"), series);
+  lineChart(el("serving"), years.map(String), series, { unit: "", zeroBased: true });
 }
 
 function renderCategories(bucket, year) {
@@ -162,8 +185,8 @@ function renderCongregations(year) {
     if (!bucket || !where) continue;
     if (synod !== ALL_SYNODS && where.synod !== synod) continue;
     if (ring && where.ring !== ring) continue;
-    rows.push({ code, name: where.name, ring: where.ring,
-                total: bucket.total, categories: bucket.categories });
+    rows.push({ code, name: where.name, ring: where.ring, total: bucket.total,
+                categories: bucket.categories, sets: bucket.sets });
   }
   rows.sort((a, b) => b.total - a.total || a.name.localeCompare(b.name, "af"));
   const list = rows.slice(0, LIMIT);
@@ -173,11 +196,14 @@ function renderCongregations(year) {
     : `${rows.length} gemeentes met predikante in ${year}.`;
   if (!list.length) { el("cong-table").innerHTML = ""; return; }
   el("cong-table").innerHTML =
-    `<thead><tr><th>Gemeente</th><th class="col-text">Ring</th><th>Predikante</th><th class="col-text">Kategorieë</th></tr></thead>` +
+    `<thead><tr><th>Gemeente</th><th class="col-text">Ring</th><th>Predikante</th>` +
+    `<th>Gemeente&shy;predikante</th><th>A01</th><th class="col-text">Kategorieë</th></tr></thead>` +
     `<tbody>${list.map((r) => `<tr>
       <td>${escapeHtml(r.name || r.code)}</td>
       <td class="col-text">${escapeHtml(r.ring || "—")}</td>
       <td>${r.total}</td>
+      <td>${(r.sets || {}).gemeente || 0}</td>
+      <td>${(r.sets || {}).gemeenteA01 || 0}</td>
       <td class="col-text">${escapeHtml(Object.entries(r.categories)
         .sort((a, b) => b[1] - a[1]).map(([c, n]) => `${c}×${n}`).join("  "))}</td>
     </tr>`).join("")}</tbody>`;

@@ -218,3 +218,14 @@ footer { color: var(--text-muted); font-size: 12px; padding: 8px 24px 32px; max-
 
 /* Numbers read best right-aligned, prose does not. */
 td.col-text, th.col-text { text-align: left; white-space: normal; }
+
+.export-pptx {
+  float: right; margin: -30px 0 0 12px;
+  font: inherit; font-size: 12px; font-weight: 500;
+  padding: 5px 11px; border-radius: 7px; cursor: pointer;
+  background: var(--surface-0); color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+.export-pptx:hover:not(:disabled) { color: var(--text-primary); border-color: var(--accent); }
+.export-pptx:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.export-pptx:disabled { opacity: .6; cursor: default; }

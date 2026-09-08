@@ -195,6 +195,26 @@ Not corrected, and needing a decision:
   `Bellville`) and one duplicated code (`NS-QUA001` names both
   Quaggapoort and Queenswood).
 
+## Exporting a chart to PowerPoint
+
+Every chart panel carries a **Stoor as PowerPoint** button. It writes a
+one-slide `.pptx` containing a **native PowerPoint chart**, not a picture
+of one -- so the recipient can restyle it, read the numbers off it, and
+paste it into an existing deck. The slide carries the panel's title, its
+subtitle (which names the scope and year), and a source line.
+
+PptxGenJS is vendored into `web/public/vendor/` for the same reason as
+Leaflet. Charts record what they drew when they render, so the exporter
+never re-derives the data; CSS custom properties are resolved to hex at
+export time, so an exported chart keeps the palette of the theme it was
+exported from.
+
+Generated files are checked with the pptx skill's validator, which catches
+the chart XML PowerPoint refuses to open. Note that LibreOffice cannot
+convert any `.pptx` in this development sandbox -- a trivial control deck
+fails identically -- so exports are verified structurally rather than by
+rendering them.
+
 ## The ministers data
 
 The ABR registers name every minister, and the 2015-2019 and 2023 files
@@ -205,7 +225,25 @@ never per congregation, where one minister's age band would identify
 them; category counts are published per congregation, since how many
 ministers a congregation has is not personal information.
 
-Two quirks the pipeline handles:
+### Ministers serving a congregation
+
+Three sets cut across the letter groups, carried over unchanged from the
+Power BI report so the two agree:
+
+| Set | Codes |
+|---|---|
+| Gemeentepredikante | `A01 A02 A03 A08 A10 D03 C01 C03 C04` |
+| Gemeentepredikante A01 | `A01` |
+| Gemeentepredikante nie A01 | the balance |
+
+They include the emeritus who still works in a congregation (`C01`) and
+exclude codes like `A05` (lecturer), so they are not the same as the
+letter-A group. The split matters: `A01` posts fall from 1,304 to 704
+between 2015 and 2026 while the rest rise from 315 to 460, so the
+non-`A01` share of congregation ministry roughly doubles, from 19.5% to
+39.5%.
+
+Two further quirks the pipeline handles:
 
 - **2020, 2021 and 2022 have no age column at all**, nor an ID column.
   Those ages are derived by joining birth years from the 2022 detail

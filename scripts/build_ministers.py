@@ -57,6 +57,22 @@ CATEGORY_GROUPS = {
     "V": "VGK predikante",
 }
 
+# Ministers actually serving a congregation. This cuts across the letter
+# groups -- it takes the congregation-attached A codes, the emeritus who
+# still works in a congregation (C01), and D03 -- and is the definition
+# the Power BI Ringsverslag used, kept here unchanged so the two agree.
+# A01 is split out because it is the standard called-and-ordained post,
+# and the balance is what a congregation leans on instead of one.
+SERVING_A01 = ["A01"]
+SERVING_OTHER = ["A02", "A03", "A08", "A10", "D03", "C01", "C03", "C04"]
+MINISTRY_SETS = {
+    "gemeente": {"label": "Gemeentepredikante",
+                 "codes": SERVING_A01 + SERVING_OTHER},
+    "gemeenteA01": {"label": "Gemeentepredikante A01", "codes": SERVING_A01},
+    "gemeenteNieA01": {"label": "Gemeentepredikante nie A01",
+                       "codes": SERVING_OTHER},
+}
+
 
 def text(value):
     return str(value).strip() if value is not None else ""
@@ -159,9 +175,12 @@ def main():
                  "categories": collections.Counter(),
                  "groups": collections.Counter(),
                  "bands": collections.Counter(),
+                 "sets": collections.Counter(),
                  "gender": collections.Counter()}))
     per_congregation = collections.defaultdict(lambda: collections.defaultdict(
         lambda: {"total": 0, "categories": collections.Counter()}))
+    set_of = {code: name for name, spec in MINISTRY_SETS.items()
+              for code in spec["codes"]}
     quality = []
 
     for path in sorted(abr_dir.glob("*.xlsx")):
@@ -222,11 +241,15 @@ def main():
                 if entry["ring"]:
                     scopes.append(f"r:{entry['synod']}|{entry['ring']}")
 
+            member_of = [name for name, spec in MINISTRY_SETS.items()
+                         if code in spec["codes"]]
             for key in scopes:
                 bucket = per_scope[key][year]
                 bucket["total"] += 1
                 bucket["categories"][code] += 1
                 bucket["groups"][code[0]] += 1
+                for name in member_of:
+                    bucket["sets"][name] += 1
                 if age is not None:
                     bucket["withAge"] += 1
                     bucket["ageSum"] += age
@@ -238,6 +261,8 @@ def main():
                 cong = per_congregation[congregation][year]
                 cong["total"] += 1
                 cong["categories"][code] += 1
+                for name in member_of:
+                    cong.setdefault("sets", collections.Counter())[name] += 1
 
         withage = per_scope[NATIONAL][year]["withAge"]
         total = per_scope[NATIONAL][year]["total"]
@@ -262,7 +287,8 @@ def main():
     def pack(bucket):
         out = {"total": bucket["total"], "withAge": bucket["withAge"],
                "categories": dict(bucket["categories"]),
-               "groups": dict(bucket["groups"])}
+               "groups": dict(bucket["groups"]),
+               "sets": dict(bucket["sets"])}
         if bucket["withAge"]:
             out["meanAge"] = round(bucket["ageSum"] / bucket["withAge"], 1)
             out["bands"] = [bucket["bands"].get(k, 0) for k, _, _ in AGE_BANDS]
@@ -280,8 +306,10 @@ def main():
         # ministers, an age band names a person.
         "byScope": {scope: {str(y): pack(b) for y, b in sorted(years_.items())}
                     for scope, years_ in per_scope.items()},
+        "ministrySets": MINISTRY_SETS,
         "byCongregation": {code: {str(y): {"total": b["total"],
-                                           "categories": dict(b["categories"])}
+                                           "categories": dict(b["categories"]),
+                                           "sets": dict(b.get("sets", {}))}
                                   for y, b in sorted(years_.items())}
                            for code, years_ in per_congregation.items()},
         # Name, ring and synod for the congregations that appear above, so a

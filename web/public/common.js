@@ -137,6 +137,11 @@ function groupedBars(target, categories, series, options = {}) {
   target.innerHTML = `<svg viewBox="0 0 ${width} ${height}" width="${width}"
     height="${height}" role="img" aria-label="Staafgrafiek">${grid}${bars}${labels}</svg>`;
   attachTooltips(target);
+  registerChart(target, {
+    type: "bar", categories, unit,
+    series: series.map((s, i) => ({ name: s.name, values: s.values,
+                                    colour: SERIES[i % SERIES.length] })),
+  });
 }
 
 function legend(target, series) {
@@ -195,6 +200,11 @@ function lineChart(target, xs, series, options = {}) {
   target.innerHTML = `<svg viewBox="0 0 ${width} ${height}" width="${width}"
     height="${height}" role="img" aria-label="Lyngrafiek">${grid}${lines}${labels}</svg>`;
   attachTooltips(target);
+  registerChart(target, {
+    type: "line", categories: xs, unit,
+    series: series.map((s, i) => ({ name: s.name, values: s.values,
+                                    colour: SERIES[i % SERIES.length] })),
+  });
 }
 
 /** One bar per x, split into ordered segments sharing a sequential ramp. */
@@ -245,6 +255,11 @@ function stackedBars(target, xs, segments, options = {}) {
   target.innerHTML = `<svg viewBox="0 0 ${width} ${height}" width="${width}"
     height="${height}" role="img" aria-label="Gestapelde staafgrafiek">${grid}${bars}${labels}</svg>`;
   attachTooltips(target);
+  registerChart(target, {
+    type: "stacked", categories: xs, unit: asShare ? "%" : "",
+    series: segments.map((s, i) => ({ name: s.name, values: s.values,
+                                      colour: RAMP[i % RAMP.length] })),
+  });
 }
 
 function rampKey(target, names) {
@@ -265,4 +280,122 @@ function scopeOptions(byScope) {
     }
   });
   return { synods: [...synods].sort((a, b) => a.localeCompare(b, "af")), rings };
+}
+
+/* ---------- PowerPoint export ----------
+   Charts are exported as native PowerPoint charts rather than pictures, so
+   the recipient can restyle them, read the numbers, and paste them into an
+   existing deck. Each chart records what it drew; the exporter turns that
+   into a one-slide .pptx. */
+
+const chartRegistry = new Map();
+
+function registerChart(target, spec) {
+  if (target && target.id) chartRegistry.set(target.id, spec);
+}
+
+/** Resolve a CSS custom property to the hex PowerPoint needs. */
+function resolveColour(value) {
+  const name = /var\((--[\w-]+)\)/.exec(value);
+  const raw = name
+    ? getComputedStyle(document.documentElement).getPropertyValue(name[1]).trim()
+    : value;
+  const hex = raw.replace("#", "").trim();
+  if (/^[0-9a-f]{6}$/i.test(hex)) return hex.toUpperCase();
+  // Fall back through a canvas for rgb()/named colours.
+  const probe = document.createElement("canvas").getContext("2d");
+  probe.fillStyle = raw || "#888888";
+  return probe.fillStyle.replace("#", "").toUpperCase();
+}
+
+/** Add an export button to every panel that contains a registered chart. */
+function addExportButtons() {
+  chartRegistry.forEach((_, id) => {
+    const target = el(id);
+    const panel = target && target.closest(".panel");
+    if (!panel || panel.querySelector(".export-pptx")) return;
+    const button = document.createElement("button");
+    button.className = "export-pptx";
+    button.type = "button";
+    button.textContent = "Stoor as PowerPoint";
+    button.addEventListener("click", () => exportChart(id, button));
+    (panel.querySelector("h2") || panel).insertAdjacentElement("afterend", button);
+  });
+}
+
+async function exportChart(id, button) {
+  const spec = chartRegistry.get(id);
+  if (!spec || typeof PptxGenJS === "undefined") return;
+  const panel = el(id).closest(".panel");
+  const title = (panel.querySelector("h2")?.textContent || "Kerkspieël").trim();
+  const subtitle = (panel.querySelector(".sub")?.textContent || "").trim();
+  const label = button.textContent;
+  button.disabled = true;
+  button.textContent = "Besig…";
+
+  try {
+    const pptx = new PptxGenJS();
+    pptx.layout = "LAYOUT_16x9";
+    pptx.author = "Kerkspieël";
+    const slide = pptx.addSlide();
+
+    slide.addText(title, {
+      x: 0.5, y: 0.35, w: 9, h: 0.6, fontSize: 24, bold: true, color: "1A1A19",
+    });
+    if (subtitle) {
+      slide.addText(subtitle, {
+        x: 0.5, y: 0.95, w: 9, h: 0.5, fontSize: 12, color: "52514E",
+      });
+    }
+
+    const colours = spec.series.map((s) => resolveColour(s.colour));
+    const data = spec.series.map((s) => ({
+      name: s.name,
+      labels: spec.categories,
+      // PowerPoint cannot plot a gap, so a missing point becomes null and
+      // the chart is told to leave it blank rather than read it as zero.
+      values: s.values.map((v) => (v == null ? null : v)),
+    }));
+
+    const options = {
+      x: 0.5, y: subtitle ? 1.5 : 1.15, w: 9, h: subtitle ? 4.0 : 4.35,
+      chartColors: colours,
+      showLegend: spec.series.length > 1,
+      legendPos: "b",
+      showValue: false,
+      catAxisLabelFontSize: 10,
+      valAxisLabelFontSize: 10,
+      dataLabelFontSize: 10,
+      displayBlanksAs: "gap",
+      valAxisTitle: spec.unit ? spec.unit.trim() : undefined,
+      showValAxisTitle: Boolean(spec.unit && spec.unit.trim()),
+    };
+
+    if (spec.type === "line") {
+      slide.addChart(pptx.ChartType.line, data,
+        { ...options, lineDataSymbol: "circle", lineSize: 2, lineSmooth: false });
+    } else {
+      slide.addChart(pptx.ChartType.bar, data, {
+        ...options,
+        barDir: "col",
+        barGrouping: spec.type === "stacked" ? "percentStacked" : "clustered",
+        barGapWidthPct: spec.type === "stacked" ? 60 : 40,
+      });
+    }
+
+    slide.addText(spec.source || "Bron: Kerkspieël · Taakspan Navorsing", {
+      x: 0.5, y: 5.05, w: 9, h: 0.35, fontSize: 9, color: "78766F",
+    });
+
+    const stamp = new Date().toISOString().slice(0, 10);
+    await pptx.writeFile({
+      fileName: `kerkspieel-${id}-${stamp}.pptx`.replace(/[^\w.-]+/g, "-"),
+    });
+  } catch (e) {
+    button.textContent = "Kon nie stoor nie";
+    setTimeout(() => { button.textContent = label; button.disabled = false; }, 2500);
+    return;
+  }
+  button.textContent = label;
+  button.disabled = false;
 }
