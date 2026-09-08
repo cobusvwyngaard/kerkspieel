@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="af">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ouderdomsprofiel · Kerkspieël</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Ouderdomsprofiel van predikante</h1>
+  <p>ABR-register 2015–2026 · Taakspan Navorsing</p>
+  <nav class="site-nav" id="site-nav" aria-label="Verslae"></nav>
+</header>
+
+<main>
+  <div class="filters">
+    <div class="field">
+      <label for="synod">Sinode</label>
+      <select id="synod"></select>
+    </div>
+    <div class="field">
+      <label for="ring">Ring</label>
+      <select id="ring"></select>
+    </div>
+    <div class="field">
+      <label for="year">Jaar</label>
+      <select id="year"></select>
+    </div>
+  </div>
+
+  <section class="tiles" id="tiles"></section>
+  <div id="note-slot"></div>
+
+  <section class="panel">
+    <h2 id="bands-title">Ouderdomsverspreiding</h2>
+    <p class="sub">Persentasie van predikante met 'n bekende ouderdom, per ouderdomsgroep.</p>
+    <div class="legend" id="bands-legend"></div>
+    <div class="scroller"><div id="bands"></div></div>
+  </section>
+
+  <section class="panel">
+    <h2>Gemiddelde ouderdom oor tyd</h2>
+    <p class="sub" id="mean-sub"></p>
+    <div class="legend" id="mean-legend"></div>
+    <div class="scroller"><div id="mean"></div></div>
+  </section>
+
+  <section class="panel">
+    <h2>Samestelling per jaar</h2>
+    <p class="sub">Elke jaar se predikante verdeel in ouderdomsgroepe, as persentasie.</p>
+    <div class="stacked-key" id="stack-legend"></div>
+    <div class="scroller"><div id="stack"></div></div>
+  </section>
+
+  <section class="panel">
+    <h2>Tabel</h2>
+    <p class="sub" id="table-sub"></p>
+    <div class="scroller"><table id="table"></table></div>
+  </section>
+</main>
+
+<footer id="footer"></footer>
+<div class="tooltip" id="tooltip" role="status" aria-live="polite"></div>
+<script src="common.js"></script>
+<script src="ouderdom.js"></script>
+</body>
+</html>

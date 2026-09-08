@@ -1,9 +1,9 @@
-# Raw survey extracts are NOT committed by default.
-# They contain free-text comment fields that may identify individual
-# ministers and congregations (POPIA). Decide on a redaction policy
-# before putting them under version control or shipping them to a CDN.
-data/raw/*.xlsx
-data/raw/*.xls
+# Raw extracts are NEVER committed. The survey files carry free-text
+# comments that identify individual ministers and congregations, and the
+# ABR ministers files carry names, dates of birth and South African ID
+# numbers. Ignore the whole tree rather than a file glob, so a new
+# subdirectory cannot quietly become committable.
+data/raw/
 
 node_modules/
 dist/

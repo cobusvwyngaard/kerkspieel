@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="af">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kaart · Kerkspieël</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<!-- Leaflet 1.9.4 (BSD-2-Clause) is vendored rather than pulled from a CDN,
+     so the site has no third-party runtime dependency and can be tested
+     offline. See vendor/LEAFLET-LICENSE.txt. -->
+<link rel="stylesheet" href="vendor/leaflet.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Kaart van gemeentes</h1>
+  <p>Gemeentes gekleur of geskaal volgens hulle eie antwoord · Taakspan Navorsing</p>
+  <nav class="site-nav" id="site-nav" aria-label="Verslae"></nav>
+</header>
+
+<main>
+  <div class="filters">
+    <div class="field field--wide">
+      <label for="question">Vraag</label>
+      <select id="question"></select>
+    </div>
+    <div class="field">
+      <label for="wave">Jaar</label>
+      <select id="wave"></select>
+    </div>
+    <div class="field">
+      <label for="synod">Sinode</label>
+      <select id="synod"></select>
+    </div>
+  </div>
+
+  <section class="panel">
+    <h2 id="map-title">—</h2>
+    <p class="sub" id="map-sub"></p>
+    <div id="note-slot"></div>
+    <div class="legend-scale" id="legend"></div>
+    <div id="map"></div>
+    <p class="map-meta" id="map-meta"></p>
+  </section>
+</main>
+
+<footer id="footer"></footer>
+<div class="tooltip" id="tooltip" role="status" aria-live="polite"></div>
+<script src="vendor/leaflet.js"></script>
+<script src="common.js"></script>
+<script src="kaart.js"></script>
+</body>
+</html>

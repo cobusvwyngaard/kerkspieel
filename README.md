@@ -1,13 +1,22 @@
 # Kerkspieël
 
-A dashboard over the Kerkspieël congregational survey (Gemeentevraelys),
-covering the 2018, 2022 and 2026 waves. It reproduces the per-ring
-Ringsverslag that was previously produced in Power BI, and adds the third
-wave.
+Four reports over the NG Kerk's own data, behind one navigation:
 
-The dashboard is static: all three waves compress to well under a
-megabyte, so everything is precomputed into JSON and aggregated in the
-browser. There is no server and no database.
+| Page | What it shows |
+|---|---|
+| `index.html` | Landing page: what the tool is and how to read it |
+| `ring.html` | Ringsverslag — a ring against its synod and the whole church, across three survey waves |
+| `kaart.html` | Congregations on a map, coloured or sized by their own answer |
+| `predikante.html` | Ministers by credential category, per congregation, ring, synod or nationally |
+| `ouderdom.html` | Age profile of ministers, and how it has shifted over twelve years |
+
+It draws on the **Gemeentevraelys** of 2018, 2022 and 2026, and on the
+**ABR ministers registers** of 2015-2026.
+
+Everything is static: the data is precomputed into JSON and aggregated in
+the browser. There is no server and no database. Leaflet is vendored into
+`web/public/vendor/`, so the site has no third-party runtime dependency
+either; the map's basemap tiles are the one external request it makes.
 
 ## The one thing to know about the data
 
@@ -38,7 +47,10 @@ python3 scripts/build_codebook.py    # questionnaires -> labels for every column
 python3 scripts/extract_options.py   # questionnaires -> response options
 python3 scripts/resolve_2026_keys.py # 2026's self-entered keys -> V03 codes
 python3 scripts/build_crosswalk.py   # match questions across waves
-python3 scripts/build_dataset.py     # -> web/public/data/*.json
+python3 scripts/build_dataset.py     # -> data/build (congregation level, not published)
+python3 scripts/build_aggregates.py  # -> web/public/data/aggregates.json
+python3 scripts/build_map.py         # -> web/public/data/map.json
+python3 scripts/build_ministers.py   # -> web/public/data/ministers.json
 python3 scripts/validate_pipeline.py # decode path vs the published report
 python3 scripts/validate_dataset.py  # built dataset vs the published report
 cd web/public && python3 -m http.server 8788
@@ -182,6 +194,33 @@ Not corrected, and needing a decision:
 - `KS_Ring_Lookup` carries ring-name spelling variants (`Belville` /
   `Bellville`) and one duplicated code (`NS-QUA001` names both
   Quaggapoort and Queenswood).
+
+## The ministers data
+
+The ABR registers name every minister, and the 2015-2019 and 2023 files
+carry South African ID numbers. `build_ministers.py` reads them and emits
+only counts: no name, date of birth or ID number reaches
+`web/public`. Age is published for a ring, a synod or the whole church,
+never per congregation, where one minister's age band would identify
+them; category counts are published per congregation, since how many
+ministers a congregation has is not personal information.
+
+Two quirks the pipeline handles:
+
+- **2020, 2021 and 2022 have no age column at all**, nor an ID column.
+  Those ages are derived by joining birth years from the 2022 detail
+  extract on the ABR number, which recovers them at the same ~80%
+  coverage the other years reach on their own. The derivation only
+  reaches ministers who also appear in that extract — a slightly older
+  group — so the mean age jumps at that boundary for reasons that are not
+  real ageing. The report says so, and marks those years.
+- **Deceased ministers (group F) appear in some registers and not
+  others** — none in 2015-2019 or 2023, several hundred elsewhere — so
+  totals are not comparable year on year unless they are excluded. The
+  report excludes them by default.
+
+Ages outside 20-105 are dropped as data errors; the later files contain
+ages in the 900s.
 
 ## Still open
 

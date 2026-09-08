@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="af">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Predikante · Kerkspieël</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Predikante</h1>
+  <p>ABR-register 2015–2026 · Taakspan Navorsing</p>
+  <nav class="site-nav" id="site-nav" aria-label="Verslae"></nav>
+</header>
+
+<main>
+  <div class="filters">
+    <div class="field">
+      <label for="synod">Sinode</label>
+      <select id="synod"></select>
+    </div>
+    <div class="field">
+      <label for="ring">Ring</label>
+      <select id="ring"></select>
+    </div>
+    <div class="field">
+      <label for="year">Jaar</label>
+      <select id="year"></select>
+    </div>
+    <div class="field">
+      <label for="live">Tel saam</label>
+      <select id="live">
+        <option value="live">Lewende register</option>
+        <option value="all">Alles, ook oorledenes</option>
+      </select>
+    </div>
+  </div>
+
+  <section class="tiles" id="tiles"></section>
+
+  <section class="panel">
+    <h2>Bevoegdheidsgroepe oor tyd</h2>
+    <p class="sub" id="trend-sub"></p>
+    <div class="legend" id="trend-legend"></div>
+    <div class="scroller"><div id="trend"></div></div>
+  </section>
+
+  <section class="panel">
+    <h2 id="cat-title">Kategorieë</h2>
+    <p class="sub">Elke bevoegdheidskode se telling in die gekose jaar.</p>
+    <div class="scroller"><table id="cat-table"></table></div>
+  </section>
+
+  <section class="panel">
+    <h2>Per gemeente</h2>
+    <p class="sub" id="cong-sub"></p>
+    <div class="scroller"><table id="cong-table"></table></div>
+  </section>
+</main>
+
+<footer id="footer"></footer>
+<div class="tooltip" id="tooltip" role="status" aria-live="polite"></div>
+<script src="common.js"></script>
+<script src="predikante.js"></script>
+</body>
+</html>

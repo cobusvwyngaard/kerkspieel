@@ -3,51 +3,117 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kerkspieël Ringsverslag</title>
+<title>Kerkspieël</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header>
-  <h1>Kerkspieël Ringsverslag</h1>
-  <p>Gemeentevraelys 2018, 2022 en 2026 · Taakspan Navorsing</p>
+  <h1>Kerkspieël</h1>
+  <p>Gemeente- en predikantedata van die NG Kerk · Taakspan Navorsing</p>
+  <nav class="site-nav" id="site-nav" aria-label="Verslae"></nav>
 </header>
 
 <main>
-  <div class="filters">
-    <div class="field">
-      <label for="synod">Sinode</label>
-      <select id="synod"></select>
-    </div>
-    <div class="field">
-      <label for="ring">Ring</label>
-      <select id="ring"></select>
-    </div>
-    <div class="field field--wide">
-      <label for="question">Vraag</label>
-      <select id="question"></select>
-    </div>
+  <p class="lede">
+    Hierdie is 'n stel verslae oor die NG Kerk se eie data. Dit trek die
+    <strong>Gemeentevraelys</strong> van 2018, 2022 en 2026 saam met
+    <strong>twaalf jaar se ABR-registers</strong> van predikante, en laat u toe om
+    'n ring, 'n sinode of die hele kerk te bekyk sonder om self met die
+    rekenaarblaaie te werk.
+  </p>
+
+  <section class="cards">
+    <a class="card" href="ring.html">
+      <h3>Ringsverslag</h3>
+      <p>Hoe 'n ring op elke vraag geantwoord het, langs sy sinode en die
+         Algemene Sinode, oor drie opnames heen.</p>
+      <div class="card-meta">242 vrae · 2018 · 2022 · 2026</div>
+    </a>
+    <a class="card" href="kaart.html">
+      <h3>Kaart</h3>
+      <p>Gemeentes op 'n kaart, gekleur of geskaal volgens hulle antwoord op
+         'n gekose vraag.</p>
+      <div class="card-meta">922 gemeentes · 387 karteerbare vrae</div>
+    </a>
+    <a class="card" href="predikante.html">
+      <h3>Predikante</h3>
+      <p>Hoeveel predikante daar per bevoegdheidskategorie is, per gemeente,
+         ring, sinode of vir die hele kerk.</p>
+      <div class="card-meta">2015–2026 · 23 kategorieë</div>
+    </a>
+    <a class="card" href="ouderdom.html">
+      <h3>Ouderdomsprofiel</h3>
+      <p>Die ouderdomsverspreiding van predikante, en hoe dit oor twaalf jaar
+         verskuif het.</p>
+      <div class="card-meta">2015–2026 · ±80% dekking</div>
+    </a>
+  </section>
+
+  <div class="prose">
+    <h2>Waar die data vandaan kom</h2>
+    <p>
+      Twee bronne, wat langs mekaar gelees word maar apart bly:
+    </p>
+    <ul>
+      <li><strong>Gemeentevraelys 2018, 2022 en 2026</strong> — elke gemeente se
+        eie antwoorde op ongeveer 400 vrae. Ongeveer driekwart van gemeentes
+        antwoord elke keer.</li>
+      <li><strong>ABR-registers 2015–2026</strong> — die amptelike register van
+        predikante, hulle bevoegdheidskategorie, en waar hulle staan.</li>
+    </ul>
+
+    <h2>Drie dinge om te weet voordat u die syfers gebruik</h2>
+    <p>
+      <strong>Veranderlike-kodes word elke opname hernommer.</strong> "Belydende
+      lidmate" is <code>V05</code> in 2018 en 2022, maar <code>V02</code> in
+      2026. 348 kolomname kom in meer as een jaar voor terwyl hulle ander vrae
+      beteken. Die verslae werk deur 'n kruisverwysing wat vraag vir vraag
+      gebou is, nie deur kolomname te vergelyk nie.
+    </p>
+    <p>
+      <strong>'n Vraag wat in twee jare voorkom is nie altyd vergelykbaar nie.</strong>
+      Van die skale het verander — die jeugbedieningsvrae het byvoorbeeld in
+      2022 vier opsies gehad en in 2026 net drie. Waar dit gebeur het, sê die
+      verslag dit met 'n waarskuwing bo die grafiek.
+    </p>
+    <p>
+      <strong>Klein getalle beteken min.</strong> 'n Ring kan vier gemeentes hê
+      wat geantwoord het. Dan skuif elke antwoord die persentasie met 25
+      persentasiepunte. Die verslae wys die getalle saam met die persentasies,
+      en waarsku waar die basis klein is. Lees die getalle.
+    </p>
+
+    <h2>Wat geverifieer is</h2>
+    <p>
+      Die syfers is teruggetoets teen die gepubliseerde Power BI-Ringsverslag
+      vir die ring George: deelname en verspreidings stem presies ooreen.
+      Die kruisverwysing tussen 2018 en 2022 stem op 87 van 89 gevalle ooreen
+      met die handgekontroleerde lys. Die kruisverwysing tussen 2022 en 2026
+      is afgelei en nog nie onafhanklik nagegaan nie.
+    </p>
+    <p>
+      Vir predikante is ouderdom vir ongeveer 80% van rekords bekend. Die jare
+      2020 tot 2022 het geen ouderdomskolom nie; daardie ouderdomme is afgelei
+      uit geboortejare wat aan dieselfde ABR-nommers gekoppel is.
+    </p>
+
+    <h2>Privaatheid</h2>
+    <p>
+      Die ABR-registers bevat name, geboortedatums en ID-nommers. Niks daarvan
+      verlaat die verwerking nie — net tellings word gepubliseer, en
+      ouderdomme word slegs vir 'n ring, 'n sinode of die hele kerk gewys,
+      nooit per gemeente nie. Die kaart is per definisie op gemeentevlak: dit
+      wys 'n enkele gemeente se antwoord.
+    </p>
   </div>
-
-  <section class="tiles" id="tiles"></section>
-
-  <section class="panel">
-    <h2 id="chart-title">—</h2>
-    <p class="sub" id="chart-sub"></p>
-    <div id="note-slot"></div>
-    <div class="legend" id="legend"></div>
-    <div class="scroller"><div id="chart"></div></div>
-  </section>
-
-  <section class="panel">
-    <h2>Vergelyking</h2>
-    <p class="sub">Persentasie van gemeentes wat elke opsie gekies het, per vlak en per jaar.</p>
-    <div class="scroller"><table id="table"></table></div>
-  </section>
 </main>
 
-<footer id="footer"></footer>
+<footer>
+  Kerkspieël · Taakspan Navorsing · vrae na
+  <a href="mailto:kerkspieel@ngkerk.org.za">kerkspieel@ngkerk.org.za</a>
+</footer>
 <div class="tooltip" id="tooltip" role="status" aria-live="polite"></div>
-<script src="app.js"></script>
+<script src="common.js"></script>
 </body>
 </html>

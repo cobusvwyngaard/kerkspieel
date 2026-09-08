@@ -5,12 +5,9 @@
    a congregation's own answers. */
 
 const WAVES = ["2018", "2022", "2026"];
-const SERIES = ["var(--series-1)", "var(--series-2)", "var(--series-3)"];
-const NATIONAL = "__all__";
 // Below this, a single congregation moves the share by 10 points or more.
 const SMALL_N = 10;
-
-const el = (id) => document.getElementById(id);
+const ALL_SYNODS = "__all_synods__";
 const state = { scopes: [], byKey: new Map(), questions: [], counts: {} };
 
 async function boot() {
@@ -32,9 +29,12 @@ const ringScopes = (synod) =>
   state.scopes.filter((s) => s.kind === "ring" && s.synod === synod);
 
 function fillSynods() {
-  el("synod").innerHTML = synodScopes()
-    .sort((a, b) => a.name.localeCompare(b.name, "af"))
-    .map((s) => `<option value="${s.key}">${escapeHtml(s.name)}</option>`).join("");
+  // "Algemene Sinode" selects the whole church rather than one synod.
+  el("synod").innerHTML =
+    `<option value="${ALL_SYNODS}">Algemene Sinode (almal)</option>` +
+    synodScopes()
+      .sort((a, b) => a.name.localeCompare(b.name, "af"))
+      .map((s) => `<option value="${s.key}">${escapeHtml(s.name)}</option>`).join("");
 }
 
 function fillQuestions() {
@@ -51,21 +51,33 @@ function fillQuestions() {
 }
 
 function onSynodChange() {
-  const synod = state.byKey.get(el("synod").value);
-  el("ring").innerHTML = [`<option value="${synod.key}">Hele sinode</option>`]
-    .concat(ringScopes(synod.name)
-      .sort((a, b) => a.name.localeCompare(b.name, "af"))
-      .map((r) => `<option value="${r.key}">${escapeHtml(r.name)}</option>`))
-    .join("");
+  const chosen = el("synod").value;
+  const ring = el("ring");
+  if (chosen === ALL_SYNODS) {
+    // Every congregation is in scope, so there is no ring to narrow to.
+    ring.innerHTML = `<option value="${NATIONAL}">Alle gemeentes</option>`;
+    ring.disabled = true;
+  } else {
+    const synod = state.byKey.get(chosen);
+    ring.disabled = false;
+    ring.innerHTML = [`<option value="${synod.key}">Hele sinode</option>`]
+      .concat(ringScopes(synod.name)
+        .sort((a, b) => a.name.localeCompare(b.name, "af"))
+        .map((r) => `<option value="${r.key}">${escapeHtml(r.name)}</option>`))
+      .join("");
+  }
   render();
 }
 
 /* ---------- selection ---------- */
 
 function scopes() {
+  const national = state.byKey.get(NATIONAL);
+  if (el("synod").value === ALL_SYNODS) {
+    return [{ scope: national, label: national.name, short: "AS" }];
+  }
   const synod = state.byKey.get(el("synod").value);
   const chosen = state.byKey.get(el("ring").value) || synod;
-  const national = state.byKey.get(NATIONAL);
   const all = [
     { scope: chosen, label: `Ring ${chosen.name}`, short: "Ring" },
     { scope: synod, label: `Sinode ${synod.name}`, short: "Sinode" },
@@ -237,53 +249,7 @@ function renderFooter(question) {
 
 /* ---------- helpers ---------- */
 
-function attachTooltips() {
-  const tip = el("tooltip");
-  const show = (e) => {
-    const t = e.target.dataset.tip;
-    if (!t) return;
-    const box = e.target.getBoundingClientRect();
-    tip.textContent = t;
-    tip.style.opacity = "1";
-    tip.style.left = `${Math.min(box.left, window.innerWidth - 240)}px`;
-    tip.style.top = `${box.top - 34}px`;
-  };
-  const hide = () => { tip.style.opacity = "0"; };
-  el("chart").querySelectorAll("[data-tip]").forEach((node) => {
-    node.addEventListener("mouseenter", show);
-    node.addEventListener("focus", show);
-    node.addEventListener("mouseleave", hide);
-    node.addEventListener("blur", hide);
-  });
-}
 
-function wrap(text, perLine, maxLines) {
-  const out = [];
-  let line = "";
-  for (const word of String(text).split(/\s+/)) {
-    if ((line + " " + word).trim().length > perLine && line) {
-      out.push(line);
-      line = word;
-      if (out.length === maxLines - 1 && out.length) break;
-    } else {
-      line = (line + " " + word).trim();
-    }
-  }
-  if (line) out.push(line);
-  return out.slice(0, maxLines);
-}
 
-function niceMax(value) {
-  // Round the axis up to something a reader can divide into quarters.
-  for (const candidate of [20, 25, 40, 50, 60, 75, 80, 100]) {
-    if (value <= candidate) return candidate;
-  }
-  return 100;
-}
-
-const round1 = (v) => (Math.round(v * 10) / 10).toString().replace(/\.0$/, "");
-const trim = (s, n) => (String(s).length > n ? String(s).slice(0, n - 1) + "…" : String(s));
-const escapeHtml = (s) => String(s).replace(/[&<>"']/g,
-  (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
 boot();
