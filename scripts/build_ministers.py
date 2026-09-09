@@ -47,14 +47,18 @@ NATIONAL = "__all__"
 
 # The register groups credentials by the letter of the code. The letter is
 # what most questions are actually about; the numbered codes are detail.
+# A to E are the ABR-bevoegdheidstabel's own headings, from the annual
+# JAARLIKSE AANMELDING circular; F, V and Z appear in the register files
+# without appearing in that table.
 CATEGORY_GROUPS = {
-    "A": "Predikante en ander volle bevoegdheid",
-    "B": "Proponente",
-    "C": "Emeriti",
-    "D": "Leraars en diensleraars",
-    "E": "Gelegitimeer, nie in gemeentebediening",
+    "A": "Leraar met volle ampsbevoegdheid",
+    "B": "Beroepbare persone met proponentsbevoegdheid",
+    "C": "Emeritus",
+    "D": "Beperkte bevoegdheid",
+    "E": "Uitgetrede leraars",
     "F": "Oorlede",
     "V": "VGK predikante",
+    "Z": "Onbekend",
 }
 
 # Ministers actually serving a congregation. This cuts across the letter
@@ -72,6 +76,22 @@ MINISTRY_SETS = {
     "gemeenteNieA01": {"label": "Gemeentepredikante nie A01",
                        "codes": SERVING_OTHER},
 }
+
+
+def read_code_table(path):
+    """The ABR's own credential table: code -> (label, description).
+
+    The register files carry a description column of their own, but it is
+    truncated, inconsistent between years, and blank for five codes. This
+    table is the authority; the register's text is only a fallback for the
+    codes it does not cover.
+    """
+    if not path.exists():
+        return {}
+    with path.open(encoding="utf-8", newline="") as handle:
+        return {row["code"].strip().upper():
+                (row["label"].strip(), row["description"].strip())
+                for row in csv.DictReader(handle) if row.get("code")}
 
 
 def text(value):
@@ -155,6 +175,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--data-dir", default="data/raw")
     ap.add_argument("--out-dir", default="web/public/data")
+    ap.add_argument("--code-table", default="data/lookup/abr_codes.csv")
     args = ap.parse_args()
     data_dir = pathlib.Path(args.data_dir)
     out_dir = pathlib.Path(args.out_dir)
@@ -166,8 +187,10 @@ def main():
 
     birth_years, gender_of = read_birth_years(data_dir / "ministers_detail.xlsx")
     register = read_register(data_dir)
+    code_table = read_code_table(pathlib.Path(args.code_table))
     print(f"birth years known for {len(birth_years)} ABR numbers")
     print(f"congregation register: {len(register)} congregations")
+    print(f"ABR credential table: {len(code_table)} codes described")
 
     # Every code that appears, whether or not the register ever describes
     # it. Several codes the report needs -- A08, A10, C03, C04, D03 -- carry
@@ -307,8 +330,20 @@ def main():
                         "genderKnown": sum(per_scope[NATIONAL][year]["gender"].values())})
 
     years = sorted({q["year"] for q in quality})
-    categories = [{"code": c, "label": labels.get(c, ""), "group": c[0]}
-                  for c in sorted(seen_codes)]
+    # The ABR's table names and defines each code; the register's own text
+    # fills in only for the codes the table does not carry (A00 and B00,
+    # which the register uses for an unrecorded code within a letter group,
+    # B04, F01, V01 and ZZZ).
+    categories = []
+    for c in sorted(seen_codes):
+        label, description = code_table.get(c, ("", ""))
+        categories.append({"code": c,
+                           "label": label or labels.get(c, ""),
+                           "description": description,
+                           "group": c[0]})
+    undescribed = [c["code"] for c in categories if not c["label"]]
+    if undescribed:
+        print(f"codes with no description: {', '.join(undescribed)}")
 
     category_index = {c: i for i, c in enumerate(sorted(seen_codes))}
     GENDERS = ["M", "F", "?"]

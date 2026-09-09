@@ -5,7 +5,7 @@ Four reports over the NG Kerk's own data, behind one navigation:
 | Page | What it shows |
 |---|---|
 | `index.html` | Landing page: what the tool is and how to read it |
-| `ring.html` | Ringsverslag — a ring against its synod and the whole church, across three survey waves |
+| `ring.html` | Ringsverslag — a ring against its synod and the whole church, across three survey waves; the published report's own four questions lead the dropdown |
 | `kaart.html` | Congregations on a map, coloured or sized by their own answer |
 | `predikante.html` | Ministers by credential category, per congregation, ring, synod or nationally |
 | `predikanteprofiel.html` | Age profile of ministers, filterable by gender, congregation-ministry set and individual credential codes |
@@ -142,6 +142,7 @@ that can identify individual ministers and congregations. Put them in
 | `Gemeentevraelys_{2018,2022,2026}.pdf` | the questionnaires; the source of every label |
 | `KS_lookup.xlsx` | 106 hand-verified question pairs and the scale definitions |
 | `KS_Ring_Lookup.xlsx`, `sinode_lookup.xlsx` | congregation register; ring and synod |
+| `JAARLIKSE_AANMELDING_<year>.pdf` | the ABR's annual circular; the source of `data/lookup/abr_codes.csv` |
 | `kerkspieel_geolocation_match.xlsx`, `Gemeentes1.xlsx`, `Ontbinde_gemeentes.xlsx` | congregation coordinates |
 
 ## What is verified, and what is not
@@ -176,6 +177,7 @@ Corrected at read time from `data/lookup/column_corrections.csv`:
 | 2022 col 95 | named `V62`; carries Ja/Nee between `V81` and `V82b`, so is `V82a` |
 | 2022 col 413 | named `V284`; sits in the `V381`-`V386` run, so is `V384` |
 | 2022 `V389` | holds no value in any of the 1075 rows |
+| ABR circular, `A02` | the definition runs "gekoppel is aan 'n gemeente met geen wedersydse verpligtinge nie beroep is na 'n gemeente en voltyds in diens is" -- the second half is `A01`'s text, pasted in. `abr_codes.csv` keeps the first half |
 
 Not corrected, and needing a decision:
 
@@ -236,6 +238,23 @@ only counts: no name, date of birth or ID number reaches
 never per congregation, where one minister's age band would identify
 them; category counts are published per congregation, since how many
 ministers a congregation has is not personal information.
+
+### What the credential codes mean
+
+`data/lookup/abr_codes.csv` carries the ABR's own bevoegdheidstabel --
+the 22 codes `A01`-`E02`, each with its short name and its full
+definition -- transcribed from the annual JAARLIKSE AANMELDING circular.
+It is the authority for how a code is labelled, and the register's own
+description column is only a fallback: that column is truncated,
+disagrees between years, and is **blank for `A08`, `A10`, `C03`, `C04`
+and `D03`**, which are five of the eight non-`A01` congregation-ministry
+codes. Six codes appear in the register but not in the ABR's table --
+`A00` and `B00` (an unrecorded code within a letter group), `B04`,
+`F01`, `V01` and `ZZZ` -- and those keep the register's own wording.
+The letter-group headings are the table's own.
+
+When the circular is reissued, update the CSV; nothing else needs to
+change.
 
 ### Ministers serving a congregation
 

@@ -37,16 +37,48 @@ function fillSynods() {
       .map((s) => `<option value="${s.key}">${escapeHtml(s.name)}</option>`).join("");
 }
 
+// The four questions the published Power BI Ringsverslag put on its slides,
+// in the order it showed them. Matched on wording rather than on question
+// id, because the ids are regenerated whenever the crosswalk is rebuilt and
+// a stale id would silently point at a different question.
+const RECOMMENDED = [
+  /huidige rigting tipeer/i,
+  /finansiële posisie/i,
+  /missionale gemeente wat sy bestaan/i,
+  /betrokkenheid by gemeenskapsorganisasies/i,
+];
+
+function recommendedQuestions() {
+  const found = [];
+  for (const pattern of RECOMMENDED) {
+    const hit = state.questions.find((q) => pattern.test(q.label));
+    if (hit && !found.includes(hit)) found.push(hit);
+  }
+  return found;
+}
+
+function option(q) {
+  return `<option value="${q.id}">${escapeHtml(trim(q.label, 110))}` +
+         `${q.comparable === "scale-changed" ? " ⚠" : ""}</option>`;
+}
+
 function fillQuestions() {
-  const usable = [...state.questions]
+  const recommended = recommendedQuestions();
+  const chosen = new Set(recommended.map((q) => q.id));
+  const rest = state.questions
+    .filter((q) => !chosen.has(q.id))
     // Questions asked the same way in every wave come first; the ones whose
     // scale moved are still offered, but behind a warning.
     .sort((a, b) => (a.comparable === b.comparable ? 0
                      : a.comparable === "yes" ? -1 : 1));
-  el("question").innerHTML = usable
-    .map((q) => `<option value="${q.id}">${escapeHtml(trim(q.label, 110))}` +
-                `${q.comparable === "scale-changed" ? " ⚠" : ""}</option>`).join("");
-  const opener = usable.find((q) => /huidige rigting/i.test(q.label));
+  el("question").innerHTML =
+    (recommended.length
+      ? `<optgroup label="Aanbevole vrae — uit die gepubliseerde Ringsverslag">` +
+        recommended.map(option).join("") + `</optgroup>`
+      : "") +
+    `<optgroup label="Alle vrae (${rest.length})">` +
+    rest.map(option).join("") + `</optgroup>`;
+  const opener = recommended[0] || rest[0];
   if (opener) el("question").value = opener.id;
 }
 

@@ -1,0 +1,23 @@
+code,label,description
+A01,Predikant (voltyds),Predikant wat beroep is na 'n gemeente en voltyds in diens is (Reglement 13).
+A02,Predikant (tentmaker),Predikant wat gekoppel is aan 'n gemeente met geen wedersydse verpligtinge nie (Reglement 16).
+A03,Predikant (vastetermynpos),Predikant wat beroep is na 'n gemeente met 'n bepaalde termyn (voltyds of deeltyds) (Reglement 14).
+A04,Voltydse kapelaan,Predikant wat beroep is na 'n gemeente maar in diens van die Veiligheidsmagte is.
+A05,Dosent (NG),Predikant wat in 'n doseerpos is wat aan die NG Kerk gekoppel is en ook aan 'n gemeente gekoppel is.
+A06,Dosent (ander),Predikant wat in 'n doseerpos is wat nie aan die NG Kerk gekoppel is nie en ook aan 'n gemeente gekoppel is.
+A07,Predikant (kerklike pos),Predikant wat beroep is in sinodale diens en/of kerklike poste.
+A08,Predikant (deeltyds),Predikant wat in 'n permanente pos na 'n gemeente beroep is maar op 'n deeltydse basis en ook 'n ander beroep beklee (Reglement 14).
+A09,Predikant (beroepbaar),Beroepbare predikante wat bevoegdheid behou het na verlof van die ATR/ABR (asook in ander betrekkings).
+A10,Predikant (buitelandse kerk),Beroepbare predikante wat bevoegdheid behou het na verlof van die ATR/ABR en tans in 'n erkende buitelandse kerk werksaam is.
+B01,Proponent (voltyds),Proponent in diens van 'n gemeente (voltyds) maar nog nie beroep en bevestig/georden nie.
+B02,Proponent (deeltyds/tydelik),Proponent in diens van 'n gemeente (deeltyds) maar nog nie beroep en bevestig/georden nie.
+B03,Proponent (beroepbaar),Proponent wat nie in kerklike diens is nie.
+C01,Emeritus (werksaam),Emeritus wat na die ouderdom van 65 in 'n vaste termyn beroep is en tot 70 jaar steeds in die bediening is.
+C02,Emeritus (uitgetree),Emeritus wat na die ouderdom van 65 (of na 'n termynpos tot 70) geensins meer by 'n gemeente betrokke is nie.
+C03,Emeritus (ouer as 70 jaar),Emeritus wat na die ouderdom van 70 jaar steeds by 'n gemeente betrokke is as pastorale hulp.
+C04,Brugleraar,Emeritus wat in 'n vastetermynpos beroep is as brugleraar vir 'n maksimum van nege maande (Reglement 17).
+D01,Standplaasleraar,Standplaasleraars wat vir 'n spesifieke missionale bediening opgelei is (bv. Dowes) (Reglement 18 punt 1.1).
+D02,Diensleraar (gelegitimeer),Diensleraar wat gelegitimeer is maar nog nie beroep is na 'n gemeente in sy/haar toegespitste veld van opleiding nie (Reglement 18).
+D03,Diensleraar (beroep),Diensleraar wat gelegitimeer is en deur 'n gemeente beroep is in sy/haar toegespitste veld van opleiding.
+E01,Uitgetree,Persone wat deur die NG Kerk gelegitimeer is maar bevoegdheid as Bedienaar van die Woord verloor het (deur bedanking of 'n kerklike tugproses).
+E02,Na ander kerk,Persone wat deur die NG Kerk gelegitimeer is maar in diens van ander Christelike kerke getree het.

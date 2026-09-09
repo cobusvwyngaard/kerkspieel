@@ -165,7 +165,7 @@ function renderCategories(bucket, year) {
     `<thead><tr><th>Kode</th><th class="col-text">Beskrywing</th><th>Getal</th><th>Aandeel</th></tr></thead>` +
     `<tbody>${rows.map((r) => `<tr>
       <td>${r.code}</td>
-      <td class="col-text">${escapeHtml(r.label || "—")}</td>
+      <td class="col-text"${r.description ? ` title="${escapeHtml(r.description)}"` : ""}>${escapeHtml(r.label || "—")}</td>
       <td>${r.n}</td>
       <td>${round1(100 * r.n / total)}%</td></tr>`).join("")}
       <tr><td>Totaal</td><td></td><td>${total}</td><td>100%</td></tr></tbody>`;

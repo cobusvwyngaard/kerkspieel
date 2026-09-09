@@ -63,12 +63,17 @@ function fillPresets() {
 }
 
 function buildCodeList() {
-  const labels = new Map(state.data.categories.map((c) => [c.code, c.label]));
-  el("codes-grid").innerHTML = state.codes.map((code) => `
-    <label><input type="checkbox" value="${code}" checked>
+  const byCode = new Map(state.data.categories.map((c) => [c.code, c]));
+  el("codes-grid").innerHTML = state.codes.map((code) => {
+    const c = byCode.get(code) || {};
+    // The ABR's own definition, where it has one, on hover.
+    const tip = c.description ? ` title="${escapeHtml(c.description)}"` : "";
+    return `
+    <label${tip}><input type="checkbox" value="${code}" checked>
       <span class="code">${code}</span>
-      <span>${escapeHtml(trim(labels.get(code) || "geen beskrywing", 44))}</span>
-    </label>`).join("");
+      <span>${escapeHtml(trim(c.label || "geen beskrywing", 44))}</span>
+    </label>`;
+  }).join("");
   el("codes-grid").querySelectorAll("input").forEach((box) =>
     box.addEventListener("change", () => {
       // Hand-picking codes means the preset no longer describes the choice.
