@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="af">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kerkprofiel · Kerkspieël</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Kerkprofiel</h1>
+  <p>Nege kwaliteite van gemeentelewe · na die NCLS-raamwerk · Taakspan Navorsing</p>
+  <nav class="site-nav" id="site-nav" aria-label="Verslae"></nav>
+</header>
+
+<main>
+  <div class="filters">
+    <div class="field">
+      <label for="synod">Sinode</label>
+      <select id="synod"></select>
+    </div>
+    <div class="field">
+      <label for="ring">Ring</label>
+      <select id="ring"></select>
+    </div>
+    <div class="field">
+      <label for="year">Jaar</label>
+      <select id="year"></select>
+    </div>
+  </div>
+
+  <section class="tiles" id="tiles"></section>
+  <div id="note-slot"></div>
+
+  <section class="panel">
+    <h2>Sirkel van sterkpunte</h2>
+    <p class="sub" id="circle-sub"></p>
+    <div class="scroller"><div id="circle"></div></div>
+  </section>
+
+  <section class="panel">
+    <h2>Kernaanwysers</h2>
+    <p class="sub" id="rank-sub"></p>
+    <div class="scroller"><table id="rank-table"></table></div>
+  </section>
+
+  <section class="panel">
+    <h2>Teenoor die gemiddelde ring</h2>
+    <p class="sub" id="spread-sub"></p>
+    <div class="scroller"><div id="spread"></div></div>
+  </section>
+
+  <section class="panel">
+    <h2>Verandering oor tyd</h2>
+    <p class="sub" id="change-sub"></p>
+    <div class="legend" id="change-legend"></div>
+    <div class="scroller"><div id="change"></div></div>
+  </section>
+
+  <div id="detail"></div>
+
+  <div class="prose">
+    <h2>Waar hierdie bladsy vandaan kom</h2>
+    <p>
+      Die <strong>NCLS Church Life Survey</strong> in Australië meet gemeentelewe
+      aan nege kernkwaliteite in drie groepe: die interne kwaliteite (geloof,
+      erediens, behoort), die kwaliteite na buite (diens, geloofsdeling,
+      insluiting) en die inspirerende kwaliteite (visie, vernuwing,
+      leierskapskultuur). Hulle <em>Church Life Profile</em> wys elke gemeente
+      se resultaat teenoor haarself in 'n vorige jaar en teenoor die hele NCLS.
+      Hierdie bladsy doen dieselfde met die Gemeentevraelys, met die ring, sy
+      sinode en die Algemene Sinode in daardie drie plekke.
+    </p>
+    <p>
+      <strong>Die twee opnames vra egter nie dieselfde soort vraag nie.</strong>
+      NCLS vra individuele kerkgangers oor hulle eie geloof, hulle eie
+      belewenis van die erediens, hulle eie gevoel van behoort. Die
+      Gemeentevraelys vra die gemeente se leierskap oor die gemeente. Dit kan
+      nie vra of iemand se geloof gegroei het nie; dit kan vra of die gemeente
+      'n gebedsbediening, kleingroepe en geloofvorming organiseer. Die
+      aanwysers hier meet dus <em>voorsiening</em>, nie <em>belewenis</em> nie.
+      'n Ring wat hoog tel op Geloof is een waar gemeentes die middele vir
+      geloofvorming inrig — nie een waarvan ons weet dat die lidmate se geloof
+      groei nie.
+    </p>
+    <p>
+      <strong>Die telling is nie NCLS s'n nie.</strong> NCLS publiseer nie hoe
+      hulle hulle telling van 1 tot 10 standaardiseer nie. Die telling hier is
+      van voor af gedefinieer en word volledig gestel: elke aanwyser word
+      gestandaardiseer teen die verspreiding van <em>ringe</em> in dieselfde
+      jaar, en 'n kwaliteit se telling is die gemiddeld van sy aanwysers se
+      tellings. Vyf is die gemiddelde ring; elke twee punte is een
+      standaardafwyking. 'n Sinode se telling middel noodwendig nader aan 5,
+      want 'n sinode is 'n gemiddeld van sy eie ringe — vergelyk sinodes met
+      sinodes.
+    </p>
+    <p>
+      Die aanwysers self staan in <code>data/lookup/profile_indicators.csv</code>
+      en kan verander word sonder om enige kode aan te raak.
+    </p>
+  </div>
+</main>
+
+<footer id="footer"></footer>
+<div class="tooltip" id="tooltip" role="status" aria-live="polite"></div>
+<script src="vendor/pptxgen.bundle.js"></script>
+<script src="common.js"></script>
+<script src="kerkprofiel.js"></script>
+</body>
+</html>

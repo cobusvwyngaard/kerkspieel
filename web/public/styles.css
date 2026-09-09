@@ -119,7 +119,10 @@ table { border-collapse: collapse; width: 100%; font-size: 12.5px; }
 th, td { padding: 6px 7px; text-align: right; border-bottom: 1px solid var(--border); white-space: nowrap; }
 th:first-child, td:first-child { text-align: left; white-space: normal; min-width: 150px; width: 26%; }
 thead th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); }
+/* The last row of most tables is a total. Tables that end on an ordinary
+   row opt out with .table--plain. */
 tbody tr:last-child td { border-bottom: none; font-weight: 600; }
+.table--plain tbody tr:last-child td { font-weight: inherit; }
 
 .note {
   background: var(--warn-bg); color: var(--warn-ink);
@@ -266,3 +269,28 @@ details.codes > summary:focus-visible { outline: 2px solid var(--accent); outlin
 .codes-grid input { margin: 0; flex: none; position: relative; top: 1px; }
 .codes-grid .code { font-weight: 600; color: var(--text-primary); flex: none; }
 .codes-grid .n { margin-left: auto; color: var(--text-muted); flex: none; }
+
+/* ---------- Kerkprofiel ---------- */
+
+/* A tile whose value is a name rather than a number needs to sit down a
+   size, or "Leierskapskultuur" runs off the card. */
+.tile .v--text { font-size: 1.15rem; line-height: 1.25; }
+
+.circle-name { font-size: 12.5px; font-weight: 600; fill: var(--text-primary); }
+.circle-score { font-size: 12px; fill: var(--text-muted); }
+.circle-lead { font-size: 11px; letter-spacing: 0.06em;
+               text-transform: uppercase; fill: var(--text-muted); }
+.circle-lead-name { font-size: 17px; font-weight: 700; fill: var(--text-primary); }
+
+.row-name { font-size: 12.5px; fill: var(--text-primary); }
+.row-value { font-size: 12px; fill: var(--text-muted); }
+
+#detail h3 { margin: 1.6rem 0 0.15rem; font-size: 1.02rem; }
+#detail h3:first-of-type { margin-top: 0.8rem; }
+.quality-sub { font-weight: 400; color: var(--text-muted); font-size: 0.9rem; }
+.quality-score { float: right; font-variant-numeric: tabular-nums;
+                 color: var(--text-muted); font-size: 0.9rem; }
+.quality-blurb { margin: 0 0 0.6rem; color: var(--text-muted);
+                 font-size: 0.88rem; max-width: 62ch; }
+/* A value that had to move inside its own bar. */
+.row-value--in { fill: #fff; }

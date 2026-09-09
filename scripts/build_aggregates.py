@@ -21,6 +21,9 @@ import json
 import pathlib
 import sys
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from scales import suspect_scales, unparsed_scales, values_by_question
+
 WAVES = ("2018", "2022", "2026")
 NATIONAL = "__all__"
 
@@ -64,7 +67,28 @@ def main():
                                  if q["options"].get(w)), [])]
                  for q in offered}
     numeric = [q for q in questions if q["comparable"] == "numeric"]
+    whole, per_wave = values_by_question(responses)
+    coded = unparsed_scales(numeric, responses, whole)
+    if coded:
+        print(f"questions filed as counts that are really scales: {len(coded)}")
+        print("  (their option lists were not parsed out of the questionnaire, "
+              "so they are neither counted nor charted)")
+    numeric = [q for q in numeric if q["id"] not in coded]
     numeric_ids = {q["id"] for q in numeric}
+    suspect = suspect_scales(offered, responses, per_wave)
+    if suspect:
+        print(f"scales that do not match their column: {len(suspect)} question-waves")
+        for (qid, wave), why in sorted(suspect.items()):
+            print(f"  {qid} {wave}: {why}")
+    # A question every wave of which is quarantined has nothing left to
+    # draw, so it leaves the dropdown rather than offering an empty chart.
+    dropped = [q["id"] for q in offered
+               if all((q["id"], w) in suspect
+                      for w, o in q["options"].items() if o)]
+    if dropped:
+        print(f"  withdrawn entirely: {', '.join(dropped)}")
+    offered = [q for q in offered if q["id"] not in set(dropped)]
+    values_of = {qid: v for qid, v in values_of.items() if qid not in set(dropped)}
 
     # counts[qid][scope][wave] -> [count per option, in the question's order]
     counts = collections.defaultdict(lambda: collections.defaultdict(dict))
@@ -87,6 +111,8 @@ def main():
                 continue
             options = values_of.get(qid)
             if not options or value not in options:
+                continue
+            if (qid, row["wave"]) in suspect:
                 continue
             slot = options.index(value)
             for key in keys:

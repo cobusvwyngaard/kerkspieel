@@ -5,6 +5,7 @@ Four reports over the NG Kerk's own data, behind one navigation:
 | Page | What it shows |
 |---|---|
 | `index.html` | Landing page: what the tool is and how to read it |
+| `kerkprofiel.html` | Nine qualities of church life, the NCLS vitality framework read off this data |
 | `ring.html` | Ringsverslag — a ring against its synod and the whole church, across three survey waves; the published report's own four questions lead the dropdown |
 | `kaart.html` | Congregations on a map, coloured or sized by their own answer |
 | `predikante.html` | Ministers by credential category, per congregation, ring, synod or nationally |
@@ -48,7 +49,8 @@ python3 scripts/extract_options.py   # questionnaires -> response options
 python3 scripts/resolve_2026_keys.py # 2026's self-entered keys -> V03 codes
 python3 scripts/build_crosswalk.py   # match questions across waves
 python3 scripts/build_dataset.py     # -> data/build (congregation level, not published)
-python3 scripts/build_aggregates.py  # -> web/public/data/aggregates.json
+python3 scripts/build_aggregates.py  # -> web/public/data/aggregates.json + numeric.json
+python3 scripts/build_profile.py     # -> web/public/data/profile.json
 python3 scripts/build_map.py         # -> web/public/data/map.json
 python3 scripts/build_ministers.py   # -> web/public/data/ministers.json
 python3 scripts/validate_pipeline.py # decode path vs the published report
@@ -144,6 +146,7 @@ that can identify individual ministers and congregations. Put them in
 | `KS_Ring_Lookup.xlsx`, `sinode_lookup.xlsx` | congregation register; ring and synod |
 | `JAARLIKSE_AANMELDING_<year>.pdf` | the ABR's annual circular; the source of `data/lookup/abr_codes.csv` |
 | `kerkspieel_geolocation_match.xlsx`, `Gemeentes1.xlsx`, `Ontbinde_gemeentes.xlsx` | congregation coordinates |
+| `WK__George.pdf`, `Skuiwe_in_die_Kerk__PTA_Oos_Ring.pptx` | the published reports; the source of the ring page's recommended questions |
 
 ## What is verified, and what is not
 
@@ -178,6 +181,20 @@ Corrected at read time from `data/lookup/column_corrections.csv`:
 | 2022 col 413 | named `V284`; sits in the `V381`-`V386` run, so is `V384` |
 | 2022 `V389` | holds no value in any of the 1075 rows |
 | ABR circular, `A02` | the definition runs "gekoppel is aan 'n gemeente met geen wedersydse verpligtinge nie beroep is na 'n gemeente en voltyds in diens is" -- the second half is `A01`'s text, pasted in. `abr_codes.csv` keeps the first half |
+
+Fixed in the pipeline, and worth knowing about:
+
+- **`KS_lookup` labels were keyed by whichever wave's code a row carried.**
+  Rows that start at 2022 have a blank 2018 code, so they were keyed by
+  the 2022 code -- into the same dict the 2018 codes are looked up in.
+  `V241` exists in both waves and names a different question in each, so
+  seven questions were charted under someone else's label: the hospitality
+  grid's wording (question 6.4) over the catechesis grid's columns
+  (question 7.1), whose values are counts running to 602. Labels are keyed
+  by wave now. `scripts/scales.py` keeps the check that caught it -- a
+  question-wave whose answers mostly fall outside its own option list, or
+  whose three-point scale only ever records 1 and 2 -- and both
+  `build_aggregates.py` and `build_map.py` run it.
 
 Not corrected, and needing a decision:
 
@@ -228,6 +245,31 @@ the chart XML PowerPoint refuses to open. Note that LibreOffice cannot
 convert any `.pptx` in this development sandbox -- a trivial control deck
 fails identically -- so exports are verified structurally rather than by
 rendering them.
+
+## The nine qualities
+
+`kerkprofiel.html` applies **NCLS Research's church vitality framework** --
+nine Core Qualities in three groups, which their *Church Life Profile*
+reports on -- to the Gemeentevraelys. The indicator table is
+`data/lookup/profile_indicators.csv`: one row per indicator, naming its
+question by wording rather than by id, with the option values that count
+as positive. `build_profile.py` resolves each pattern and **fails the
+build** if one matches no question or more than one.
+
+Two things it is not:
+
+- **It is not the NCLS instrument.** NCLS surveys attenders and can ask a
+  person whether their own faith grew this year. The Gemeentevraelys
+  surveys congregations, and the leadership answers, so it can only ask
+  whether the congregation runs a prayer ministry, small groups, faith
+  formation in homes. Every indicator here measures *provision*, not
+  *experience*.
+- **The score is not NCLS's score.** NCLS does not publish how it
+  standardises its 1-to-10 scale. This one is defined from scratch: each
+  indicator is standardised against the spread of *rings* in the same wave,
+  two points to a standard deviation, and a quality's score is the mean of
+  its indicators' scores. Five is the average ring. A synod is an average
+  of its own rings, so its score sits closer to 5 by construction.
 
 ## The ministers data
 
@@ -304,6 +346,14 @@ Ages outside 20-105 are dropped as data errors; the later files contain
 ages in the 900s.
 
 ## Still open
+
+- **42 questions have no option list.** Their grids -- *Altyd / Gereeld /
+  Soms / Nooit* headers spanning several rows -- are not picked up by
+  `extract_options.py`, so they are filed as counts, and a mean over a
+  response code says nothing. `scripts/scales.py` holds them back from
+  both the ring page and the map rather than publishing a meaningless
+  number. Teaching the questionnaire parser those grid headers would
+  return them to the reports; the answers are already in the dataset.
 
 - **Small numbers.** A ring can have four responding congregations, where
   every answer moves the share by 25 points. The dashboard says so, but

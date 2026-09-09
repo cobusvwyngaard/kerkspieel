@@ -51,7 +51,7 @@ const RECOMMENDED = [
   /betrokkenheid by gemeenskapsorganisasies/i,
   /^Belydende Lidmate$/i,
   /Betaalde persone vir andertalige of kruiskulturele/i,
-  /bedieningsopsies.*Diensleraar/i,
+  /^Oorweeg vir voortbestaan: diensleraar$/i,
 ];
 
 /** Every question the page can draw, counted ones included. */
@@ -64,6 +64,9 @@ function recommendedQuestions() {
   for (const pattern of RECOMMENDED) {
     const hit = allQuestions().find((q) => pattern.test(q.label));
     if (hit && !found.includes(hit)) found.push(hit);
+    // A question can be reworded when the crosswalk is rebuilt. Silence
+    // would just drop it from the list; say so where a maintainer looks.
+    else if (!hit) console.warn(`recommended question not found: ${pattern}`);
   }
   return found;
 }

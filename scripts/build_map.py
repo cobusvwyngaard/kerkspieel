@@ -28,6 +28,9 @@ import json
 import pathlib
 import sys
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from scales import unparsed_scales
+
 WAVES = ("2018", "2022", "2026")
 MAX_ORDINAL = 6
 # A numeric question is only worth a pin size if congregations actually
@@ -35,8 +38,13 @@ MAX_ORDINAL = 6
 MIN_NUMERIC_SPREAD = 4
 
 
-def classify(question):
+def classify(question, coded=frozenset()):
     """How this question can be drawn, or None if it cannot."""
+    if question["id"] in coded:
+        # Filed as a count, but its values are option codes whose labels
+        # were never parsed. A pin sized by an Altyd/Soms/Nooit code would
+        # say nothing, so it is not offered.
+        return None, None
     options = None
     for wave in reversed(WAVES):
         listed = question["options"].get(wave)
@@ -82,9 +90,14 @@ def main():
         for qid, value in row["values"].items():
             answers[qid].setdefault(row["wave"], {})[slot] = value
 
+    coded = unparsed_scales([q for q in questions if q["comparable"] == "numeric"],
+                            responses)
+    if coded:
+        print(f"held back, option list never parsed: {len(coded)} questions")
+
     mappable, values = [], {}
     for question in questions:
-        kind, options = classify(question)
+        kind, options = classify(question, coded)
         if not kind or question["id"] not in answers:
             continue
 

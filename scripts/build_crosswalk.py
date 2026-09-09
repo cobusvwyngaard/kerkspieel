@@ -176,8 +176,18 @@ def main():
 
     truth = read_truth(pathlib.Path(args.data_dir) / "KS_lookup.xlsx")
     verified = {a: b for a, b, _, _ in truth if a and b}
-    labels = {a or b: lab for a, b, lab, _ in truth}
-    types = {a or b: t for a, b, _, t in truth}
+    # Keyed by wave, never by "whichever code the row has". KS_lookup holds
+    # rows that start at 2022 -- the hospitality grid is one -- and a single
+    # dict keyed by either code lets a 2022 code stand in for a 2018 one.
+    # V241 exists in both waves and names a different question in each, so
+    # that collision silently gave seven questions someone else's label.
+    labels = {wave: {} for wave in ("2018", "2022")}
+    types = {wave: {} for wave in ("2018", "2022")}
+    for a, b, lab, kind in truth:
+        for wave, code in (("2018", a), ("2022", b)):
+            if code:
+                labels[wave][code] = lab
+                types[wave][code] = kind
 
     derived = match_waves(books["2018"][1], books["2022"][1])
     agree = sum(1 for a, b in verified.items() if derived.get(a, ("",))[0] == b)
@@ -195,8 +205,9 @@ def main():
             derived[code18][2] if code18 in derived else "")
         code26 = forward.get(code22, (None,))[0] if code22 else None
         rows.append(with_scales({
-            "label": labels.get(code18) or (v18["stem"] + " " + v18.get("item", "")).strip(),
-            "type": types.get(code18, ""),
+            "label": labels["2018"].get(code18)
+                     or (v18["stem"] + " " + v18.get("item", "")).strip(),
+            "type": types["2018"].get(code18, ""),
             "V2018": code18, "V2022": code22 or "", "V2026": code26 or "",
             "source_2018_2022": source,
             "source_2022_2026": forward.get(code22, ("", "", ""))[2] if code22 else "",
@@ -209,8 +220,9 @@ def main():
             continue
         code26 = forward.get(code22, (None,))[0]
         rows.append(with_scales({
-            "label": (v22["stem"] + " " + v22.get("item", "")).strip(),
-            "type": types.get(code22, ""), "V2018": "", "V2022": code22,
+            "label": labels["2022"].get(code22)
+                     or (v22["stem"] + " " + v22.get("item", "")).strip(),
+            "type": types["2022"].get(code22, ""), "V2018": "", "V2022": code22,
             "V2026": code26 or "", "source_2018_2022": "",
             "source_2022_2026": forward.get(code22, ("", "", ""))[2] if code26 else "",
         }, scale))

@@ -1,0 +1,46 @@
+group,quality,indicator,headline,positive,pattern
+intern,geloof,Georganiseerde gebedsbediening,1,1,^Ons het ‘n georganiseerde gebedsbediening$
+intern,geloof,Gebedsgroepe wat bymekaarkom,0,1,gebedsgroepe wat van tyd tot tyd bymekaar kom
+intern,geloof,"Geloofvorming in huise en gesinne",0,1,"geloofvorming, buiten in die kategese.*Huise"
+intern,geloof,Weeklikse byeenkomste vir geloofvorming,0,1,"geloofvorming, buiten in die kategese.*Weeklikse"
+intern,geloof,Gebedsgroepe in bepaalde tye,0,1,gebedsgroepe wat sekere tye bymekaarkom
+intern,erediens,Preekreekse word gedoen,1,"1,2",Ons doen van tyd tot tyd preekreekse
+intern,erediens,Die kerkjaar word gevolg,0,"1,2",die kerkjaar word gevolg
+intern,erediens,Gesins- of familiediens,0,1,ander eredienste\? Gesins- of familiediens
+intern,erediens,Aparte jeugdiens,0,1,Aparte Jeugdiens
+intern,erediens,Aparte kinderdiens,0,1,Aparte Kinderdiens
+intern,erediens,VONKK-liedere word gebruik,0,"1,2",liederebundels gebruik u tydens die eredienste VONKK
+intern,behoort,Georganiseerde kleingroepbediening,1,1,georganiseerde kleingroepbediening in u gemeente\? 6\.7
+intern,behoort,Georganiseerde seniorbediening,0,1,Ons het ’n georganiseerde seniorbediening
+intern,behoort,Lidmate word vir dienswerk bevestig,0,1,dienswerk afgesonder of bevestig
+intern,behoort,Kleingroepe dra projekte,0,1,verantwoordelikheid vir hierdie projekte\? Kleingroepe
+buite,diens,"Armoedeverligting: geld, kos en klere",1,1,"Verligting van armoede: Gee van geld, kos en klere"
+buite,diens,Armoedeverligting: vaardigheidsontwikkeling,0,1,Verligting van armoede: Vaardigheidsontwikkeling
+buite,diens,Armoedeverligting: vroeë kind-ontwikkeling,0,1,Verligting van armoede: Vroeë kind-ontwikkeling
+buite,diens,Geboue is beskikbaar vir die gemeenskap,0,"1,2,3",geboue tot beskikking van die gemeenskap
+buite,diens,Vennoot van die maatskaplike dienste,0,1,maatskaplike dienste.*Ons is mekaar se vennote
+buite,geloofsdeling,Georganiseerde evangelisasiebediening,1,1,Het u gemeente ’n georganiseerde evangelisasiebediening\? 6\.5
+buite,geloofsdeling,Spesiale eredienste word gehou,0,1,georganiseerde evangelisasiebediening\? Ons hou spesiale eredienste
+buite,geloofsdeling,Doop- en huwelikskategese as geleentheid,0,1,Geleenthede soos Doop en Huwelikskategese
+buite,geloofsdeling,Eie materiaal is ontwikkel,0,1,Eie materiaal in die gemeente ontwikkel
+buite,insluiting,Andertalige erediens,1,1,ander eredienste\? Andertalige diens
+buite,insluiting,Betaalde andertalige of kruiskulturele bediening,0,1,^Betaalde persone vir andertalige of kruiskulturele bediening$
+buite,insluiting,Rassisme kry aandag,0,1,maatskaplike en sosiale kwessies aandag \.\.\. rassisme
+buite,insluiting,Kontak met die NG Kerkfamilie,0,1,Het u kontak met ŉ bepaalde gemeente\(s\) van die NG Kerkfamilie\? 9\.1
+buite,insluiting,Gesamentlike projekte met die NG Kerkfamilie,0,1,kontak met die NG Kerkfamilie aan\? Gesamentlike projekte
+buite,insluiting,Ekumeniese gespreksgroepe bestaan,0,1,Bestaan daar ekumeniese gespreksgroepe
+inspirasie,visie,Die roeping word helder gekommunikeer,1,"1,2",kommunikeer die roeping van die gemeente gereeld
+inspirasie,visie,Leierskap onderskei gereeld die roeping,0,"1,2",beplan gereeld om die roeping en fokus
+inspirasie,visie,'n Formele bedieningsplan bestaan,0,"1,2",beskik oor ‘n formele bedieningsplan
+inspirasie,visie,'n Missionale gemeente,0,"1,2",missionale gemeente wat sy bestaan sien
+inspirasie,innovasie,Bediening pas by 'n veranderende konteks aan,1,"1,2",pas gereeld haar bediening aan by die veranderende konteks
+inspirasie,innovasie,Weerspieël die demografie van die gemeenskap,0,"1,2",reflekteer die demografie van die gemeenskap
+inspirasie,innovasie,Die gemeente het 'n eie webwerf,0,1,Het die gemeente ŉ eie webwerf
+inspirasie,innovasie,Elektroniese nuusbrief,0,1,Stuur die gemeente ŉ elektroniese nuusbrief
+inspirasie,leierskap,Lidmate word bemagtig om hulle gawes te gebruik,1,"1,2",bemagtig lidmate om hulle gawes
+inspirasie,leierskap,Bedieninge weerspieël die roeping,0,"1,2","maak seker dat die bedieninge, aksies en projekte"
+inspirasie,leierskap,Finansies dien die roeping,0,"1,2",bestuur die finansies van die gemeente op so ‘n manier
+inspirasie,leierskap,Diensverhoudinge-kommissie bestaan,0,1,Bestaan daar ŉ Diensverhoudinge Kommissie
+meting,rigting,Groeiend of dinamies groeiend,1,"3,4",Hoe sou u die gemeente se huidige rigting tipeer
+meting,finansies,Inkomste hou tred met of groei bo inflasie,1,"1,2",Beskryf die gemeente se finansiële posisie
+meting,gemeenskap,Neem deel aan of lei gemeenskapsorganisasies,1,"3,4",Gemeente se betrokkenheid by gemeenskapsorganisasies

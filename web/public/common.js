@@ -4,6 +4,7 @@
 const PAGES = [
   { href: "index.html", label: "Tuis" },
   { href: "ring.html", label: "Ringsverslag" },
+  { href: "kerkprofiel.html", label: "Kerkprofiel" },
   { href: "kaart.html", label: "Kaart" },
   { href: "predikante.html", label: "Predikante" },
   { href: "predikanteprofiel.html", label: "Predikanteprofiel" },
