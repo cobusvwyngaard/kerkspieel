@@ -8,7 +8,8 @@ const WAVES = ["2018", "2022", "2026"];
 // Below this, a single congregation moves the share by 10 points or more.
 const SMALL_N = 10;
 const ALL_SYNODS = "__all_synods__";
-const state = { scopes: [], byKey: new Map(), questions: [], counts: {} };
+const state = { scopes: [], byKey: new Map(), questions: [], counts: {},
+                numeric: [], numericStats: null };
 
 async function boot() {
   const payload = await fetch("data/aggregates.json").then((r) => r.json());
@@ -16,6 +17,7 @@ async function boot() {
   state.byKey = new Map(payload.scopes.map((s) => [s.key, s]));
   state.questions = payload.questions;
   state.counts = payload.counts;
+  state.numeric = payload.numericQuestions || [];
 
   fillSynods();
   fillQuestions();
@@ -37,29 +39,40 @@ function fillSynods() {
       .map((s) => `<option value="${s.key}">${escapeHtml(s.name)}</option>`).join("");
 }
 
-// The four questions the published Power BI Ringsverslag put on its slides,
-// in the order it showed them. Matched on wording rather than on question
-// id, because the ids are regenerated whenever the crosswalk is rebuilt and
-// a stale id would silently point at a different question.
+// The questions the two published reports put on their slides: the four in
+// the Power BI Ringsverslag, then the three the Skuiwe in die Kerk deck adds.
+// Matched on wording rather than on question id, because the ids are
+// regenerated whenever the crosswalk is rebuilt and a stale id would
+// silently point at a different question.
 const RECOMMENDED = [
   /huidige rigting tipeer/i,
   /finansiële posisie/i,
   /missionale gemeente wat sy bestaan/i,
   /betrokkenheid by gemeenskapsorganisasies/i,
+  /^Belydende Lidmate$/i,
+  /Betaalde persone vir andertalige of kruiskulturele/i,
+  /bedieningsopsies.*Diensleraar/i,
 ];
+
+/** Every question the page can draw, counted ones included. */
+const allQuestions = () => state.questions.concat(state.numeric);
+
+const isNumeric = (q) => q != null && !q.options;
 
 function recommendedQuestions() {
   const found = [];
   for (const pattern of RECOMMENDED) {
-    const hit = state.questions.find((q) => pattern.test(q.label));
+    const hit = allQuestions().find((q) => pattern.test(q.label));
     if (hit && !found.includes(hit)) found.push(hit);
   }
   return found;
 }
 
 function option(q) {
-  return `<option value="${q.id}">${escapeHtml(trim(q.label, 110))}` +
-         `${q.comparable === "scale-changed" ? " ⚠" : ""}</option>`;
+  const mark = isNumeric(q) ? " №"
+    : q.comparable === "scale-changed" ? " ⚠"
+    : q.comparable === "single-wave" ? ` (${Object.keys(q.codes)[0]})` : "";
+  return `<option value="${q.id}">${escapeHtml(trim(q.label, 110))}${mark}</option>`;
 }
 
 function fillQuestions() {
@@ -68,19 +81,25 @@ function fillQuestions() {
   const rest = state.questions
     .filter((q) => !chosen.has(q.id))
     // Questions asked the same way in every wave come first; the ones whose
-    // scale moved are still offered, but behind a warning.
-    .sort((a, b) => (a.comparable === b.comparable ? 0
-                     : a.comparable === "yes" ? -1 : 1));
+    // scale moved, and the ones asked in only one wave, are still offered
+    // but behind a warning.
+    .sort((a, b) => rank(a) - rank(b));
+  const counted = state.numeric.filter((q) => !chosen.has(q.id));
   el("question").innerHTML =
     (recommended.length
-      ? `<optgroup label="Aanbevole vrae — uit die gepubliseerde Ringsverslag">` +
+      ? `<optgroup label="Aanbevole vrae — uit die gepubliseerde verslae">` +
         recommended.map(option).join("") + `</optgroup>`
       : "") +
-    `<optgroup label="Alle vrae (${rest.length})">` +
-    rest.map(option).join("") + `</optgroup>`;
+    `<optgroup label="Gekose antwoorde (${rest.length})">` +
+    rest.map(option).join("") + `</optgroup>` +
+    `<optgroup label="Getalle wat getel is (${counted.length})">` +
+    counted.map(option).join("") + `</optgroup>`;
   const opener = recommended[0] || rest[0];
   if (opener) el("question").value = opener.id;
 }
+
+const rank = (q) => (q.comparable === "yes" ? 0
+                     : q.comparable === "scale-changed" ? 1 : 2);
 
 function onSynodChange() {
   const chosen = el("synod").value;
@@ -141,7 +160,7 @@ function orderedOptions(question) {
 /* ---------- render ---------- */
 
 function render() {
-  const question = state.questions.find((q) => q.id === el("question").value);
+  const question = allQuestions().find((q) => q.id === el("question").value);
   const scopeList = scopes();
   const primary = scopeList[0];
 
@@ -151,13 +170,20 @@ function render() {
   el("chart-title").textContent = trim(question.label, 150);
   el("chart-sub").textContent = primary.label;
 
-  el("note-slot").innerHTML = question.comparable === "scale-changed"
-    ? `<p class="note"><strong>Skale verskil tussen jare.</strong> Hierdie vraag
-       is nie in elke jaar met dieselfde aantal antwoordopsies gevra nie
-       (${WAVES.filter((w) => question.optionCounts[w])
-              .map((w) => `${w}: ${question.optionCounts[w]}`).join(", ")}),
-       so die jare is nie direk vergelykbaar nie.</p>`
-    : "";
+  if (isNumeric(question)) { renderNumeric(question, scopeList); return; }
+
+  el("note-slot").innerHTML =
+    question.comparable === "scale-changed"
+      ? `<p class="note"><strong>Skale verskil tussen jare.</strong> Hierdie vraag
+         is nie in elke jaar met dieselfde aantal antwoordopsies gevra nie
+         (${WAVES.filter((w) => question.optionCounts[w])
+                .map((w) => `${w}: ${question.optionCounts[w]}`).join(", ")}),
+         so die jare is nie direk vergelykbaar nie.</p>`
+      : question.comparable === "single-wave"
+      ? `<p class="note"><strong>Net in ${Object.keys(question.codes).join(", ")} gevra.</strong>
+         Daar is niks om oor tyd mee te vergelyk nie; wat wel vergelyk kan word
+         is die ring teenoor sy sinode en die hele kerk in daardie jaar.</p>`
+      : "";
 
   const options = orderedOptions(question);
   const series = WAVES
@@ -266,6 +292,8 @@ function renderChart(options, series) {
 }
 
 function renderTable(question, options, scopeList) {
+  el("table-sub").textContent =
+    "Persentasie van gemeentes wat elke opsie gekies het, per vlak en per jaar.";
   const cols = [];
   scopeList.forEach((sc) => WAVES.forEach((wave) => {
     const d = distribution(question, sc.scope, wave);
@@ -282,6 +310,76 @@ function renderTable(question, options, scopeList) {
   const foot = `<tr><td>Aantal gemeentes</td>${
     cols.map((c) => `<td>${c.d.n}</td>`).join("")}</tr>`;
   el("table").innerHTML = `${head}<tbody>${body}${foot}</tbody>`;
+}
+
+/* ---------- counted questions ----------
+   A count has no options to share out, so the comparison is a different
+   one: how large the average congregation is here, against the synod and
+   the church. Totals are in the table, where a ring's is not silently set
+   next to the whole church's. */
+
+async function renderNumeric(question, scopeList) {
+  el("legend").innerHTML = "";
+  el("note-slot").innerHTML = "";
+  el("chart").innerHTML = `<p class="empty">Besig om die getalle te laai…</p>`;
+  renderFooter(question);
+
+  if (!state.numericStats) {
+    try {
+      state.numericStats = (await loadJSON("numeric.json")).stats;
+    } catch (e) {
+      el("chart").innerHTML = `<p class="empty">Kon nie die getalle laai nie.</p>`;
+      return;
+    }
+  }
+  // The selection can have moved while the file was in flight.
+  if (el("question").value !== question.id) return;
+
+  const stats = state.numericStats[question.id] || {};
+  const at = (scope, wave) => (stats[scope.key] || {})[wave] || null;
+  const waves = WAVES.filter((w) => scopeList.some((sc) => at(sc.scope, w)));
+  if (!waves.length) {
+    el("chart").innerHTML = `<p class="empty">Geen getalle vir hierdie keuse nie.</p>`;
+    el("table").innerHTML = "";
+    return;
+  }
+
+  const series = scopeList.map((sc) => ({
+    name: sc.label,
+    values: waves.map((w) => {
+      const row = at(sc.scope, w);
+      return row && row[0] ? Math.round((row[1] / row[0]) * 10) / 10 : null;
+    }),
+  }));
+  el("note-slot").innerHTML =
+    `<p class="note"><strong>Hierdie vraag tel iets; dit kies nie.</strong>
+     Die grafiek wys die <em>gemiddeld per gemeente</em>, want 'n ring se
+     totaal en die hele kerk se totaal is nie vergelykbaar nie. Die totale,
+     die mediaan en hoeveel gemeentes geantwoord het staan in die tabel.</p>`;
+  legend(el("legend"), series);
+  groupedBars(el("chart"), waves.map(String), series, { unit: "", maxLines: 1 });
+
+  el("table-sub").textContent =
+    "Getalle per vlak en per jaar. Die mediaan is die middelste gemeente; " +
+    "die gemiddeld is die totaal gedeel deur die gemeentes wat geantwoord het.";
+  const rows = [
+    ["Gemeentes wat geantwoord het", (r) => r[0]],
+    ["Totaal", (r) => r[1].toLocaleString("af-ZA")],
+    ["Gemiddeld per gemeente", (r) => (r[0] ? round1(r[1] / r[0]) : "—")],
+    ["Mediaan", (r) => round1(r[2])],
+  ];
+  const cols = [];
+  scopeList.forEach((sc) => waves.forEach((wave) => {
+    const row = at(sc.scope, wave);
+    if (row) cols.push({ head: `${sc.short} ${wave}`, row });
+  }));
+  el("table").innerHTML =
+    `<thead><tr><th>Beskrywing</th>${cols.map((c) =>
+      `<th>${escapeHtml(c.head)}</th>`).join("")}</tr></thead>` +
+    `<tbody>${rows.map(([name, read]) => `<tr><td>${name}</td>${
+      cols.map((c) => `<td>${read(c.row)}</td>`).join("")}</tr>`).join("")}</tbody>`;
+
+  addExportButtons();
 }
 
 function renderFooter(question) {

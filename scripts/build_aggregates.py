@@ -53,14 +53,25 @@ def main():
         for key in keys:
             members[key] += 1
 
-    offered = [q for q in questions if q["comparable"] in ("yes", "scale-changed")]
+    # A question asked in only one wave still says something about a ring
+    # against its synod and the church; it just cannot be trended. It is
+    # offered where it has options to count.
+    offered = [q for q in questions
+               if q["comparable"] in ("yes", "scale-changed", "single-wave")
+               and any(q["options"].values())]
     values_of = {q["id"]: [o["value"] for o in
                            next((q["options"][w] for w in reversed(WAVES)
                                  if q["options"].get(w)), [])]
                  for q in offered}
+    numeric = [q for q in questions if q["comparable"] == "numeric"]
+    numeric_ids = {q["id"] for q in numeric}
 
     # counts[qid][scope][wave] -> [count per option, in the question's order]
     counts = collections.defaultdict(lambda: collections.defaultdict(dict))
+    # values[qid][scope][wave] -> every congregation's number, for the
+    # counts the survey asks for (members, baptisms, attendance)
+    values = collections.defaultdict(lambda: collections.defaultdict(
+        lambda: collections.defaultdict(list)))
     responded = collections.defaultdict(collections.Counter)
     for row in responses:
         keys = scopes_of.get(row["code"])
@@ -69,6 +80,11 @@ def main():
         for key in keys:
             responded[key][row["wave"]] += 1
         for qid, value in row["values"].items():
+            if qid in numeric_ids:
+                if isinstance(value, (int, float)) and value >= 0:
+                    for key in keys:
+                        values[qid][key][row["wave"]].append(value)
+                continue
             options = values_of.get(qid)
             if not options or value not in options:
                 continue
@@ -102,15 +118,47 @@ def main():
                        "order": q["order"]}
                       for q in offered],
         "counts": {qid: {k: v for k, v in scoped.items()} for qid, scoped in counts.items()},
+        # The counted questions' index only, so a report can list them
+        # without downloading every ring's totals. The totals themselves
+        # are in numeric.json, which is fetched when one is chosen.
+        "numericQuestions": [{"id": q["id"], "label": q["label"], "codes": q["codes"]}
+                             for q in numeric if q["id"] in values],
     }
-    path = out_dir / "aggregates.json"
+    write(out_dir / "aggregates.json", payload)
+    print(f"scopes: {len(payload['scopes'])}  questions: {len(payload['questions'])}")
+
+    # The counted questions live in their own file. They are a fifth of the
+    # questionnaire and only one report reaches for them, so folding them
+    # into aggregates.json would double what every page downloads.
+    numeric_payload = {
+        "waves": list(WAVES),
+        "questions": [{"id": q["id"], "label": q["label"], "codes": q["codes"]}
+                      for q in numeric if q["id"] in values],
+        "stats": {qid: {key: {wave: summarise(nums)
+                              for wave, nums in sorted(waves.items())}
+                        for key, waves in sorted(scoped.items())}
+                  for qid, scoped in sorted(values.items())},
+    }
+    write(out_dir / "numeric.json", numeric_payload)
+    print(f"numeric questions: {len(numeric_payload['questions'])}")
+    return 0
+
+
+def summarise(numbers):
+    """[congregations answering, total, median] -- the mean is total/n."""
+    ordered = sorted(numbers)
+    n = len(ordered)
+    middle = (ordered[n // 2] if n % 2
+              else (ordered[n // 2 - 1] + ordered[n // 2]) / 2)
+    return [n, sum(ordered), round(middle, 1)]
+
+
+def write(path, payload):
     path.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
                     encoding="utf-8")
     packed = len(gzip.compress(path.read_bytes(), 9))
     print(f"  {path}  {path.stat().st_size / 1e6:.2f} MB "
           f"({packed / 1e6:.2f} MB gzipped)")
-    print(f"scopes: {len(payload['scopes'])}  questions: {len(payload['questions'])}")
-    return 0
 
 
 if __name__ == "__main__":

@@ -110,12 +110,19 @@ def main():
     print("=" * 68)
     print("Coverage")
     print("=" * 68)
-    usable = [q for q in questions if q["comparable"] in ("yes", "scale-changed")]
+    # The same rule build_aggregates.py offers a question by.
+    usable = [q for q in questions
+              if q["comparable"] in ("yes", "scale-changed", "single-wave")
+              and any(q["options"].values())]
+    counted = [q for q in questions if q["comparable"] == "numeric"]
     placed = sum(1 for c in congregations if c["lat"] is not None)
     print(f"  congregations           : {len(congregations)} ({placed} mapped)")
     print(f"  questions offered       : {len(usable)} of {len(questions)}")
     print(f"  of those, same scale    : "
           f"{sum(1 for q in usable if q['comparable'] == 'yes')}")
+    print(f"  of those, one wave only : "
+          f"{sum(1 for q in usable if q['comparable'] == 'single-wave')}")
+    print(f"  counted questions       : {len(counted)}")
     for wave in WAVES:
         n = sum(1 for r in responses if r["wave"] == wave)
         print(f"  responses {wave}          : {n}")
