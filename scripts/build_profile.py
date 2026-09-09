@@ -135,13 +135,44 @@ def load_indicators(path, questions):
                                 f"for {row['pattern']!r}")
                 continue
             question = hits[0]
-            wanted = {int(v) for v in row["positive"].split(",")}
-            values = [o["value"] for o in question["options"]]
-            unknown = wanted - set(values)
-            if unknown:
-                failures.append(f"  {row['indicator']!r}: option(s) {sorted(unknown)} "
-                                f"are not offered by {question['id']}")
+            # Positives are named by their label, not their number. The
+            # scales move between waves -- 2022 inserts "Gereeld" into grids
+            # that read "Altyd / Soms / Nooit" either side of it -- so the
+            # same number means different answers in different years, while
+            # the label means the same thing wherever it appears.
+            wanted = [w.strip() for w in row["positive"].split("|") if w.strip()]
+            slots, missing, note = {}, [], []
+            for wave, options in question["options"].items():
+                hit, trouble = match_options(options, wanted)
+                if trouble:
+                    failures.append(f"  {row['indicator']!r} in {wave}: {trouble}")
+                elif hit:
+                    slots[wave] = hit
+                else:
+                    missing.append(wave)
+            if failures and failures[-1].startswith(f"  {row['indicator']!r}"):
                 continue
+            if not slots:
+                failures.append(f"  {row['indicator']!r}: no wave of "
+                                f"{question['id']} offers {wanted}")
+                continue
+            # A long option wraps differently from one questionnaire to the
+            # next, so the same answer reaches the codebook as a different
+            # fragment. Where the scale is the same length, the position is
+            # still the same answer.
+            template = next(iter(slots))
+            width = len(question["options"][template])
+            for wave in list(missing):
+                if len(question["options"][wave]) == width:
+                    slots[wave] = list(slots[template])
+                    missing.remove(wave)
+                    note.append(wave)
+            if note:
+                print(f"  note: {row['indicator']!r} matched {', '.join(note)} "
+                      f"by position -- its option labels are worded differently there")
+            if missing:
+                print(f"  note: {row['indicator']!r} has no "
+                      f"{' / '.join(wanted)} option in {', '.join(missing)}")
             resolved.append({
                 "key": f"i{len(resolved):02d}",
                 "quality": row["quality"],
@@ -150,17 +181,71 @@ def load_indicators(path, questions):
                 "question": question["id"],
                 "questionLabel": question["label"],
                 "codes": question["codes"],
-                "answer": " of ".join(o["label"] for o in question["options"]
-                                      if o["value"] in wanted),
-                "slots": [i for i, v in enumerate(values) if v in wanted],
+                "answer": " of ".join(sorted(wanted)),
+                "slots": slots,
             })
     if failures:
         sys.exit("indicator table does not resolve:\n" + "\n".join(failures))
     return resolved
 
 
+def normalise(text):
+    return re.sub(r"\s+", " ", text).strip().lower()
+
+
+def match_options(options, wanted):
+    """Which slots of this wave's scale count as a positive answer.
+
+    Exact labels first, because "Ja" is a substring of half the questionnaire.
+    Only where a wave offers none of them does it fall back to matching a
+    fragment, which is what a long option wrapped differently needs.
+    """
+    labels = [normalise(o["label"]) for o in options]
+    targets = [normalise(w) for w in wanted]
+    exact = [i for i, label in enumerate(labels) if label in targets]
+    if exact:
+        return exact, None
+    hits = []
+    for target in targets:
+        found = [i for i, label in enumerate(labels) if target in label]
+        if len(found) > 1:
+            return None, f"{target!r} matches {len(found)} of the options"
+        hits += found
+    return sorted(set(hits)), None
+
+
 def clamp(value, low, high):
     return max(low, min(high, value))
+
+
+def pick(ordered, quantile):
+    """The value at a quantile of an already-sorted list."""
+    if not ordered:
+        return None
+    return ordered[min(len(ordered) - 1, int(quantile * len(ordered)))]
+
+
+# The bands a reader is shown, and where they cut the 1-to-10 line. They are
+# fixed rather than derived so the same score always reads the same way; the
+# share of rings each one holds is measured and published beside it.
+BANDS = [
+    (1.0, 3.0, "Ver onder", "Ver onder die gemiddelde ring"),
+    (3.0, 4.5, "Onder", "Onder die gemiddelde ring"),
+    (4.5, 5.5, "Gemiddeld", "Rondom die gemiddelde ring"),
+    (5.5, 7.0, "Bo", "Bo die gemiddelde ring"),
+    (7.0, 10.0, "Ver bo", "Ver bo die gemiddelde ring"),
+]
+
+
+def score_bands(ring_scores):
+    total = len(ring_scores) or 1
+    out = []
+    for low, high, short, label in BANDS:
+        held = sum(1 for v in ring_scores
+                   if v >= low and (v < high or high == 10.0))
+        out.append({"from": low, "to": high, "short": short, "label": label,
+                    "share": round(100 * held / total)})
+    return out
 
 
 def main():
@@ -191,10 +276,11 @@ def main():
         rows = {}
         for scope, by_wave in scoped.items():
             for wave, bucket in by_wave.items():
+                slots = ind["slots"].get(wave)
                 n = sum(bucket)
-                if not n:
+                if not n or slots is None:
                     continue
-                positive = sum(bucket[i] for i in ind["slots"])
+                positive = sum(bucket[i] for i in slots)
                 rows.setdefault(scope, {})[wave] = [n, round(100 * positive / n, 1)]
         share[ind["key"]] = rows
 
@@ -225,6 +311,28 @@ def main():
             return None
         return round(clamp(5 + POINTS_PER_SD * (row[1] - ref[0]) / ref[1], 1, 10), 1)
 
+    # The percentage every reference ring reached, per indicator and wave,
+    # so a scope can be told where it stands among them in plain terms.
+    ladder = {}
+    for ind in indicators:
+        rows = share[ind["key"]]
+        for wave in waves:
+            values = sorted(rows[k][wave][1] for k in ring_keys
+                            if k in rows and wave in rows[k]
+                            and rows[k][wave][0] >= MIN_REFERENCE)
+            if values:
+                ladder.setdefault(wave, {})[ind["key"]] = values
+
+    def standing(key, scope, wave):
+        """Share of reference rings this scope is above, 0 to 100."""
+        row = share[key].get(scope, {}).get(wave)
+        values = ladder.get(wave, {}).get(key)
+        if not row or not values:
+            return None
+        below = sum(1 for v in values if v < row[1])
+        same = sum(1 for v in values if v == row[1])
+        return round(100 * (below + same / 2) / len(values))
+
     by_quality = {}
     for ind in indicators:
         by_quality.setdefault(ind["quality"], []).append(ind)
@@ -244,13 +352,31 @@ def main():
                 got = [score_of(m["key"], scope, wave) for m in members]
                 got = [g for g in got if g is not None]
                 pcts = [cells[m["key"]][1] for m in members if m["key"] in cells]
+                ranks = [standing(m["key"], scope, wave) for m in members]
+                ranks = [r for r in ranks if r is not None]
                 if got:
                     marks[quality] = [round(statistics.fmean(got), 1),
-                                      round(statistics.fmean(pcts), 1), len(got)]
+                                      round(statistics.fmean(pcts), 1), len(got),
+                                      round(statistics.fmean(ranks)) if ranks else None]
             scores.setdefault(scope, {})[wave] = marks
+
+    # What a score means, in bands read off the spread the scores actually
+    # took. Stated here rather than in the page, so the wording cannot drift
+    # from the numbers.
+    ring_scores = sorted(v[0] for key in scores if key in set(ring_keys)
+                         for wave_marks in scores[key].values()
+                         for v in wave_marks.values())
+    bands = score_bands(ring_scores)
 
     payload = {
         "waves": waves,
+        "bands": bands,
+        "scoreSpread": {"n": len(ring_scores),
+                        "p10": pick(ring_scores, 0.10),
+                        "p25": pick(ring_scores, 0.25),
+                        "median": pick(ring_scores, 0.50),
+                        "p75": pick(ring_scores, 0.75),
+                        "p90": pick(ring_scores, 0.90)},
         "scopes": aggregates["scopes"],
         "groups": GROUPS,
         "qualities": QUALITIES,

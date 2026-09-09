@@ -91,7 +91,7 @@ function ordinalRamp(count) {
   return Array.from({ length: count }, (_, i) => ORDINAL_RAMP[Math.round(i * step)]);
 }
 
-function encoder(question) {
+function encoder(question, wave) {
   if (question.kind === "numeric") {
     const { min, p95 } = question.scale;
     const span = Math.max(1, p95 - min);
@@ -103,7 +103,9 @@ function encoder(question) {
       describe: (v) => String(v),
     };
   }
-  const options = [...question.options].sort((a, b) => a.rank - b.rank);
+  // Each wave has its own scale; a value only means something inside its
+  // own year's option list.
+  const options = [...(question.options[wave] || [])].sort((a, b) => a.rank - b.rank);
   const palette = question.kind === "binary" ? BINARY_COLOURS : ordinalRamp(options.length);
   const slot = new Map(options.map((o, i) => [o.value, i]));
   const name = new Map(options.map((o) => [o.value, o.label || `Opsie ${o.value}`]));
@@ -138,7 +140,7 @@ function render() {
     return;
   }
 
-  const enc = encoder(question);
+  const enc = encoder(question, wave);
   renderLegend(question, enc);
 
   state.layer.clearLayers();

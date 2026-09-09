@@ -1,6 +1,16 @@
+# The data files are large and change once a wave, so they are worth
+# holding on to. The code is a few kilobytes and decides what the site even
+# offers -- common.js builds the navigation, so an hour-old copy of it hides
+# a report that was added in the meantime. Those revalidate every time:
+# "no-cache" still serves from the browser's cache, it just asks first, and
+# the answer is a 304 unless the file really changed.
 /data/*
   Cache-Control: public, max-age=3600, must-revalidate
 /*.css
-  Cache-Control: public, max-age=3600
+  Cache-Control: no-cache
 /*.js
-  Cache-Control: public, max-age=3600
+  Cache-Control: no-cache
+/
+  Cache-Control: no-cache
+/*.html
+  Cache-Control: no-cache

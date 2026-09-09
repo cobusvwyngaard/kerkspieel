@@ -39,6 +39,13 @@ GRID_WORDS = ("ja", "nee", "altyd", "gereeld", "soms", "nooit", "mans", "vrouens
               "dieselfde", "beter", "meer", "minder")
 CODE_ANY = re.compile(r"\([Vv]\d{1,3}[a-zA-Z]?")
 NEXT_QUESTION = re.compile(r"^\s*\d{1,2}\.\d{1,2}\.?\s")
+# The digits trailing a grid row, each standing alone between spaces.
+TRAILING = re.compile(r"(?<=\s)(\d)(?=\s|$)")
+# "... swakker            1              1              1" -- one row of a
+# grid whose columns are the variables and whose rows are the options.
+EQUAL_ROW = re.compile(r"^\s*(\S.*?)\s{2,}(\d(?:\s+\d)+)\s*$")
+# How far a row's variable code may sit below the digits that belong to it.
+SCALE_REACH = 2
 
 
 def grid_header(line):
@@ -58,19 +65,80 @@ def grid_header(line):
     return None
 
 
+def trailing_scale(line):
+    """The 1..N run trailing a line, or None if it does not read as a scale."""
+    digits = [int(t) for t in TRAILING.findall(line.rstrip())]
+    return digits if len(digits) >= 2 and digits == list(range(1, len(digits) + 1)) \
+        else None
+
+
+def codes_above(lines, start, wanted):
+    """The variable codes in the unbroken block of lines above `start`."""
+    codes = []
+    for j in range(start - 1, -1, -1):
+        if not lines[j].strip():
+            break
+        codes = codes_in(lines[j]) + codes
+    return codes if len(codes) == wanted else []
+
+
+def transposed_grids(lines):
+    """Grids whose columns are the variables and whose rows are the options.
+
+    The attendance question is laid out this way: three columns headed
+    "In persoon", "Aanlyn" and "Totale", each with its own variable code,
+    over rows reading "... swakker  1  1  1". Every column offers the same
+    options, so each code takes the row labels.
+    """
+    found, i = {}, 0
+    while i < len(lines):
+        rows, j = [], i
+        while j < len(lines):
+            m = EQUAL_ROW.match(lines[j])
+            if not m:
+                break
+            digits = [int(d) for d in m.group(2).split()]
+            # One row of a transposed grid repeats one value across the
+            # columns, and the rows count 1, 2, 3 down the options.
+            if len(set(digits)) != 1 or digits[0] != len(rows) + 1:
+                break
+            rows.append((digits[0], clean_label(m.group(1)), len(digits)))
+            j += 1
+        widths = {r[2] for r in rows}
+        if len(rows) >= 2 and len(widths) == 1:
+            for code in codes_above(lines, i, widths.pop()):
+                found[code] = [(v, label) for v, label, _ in rows]
+            i = max(j, i + 1)
+        else:
+            i += 1
+    return found
+
+
+def clean_label(text):
+    return re.sub(r"\s+", " ", text).strip().lstrip(". ").strip()
+
+
 def extract(text_path):
     """code -> ordered list of (value, label)."""
     lines = pathlib.Path(text_path).read_text(encoding="utf-8").splitlines()
     options = {}
     header = None
+    # A grid row often wraps: the digits land on a line of their own, or on
+    # the first half of the label, with the variable code on the line below.
+    # Such a run waits here for the code that claims it.
+    pending = None
 
     for i, line in enumerate(lines):
         found = codes_in(line)
         maybe_header = grid_header(line)
         if maybe_header:
-            header = maybe_header
+            header, pending = maybe_header, None
             continue
         if not found:
+            stranded = trailing_scale(line)
+            if stranded:
+                pending = (stranded, i)
+                continue
             if line.strip() and not OPTION_LINE.match(line):
                 header = header if not line.strip()[0].isdigit() else None
             continue
@@ -80,8 +148,11 @@ def extract(text_path):
         # Grid row: the option values trail the item text. A run of digits
         # reading 1..N is a scale whether or not a header was recognised --
         # the Likert grids label their columns several lines further up.
-        trailing = [int(t) for t in re.findall(r"(?<=\s)(\d)(?=\s|$)", line.rstrip())]
+        trailing = [int(t) for t in TRAILING.findall(line.rstrip())]
         scale = len(trailing) >= 2 and trailing == list(range(1, len(trailing) + 1))
+        if not trailing and pending and i - pending[1] <= SCALE_REACH:
+            trailing, scale = pending[0], True
+        pending = None
         # A header may name more columns than a row fills -- "Ja Nee Getal"
         # sits above rows carrying only the Ja/Nee codes -- so take the
         # header labels the row actually reaches.
@@ -146,6 +217,10 @@ def main():
         if not text.exists():
             sys.exit(f"missing {text}; run scripts/build_codebook.py first")
         opts = extract(text)
+        # The transposed grids are read in a second pass and win, because a
+        # column of one is otherwise mistaken for a stacked option list.
+        opts.update(transposed_grids(
+            pathlib.Path(text).read_text(encoding="utf-8").splitlines()))
         book = json.loads((cb_dir / f"codebook_{year}.json").read_text(encoding="utf-8"))
         known = {v["code"] for v in book["resolved"].values()}
         hit = {c: o for c, o in opts.items() if c in known}

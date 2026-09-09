@@ -31,6 +31,15 @@ code is only meaningful together with its year, and
 
 Two further traps the pipeline handles:
 
+- **Each wave is counted against its own scale.** 2022 inserts *Gereeld*
+  into grids that read *Altyd / Soms / Nooit* either side of it. Counting a
+  2022 answer against 2026's shorter list dropped every *Nooit* and filed
+  every *Soms* under the wrong name -- 18,143 answers discarded and 34,267
+  relabelled across 94 question-waves. `aggregates.json` and `map.json` now
+  carry one option list per wave, and a chart's axis is the merged order of
+  all of them, so a wave that never offered an option simply has no bar
+  there.
+
 - **Some scales are stored in reverse.** For the financial-position and
   Likert questions the raw code `1` is the *best* answer, not the worst.
   `KS_lookup` records the intended display order and the pipeline applies
@@ -207,6 +216,15 @@ Not corrected, and needing a decision:
   an authoritative old/new key lookup in as
   `data/lookup/key_2026_authoritative.csv` and it supersedes every
   heuristic.
+- **Grid options spanning three lines.** A grid row wraps: the item text
+  on one line, the option digits on the next, the rest of the text and the
+  variable code on a third. `extract_options.py` used to require the
+  digits and the code on one line, so 42 questions reached the reports
+  with no option list at all and were filed as counts. It now carries a
+  stranded run of digits forward to the code that claims it, and reads the
+  transposed grids -- where the columns are the variables and the rows are
+  the options -- in a second pass. 211 variables gained their options.
+
 - **105 congregations have no coordinate**, mostly amalgamations and
   renamings the geolocation match sheet has not caught up with. Run
   `scripts/audit_geo.py` for the list.
@@ -252,9 +270,13 @@ rendering them.
 nine Core Qualities in three groups, which their *Church Life Profile*
 reports on -- to the Gemeentevraelys. The indicator table is
 `data/lookup/profile_indicators.csv`: one row per indicator, naming its
-question by wording rather than by id, with the option values that count
-as positive. `build_profile.py` resolves each pattern and **fails the
-build** if one matches no question or more than one.
+question by wording rather than by id, and its positive answers by their
+*label* rather than their number -- the number means different answers in
+different waves, the label does not. `build_profile.py` resolves each
+pattern and **fails the build** if one matches no question or more than
+one, or if a positive label matches more than one option in a wave. Where
+a wave words a long option differently, it falls back to matching by
+position and says so.
 
 Two things it is not:
 
@@ -347,13 +369,14 @@ ages in the 900s.
 
 ## Still open
 
-- **42 questions have no option list.** Their grids -- *Altyd / Gereeld /
-  Soms / Nooit* headers spanning several rows -- are not picked up by
-  `extract_options.py`, so they are filed as counts, and a mean over a
-  response code says nothing. `scripts/scales.py` holds them back from
-  both the ring page and the map rather than publishing a meaningless
-  number. Teaching the questionnaire parser those grid headers would
-  return them to the reports; the answers are already in the dataset.
+- **Two rows of the 2018 hospitality grid look crossed against their
+  later selves.** 2022 and 2026 ask seven items there where 2018 asks six,
+  and the crosswalk pairs them by wording; five of the six line up (their
+  distributions track across the waves), but "van gasvryheid ... te kweek"
+  reads 69% *Altyd* in 2018 against 8% and 14% later, and "mense te besoek
+  en te nooi" runs the other way. Both are almost certainly matched to the
+  wrong row of the later grid. Grids whose row count changes between waves
+  need matching on the block, not row by row.
 
 - **Small numbers.** A ring can have four responding congregations, where
   every answer moves the share by 25 points. The dashboard says so, but

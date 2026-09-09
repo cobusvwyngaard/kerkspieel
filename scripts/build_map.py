@@ -121,11 +121,17 @@ def main():
         entry = {"id": question["id"], "label": question["label"], "kind": kind,
                  "codes": question["codes"], "answered": counts}
         if options:
+            # Each wave carries its own scale. 2022 inserts "Gereeld" into
+            # grids that read "Altyd / Soms / Nooit" either side of it, so a
+            # pin coloured by 2022's value against 2026's list would show
+            # "Soms" where the congregation answered "Gereeld".
             order = question.get("order") or {}
-            entry["options"] = [
-                {"value": o["value"], "label": o["label"],
-                 "rank": order.get(str(o["value"]), o["value"])}
-                for o in options]
+            listed = {w: question["options"].get(w) or options for w in per_wave}
+            entry["options"] = {
+                wave: [{"value": o["value"], "label": o["label"],
+                        "rank": order.get(str(o["value"]), o["value"])}
+                       for o in opts]
+                for wave, opts in listed.items()}
         if kind == "numeric":
             # The legend needs a scale; percentiles beat min/max because a
             # single very large congregation would otherwise flatten the rest.

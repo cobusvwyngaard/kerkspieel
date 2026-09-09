@@ -142,23 +142,28 @@ function scopes() {
   return chosen.key === synod.key ? all.slice(1) : all;
 }
 
+/** One wave's answers, keyed by option label rather than by position.
+ *
+ *  Each wave is counted against its own scale, because the scales move --
+ *  2022 inserts "Gereeld" into grids that read "Altyd / Soms / Nooit"
+ *  either side of it. Keying on the label is what lets the waves be drawn
+ *  on one axis anyway: a wave that never offered an option simply has no
+ *  bar there.
+ */
 function distribution(question, scope, wave) {
   const counts = (state.counts[question.id] || {})[scope.key];
   const bucket = counts && counts[wave];
-  if (!bucket) return null;
+  const options = (question.options || {})[wave];
+  if (!bucket || !options) return null;
   const n = bucket.reduce((a, b) => a + b, 0);
   if (!n) return null;
-  return { n, share: bucket.map((c) => (100 * c) / n) };
+  const share = new Map();
+  options.forEach((o, i) => share.set(o.label, (100 * bucket[i]) / n));
+  return { n, share };
 }
 
-function orderedOptions(question) {
-  // The published report orders options worst-first; the raw codes of
-  // several questions run the other way.
-  const order = question.order || {};
-  return question.options
-    .map((o, index) => ({ ...o, index, rank: order[o.value] ?? o.value }))
-    .sort((a, b) => a.rank - b.rank);
-}
+/** The labels a chart puts on its axis, in the questionnaire's order. */
+const categoriesOf = (question) => question.categories || [];
 
 /* ---------- render ---------- */
 
@@ -180,15 +185,17 @@ function render() {
       ? `<p class="note"><strong>Skale verskil tussen jare.</strong> Hierdie vraag
          is nie in elke jaar met dieselfde aantal antwoordopsies gevra nie
          (${WAVES.filter((w) => question.optionCounts[w])
-                .map((w) => `${w}: ${question.optionCounts[w]}`).join(", ")}),
-         so die jare is nie direk vergelykbaar nie.</p>`
+                .map((w) => `${w}: ${question.optionCounts[w]}`).join(", ")}).
+         Elke jaar word teen sy eie skaal getel, en 'n jaar wat 'n opsie nie
+         aangebied het nie, het geen staaf daar nie — maar die jare bly
+         daarmee nie streng vergelykbaar nie.</p>`
       : question.comparable === "single-wave"
       ? `<p class="note"><strong>Net in ${Object.keys(question.codes).join(", ")} gevra.</strong>
          Daar is niks om oor tyd mee te vergelyk nie; wat wel vergelyk kan word
          is die ring teenoor sy sinode en die hele kerk in daardie jaar.</p>`
       : "";
 
-  const options = orderedOptions(question);
+  const options = categoriesOf(question);
   const series = WAVES
     .map((wave) => ({ wave, data: distribution(question, primary.scope, wave) }))
     .filter((s) => s.data);
@@ -239,7 +246,7 @@ function renderChart(options, series) {
   const width = pad.left + pad.right + groupW * options.length;
   const height = 300;
   const plotH = height - pad.top - pad.bottom;
-  const max = niceMax(Math.max(20, ...series.flatMap((s) => s.data.share)));
+  const max = niceMax(Math.max(20, ...series.flatMap((s) => [...s.data.share.values()])));
   const y = (v) => pad.top + plotH - (v / max) * plotH;
 
   const step = max / 4;
@@ -254,13 +261,15 @@ function renderChart(options, series) {
   const inner = groupW - 18;
   const barW = (inner - gap * (series.length - 1)) / series.length;
 
-  const bars = options.map((opt, oi) => {
+  const bars = options.map((name, oi) => {
     const x0 = pad.left + oi * groupW + 9;
     return series.map((s, si) => {
-      const v = s.data.share[opt.index];
+      const v = s.data.share.get(name);
+      // A wave that never offered this option gets no bar, which is what a
+      // changed scale looks like on the chart.
+      if (v == null) return "";
       const h = Math.max(v > 0 ? 2 : 0, (v / max) * plotH);
       const x = x0 + si * (barW + gap);
-      const name = opt.label || `Opsie ${opt.value}`;
       return `<rect class="bar" x="${x}" y="${y(v)}" width="${barW}" height="${h}"
         fill="${SERIES[si]}" tabindex="0" role="img"
         aria-label="${escapeHtml(name)}, ${s.wave}: ${v.toFixed(1)} persent"
@@ -268,9 +277,9 @@ function renderChart(options, series) {
     }).join("");
   }).join("");
 
-  const labels = options.map((opt, oi) => {
+  const labels = options.map((name, oi) => {
     const cx = pad.left + oi * groupW + groupW / 2;
-    return wrap(opt.label || `Opsie ${opt.value}`, Math.floor(groupW / 6), 3)
+    return wrap(name, Math.floor(groupW / 6), 3)
       .map((line, li) =>
         `<text x="${cx}" y="${height - pad.bottom + 16 + li * 13}"
                text-anchor="middle">${escapeHtml(line)}</text>`).join("");
@@ -286,9 +295,9 @@ function renderChart(options, series) {
   // has to record its chart itself for the PowerPoint export.
   registerChart(el("chart"), {
     type: "bar", unit: "%",
-    categories: options.map((o) => o.label || `Opsie ${o.value}`),
+    categories: options,
     series: series.map((s, i) => ({
-      name: s.wave, values: options.map((o) => s.data.share[o.index]),
+      name: s.wave, values: options.map((name) => s.data.share.get(name) ?? null),
       colour: SERIES[i % SERIES.length],
     })),
   });
@@ -306,9 +315,12 @@ function renderTable(question, options, scopeList) {
 
   const head = `<thead><tr><th>Beskrywing</th>${
     cols.map((c) => `<th>${escapeHtml(c.head)}</th>`).join("")}</tr></thead>`;
-  const body = options.map((opt) => `<tr>
-      <td>${escapeHtml(opt.label || `Opsie ${opt.value}`)}</td>
-      ${cols.map((c) => `<td>${c.d.share[opt.index].toFixed(2)}%</td>`).join("")}
+  const body = options.map((name) => `<tr>
+      <td>${escapeHtml(name)}</td>
+      ${cols.map((c) => {
+        const v = c.d.share.get(name);
+        return `<td>${v == null ? "—" : `${v.toFixed(2)}%`}</td>`;
+      }).join("")}
     </tr>`).join("");
   const foot = `<tr><td>Aantal gemeentes</td>${
     cols.map((c) => `<td>${c.d.n}</td>`).join("")}</tr>`;

@@ -15,6 +15,11 @@
   --grid:     #e7e5df;
   --ramp-1: #c6dbef; --ramp-2: #9ecae1; --ramp-3: #6baed6;
   --ramp-4: #4292c6; --ramp-5: #2171b5; --ramp-6: #08519c;
+  /* The five bands of the 1-to-10 score, running from far below the
+     average ring to far above it. Diverging, because 5 is a middle
+     and not a low end. */
+  --score-1: #d4653a; --score-2: #e7a06f; --score-3: #cfcabc;
+  --score-4: #6fbe9a; --score-5: #1f9e73;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -34,6 +39,8 @@
     --grid:     #2b2a27;
     --ramp-1: #16365c; --ramp-2: #1d4f86; --ramp-3: #2c6fb0;
     --ramp-4: #4292c6; --ramp-5: #74b3dd; --ramp-6: #a9d0ea;
+    --score-1: #c2542c; --score-2: #b87a4d; --score-3: #565349;
+    --score-4: #3f8f70; --score-5: #17a375;
   }
 }
 :root[data-theme="dark"] {
@@ -53,6 +60,8 @@
   --grid:     #2b2a27;
   --ramp-1: #16365c; --ramp-2: #1d4f86; --ramp-3: #2c6fb0;
   --ramp-4: #4292c6; --ramp-5: #74b3dd; --ramp-6: #a9d0ea;
+  --score-1: #c2542c; --score-2: #b87a4d; --score-3: #565349;
+  --score-4: #3f8f70; --score-5: #17a375;
 }
 
 * { box-sizing: border-box; }
@@ -294,3 +303,14 @@ details.codes > summary:focus-visible { outline: 2px solid var(--accent); outlin
                  font-size: 0.88rem; max-width: 62ch; }
 /* A value that had to move inside its own bar. */
 .row-value--in { fill: #fff; }
+.scale-band { font-size: 11px; font-weight: 600; fill: var(--text-primary); }
+.scale-share { font-size: 10.5px; fill: var(--text-muted); }
+.scale-tick { font-size: 10.5px; fill: var(--text-muted); }
+.scale-note {
+  margin: 10px 0 0; font-size: 12.5px; line-height: 1.55;
+  color: var(--text-secondary); max-width: 78ch;
+}
+.score-chip {
+  display: inline-block; min-width: 34px; padding: 1px 6px; border-radius: 5px;
+  color: #16150f; font-weight: 650; font-variant-numeric: tabular-nums;
+}

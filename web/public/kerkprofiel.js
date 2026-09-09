@@ -88,7 +88,7 @@ function ranked(key, wave) {
   return state.qualities
     .filter((q) => q.group !== "meting" && scored[q.key])
     .map((q) => ({ ...q, score: scored[q.key][0], pct: scored[q.key][1],
-                   n: scored[q.key][2] }))
+                   n: scored[q.key][2], rank: scored[q.key][3] ?? null }))
     .sort((a, b) => b.score - a.score);
 }
 
@@ -96,7 +96,8 @@ const measures = (key, wave) => {
   const scored = marks(key, wave);
   return state.qualities
     .filter((q) => q.group === "meting" && scored[q.key])
-    .map((q) => ({ ...q, score: scored[q.key][0], pct: scored[q.key][1] }));
+    .map((q) => ({ ...q, score: scored[q.key][0], pct: scored[q.key][1],
+                   n: scored[q.key][2], rank: scored[q.key][3] ?? null }));
 };
 
 const headlineOf = (quality) =>
@@ -117,6 +118,7 @@ function render() {
 
   renderTiles(sc, wave, list);
   renderNote(sc, wave, list);
+  renderScale(sc, wave, list);
   renderCircle(sc, wave, list);
   renderRankTable(sc, wave, list);
   renderSpread(sc, wave, list);
@@ -176,6 +178,66 @@ function renderNote(sc, wave, list) {
   el("note-slot").innerHTML = notes.join("");
 }
 
+/* ---------- what the score means ----------
+   The bands and the spread come from the build, measured off the scores
+   the rings actually took, so the wording cannot drift from the numbers. */
+
+const bandOf = (score) => state.data.bands.find(
+  (b) => score >= b.from && (score < b.to || b.to === 10)) || null;
+
+const bandColour = (score) => {
+  const i = state.data.bands.indexOf(bandOf(score));
+  return ["var(--score-1)", "var(--score-2)", "var(--score-3)",
+          "var(--score-4)", "var(--score-5)"][i] || "var(--series-1)";
+};
+
+function renderScale(sc, wave, list) {
+  const bands = state.data.bands;
+  const spread = state.data.scoreSpread;
+  el("scale-sub").textContent =
+    `Elke kwaliteit kry 'n telling van 1 tot 10. Vyf is die gemiddelde ring; ` +
+    `elke twee punte is een standaardafwyking tussen ringe.`;
+
+  const width = 820, height = 96, pad = 12;
+  const x = (v) => pad + ((v - 1) / 9) * (width - 2 * pad);
+  const blocks = bands.map((b, i) => `
+    <rect x="${x(b.from)}" y="18" width="${x(b.to) - x(b.from) - 2}" height="26"
+      rx="4" fill="${["var(--score-1)", "var(--score-2)", "var(--score-3)",
+                     "var(--score-4)", "var(--score-5)"][i]}"
+      tabindex="0" role="img"
+      aria-label="${escapeHtml(`${b.label}: ${b.from} tot ${b.to}`)}"
+      data-tip="${escapeHtml(`${b.label} · ${b.from}–${b.to} · ${b.share}% van ringe`)}"></rect>
+    <text x="${(x(b.from) + x(b.to)) / 2}" y="60" text-anchor="middle"
+      class="scale-band">${escapeHtml(b.short)}</text>
+    <text x="${(x(b.from) + x(b.to)) / 2}" y="75" text-anchor="middle"
+      class="scale-share">${b.share}% van ringe</text>`).join("");
+  const ticks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((v) =>
+    `<text x="${x(v)}" y="12" text-anchor="middle" class="scale-tick">${v}</text>`).join("");
+
+  // Where this scope's own qualities fall, so the bands are not abstract.
+  const pins = list.map((q) => `
+    <circle cx="${x(q.score)}" cy="31" r="5" fill="var(--text-primary)"
+      stroke="var(--surface-1)" stroke-width="2" tabindex="0" role="img"
+      aria-label="${escapeHtml(`${q.label}: ${q.score}`)}"
+      data-tip="${escapeHtml(`${q.label} — ${q.score} uit 10`)}"></circle>`).join("");
+
+  el("scale").innerHTML =
+    `<svg viewBox="0 0 ${width} ${height}" width="${width}" height="${height}"
+          role="img" aria-label="Skaal van 1 tot 10">${ticks}${blocks}${pins}</svg>`;
+  attachTooltips(el("scale"));
+
+  el("scale-note").innerHTML =
+    `Die telling vergelyk, dit meet nie. Vir elke aanwyser word die persentasie ` +
+    `gemeentes wat so geantwoord het, vergelyk met dieselfde persentasie in al ` +
+    `die ander <strong>ringe</strong> van daardie jaar. 'n Kwaliteit se telling ` +
+    `is die gemiddeld van sy aanwysers s'n. Die helfte van alle ringe lê tussen ` +
+    `${spread.p25} en ${spread.p75}; een uit tien lê onder ${spread.p10} en een ` +
+    `uit tien bo ${spread.p90}. Die swart kolletjies hierbo is ` +
+    `${escapeHtml(scopeName(sc))} se eie nege kwaliteite in ${wave}. ` +
+    `<strong>Dit is nie NCLS se telling nie</strong> — NCLS publiseer nie hoe ` +
+    `hulle eie telling bereken word nie.`;
+}
+
 /* The circle of strengths: the qualities around a ring, strongest at the
    top and running clockwise, which is how the NCLS profile lays it out. */
 function renderCircle(sc, wave, list) {
@@ -188,8 +250,7 @@ function renderCircle(sc, wave, list) {
   const width = 860, height = 500;
   const cx = width / 2, cy = height / 2 + 4, r = 132;
   const dot = (score) => 7 + 1.6 * Math.max(0, score - 1);
-  const colour = (score) => score >= 6.5 ? "var(--series-3)"
-    : score <= 3.5 ? "var(--series-2)" : "var(--series-1)";
+  const colour = bandColour;
 
   const points = list.map((q, i) => {
     const angle = -Math.PI / 2 + (2 * Math.PI * i) / list.length;
@@ -210,7 +271,9 @@ function renderCircle(sc, wave, list) {
         fill="${colour(p.score)}" stroke="var(--surface-1)" stroke-width="2"
         tabindex="0" role="img"
         aria-label="${escapeHtml(`${p.label}: telling ${p.score} uit 10`)}"
-        data-tip="${escapeHtml(`${p.label} — telling ${p.score}/10 · gemiddeld ${p.pct}% oor ${p.n} aanwysers`)}"></circle>
+        data-tip="${escapeHtml(`${p.label} — ${p.score} uit 10, ${bandOf(p.score).label.toLowerCase()}` +
+          (p.rank == null ? "" : ` · beter as ${p.rank}% van ringe`) +
+          ` · gemiddeld ${p.pct}% oor ${p.n} aanwysers`)}"></circle>
       <text class="circle-name" x="${lx}" y="${ly - 4}" text-anchor="${anchor}">${escapeHtml(p.label)}</text>
       <text class="circle-score" x="${lx}" y="${ly + 12}" text-anchor="${anchor}">${p.score} / 10</text>`;
   }).join("");
@@ -233,25 +296,31 @@ function renderCircle(sc, wave, list) {
 function renderRankTable(sc, wave, list) {
   el("rank-sub").textContent =
     `${scopeName(sc)} · ${wave} · elke kwaliteit se hoofaanwyser, met die ` +
-    `persentasie gemeentes wat so geantwoord het.`;
+    `persentasie gemeentes wat so geantwoord het. "Beter as" tel hoeveel van ` +
+    `die ander ringe hierdie keuse verbysteek.`;
   const rows = list.concat(measures(sc.key, wave));
   if (!rows.length) { el("rank-table").innerHTML = ""; return; }
   const nat = cells(NATIONAL, wave);
+  el("rank-table").className = "table--plain";
   el("rank-table").innerHTML =
-    `<thead><tr><th>#</th><th>Kwaliteit</th><th class="col-text">Hoofaanwyser</th>
+    `<thead><tr><th>Kwaliteit</th><th class="col-text">Hoofaanwyser</th>
       <th>${escapeHtml(sc.kind === "national" ? "Landwyd" : "Hierdie keuse")}</th>
-      <th>Algemene Sinode</th><th>Telling</th></tr></thead>` +
+      <th>Algemene Sinode</th><th>Telling</th>
+      <th>Wat dit beteken</th></tr></thead>` +
     `<tbody>${rows.map((q, i) => {
       const ind = headlineOf(q.key);
       const here = ind ? cells(sc.key, wave)[ind.key] : null;
       const there = ind ? nat[ind.key] : null;
+      const band = bandOf(q.score);
       return `<tr>
-        <td>${q.group === "meting" ? "—" : i + 1}</td>
-        <td>${escapeHtml(q.label)}</td>
+        <td>${q.group === "meting" ? "" : `${i + 1}. `}${escapeHtml(q.label)}</td>
         <td class="col-text">${escapeHtml(ind ? ind.label : "—")}</td>
         <td>${here ? `${round1(here[1])}% <span style="color:var(--text-muted)">(n=${here[0]})</span>` : "—"}</td>
         <td>${there ? `${round1(there[1])}%` : "—"}</td>
-        <td>${q.score}</td></tr>`;
+        <td><span class="score-chip" style="background:${bandColour(q.score)}">${q.score}</span></td>
+        <td>${escapeHtml(band ? band.short : "—")}${
+          q.rank == null ? "" : ` <span style="color:var(--text-muted)">· beter as ${q.rank}%</span>`}</td>
+      </tr>`;
     }).join("")}</tbody>`;
 }
 
