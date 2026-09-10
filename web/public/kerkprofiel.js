@@ -21,21 +21,32 @@ async function boot() {
     failed(e.message);
     return;
   }
-  state.byKey = new Map(state.data.scopes.map((s) => [s.key, s]));
+  // The scope list comes from the whole population, so the dropdowns do not
+  // change shape when the panel is chosen; a ring the panel does not reach
+  // says so instead of disappearing.
+  state.byKey = new Map(state.data.sets.all.scopes.map((s) => [s.key, s]));
   state.qualities = state.data.qualities;
   state.indicators = state.data.indicators;
   fillSynods();
   fillYears();
-  ["synod", "ring", "year"].forEach((id) =>
+  if (!state.data.sets.panel) el("population").parentElement.hidden = true;
+  ["synod", "ring", "year", "population"].forEach((id) =>
     el(id).addEventListener("change", id === "synod" ? onSynodChange : render));
   onSynodChange();
 }
 
 /* ---------- scope ---------- */
 
-const synodScopes = () => state.data.scopes.filter((s) => s.kind === "synod");
+/* Either the whole population, or only the congregations that answered in
+   every wave. The two are built the same way and stand side by side in
+   profile.json, so switching costs nothing. */
+const chosenSet = () => state.data.sets[el("population").value] || state.data.sets.all;
+const onPanel = () => el("population").value === "panel" && state.data.sets.panel;
+
+const synodScopes = () =>
+  state.data.sets.all.scopes.filter((s) => s.kind === "synod");
 const ringScopes = (synod) =>
-  state.data.scopes.filter((s) => s.kind === "ring" && s.synod === synod);
+  state.data.sets.all.scopes.filter((s) => s.kind === "ring" && s.synod === synod);
 
 function fillSynods() {
   el("synod").innerHTML = `<option value="${ALL_SYNODS}">Algemene Sinode (almal)</option>` +
@@ -79,8 +90,15 @@ function scopeName(sc = scope()) {
 
 /* ---------- reading the payload ---------- */
 
-const cells = (key, wave) => (state.data.data[key] || {})[wave] || {};
-const marks = (key, wave) => (state.data.scores[key] || {})[wave] || {};
+const cells = (key, wave) => (chosenSet().data[key] || {})[wave] || {};
+const marks = (key, wave) => (chosenSet().scores[key] || {})[wave] || {};
+
+/** The scope as this population sees it: how many congregations, and how
+    many of them answered in each year. */
+function scopeRow(key) {
+  return chosenSet().scopes.find((s) => s.key === key)
+    || { ...state.byKey.get(key), congregations: 0, responded: {} };
+}
 
 /** The qualities that carry a score for this scope and year, best first. */
 function ranked(key, wave) {
@@ -126,21 +144,27 @@ function render() {
   renderDetail(sc, wave);
 
   el("footer").textContent =
-    `Bron: Gemeentevraelys ${state.data.waves.join(", ")}. Die nege kwaliteite ` +
-    `is die NCLS Research-raamwerk; die aanwysers en die telling is hier ` +
-    `gedefinieer en is nie NCLS se eie nie.`;
+    `Bron: Gemeentevraelys ${state.data.waves.join(", ")}` +
+    (onPanel()
+      ? `, beperk tot die ${state.data.panelCongregations} gemeentes wat elke jaar geantwoord het`
+      : "") +
+    `. Die nege kwaliteite is die NCLS Research-raamwerk; die aanwysers en ` +
+    `die telling is hier gedefinieer en is nie NCLS se eie nie.`;
   addExportButtons();
 }
 
 function renderTiles(sc, wave, list) {
-  const responded = sc.responded[wave] || 0;
-  const pct = sc.congregations ? Math.round((100 * responded) / sc.congregations) : 0;
+  const here = scopeRow(sc.key);
+  const responded = here.responded[wave] || 0;
+  const pct = here.congregations
+    ? Math.round((100 * responded) / here.congregations) : 0;
   const best = list[0];
   const worst = list[list.length - 1];
-  const tiles = [
-    ["Gemeentes", sc.congregations, scopeName(sc)],
-    [`${wave} deelname`, responded, `${pct}% van gemeentes`],
-  ];
+  const tiles = onPanel()
+    ? [["Gemeentes", here.congregations, `${scopeName(sc)} · elke jaar geantwoord`],
+       [`${wave} deelname`, responded, `${pct}% van dié gemeentes`]]
+    : [["Gemeentes", sc.congregations, scopeName(sc)],
+       [`${wave} deelname`, responded, `${pct}% van gemeentes`]];
   if (best) {
     tiles.push(["Sterkste kwaliteit", best.label, `telling ${best.score} uit 10`]);
     tiles.push(["Grootste ruimte", worst.label, `telling ${worst.score} uit 10`]);
@@ -153,7 +177,18 @@ function renderTiles(sc, wave, list) {
 
 function renderNote(sc, wave, list) {
   const notes = [];
-  const responded = sc.responded[wave] || 0;
+  const responded = scopeRow(sc.key).responded[wave] || 0;
+  if (onPanel()) {
+    const total = state.data.panelCongregations;
+    const here = scopeRow(sc.key).congregations;
+    notes.push(`<p class="note"><strong>Net gemeentes wat elke jaar geantwoord het.</strong>
+      ${total} gemeentes het die vraelys in ${state.data.waves.join(", ")} almal
+      ingevul${here === total ? "" : `, en ${here} daarvan val in hierdie keuse`}.
+      'n Verandering oor tyd is dan 'n verandering by dieselfde gemeentes, nie
+      'n verandering in wie geantwoord het nie. Die telling word ook teen
+      hierdie kleiner groep ringe gemeet, so dit is nie dieselfde telling as
+      by "almal" nie.</p>`);
+  }
   if (!list.length) {
     notes.push(`<p class="note"><strong>Geen profiel vir hierdie keuse nie.</strong>
       ${escapeHtml(scopeName(sc))} het geen bruikbare antwoorde in ${wave} nie.</p>`);
@@ -182,18 +217,18 @@ function renderNote(sc, wave, list) {
    The bands and the spread come from the build, measured off the scores
    the rings actually took, so the wording cannot drift from the numbers. */
 
-const bandOf = (score) => state.data.bands.find(
+const bandOf = (score) => chosenSet().bands.find(
   (b) => score >= b.from && (score < b.to || b.to === 10)) || null;
 
 const bandColour = (score) => {
-  const i = state.data.bands.indexOf(bandOf(score));
+  const i = chosenSet().bands.indexOf(bandOf(score));
   return ["var(--score-1)", "var(--score-2)", "var(--score-3)",
           "var(--score-4)", "var(--score-5)"][i] || "var(--series-1)";
 };
 
 function renderScale(sc, wave, list) {
-  const bands = state.data.bands;
-  const spread = state.data.scoreSpread;
+  const bands = chosenSet().bands;
+  const spread = chosenSet().scoreSpread;
   el("scale-sub").textContent =
     `Elke kwaliteit kry 'n telling van 1 tot 10. Vyf is die gemiddelde ring; ` +
     `elke twee punte is een standaardafwyking tussen ringe.`;

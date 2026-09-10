@@ -8,24 +8,41 @@ const WAVES = ["2018", "2022", "2026"];
 // Below this, a single congregation moves the share by 10 points or more.
 const SMALL_N = 10;
 const ALL_SYNODS = "__all_synods__";
-const state = { scopes: [], byKey: new Map(), questions: [], counts: {},
-                numeric: [], numericStats: null };
+const state = { scopes: [], byKey: new Map(), questions: [], numeric: [],
+                // Two populations: everyone who answered a given wave, and
+                // only the congregations that answered in every wave. The
+                // panel is a separate file, fetched the first time it is
+                // asked for.
+                sets: { all: null, panel: null } };
 
 async function boot() {
   const payload = await fetch("data/aggregates.json").then((r) => r.json());
   state.scopes = payload.scopes;
   state.byKey = new Map(payload.scopes.map((s) => [s.key, s]));
   state.questions = payload.questions;
-  state.counts = payload.counts;
   state.numeric = payload.numericQuestions || [];
+  state.sets.all = { scopes: payload.scopes, counts: payload.counts,
+                     numericStats: null };
 
   fillSynods();
   fillQuestions();
-  ["synod", "ring", "question"].forEach((id) =>
+  ["synod", "ring", "question", "population"].forEach((id) =>
     el(id).addEventListener("change", id === "synod" ? onSynodChange : render));
   onSynodChange();
 }
 
+const onPanel = () => el("population").value === "panel";
+const active = () => state.sets[onPanel() ? "panel" : "all"] || state.sets.all;
+
+/** The chosen population's own view of a scope: how many congregations it
+    holds, and how many of them answered in each year. */
+function rowOf(key) {
+  return (active().scopes || []).find((s) => s.key === key)
+    || { ...state.byKey.get(key), congregations: 0, responded: {} };
+}
+
+// The scope lists come from the whole population, so the dropdowns keep
+// their shape when the panel is chosen.
 const synodScopes = () => state.scopes.filter((s) => s.kind === "synod");
 const ringScopes = (synod) =>
   state.scopes.filter((s) => s.kind === "ring" && s.synod === synod);
@@ -151,7 +168,7 @@ function scopes() {
  *  bar there.
  */
 function distribution(question, scope, wave) {
-  const counts = (state.counts[question.id] || {})[scope.key];
+  const counts = (active().counts[question.id] || {})[scope.key];
   const bucket = counts && counts[wave];
   const options = (question.options || {})[wave];
   if (!bucket || !options) return null;
@@ -167,12 +184,24 @@ const categoriesOf = (question) => question.categories || [];
 
 /* ---------- render ---------- */
 
-function render() {
+async function render() {
+  // The panel lives in its own file; nothing can be drawn until it is here.
+  if (onPanel() && !state.sets.panel) {
+    el("chart").innerHTML = `<p class="empty">Besig om die gemeentes te laai…</p>`;
+    try {
+      state.sets.panel = await loadJSON("panel.json");
+    } catch (e) {
+      el("chart").innerHTML = `<p class="empty">Kon nie die gemeentes laai nie.</p>`;
+      return;
+    }
+    if (!onPanel()) return;                      // the choice moved on
+  }
   const question = allQuestions().find((q) => q.id === el("question").value);
   const scopeList = scopes();
   const primary = scopeList[0];
 
   renderTiles(primary.scope);
+  renderPopulationNote();
   if (!question) return;
 
   el("chart-title").textContent = trim(question.label, 150);
@@ -219,15 +248,32 @@ function render() {
 }
 
 function renderTiles(scope) {
+  const here = rowOf(scope.key);
   const tiles = [`<div class="tile"><div class="k">Gemeentes</div>
-     <div class="v">${scope.congregations}</div><div class="s">in hierdie keuse</div></div>`];
+     <div class="v">${here.congregations}</div><div class="s">${
+       onPanel() ? "wat elke jaar geantwoord het" : "in hierdie keuse"}</div></div>`];
   WAVES.forEach((wave) => {
-    const n = scope.responded[wave] || 0;
-    const pct = scope.congregations ? Math.round((100 * n) / scope.congregations) : 0;
+    const n = here.responded[wave] || 0;
+    const pct = here.congregations ? Math.round((100 * n) / here.congregations) : 0;
     tiles.push(`<div class="tile"><div class="k">${wave} deelname</div>
       <div class="v">${n}</div><div class="s">${pct}% van gemeentes</div></div>`);
   });
   el("tiles").innerHTML = tiles.join("");
+}
+
+/** Said once, above the question's own notes, because it changes every
+    number on the page. */
+function renderPopulationNote() {
+  if (!onPanel()) { el("population-note").innerHTML = ""; return; }
+  const total = state.sets.panel.congregations;
+  const here = rowOf(scopes()[0].scope.key).congregations;
+  el("population-note").innerHTML =
+    `<p class="note"><strong>Net gemeentes wat elke jaar geantwoord het.</strong>
+     ${total} gemeentes het die vraelys in ${WAVES.join(", ")} almal ingevul${
+       here === total ? "" : `, en ${here} daarvan val in hierdie keuse`}.
+     'n Verskil tussen die jare is dan 'n verskil by dieselfde gemeentes, nie
+     'n verskil in wie geantwoord het nie — teen die prys van 'n kleiner
+     basis.</p>`;
 }
 
 function renderLegend(series) {
@@ -339,18 +385,20 @@ async function renderNumeric(question, scopeList) {
   el("chart").innerHTML = `<p class="empty">Besig om die getalle te laai…</p>`;
   renderFooter(question);
 
-  if (!state.numericStats) {
+  const set = active();
+  if (!set.numericStats) {
     try {
-      state.numericStats = (await loadJSON("numeric.json")).stats;
+      set.numericStats = onPanel() ? state.sets.panel.numeric
+        : (await loadJSON("numeric.json")).stats;
     } catch (e) {
       el("chart").innerHTML = `<p class="empty">Kon nie die getalle laai nie.</p>`;
       return;
     }
   }
   // The selection can have moved while the file was in flight.
-  if (el("question").value !== question.id) return;
+  if (el("question").value !== question.id || set !== active()) return;
 
-  const stats = state.numericStats[question.id] || {};
+  const stats = set.numericStats[question.id] || {};
   const at = (scope, wave) => (stats[scope.key] || {})[wave] || null;
   const waves = WAVES.filter((w) => scopeList.some((sc) => at(sc.scope, w)));
   if (!waves.length) {

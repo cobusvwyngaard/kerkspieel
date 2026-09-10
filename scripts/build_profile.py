@@ -189,6 +189,111 @@ def load_indicators(path, questions):
     return resolved
 
 
+def profile_set(indicators, waves, scope_rows, counts):
+    """Every scope's indicator percentages and quality scores, for one
+    population -- either everyone who answered, or only the congregations
+    that answered in every wave."""
+    # share[indicator][scope][wave] -> [responding congregations, percent]
+    share = {}
+    for ind in indicators:
+        scoped = counts.get(ind["question"], {})
+        rows = {}
+        for scope, by_wave in scoped.items():
+            for wave, bucket in by_wave.items():
+                slots = ind["slots"].get(wave)
+                n = sum(bucket)
+                if not n or slots is None:
+                    continue
+                positive = sum(bucket[i] for i in slots)
+                rows.setdefault(scope, {})[wave] = [n, round(100 * positive / n, 1)]
+        share[ind["key"]] = rows
+
+    # What an average ring looks like, indicator by indicator and wave by
+    # wave. Rings are the reference for every scope, so a synod's score and
+    # a ring's score mean the same thing -- though a synod averages over its
+    # rings, which pulls it towards the middle.
+    ring_keys = [s["key"] for s in scope_rows if s["kind"] == "ring"]
+    reference, ladder = {}, {}
+    for ind in indicators:
+        rows = share[ind["key"]]
+        for wave in waves:
+            values = sorted(rows[k][wave][1] for k in ring_keys
+                            if k in rows and wave in rows[k]
+                            and rows[k][wave][0] >= MIN_REFERENCE)
+            if values:
+                ladder.setdefault(wave, {})[ind["key"]] = values
+            if len(values) < 3:
+                continue
+            spread = statistics.pstdev(values)
+            if spread <= 0:
+                continue
+            reference.setdefault(wave, {})[ind["key"]] = [
+                round(statistics.fmean(values), 1), round(spread, 2), len(values)]
+
+    def score_of(key, scope, wave):
+        row = share[key].get(scope, {}).get(wave)
+        ref = reference.get(wave, {}).get(key)
+        if not row or not ref:
+            return None
+        return round(clamp(5 + POINTS_PER_SD * (row[1] - ref[0]) / ref[1], 1, 10), 1)
+
+    def standing(key, scope, wave):
+        """Share of reference rings this scope is above, 0 to 100."""
+        row = share[key].get(scope, {}).get(wave)
+        values = ladder.get(wave, {}).get(key)
+        if not row or not values:
+            return None
+        below = sum(1 for v in values if v < row[1])
+        same = sum(1 for v in values if v == row[1])
+        return round(100 * (below + same / 2) / len(values))
+
+    by_quality = {}
+    for ind in indicators:
+        by_quality.setdefault(ind["quality"], []).append(ind)
+
+    data, scores = {}, {}
+    for scope in [s["key"] for s in scope_rows]:
+        for wave in waves:
+            cells = {ind["key"]: share[ind["key"]][scope][wave]
+                     for ind in indicators
+                     if wave in share[ind["key"]].get(scope, {})}
+            if not cells:
+                continue
+            data.setdefault(scope, {})[wave] = cells
+            marks = {}
+            for quality, members in by_quality.items():
+                got = [score_of(m["key"], scope, wave) for m in members]
+                got = [g for g in got if g is not None]
+                pcts = [cells[m["key"]][1] for m in members if m["key"] in cells]
+                ranks = [standing(m["key"], scope, wave) for m in members]
+                ranks = [r for r in ranks if r is not None]
+                if got:
+                    marks[quality] = [round(statistics.fmean(got), 1),
+                                      round(statistics.fmean(pcts), 1), len(got),
+                                      round(statistics.fmean(ranks)) if ranks else None]
+            scores.setdefault(scope, {})[wave] = marks
+
+    # What a score means, in bands read off the spread the scores actually
+    # took. Stated here rather than in the page, so the wording cannot drift
+    # from the numbers.
+    ring_scores = sorted(v[0] for key in scores if key in set(ring_keys)
+                         for wave_marks in scores[key].values()
+                         for v in wave_marks.values())
+    return {
+        "scopes": scope_rows,
+        "data": data,
+        "scores": scores,
+        "reference": reference,
+        "bands": score_bands(ring_scores),
+        "scoreSpread": {"n": len(ring_scores),
+                        "p10": pick(ring_scores, 0.10),
+                        "p25": pick(ring_scores, 0.25),
+                        "median": pick(ring_scores, 0.50),
+                        "p75": pick(ring_scores, 0.75),
+                        "p90": pick(ring_scores, 0.90)},
+    }
+
+
 def normalise(text):
     return re.sub(r"\s+", " ", text).strip().lower()
 
@@ -269,124 +374,26 @@ def main():
     print(f"indicators: {len(indicators)} over "
           f"{len({i['quality'] for i in indicators})} qualities")
 
-    # share[indicator][scope][wave] -> [responding congregations, percent]
-    share = {}
-    for ind in indicators:
-        scoped = counts.get(ind["question"], {})
-        rows = {}
-        for scope, by_wave in scoped.items():
-            for wave, bucket in by_wave.items():
-                slots = ind["slots"].get(wave)
-                n = sum(bucket)
-                if not n or slots is None:
-                    continue
-                positive = sum(bucket[i] for i in slots)
-                rows.setdefault(scope, {})[wave] = [n, round(100 * positive / n, 1)]
-        share[ind["key"]] = rows
+    panel_path = in_dir / "panel.json"
+    panel = json.loads(panel_path.read_text(encoding="utf-8")) \
+        if panel_path.exists() else None
 
-    # What an average ring looks like, indicator by indicator and wave by
-    # wave. Rings are the reference for every scope, so a synod's score and
-    # a ring's score mean the same thing -- though a synod averages over its
-    # rings, which pulls it towards the middle.
-    ring_keys = [s["key"] for s in aggregates["scopes"] if s["kind"] == "ring"]
-    reference = {}
-    for ind in indicators:
-        rows = share[ind["key"]]
-        for wave in waves:
-            values = [rows[k][wave][1] for k in ring_keys
-                      if k in rows and wave in rows[k]
-                      and rows[k][wave][0] >= MIN_REFERENCE]
-            if len(values) < 3:
-                continue
-            spread = statistics.pstdev(values)
-            if spread <= 0:
-                continue
-            reference.setdefault(wave, {})[ind["key"]] = [
-                round(statistics.fmean(values), 1), round(spread, 2), len(values)]
-
-    def score_of(key, scope, wave):
-        row = share[key].get(scope, {}).get(wave)
-        ref = reference.get(wave, {}).get(key)
-        if not row or not ref:
-            return None
-        return round(clamp(5 + POINTS_PER_SD * (row[1] - ref[0]) / ref[1], 1, 10), 1)
-
-    # The percentage every reference ring reached, per indicator and wave,
-    # so a scope can be told where it stands among them in plain terms.
-    ladder = {}
-    for ind in indicators:
-        rows = share[ind["key"]]
-        for wave in waves:
-            values = sorted(rows[k][wave][1] for k in ring_keys
-                            if k in rows and wave in rows[k]
-                            and rows[k][wave][0] >= MIN_REFERENCE)
-            if values:
-                ladder.setdefault(wave, {})[ind["key"]] = values
-
-    def standing(key, scope, wave):
-        """Share of reference rings this scope is above, 0 to 100."""
-        row = share[key].get(scope, {}).get(wave)
-        values = ladder.get(wave, {}).get(key)
-        if not row or not values:
-            return None
-        below = sum(1 for v in values if v < row[1])
-        same = sum(1 for v in values if v == row[1])
-        return round(100 * (below + same / 2) / len(values))
-
-    by_quality = {}
-    for ind in indicators:
-        by_quality.setdefault(ind["quality"], []).append(ind)
-
-    scopes = [s["key"] for s in aggregates["scopes"]]
-    data, scores = {}, {}
-    for scope in scopes:
-        for wave in waves:
-            cells = {ind["key"]: share[ind["key"]][scope][wave]
-                     for ind in indicators
-                     if wave in share[ind["key"]].get(scope, {})}
-            if not cells:
-                continue
-            data.setdefault(scope, {})[wave] = cells
-            marks = {}
-            for quality, members in by_quality.items():
-                got = [score_of(m["key"], scope, wave) for m in members]
-                got = [g for g in got if g is not None]
-                pcts = [cells[m["key"]][1] for m in members if m["key"] in cells]
-                ranks = [standing(m["key"], scope, wave) for m in members]
-                ranks = [r for r in ranks if r is not None]
-                if got:
-                    marks[quality] = [round(statistics.fmean(got), 1),
-                                      round(statistics.fmean(pcts), 1), len(got),
-                                      round(statistics.fmean(ranks)) if ranks else None]
-            scores.setdefault(scope, {})[wave] = marks
-
-    # What a score means, in bands read off the spread the scores actually
-    # took. Stated here rather than in the page, so the wording cannot drift
-    # from the numbers.
-    ring_scores = sorted(v[0] for key in scores if key in set(ring_keys)
-                         for wave_marks in scores[key].values()
-                         for v in wave_marks.values())
-    bands = score_bands(ring_scores)
+    sets = {"all": profile_set(indicators, waves, aggregates["scopes"], counts)}
+    if panel:
+        sets["panel"] = profile_set(indicators, waves, panel["scopes"],
+                                    panel["counts"])
+        print(f"panel: {panel['congregations']} congregations answered every wave")
 
     payload = {
         "waves": waves,
-        "bands": bands,
-        "scoreSpread": {"n": len(ring_scores),
-                        "p10": pick(ring_scores, 0.10),
-                        "p25": pick(ring_scores, 0.25),
-                        "median": pick(ring_scores, 0.50),
-                        "p75": pick(ring_scores, 0.75),
-                        "p90": pick(ring_scores, 0.90)},
-        "scopes": aggregates["scopes"],
+        "sets": sets,
+        "panelCongregations": panel["congregations"] if panel else 0,
         "groups": GROUPS,
         "qualities": QUALITIES,
         "indicators": [{k: v for k, v in ind.items() if k != "slots"}
                        for ind in indicators],
-        "reference": reference,
         "minReference": MIN_REFERENCE,
         "pointsPerSd": POINTS_PER_SD,
-        "data": data,
-        "scores": scores,
     }
     named = {q["key"] for q in QUALITIES}
     missing = {i["quality"] for i in indicators} - named
@@ -400,10 +407,11 @@ def main():
     print(f"  {path}  {path.stat().st_size / 1e6:.2f} MB "
           f"({packed / 1e6:.2f} MB gzipped)")
 
-    national = scores.get(NATIONAL, {}).get(waves[-1], {})
-    print(f"scopes scored: {len(scores)}   "
-          f"reference rings in {waves[-1]}: "
-          f"{max((v[2] for v in reference.get(waves[-1], {}).values()), default=0)}")
+    national = sets["all"]["scores"].get(NATIONAL, {}).get(waves[-1], {})
+    for name, block in sets.items():
+        print(f"{name}: {len(block['scores'])} scopes scored, "
+              f"{max((v[2] for v in block['reference'].get(waves[-1], {}).values()), default=0)} "
+              f"reference rings in {waves[-1]}")
     for q in QUALITIES:
         row = national.get(q["key"])
         if row:

@@ -94,47 +94,55 @@ def main():
     offered = [q for q in offered if q["id"] not in set(dropped)]
     values_of = {qid: v for qid, v in values_of.items() if qid not in set(dropped)}
 
-    # counts[qid][scope][wave] -> [count per option, in the question's order]
-    counts = collections.defaultdict(lambda: collections.defaultdict(dict))
-    # values[qid][scope][wave] -> every congregation's number, for the
-    # counts the survey asks for (members, baptisms, attendance)
-    values = collections.defaultdict(lambda: collections.defaultdict(
-        lambda: collections.defaultdict(list)))
-    responded = collections.defaultdict(collections.Counter)
-    for row in responses:
-        keys = scopes_of.get(row["code"])
-        if not keys:
-            continue
-        for key in keys:
-            responded[key][row["wave"]] += 1
-        for qid, value in row["values"].items():
-            if qid in numeric_ids:
-                if isinstance(value, (int, float)) and value >= 0:
-                    for key in keys:
-                        values[qid][key][row["wave"]].append(value)
+    def tally(rows):
+        """Count a set of responses into scopes, options and numbers."""
+        # counts[qid][scope][wave] -> [count per option, in the question's order]
+        counts = collections.defaultdict(lambda: collections.defaultdict(dict))
+        # values[qid][scope][wave] -> every congregation's number, for the
+        # counts the survey asks for (members, baptisms, attendance)
+        values = collections.defaultdict(lambda: collections.defaultdict(
+            lambda: collections.defaultdict(list)))
+        responded = collections.defaultdict(collections.Counter)
+        for row in rows:
+            keys = scopes_of.get(row["code"])
+            if not keys:
                 continue
-            options = (values_of.get(qid) or {}).get(row["wave"])
-            if not options or value not in options:
-                continue
-            if (qid, row["wave"]) in suspect:
-                continue
-            slot = options.index(value)
             for key in keys:
-                bucket = counts[qid][key].setdefault(row["wave"], [0] * len(options))
-                bucket[slot] += 1
+                responded[key][row["wave"]] += 1
+            for qid, value in row["values"].items():
+                if qid in numeric_ids:
+                    if isinstance(value, (int, float)) and value >= 0:
+                        for key in keys:
+                            values[qid][key][row["wave"]].append(value)
+                    continue
+                options = (values_of.get(qid) or {}).get(row["wave"])
+                if not options or value not in options:
+                    continue
+                if (qid, row["wave"]) in suspect:
+                    continue
+                slot = options.index(value)
+                for key in keys:
+                    bucket = counts[qid][key].setdefault(row["wave"], [0] * len(options))
+                    bucket[slot] += 1
+        return counts, values, responded
 
-    scopes = [{"key": NATIONAL, "kind": "national", "name": "Algemene Sinode",
-               "synod": "", "congregations": members[NATIONAL],
-               "responded": dict(responded[NATIONAL])}]
-    for key in sorted(members):
-        if key == NATIONAL:
-            continue
-        kind, _, rest = key.partition(":")
-        synod, _, ring = rest.partition("|")
-        scopes.append({"key": key, "kind": "ring" if kind == "r" else "synod",
-                       "name": ring or synod, "synod": synod,
-                       "congregations": members[key],
-                       "responded": dict(responded[key])})
+    def scope_list(responded, membership):
+        rows = [{"key": NATIONAL, "kind": "national", "name": "Algemene Sinode",
+                 "synod": "", "congregations": membership[NATIONAL],
+                 "responded": dict(responded[NATIONAL])}]
+        for key in sorted(membership):
+            if key == NATIONAL:
+                continue
+            kind, _, rest = key.partition(":")
+            synod, _, ring = rest.partition("|")
+            rows.append({"key": key, "kind": "ring" if kind == "r" else "synod",
+                         "name": ring or synod, "synod": synod,
+                         "congregations": membership[key],
+                         "responded": dict(responded[key])})
+        return rows
+
+    counts, values, responded = tally(responses)
+    scopes = scope_list(responded, members)
 
     payload = {
         "waves": list(WAVES),
@@ -164,6 +172,34 @@ def main():
     }
     write(out_dir / "numeric.json", numeric_payload)
     print(f"numeric questions: {len(numeric_payload['questions'])}")
+
+    # The same tally over the congregations that answered in every wave.
+    # Comparing 2018 with 2026 otherwise compares two different sets of
+    # congregations as much as two points in time: three quarters answer
+    # each wave, but not the same three quarters.
+    answered = collections.defaultdict(set)
+    for row in responses:
+        answered[row["code"]].add(row["wave"])
+    panel = {code for code, waves in answered.items()
+             if len(waves) == len(WAVES) and code in scopes_of}
+    panel_members = collections.Counter()
+    for code in panel:
+        for key in scopes_of[code]:
+            panel_members[key] += 1
+    panel_counts, panel_values, panel_responded = tally(
+        [r for r in responses if r["code"] in panel])
+    write(out_dir / "panel.json", {
+        "waves": list(WAVES),
+        "congregations": len(panel),
+        "scopes": scope_list(panel_responded, panel_members),
+        "counts": {qid: dict(scoped) for qid, scoped in panel_counts.items()},
+        "numeric": {qid: {key: {wave: summarise(nums)
+                                for wave, nums in sorted(waves.items())}
+                          for key, waves in sorted(scoped.items())}
+                    for qid, scoped in sorted(panel_values.items())},
+    })
+    print(f"panel: {len(panel)} congregations answered all "
+          f"{len(WAVES)} waves, in {sum(1 for k in panel_members if k.startswith('r:'))} rings")
     return 0
 
 

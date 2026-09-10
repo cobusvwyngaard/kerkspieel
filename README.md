@@ -31,6 +31,19 @@ code is only meaningful together with its year, and
 
 Two further traps the pipeline handles:
 
+- **Who answers changes between waves.** About three quarters of
+  congregations answer each survey, but not the same three quarters: 1,028
+  have answered at least once and only **469 have answered all three
+  times**. A 2018-to-2026 difference is therefore partly a difference in
+  who answered. The Ringsverslag and the Kerkprofiel both carry a
+  *Gemeentes* filter that restricts the report to those 469, so a change
+  over time is a change at the same congregations. `panel.json` holds that
+  tally; the ring page fetches it only when the filter is switched on, and
+  `profile.json` carries both populations side by side. Note the panel is
+  "returned the questionnaire in every wave", not "answered every question
+  in every wave" -- an item a panel congregation skipped still shows a
+  smaller n.
+
 - **Each wave is counted against its own scale.** 2022 inserts *Gereeld*
   into grids that read *Altyd / Soms / Nooit* either side of it. Counting a
   2022 answer against 2026's shorter list dropped every *Nooit* and filed
@@ -58,7 +71,7 @@ python3 scripts/extract_options.py   # questionnaires -> response options
 python3 scripts/resolve_2026_keys.py # 2026's self-entered keys -> V03 codes
 python3 scripts/build_crosswalk.py   # match questions across waves
 python3 scripts/build_dataset.py     # -> data/build (congregation level, not published)
-python3 scripts/build_aggregates.py  # -> web/public/data/aggregates.json + numeric.json
+python3 scripts/build_aggregates.py  # -> aggregates.json, numeric.json, panel.json
 python3 scripts/build_profile.py     # -> web/public/data/profile.json
 python3 scripts/build_map.py         # -> web/public/data/map.json
 python3 scripts/build_ministers.py   # -> web/public/data/ministers.json
