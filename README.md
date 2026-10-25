@@ -98,9 +98,12 @@ the project just serves `web/public` as static assets, per
 ```toml
 name = "kerkspieel"
 compatibility_date = "2026-09-01"
+main = "worker/index.js"
 
 [assets]
 directory = "./web/public"
+binding = "ASSETS"
+run_worker_first = true
 ```
 
 This is the newer `[assets]`-based config a git-connected **Worker**
@@ -111,6 +114,28 @@ file sitting in its actual working directory — which is the project's
 identical `wrangler.toml` (with the path adjusted) lives at **both**
 the repo root and in `web/`, covering either setting rather than relying
 on knowing which one the dashboard is using.
+
+### Only one entrance is open
+
+`worker/index.js` sits in front of the assets and decides which part of
+the site answers. It currently leaves **only `/opsomming/`** open: the
+root redirects there, and every other page returns a 404 that says so.
+Nothing has been deleted -- every file is still in `web/public` and still
+deployed, it just does not answer.
+
+To open the whole site again, set `OPEN` to `null` in `worker/index.js`,
+or drop `main` and the two asset keys under it from both `wrangler.toml`
+files, which takes the worker out of the path entirely.
+
+`run_worker_first = true` is what makes this work: without it the asset
+server answers before the worker runs, and a request for a page that
+exists would never reach the gate. Verified on the real runtime with
+`npx wrangler@4 dev --local`.
+
+**It hides pages; it does not authenticate anyone.** The data files stay
+readable, because the Opsomming pages read them -- `map.json` in
+particular is congregation-level. Cloudflare Access in front of the
+project is what actually restricts who may look.
 
 If the repo picker shows **"Missing git connection,"** Cloudflare's
 GitHub App isn't authorized for this repo yet: go to

@@ -6,5 +6,14 @@
 name = "kerkspieel"
 compatibility_date = "2026-09-01"
 
+# worker/index.js decides which part of the site answers. It is the switch
+# that currently leaves only the Opsomming entrance open; remove `main` and
+# the two asset keys below it to serve everything again.
+main = "worker/index.js"
+
 [assets]
 directory = "./web/public"
+binding = "ASSETS"
+# Without this the asset server answers before the worker ever runs, and
+# the gate would never see a request for a page that exists.
+run_worker_first = true
