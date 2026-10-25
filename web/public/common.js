@@ -29,12 +29,16 @@ function renderNav() {
   const here = stem(location.pathname);
   const nav = el("site-nav");
   if (!nav) return;
-  nav.innerHTML = PAGES.map((p) =>
+  // A page can carry its own navigation. The Opsomming entrance does, so
+  // that it offers only its own reports.
+  nav.innerHTML = (window.SITE_PAGES || PAGES).map((p) =>
     `<a href="${p.href}"${stem(p.href) === here ? ' aria-current="page"' : ""}>${p.label}</a>`
   ).join("");
 }
 
-const loadJSON = (name) => fetch(`data/${name}`).then((r) => {
+// Pages in a subdirectory set DATA_BASE so they read the one copy of the
+// data rather than a second one beside them.
+const loadJSON = (name) => fetch(`${window.DATA_BASE || "data/"}${name}`).then((r) => {
   if (!r.ok) throw new Error(`${name}: HTTP ${r.status}`);
   return r.json();
 });

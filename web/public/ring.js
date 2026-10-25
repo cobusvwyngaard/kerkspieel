@@ -8,7 +8,7 @@ const WAVES = ["2018", "2022", "2026"];
 // Below this, a single congregation moves the share by 10 points or more.
 const SMALL_N = 10;
 const ALL_SYNODS = "__all_synods__";
-const state = { scopes: [], byKey: new Map(), questions: [], numeric: [],
+const state = { scopes: [], byKey: new Map(), questions: [], numeric: [], set: null,
                 // Two populations: everyone who answered a given wave, and
                 // only the congregations that answered in every wave. The
                 // panel is a separate file, fetched the first time it is
@@ -16,13 +16,24 @@ const state = { scopes: [], byKey: new Map(), questions: [], numeric: [],
                 sets: { all: null, panel: null } };
 
 async function boot() {
-  const payload = await fetch("data/aggregates.json").then((r) => r.json());
+  const payload = await loadJSON("aggregates.json");
   state.scopes = payload.scopes;
   state.byKey = new Map(payload.scopes.map((s) => [s.key, s]));
   state.questions = payload.questions;
   state.numeric = payload.numericQuestions || [];
   state.sets.all = { scopes: payload.scopes, counts: payload.counts,
                      numericStats: null };
+
+  // The Opsomming entrance offers one fixed list of questions instead of
+  // the whole questionnaire, and pins each wave to its own variable code.
+  if (window.QUESTION_SET) {
+    try {
+      state.set = await loadJSON(`${window.QUESTION_SET}.json`);
+    } catch (e) {
+      failed(e.message);
+      return;
+    }
+  }
 
   fillSynods();
   fillQuestions();
@@ -71,10 +82,28 @@ const RECOMMENDED = [
   /^Oorweeg vir voortbestaan: diensleraar$/i,
 ];
 
-/** Every question the page can draw, counted ones included. */
-const allQuestions = () => state.questions.concat(state.numeric);
+/** Every question the page can draw, counted ones included.
+ *
+ *  Under a fixed set, an entry stands in for a question: it carries each
+ *  wave's own options and names the published question that holds that
+ *  wave's column, which need not be the same one for every wave.
+ */
+const allQuestions = () => state.set
+  ? state.set.entries.map((e) => ({
+      id: e.key, label: e.title, codes: e.codes, sources: e.sources,
+      comparable: e.kind === "number" ? "numeric"
+        : new Set(Object.values(e.optionCounts || {})).size > 1 ? "scale-changed"
+        : e.waves.length === 1 ? "single-wave" : "yes",
+      options: e.kind === "number" ? null : e.options,
+      optionCounts: e.optionCounts, categories: e.categories,
+    }))
+  : state.questions.concat(state.numeric);
 
 const isNumeric = (q) => q != null && !q.options;
+
+/** Which published question holds this wave's column. */
+const sourceOf = (question, wave) =>
+  (question.sources && question.sources[wave]) || question.id;
 
 function recommendedQuestions() {
   const found = [];
@@ -89,6 +118,7 @@ function recommendedQuestions() {
 }
 
 function option(q) {
+  if (!q) return "";
   const mark = isNumeric(q) ? " №"
     : q.comparable === "scale-changed" ? " ⚠"
     : q.comparable === "single-wave" ? ` (${Object.keys(q.codes)[0]})` : "";
@@ -96,6 +126,15 @@ function option(q) {
 }
 
 function fillQuestions() {
+  // A fixed set keeps the report's own grouping instead of the dropdown's.
+  if (state.set) {
+    const byKey = new Map(allQuestions().map((q) => [q.id, q]));
+    el("question").innerHTML = state.set.sections.map((section) =>
+      `<optgroup label="${escapeHtml(section.label)}">` +
+      section.keys.map((key) => option(byKey.get(key))).join("") +
+      `</optgroup>`).join("");
+    return;
+  }
   const recommended = recommendedQuestions();
   const chosen = new Set(recommended.map((q) => q.id));
   const rest = state.questions
@@ -168,7 +207,7 @@ function scopes() {
  *  bar there.
  */
 function distribution(question, scope, wave) {
-  const counts = (active().counts[question.id] || {})[scope.key];
+  const counts = (active().counts[sourceOf(question, wave)] || {})[scope.key];
   const bucket = counts && counts[wave];
   const options = (question.options || {})[wave];
   if (!bucket || !options) return null;
@@ -398,8 +437,8 @@ async function renderNumeric(question, scopeList) {
   // The selection can have moved while the file was in flight.
   if (el("question").value !== question.id || set !== active()) return;
 
-  const stats = set.numericStats[question.id] || {};
-  const at = (scope, wave) => (stats[scope.key] || {})[wave] || null;
+  const at = (scope, wave) =>
+    ((set.numericStats[sourceOf(question, wave)] || {})[scope.key] || {})[wave] || null;
   const waves = WAVES.filter((w) => scopeList.some((sc) => at(sc.scope, w)));
   if (!waves.length) {
     el("chart").innerHTML = `<p class="empty">Geen getalle vir hierdie keuse nie.</p>`;
@@ -449,7 +488,8 @@ function renderFooter(question) {
   const codes = WAVES.filter((w) => question.codes[w])
     .map((w) => `${w}: ${question.codes[w]}`).join(" · ");
   el("footer").textContent =
-    `Veranderlike ${codes}. Kodes word elke opname hernommer, so 'n kode geld net saam met sy jaar.`;
+    `Veranderlike ${codes}. Kodes word elke opname hernommer, so 'n kode geld net saam met sy jaar.` +
+    (state.set ? `  ${state.set.source}.` : "");
 }
 
 /* ---------- helpers ---------- */

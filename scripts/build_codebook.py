@@ -38,6 +38,16 @@ SECTION = re.compile(r"^\s*(\d{1,2})\s{2,}([A-ZŉÊÈÉÎÔÛ][A-ZŉÊÈÉÎÔÛ
 QNUM = re.compile(r"^\s*(\d{1,2}\.\d{1,2})\.?\s+(.*)$")
 GENDER_GRID = re.compile(r"\bMans\b.*\bVrou", re.I)
 TRAILING_SCALE = re.compile(r"(\s+\d+){1,8}\s*$")
+# A line of nothing but the scale's digits, stranded between the two halves
+# of a wrapped grid row.
+ONLY_DIGITS = re.compile(r"^\s*\d(\s+\d)*\s*$")
+# The words a grid header is made of. A header is not part of any row's text.
+HEADER_WORDS = {"ja", "nee", "altyd", "gereeld", "soms", "nooit", "nie",
+                "mans", "vrouens", "vroue", "getal", "geen", "geringe",
+                "belangrike", "swakker", "dieselfde", "beter", "meer",
+                "minder", "n.v.t.", "%"}
+# How many lines above its code a grid row's text may start.
+WRAP_REACH = 3
 
 ADMIN_COLUMNS = {"Gemeentenaam", "RING NAAM", "DP", "BL", "V00 (Ring)"}
 # Export plumbing in the 2026 file, not questions.
@@ -124,6 +134,12 @@ def parse_questionnaire(path):
         if not found:
             continue
         item = TRAILING_SCALE.sub("", clean(line)).strip()
+        # A grid row wraps: its text starts a line or two above the line
+        # carrying the code, sometimes with the scale's digits stranded in
+        # between. Taking only the code's own line leaves three different
+        # questions all called "... kommunikeer?", and the crosswalk then
+        # has nothing to match them on.
+        item = " ".join(wrapped_above(lines, i, stem) + [item]).strip()
         # A Mans/Vrouens grid prints one code for a two-column table; the
         # data splits it into an "a" (mans) and "b" (vrouens) column.
         split = gendered and len(found) == 1 and not found[0][-1].isalpha()
@@ -140,6 +156,30 @@ def parse_questionnaire(path):
                          "stem": stem,
                          "item": (item + suffix) if item != stem else suffix.strip()})
     return rows
+
+
+def wrapped_above(lines, index, stem):
+    """The earlier half of a grid row whose code sits on a later line."""
+    collected = []
+    for j in range(index - 1, max(-1, index - 1 - WRAP_REACH), -1):
+        line = lines[j]
+        text = clean(line).strip()
+        if not text:
+            break
+        if ONLY_DIGITS.match(line):
+            continue                       # the stranded scale; keep walking
+        if (CODE.search(line) or QNUM.match(line) or SECTION.match(line)
+                or GENDER_GRID.search(line)):
+            break
+        words = [w.strip(":").lower() for w in text.split()]
+        if words and all(w in HEADER_WORDS or w.isdigit() for w in words):
+            break                          # a grid header belongs to no row
+        if text and stem.startswith(text):
+            break                          # the question's own stem
+        if len(line) - len(line.lstrip()) < 4:
+            break                          # not indented like a grid row
+        collected.insert(0, text)
+    return collected
 
 
 def read_corrections(path, year):

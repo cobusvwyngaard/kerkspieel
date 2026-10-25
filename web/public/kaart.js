@@ -11,11 +11,17 @@ const NO_ANSWER = "#9a9a95";
 const ALL_SYNODS = "__all__";
 const SA_VIEW = [[-35.2, 15.5], [-21.5, 33.5]];
 
-const state = { data: null, map: null, layer: null, pins: [], legend: [] };
+const state = { data: null, map: null, layer: null, pins: [], legend: [],
+                set: null };
 
 async function boot() {
   try {
     state.data = await loadJSON("map.json");
+    // The Opsomming entrance maps one fixed list of questions, each wave
+    // pinned to its own variable code.
+    if (window.QUESTION_SET) {
+      state.set = await loadJSON(`${window.QUESTION_SET}.json`);
+    }
   } catch (e) {
     failed(e.message);
     return;
@@ -44,7 +50,30 @@ function initMap() {
 
 const KIND_LABEL = { binary: "Ja/Nee", ordinal: "Skaal", numeric: "Getal" };
 
+/** Under a fixed set, a question as the map needs it: the published
+ *  question that holds this wave's column, relabelled and re-optioned to
+ *  what the set says that column is. */
+function entryAsQuestion(entry, wave) {
+  const source = state.data.questions.find((q) => q.id === entry.sources[wave]);
+  if (!source) return null;
+  const options = (entry.options || {})[wave];
+  return { ...source, id: entry.key, label: entry.title,
+           codes: entry.codes, source: source.id,
+           options: options ? { [wave]: options.map((o, i) => ({ ...o, rank: i + 1 })) }
+                            : source.options };
+}
+
 function fillQuestions() {
+  if (state.set) {
+    el("question").innerHTML = state.set.sections.map((section) => {
+      const keys = section.keys.filter((k) => entryOf(k) && entryOf(k).mappable.length);
+      if (!keys.length) return "";
+      return `<optgroup label="${escapeHtml(section.label)}">` +
+        keys.map((k) => `<option value="${k}">${
+          escapeHtml(trim(entryOf(k).title, 95))}</option>`).join("") + `</optgroup>`;
+    }).join("");
+    return;
+  }
   // Grouped by how they draw, because that is what decides whether the
   // reader is looking at colours or at pin sizes.
   const groups = { binary: [], ordinal: [], numeric: [] };
@@ -57,13 +86,27 @@ function fillQuestions() {
       `</optgroup>`).join("");
 }
 
+const entryOf = (key) =>
+  state.set && state.set.entries.find((e) => e.key === key);
+
 function current() {
+  if (state.set) {
+    const entry = entryOf(el("question").value);
+    return entry ? entryAsQuestion(entry, el("wave").value || entry.mappable[0]) : null;
+  }
   return state.data.questions.find((q) => q.id === el("question").value);
 }
 
+function valuesOf(question) {
+  return state.data.values[question.source || question.id] || {};
+}
+
 function fillWaves() {
-  const q = current();
-  const have = state.data.waves.filter((w) => (state.data.values[q.id] || {})[w]);
+  const entry = state.set && entryOf(el("question").value);
+  const chosen = current();
+  const have = entry
+    ? entry.mappable.slice()
+    : state.data.waves.filter((w) => chosen && valuesOf(chosen)[w]);
   const keep = el("wave").value;
   el("wave").innerHTML = have.map((w) =>
     `<option value="${w}">${w}</option>`).join("");
@@ -123,7 +166,7 @@ function render() {
   const question = current();
   const wave = el("wave").value;
   const synod = el("synod").value;
-  const column = (state.data.values[question.id] || {})[wave];
+  const column = valuesOf(question)[wave];
 
   el("map-title").textContent = trim(question.label, 150);
   el("map-sub").textContent =

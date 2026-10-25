@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="af">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ringsverslag · Gemeente-opname 2026</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<header>
+  <h1>Ringsverslag</h1>
+  <p>Opsomming van enkele tabelle · Gemeente-opname 2026 · Taakspan Navorsing</p>
+  <nav class="site-nav" id="site-nav" aria-label="Verslae"></nav>
+</header>
+
+<main>
+  <div class="filters">
+    <div class="field">
+      <label for="synod">Sinode</label>
+      <select id="synod"></select>
+    </div>
+    <div class="field">
+      <label for="ring">Ring</label>
+      <select id="ring"></select>
+    </div>
+    <div class="field">
+      <label for="population">Gemeentes</label>
+      <select id="population">
+        <option value="all">Almal wat geantwoord het</option>
+        <option value="panel">Net dié wat elke jaar geantwoord het</option>
+      </select>
+    </div>
+    <div class="field field--wide">
+      <label for="question">Vraag</label>
+      <select id="question"></select>
+    </div>
+  </div>
+
+  <section class="tiles" id="tiles"></section>
+  <div id="population-note"></div>
+
+  <section class="panel">
+    <h2 id="chart-title">—</h2>
+    <p class="sub" id="chart-sub"></p>
+    <div id="note-slot"></div>
+    <div class="legend" id="legend"></div>
+    <div class="scroller"><div id="chart"></div></div>
+  </section>
+
+  <section class="panel">
+    <h2>Vergelyking</h2>
+    <p class="sub" id="table-sub">Persentasie van gemeentes wat elke opsie gekies het, per vlak en per jaar.</p>
+    <div class="scroller"><table id="table"></table></div>
+  </section>
+</main>
+
+<footer id="footer"></footer>
+<div class="tooltip" id="tooltip" role="status" aria-live="polite"></div>
+<script>
+  // This entrance stands on its own: its navigation lists only its own
+  // pages, it reads the one copy of the data a directory up, and it offers
+  // only the questions BYLAAG 3 summarises.
+  window.DATA_BASE = "../data/";
+  window.QUESTION_SET = "opsomming";
+  window.SITE_PAGES = [
+    { href: "index.html", label: "Oorsig" },
+    { href: "ring.html", label: "Ringsverslag" },
+    { href: "kaart.html", label: "Kaart" },
+  ];
+</script>
+<script src="../vendor/pptxgen.bundle.js"></script>
+<script src="../common.js"></script>
+<script src="../ring.js"></script>
+</body>
+</html>

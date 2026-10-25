@@ -6,6 +6,7 @@ Four reports over the NG Kerk's own data, behind one navigation:
 |---|---|
 | `index.html` | Landing page: what the tool is and how to read it |
 | `kerkprofiel.html` | Nine qualities of church life, the NCLS vitality framework read off this data |
+| `opsomming/` | A separate entrance: Bylaag 3's tables only, with its own navigation |
 | `ring.html` | Ringsverslag — a ring against its synod and the whole church, across three survey waves; the published report's own four questions lead the dropdown |
 | `kaart.html` | Congregations on a map, coloured or sized by their own answer |
 | `predikante.html` | Ministers by credential category, per congregation, ring, synod or nationally |
@@ -73,6 +74,7 @@ python3 scripts/build_crosswalk.py   # match questions across waves
 python3 scripts/build_dataset.py     # -> data/build (congregation level, not published)
 python3 scripts/build_aggregates.py  # -> aggregates.json, numeric.json, panel.json
 python3 scripts/build_profile.py     # -> web/public/data/profile.json
+python3 scripts/build_opsomming.py   # -> web/public/data/opsomming.json
 python3 scripts/build_map.py         # -> web/public/data/map.json
 python3 scripts/build_ministers.py   # -> web/public/data/ministers.json
 python3 scripts/validate_pipeline.py # decode path vs the published report
@@ -306,6 +308,37 @@ Two things it is not:
   its indicators' scores. Five is the average ring. A synod is an average
   of its own rings, so its score sits closer to 5 by construction.
 
+## The Opsomming entrance
+
+`web/public/opsomming/` is a second way in: its own landing page, its own
+copy of the ring report and the map, and a navigation that lists only
+those three. It shows the questions **Bylaag 3 of the 2026 Gemeente-opname**
+summarises -- Kobus Schoeman's ten tables -- plus the counts that say how
+large a congregation is, and nothing else. It reads the same data files
+one directory up; `window.DATA_BASE`, `window.SITE_PAGES` and
+`window.QUESTION_SET` are all a page needs to set.
+
+**This is a separate entrance, not access control.** Every page sits on
+the same public origin, and someone who knows the main URL still reaches
+the main site. Cloudflare Access is what actually restricts a path.
+
+Each entry in `data/lookup/opsomming_questions.csv` names **the variable
+code in each wave** rather than a label or a question id:
+
+```
+section,title,v2018,v2022,v2026
+Tegnologie,Word e-posse gebruik om met lidmate ...,V173,V193,V135
+```
+
+That is deliberate. The crosswalk pairs one wave's rows to the next by
+wording, and where a grid's rows read alike -- the technology grid is three
+rows of "... kommunikeer?" -- it has crossed a few of them. Six of the 37
+entries therefore draw their waves from more than one published question,
+and `build_opsomming.py` stitches them back together and reports how many
+it had to. Checked against Bylaag 3's own figures, all eleven rows of its
+technology table now agree to within 0.3 points, as do its financial-position
+and congregation-direction tables.
+
 ## The ministers data
 
 The ABR registers name every minister, and the 2015-2019 and 2023 files
@@ -381,6 +414,20 @@ Ages outside 20-105 are dropped as data errors; the later files contain
 ages in the 900s.
 
 ## Still open
+
+- **Grid rows are crossed between waves where the rows read alike.** Found
+  in three places so far: the hospitality grid, the technology grid and the
+  attendance block. The cause is upstream of the crosswalk -- a grid row
+  whose text wraps reached the codebook as only its last line, so three
+  different questions arrived as "... kommunikeer?" and the matcher had
+  nothing to tell them apart. `build_codebook.py` now carries the earlier
+  lines of a wrapped row into its label: across the three questionnaires
+  213 items gained their missing front half and **not one changed in any
+  other way**. The published crosswalk still holds the old labels, because
+  rebuilding it needs the raw extracts; rerun the pipeline from
+  `build_codebook.py` once they are back in `data/raw/` and the crossed
+  rows should pair correctly. Until then the Opsomming entrance pins its
+  own codes per wave and is unaffected.
 
 - **Two rows of the 2018 hospitality grid look crossed against their
   later selves.** 2022 and 2026 ask seven items there where 2018 asks six,

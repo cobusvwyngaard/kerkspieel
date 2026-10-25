@@ -314,3 +314,18 @@ details.codes > summary:focus-visible { outline: 2px solid var(--accent); outlin
   display: inline-block; min-width: 34px; padding: 1px 6px; border-radius: 5px;
   color: #16150f; font-weight: 650; font-variant-numeric: tabular-nums;
 }
+
+/* ---------- the Opsomming entrance ---------- */
+
+#sections h3 { margin: 1.3rem 0 0.3rem; font-size: 0.98rem; }
+#sections h3:first-child { margin-top: 0.2rem; }
+.set-list { margin: 0; padding-left: 20px; }
+.set-list li {
+  font-size: 13.5px; color: var(--text-secondary); line-height: 1.55;
+  margin-bottom: 2px;
+}
+.set-codes {
+  color: var(--text-muted); font-size: 11.5px; white-space: nowrap;
+  margin-left: 6px;
+}
+.th-note { font-weight: 400; text-transform: none; letter-spacing: 0; }

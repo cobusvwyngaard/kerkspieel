@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="af">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gemeente-opname 2026 · Opsomming</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<header>
+  <h1>Gemeente-opname 2026</h1>
+  <p>Opsomming van enkele tabelle · Taakspan Navorsing</p>
+  <nav class="site-nav" id="site-nav" aria-label="Verslae"></nav>
+</header>
+
+<main>
+  <p class="lede">
+    Hierdie is die tabelle uit <strong>Bylaag 3 van die Gemeente-opname 2026</strong>,
+    saamgestel deur Kobus Schoeman, teen die volledige datastel. Elke tabel kan
+    hier vir 'n <strong>ring</strong>, 'n <strong>sinode</strong> of die hele kerk
+    gelees word, en op 'n kaart gewys word — met 2018 en 2022 langsaan waar
+    dieselfde vraag toe gevra is.
+  </p>
+
+  <section class="cards">
+    <a class="card" href="ring.html">
+      <h3>Ringsverslag</h3>
+      <p>Elke tabel se antwoorde vir 'n ring, langs sy sinode en die Algemene
+         Sinode, oor die drie opnames heen.</p>
+      <div class="card-meta" id="ring-meta">—</div>
+    </a>
+    <a class="card" href="kaart.html">
+      <h3>Kaart</h3>
+      <p>Dieselfde vrae op 'n kaart: elke gemeente gekleur of geskaal volgens
+         haar eie antwoord.</p>
+      <div class="card-meta" id="kaart-meta">—</div>
+    </a>
+  </section>
+
+  <section class="tiles" id="size-tiles"></section>
+
+  <section class="panel">
+    <h2>Hoe groot is 'n gemeente?</h2>
+    <p class="sub" id="size-sub"></p>
+    <div class="scroller"><table id="size-table"></table></div>
+  </section>
+
+  <section class="panel">
+    <h2>Wat in hierdie opsomming staan</h2>
+    <p class="sub">Die nege afdelings, en wat elkeen bevat. Kies enige van hulle
+       in die Ringsverslag of op die Kaart.</p>
+    <div id="sections"></div>
+  </section>
+
+  <div class="prose">
+    <h2>Hoe om dit te lees</h2>
+    <p>
+      <strong>Die jare is nie dieselfde gemeentes nie.</strong> Ongeveer
+      driekwart van gemeentes vul elke opname in, maar nie dieselfde driekwart
+      nie. Die Ringsverslag het 'n keuse <em>Gemeentes</em> waarmee die verslag
+      beperk kan word tot die gemeentes wat al drie kere geantwoord het — dan is
+      'n verandering 'n verandering by dieselfde gemeentes.
+    </p>
+    <p>
+      <strong>Klein getalle beteken min.</strong> 'n Ring kan vier gemeentes hê
+      wat geantwoord het. Dan skuif elke antwoord die persentasie met 25
+      persentasiepunte. Die verslae wys die getalle saam met die persentasies.
+    </p>
+    <p>
+      <strong>Elke jaar word teen sy eie skaal getel.</strong> Party vrae het
+      tussen opnames 'n antwoordopsie bygekry of verloor — 2022 voeg
+      byvoorbeeld "Gereeld" by waar 2018 en 2026 net "Altyd / Soms / Nooit"
+      aanbied. Die grafiek wys dan 'n staaf vir die jaar wat die opsie gehad het
+      en niks vir die jare wat dit nie gehad het nie.
+    </p>
+    <p>
+      <strong>Elke vraag is aan sy eie veranderlike-kode in elke jaar
+      vasgemaak.</strong> Die vraelys hernommer sy kodes elke opname, en waar 'n
+      roosters se rye eenders lees, het die outomatiese koppeling tussen jare 'n
+      paar van hulle gekruis. Die lys agter hierdie bladsy
+      (<code>data/lookup/opsomming_questions.csv</code>) noem vir elke tabel die
+      kode in 2018, 2022 en 2026 soos dit op die vraelys self staan, so hierdie
+      verslag is reg ook waar die algemene koppeling dit nie is nie. Die kodes
+      staan onderaan elke grafiek.
+    </p>
+  </div>
+</main>
+
+<footer id="footer"></footer>
+<div class="tooltip" id="tooltip" role="status" aria-live="polite"></div>
+<script>
+  window.DATA_BASE = "../data/";
+  window.QUESTION_SET = "opsomming";
+  window.SITE_PAGES = [
+    { href: "index.html", label: "Oorsig" },
+    { href: "ring.html", label: "Ringsverslag" },
+    { href: "kaart.html", label: "Kaart" },
+  ];
+</script>
+<script src="../common.js"></script>
+<script src="opsomming.js"></script>
+</body>
+</html>
