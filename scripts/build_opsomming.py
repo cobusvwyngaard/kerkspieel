@@ -30,10 +30,14 @@ import csv
 import gzip
 import json
 import pathlib
+import re
 import sys
 
 WAVES = ("2018", "2022", "2026")
 SIZE_SECTION = "Gemeentegrootte"
+# "Nee 10 KOMMENTAAR" -- the option parser runs a Ja/Nee answer into the
+# heading that follows it. The answer is still Ja or Nee.
+YES_NO = re.compile(r"^(Ja|Nee)\b.+", re.I)
 
 
 def merge_sequences(sequences):
@@ -99,7 +103,10 @@ def main():
                 codes[wave] = code
                 kinds.add(kind)
                 if kind == "choice":
-                    options[wave] = question["options"][wave]
+                    options[wave] = [
+                        {**o, "label": o["label"].split()[0]
+                         if YES_NO.match(o["label"]) else o["label"]}
+                        for o in question["options"][wave]]
             if not sources:
                 failures.append(f"  {row['title']!r}: no wave resolves")
                 continue
@@ -112,6 +119,10 @@ def main():
                 "key": f"o{len(entries):02d}",
                 "section": row["section"],
                 "title": row["title"],
+                # A caveat that belongs to this entry rather than to the
+                # chart it is drawn on -- a question whose base changed
+                # between waves, say.
+                "note": (row.get("note") or "").strip(),
                 "kind": kind,
                 "codes": codes,
                 "sources": sources,

@@ -1,39 +1,41 @@
-section,title,v2018,v2022,v2026
-Finansies,Watter van die volgende beskryf die gemeente se finansiële posisie die beste?,V111,V117,V64
-Eredienste,Erediensbywoning in die kerkgebou teenoor voor Covid-19,,V157,V94
-Eredienste,Aanlyn erediensbywoning teenoor voor Covid-19,,V158,V95
-Eredienste,Totale erediensbywoning teenoor voor Covid-19,,V159,V96
-Tegnologie,Is die lidmaatdatabasis gerekenariseerd?,V170,V190,V132
-Tegnologie,Is die boekhoustelsel gerekenariseerd?,V171,V191,V133
-Tegnologie,Het die gemeente 'n eie webwerf?,V172,V192,V134
-Tegnologie,Word e-posse gebruik om met lidmate as 'n groep te kommunikeer?,V173,V193,V135
-Tegnologie,Word sms'e of WhatsApp gebruik om met lidmate as 'n groep te kommunikeer?,V174,V194,V136
-Tegnologie,Word sosiale media gebruik om met lidmate te kommunikeer?,V175,V195,V137
-Tegnologie,Word kunsmatige intelligensie (KI) in administrasie en bediening gebruik?,,,V138
-Tegnologie,Stuur die gemeente 'n elektroniese nuusbrief uit?,V176,V196,V139
-Tegnologie,Word 'n dataprojektor tydens eredienste gebruik?,V177,V197,V140
-Tegnologie,Word dankoffers elektronies ingesamel?,V178,V198,V141
-Tegnologie,'n Selfoontoep wat spesiaal vir die gemeente ontwerp is,,,V142
-Rigting,Hoe sou u die gemeente se huidige rigting tipeer?,V160,V179,V118
-Sending,Die kultuur en ouderdom van die gemeente weerspieël die gemeenskap,V183,V217,V160
-Sending,Sendingprojekte is deel van die gewone gemeente-aktiwiteite,V184,V218,V161
-Sending,Ons gemeente is 'n missionale gemeente,V191,V225,V168
-Gasvryheid,Ons vestig 'n kultuur van gasvryheid by al ons lidmate,V210,V244,V187
-Gasvryheid,Ons soek nuwe mense op wat in die gemeenskap intrek,V211,V245,V188
-Gasvryheid,Ons het 'n program om kerklos en kerkvervreemde mense te nooi,V212,V246,V189
-Seniorbediening,Ons het 'n georganiseerde seniorbediening,V237,V273,V215
-Seniorbediening,Senior lidmate skakel in by die gewone bediening van die gemeente,V238,V274,V216
-Seniorbediening,Ons reël sosiale byeenkomste en uitstappies vir seniors,V239,V275,V217
-Seniorbediening,Senior lidmate vorm hulle eie kleingroepe vir onderlinge sorg,V240,V276,V218
-Seniorbediening,Senior lidmate het 'n eie bediening in die gemeente en na buite,V241,V277,V219
-Seniorbediening,Spesiale pastorale versorging van huisgebonde en verswakte bejaardes,V242,V278,V220
-Gemeenskap,Ons stel ons geboue tot beskikking van die gemeenskap,V206,V240,V183
-Gemeenskap,Die gemeente se betrokkenheid by gemeenskapsorganisasies,V339,V378,V318
-Gemeenskap,Die gemeente se rol by krisisse en kwessies in die gemeenskap,V340,V379,V320
-Gemeenskap,Die gemeente gee spesifiek aandag aan rassisme,V331,V370,V308
-Gemeentegrootte,Belydende lidmate,V05,V05,V02
-Gemeentegrootte,Dooplidmate,V06,V06,V03
-Gemeentegrootte,Ongedooptes,V07,V07,V04
-Gemeentegrootte,Lidmate tussen 60 en 80,V08,V08,V06
-Gemeentegrootte,Lidmate ouer as 80,V09,V09,V05
-Gemeentegrootte,Gemiddelde erediensbywoning per Sondag,V141,V153,V91
+section,title,v2018,v2022,v2026,note
+Finansies,Watter van die volgende beskryf die gemeente se finansiële posisie die beste?,V111,V117,V64,
+Eredienste,Erediensbywoning in die kerkgebou teenoor voor Covid-19,,V157,V94,
+Eredienste,Aanlyn erediensbywoning teenoor voor Covid-19,,V158,V95,
+Eredienste,Totale erediensbywoning teenoor voor Covid-19,,V159,V96,
+Tegnologie,Is die lidmaatdatabasis gerekenariseerd?,V170,V190,V132,
+Tegnologie,Is die boekhoustelsel gerekenariseerd?,V171,V191,V133,
+Tegnologie,Het die gemeente 'n eie webwerf?,V172,V192,V134,
+Tegnologie,Word e-posse gebruik om met lidmate as 'n groep te kommunikeer?,V173,V193,V135,
+Tegnologie,Word sms'e of WhatsApp gebruik om met lidmate as 'n groep te kommunikeer?,V174,V194,V136,
+Tegnologie,Word sosiale media gebruik om met lidmate te kommunikeer?,V175,V195,V137,
+Tegnologie,Word kunsmatige intelligensie (KI) in administrasie en bediening gebruik?,,,V138,
+Tegnologie,Stuur die gemeente 'n elektroniese nuusbrief uit?,V176,V196,V139,
+Tegnologie,Word 'n dataprojektor tydens eredienste gebruik?,V177,V197,V140,
+Tegnologie,Word dankoffers elektronies ingesamel?,V178,V198,V141,
+Tegnologie,'n Selfoontoep wat spesiaal vir die gemeente ontwerp is,,,V142,
+Rigting,Hoe sou u die gemeente se huidige rigting tipeer?,V160,V179,V118,
+Sending,Die kultuur en ouderdom van die gemeente weerspieël die gemeenskap,V183,V217,V160,
+Sending,Sendingprojekte is deel van die gewone gemeente-aktiwiteite,V184,V218,V161,
+Sending,Ons gemeente is 'n missionale gemeente,V191,V225,V168,
+Gasvryheid,Ons vestig 'n kultuur van gasvryheid by al ons lidmate,V210,V244,V187,
+Gasvryheid,Ons soek nuwe mense op wat in die gemeenskap intrek,V211,V245,V188,
+Gasvryheid,Ons het 'n program om kerklos en kerkvervreemde mense te nooi,V212,V246,V189,
+Seniorbediening,Ons het 'n georganiseerde seniorbediening,V237,V273,V215,
+Seniorbediening,Senior lidmate skakel in by die gewone bediening van die gemeente,V238,V274,V216,
+Seniorbediening,Ons reël sosiale byeenkomste en uitstappies vir seniors,V239,V275,V217,
+Seniorbediening,Senior lidmate vorm hulle eie kleingroepe vir onderlinge sorg,V240,V276,V218,
+Seniorbediening,Senior lidmate het 'n eie bediening in die gemeente en na buite,V241,V277,V219,
+Seniorbediening,Spesiale pastorale versorging van huisgebonde en verswakte bejaardes,V242,V278,V220,
+Gemeenskap,Ons stel ons geboue tot beskikking van die gemeenskap,V206,V240,V183,
+Gemeenskap,Die gemeente se betrokkenheid by gemeenskapsorganisasies,V339,V378,V318,
+Gemeenskap,Die gemeente se rol by krisisse en kwessies in die gemeenskap,V340,V379,V320,
+Gemeenskap,Die gemeente gee spesifiek aandag aan rassisme,V331,V370,V308,
+Ekumene,Bestaan daar ekumeniese gespreksgroepe tussen kerke en gemeentes in u omgewing?,V348,V387,V327,
+Ekumene,Neem u gemeente aan die ekumeniese gespreksgroepe deel?,V349,V388,V328,"In 2022 het hoofsaaklik net gemeentes wat wél sulke groepe in hul omgewing het, hierdie vraag beantwoord (379 van 804); in 2026 het byna almal geantwoord (634 van 643). Die persentasies rus dus op verskillende groepe en is nie oor die jare heen vergelykbaar nie — lees elke jaar saam met sy eie getal gemeentes."
+Gemeentegrootte,Belydende lidmate,V05,V05,V02,
+Gemeentegrootte,Dooplidmate,V06,V06,V03,
+Gemeentegrootte,Ongedooptes,V07,V07,V04,
+Gemeentegrootte,Lidmate tussen 60 en 80,V08,V08,V06,
+Gemeentegrootte,Lidmate ouer as 80,V09,V09,V05,
+Gemeentegrootte,Gemiddelde erediensbywoning per Sondag,V141,V153,V91,

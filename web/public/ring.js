@@ -95,7 +95,7 @@ const allQuestions = () => state.set
         : new Set(Object.values(e.optionCounts || {})).size > 1 ? "scale-changed"
         : e.waves.length === 1 ? "single-wave" : "yes",
       options: e.kind === "number" ? null : e.options,
-      optionCounts: e.optionCounts, categories: e.categories,
+      optionCounts: e.optionCounts, categories: e.categories, note: e.note,
     }))
   : state.questions.concat(state.numeric);
 
@@ -248,8 +248,10 @@ async function render() {
 
   if (isNumeric(question)) { renderNumeric(question, scopeList); return; }
 
-  el("note-slot").innerHTML =
-    question.comparable === "scale-changed"
+  // A caveat the question list attached to this entry, said before the
+  // generic ones because it is usually the more important of the two.
+  el("note-slot").innerHTML = ownNote(question) +
+    (question.comparable === "scale-changed"
       ? `<p class="note"><strong>Skale verskil tussen jare.</strong> Hierdie vraag
          is nie in elke jaar met dieselfde aantal antwoordopsies gevra nie
          (${WAVES.filter((w) => question.optionCounts[w])
@@ -261,7 +263,7 @@ async function render() {
       ? `<p class="note"><strong>Net in ${Object.keys(question.codes).join(", ")} gevra.</strong>
          Daar is niks om oor tyd mee te vergelyk nie; wat wel vergelyk kan word
          is die ring teenoor sy sinode en die hele kerk in daardie jaar.</p>`
-      : "";
+      : "");
 
   const options = categoriesOf(question);
   const series = WAVES
@@ -420,7 +422,7 @@ function renderTable(question, options, scopeList) {
 
 async function renderNumeric(question, scopeList) {
   el("legend").innerHTML = "";
-  el("note-slot").innerHTML = "";
+  el("note-slot").innerHTML = ownNote(question);
   el("chart").innerHTML = `<p class="empty">Besig om die getalle te laai…</p>`;
   renderFooter(question);
 
@@ -453,7 +455,7 @@ async function renderNumeric(question, scopeList) {
       return row && row[0] ? Math.round((row[1] / row[0]) * 10) / 10 : null;
     }),
   }));
-  el("note-slot").innerHTML =
+  el("note-slot").innerHTML = ownNote(question) +
     `<p class="note"><strong>Hierdie vraag tel iets; dit kies nie.</strong>
      Die grafiek wys die <em>gemiddeld per gemeente</em>, want 'n ring se
      totaal en die hele kerk se totaal is nie vergelykbaar nie. Die totale,
@@ -483,6 +485,10 @@ async function renderNumeric(question, scopeList) {
 
   addExportButtons();
 }
+
+const ownNote = (question) => question.note
+  ? `<p class="note"><strong>Let op by hierdie vraag.</strong> ${escapeHtml(question.note)}</p>`
+  : "";
 
 function renderFooter(question) {
   const codes = WAVES.filter((w) => question.codes[w])
